@@ -1,16 +1,26 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
-function intro() {
+const navMobile = "";
+
+function intro(props) {
     return (
-        <div className='py-12 md:py-16 lg:py-24 xl:py-32 2xl:py-48 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto'>
+        <div className={props.header}>
             <div className='text-5xl font-extrabold'>
                 <span className='bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500'>
                     Hello there!
                 </span>
             </div>
-            <div className="text-white text-8xl font-extrabold">
+            <div className="text-white text-8xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-extrabold">
                 I'm Kartavya Sharma<span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">.</span>
             </div>
+            <br />
+            <nav className='justify-between items-center relative text-white font-semibold text-base md:text-lg lg:text-2xl' role='navigation'>
+                <a href='#' target='_blank'>Home</a>
+                <a href='#' target='_blank' className="pl-10">Projects</a>
+                <a href='#' target='_blank' className="pl-10">Blog</a>
+                <a href='#' target='_blank' className="pl-10">Contact</a>
+            </nav>
         </div>
     )
 }
