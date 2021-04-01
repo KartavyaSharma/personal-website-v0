@@ -10,8 +10,8 @@ function aboutme(props) {
                     <p>
                         Hi! I'm a freshman at UC Berkeley studying Electrical Engineering and Computer science. 
                         <br/><br/>
-                        As a programmer I have experience in computational thinking, data structures, abstraction, and problem solving. I am passionate about
-                        issues our sociaty faces as a concequence of technological proliferation, and coming up with solutions to address said issues. I am
+                        As a programmer, I have experience in computational thinking, data structures, abstraction, and problem solving. I am passionate about
+                        issues our society faces as a consequence of technological proliferation and coming up with solutions to address said issues. I am
                         actively involved in Competitive Programming as a hobby and as a means to hone my problem solving skills. I'm always on the lookout to
                         learn new optimization techniques and algorithms I'm yet not privy to.
                         <br/><br/>
