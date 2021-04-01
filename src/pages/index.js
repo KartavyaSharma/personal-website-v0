@@ -10,6 +10,7 @@ const mobileBody = "";
 const IndexPage = () => (
   <div className='bg-gray-900 h-screen'>
     <Intro header={mobileHeaders} body={mobileBody}/>
+    <div></div>
   </div>
 )
 
