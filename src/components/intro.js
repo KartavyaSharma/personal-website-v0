@@ -13,16 +13,15 @@ function intro(props) {
                 I'm Kartavya Sharma<span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">.</span>
             </div>
             <br />
-            <nav className='justify-between items-center relative font-semibold text-xl lg:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500' role='navigation'>
-                <a href='#' target='_blank'>Home</a>
-                <a href='#' target='_blank' className="pl-5 md:pl-10">About me</a>
-                <a href='#' target='_blank' className="pl-5 md:pl-10">Projects</a>
-                <a href='#' target='_blank' className="pl-5 md:pl-10">Blog</a>
-                <a href='#' target='_blank' className="pl-5 md:pl-10">Contact</a>
+            <nav className='justify-between items-center relative font-semibold text-xl lg:text-4xl py-0 xl:py-4 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500' role='navigation'>
+                <a href='#' target='_blank' className="underline">About</a>
+                <a href='#' target='_blank' className="pl-5 md:pl-10 underline">Projects</a>
+                <a href='#' target='_blank' className="pl-5 md:pl-10 underline">Blog</a>
+                <a href='#' target='_blank' className="pl-5 md:pl-10 underline">Contact</a>
             </nav>
-            <div className={props.body}>
-                I'm a current freshman at UC Berkeley studying Electrical Engineering and Computer Science. I'm interested in Competitive Programming,
-                Web Development Technologies, and Machine Learning. I currently dabble in C++ and Python, whilst exploring Jamstack with React (Gatsby,)
+            <div className='text-white text-xl lg:text-2xl py-8 md:py-12 lg:py-16 xl:w-4/5'>
+                I'm a freshman at UC Berkeley studying Electrical Engineering and Computer Science. I'm interested in Competitive Programming,
+                Web Development Technologies, and Machine Learning. I currently dabble in C++ and Python, currently exploring Jamstack with React,
                 GraphQL, and headless CMS services.
             </div>
             <div className='flex flex-row 2xl:py-8'>
