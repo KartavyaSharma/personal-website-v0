@@ -20,9 +20,9 @@ function intro(props) {
                 <a href='#' target='_blank' className="pl-5 md:pl-10">Blog</a>
                 <a href='#' target='_blank' className="pl-5 md:pl-10">Contact</a>
             </nav>
-            <div className={props.sectionBody}>
+            <div className={props.body}>
                 I'm a current freshman at UC Berkeley studying Electrical Engineering and Computer Science. I'm interested in Competitive Programming,
-                Web Development Technologies, and Machine Learning. I currently dabble in C++ and Python and am currently exploring Jamstack with React (Gatsby,)
+                Web Development Technologies, and Machine Learning. I currently dabble in C++ and Python, whilst exploring Jamstack with React (Gatsby,)
                 GraphQL, and headless CMS services.
             </div>
             <div className='flex flex-row 2xl:py-8'>
