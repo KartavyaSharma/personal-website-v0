@@ -3,13 +3,15 @@ import Myself from "../images/android-chrome-512x512.png"
 import Roze from "../images/HELA_512x512.png"
 import Prime from "../images/Prime_logo.png"
 
+const cardAnimation = "transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110";
+
 function projects(props) {
     return (
         <div className={props.header} id="projects">
             <div className={props.topNum}>02</div>
             <div className={props.topTitle}>Projects</div>
             <div className='flex flex-row mt-4 mx-auto py-4 md:py-8 lg:py-12'>
-                <div className='max-w-md mr-auto bg-gray-300 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4'>
+                <div className={'max-w-md mr-auto bg-gray-300 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4 '+ cardAnimation}>
                     <div className='md:flex'>
                         <div className='md:flex-shrink-0 px-3'>
                             <img className='h-64 object-cover md:w-48 lg:w-64' src={Myself} alt='' />
@@ -37,7 +39,7 @@ function projects(props) {
                     <path d="M338.91551,417.19256q.3425.27261.66395.57794a10.38021,10.38021,0,0,1-.41708,15.48365,9.72179,9.72179,0,0,1-.81382.61338l1.56823,52.94493a8.06132,8.06132,0,0,1-5.545,7.867l-.09553.02052-42.98869,4.578a8.89852,8.89852,0,1,1-1.72218-17.71279l30.64427-2.69888,5.29962-45.851a9.87574,9.87574,0,0,1-.97155-.99,10.38,10.38,0,0,1,14.3778-14.83273Z" transform="translate(-180.86417 -106.46046)" fill="#a0616a" /><polygon points="139.328 649.174 150.895 649.174 156.397 604.561 139.326 604.561 139.328 649.174" fill="#a0616a" /><path d="M317.24235,751.8583l22.778-.00093h.00092a14.5157,14.5157,0,0,1,14.51609,14.51587v.47171l-37.29436.00139Z" transform="translate(-180.86417 -106.46046)" fill="#2f2e41" /><polygon points="24.366 633.182 34.304 639.099 61.857 603.582 47.189 594.849 24.366 633.182" fill="#a0616a" /><path d="M204.6271,734.88875l19.57164,11.65289.00079.00047a14.5157,14.5157,0,0,1,5.04582,19.89892l-.24134.40531L196.95952,747.767Z" transform="translate(-180.86417 -106.46046)" fill="#2f2e41" /><path d="M334.4881,739.87708H321.53641a4.23772,4.23772,0,0,1-4.22149-3.79676L304.25773,613.34293a1.41541,1.41541,0,0,0-2.69716-.433l-23.5554,52.15872-41.70358,68.00266a4.26564,4.26564,0,0,1-5.32891,1.66575l-16.66024-7.33a4.24672,4.24672,0,0,1-1.93478-6.06413l38.33707-64.19208,11.75766-54.0852c-3.69795-23.455,12.155-58.326,12.31575-58.67614l.07855-.17044,43.66751-17.06765.219.2681c17.22117,56.51377,27.715,117.3322,19.96672,208.5678A4.27417,4.27417,0,0,1,334.4881,739.87708Z" transform="translate(-180.86417 -106.46046)" fill="#2f2e41" />
                     <path d="M273.10743,549.934l-.20339-.42749c-.09719-.20454-9.807-20.68365-17.292-42.57146a32.28512,32.28512,0,0,1,2.23858-25.87344,32.6374,32.6374,0,0,1,20.81263-16.00426h0A32.677,32.677,0,0,1,316.591,484.62709c5.93722,14.84708,4.045,30.69452,2.26429,43.15723l-.03547.24967-.22711.10872Z" transform="translate(-180.86417 -106.46046)" fill="#3f3d56" /><path d="M310.12378,420.05358H273.32992V404.01523c8.07584-3.20838,15.97847-5.93693,20.75551,0a16.03844,16.03844,0,0,1,16.03835,16.03833Z" transform="translate(-180.86417 -106.46046)" fill="#2f2e41" /><path d="M271.29289,401.18493c-21.99607,0-28.15279,27.57121-28.15279,43.12552,0,8.67446,3.923,11.777,10.08753,12.8268l2.17708-11.611,5.09905,12.11064c1.73162.00864,3.55077-.02488,5.43671-.05989l1.72886-3.55986,3.85527,3.496c15.44087.023,27.92061,2.27382,27.92061-13.20269C299.44521,428.75614,294.04582,401.18493,271.29289,401.18493Z" transform="translate(-180.86417 -106.46046)" fill="#2f2e41" /><path d="M373.86417,767.93324h-192a1,1,0,1,1,0-2h192a1,1,0,0,1,0,2Z" transform="translate(-180.86417 -106.46046)" fill="#ccc" /><path d="M377.47441,438.93324h-43a9.51081,9.51081,0,0,1-9.5-9.5v-43a9.51081,9.51081,0,0,1,9.5-9.5h43a9.51081,9.51081,0,0,1,9.5,9.5v43A9.51081,9.51081,0,0,1,377.47441,438.93324Z" transform="translate(-180.86417 -106.46046)" fill="#fff" /><path d="M377.47441,438.93324h-43a9.51081,9.51081,0,0,1-9.5-9.5v-43a9.51081,9.51081,0,0,1,9.5-9.5h43a9.51081,9.51081,0,0,1,9.5,9.5v43A9.51081,9.51081,0,0,1,377.47441,438.93324Zm-43-60a7.50836,7.50836,0,0,0-7.5,7.5v43a7.50836,7.50836,0,0,0,7.5,7.5h43a7.50836,7.50836,0,0,0,7.5-7.5v-43a7.50836,7.50836,0,0,0-7.5-7.5Z" transform="translate(-180.86417 -106.46046)" fill="#3f3d56" /><path d="M369.97441,421.43324h-28a3.00328,3.00328,0,0,1-3-3v-21a3.00328,3.00328,0,0,1,3-3h7.88232a2.98117,2.98117,0,0,1,2.55518,1.42724l2.19824,3.57276h15.36426a3.00328,3.00328,0,0,1,3,3v16A3.00328,3.00328,0,0,1,369.97441,421.43324Z" transform="translate(-180.86417 -106.46046)" fill="#6c63ff" /><path d="M369.06364,432.04239q.20986.38415.38766.79029a10.38021,10.38021,0,0,1-6.39269,14.10854,9.72022,9.72022,0,0,1-.98807.24953l-19.09943,49.40482a8.06134,8.06134,0,0,1-8.16324,5.09887l-.096-.01816-41.39664-12.46211a8.89853,8.89853,0,1,1,5.28606-16.99313l29.29033,9.40382,22.6764-40.20175a9.87622,9.87622,0,0,1-.51127-1.28942,10.38005,10.38005,0,0,1,19.0069-8.0913Z" transform="translate(-180.86417 -106.46046)" fill="#a0616a" />
                 </svg>
-                <div className='max-w-md ml-auto bg-gray-300 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-8'>
+                <div className={'max-w-md ml-auto bg-gray-300 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-8 ' + cardAnimation}>
                     <div className='md:flex'>
                         <div className='pr-4 pl-8 pt-8 pb-8'>
                             <div className='uppercase tracking-wide text-sm text-indigo-500 font-semibold'>Project</div>
@@ -51,7 +53,7 @@ function projects(props) {
                 </div>
             </div>
             <div className='flex flex-row mt-4 mx-auto py-4 md:py-8 lg:py-12'>
-                <div className='max-w-md mr-auto bg-gray-300 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4'>
+                <div className={'max-w-md mr-auto bg-gray-300 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4 ' + cardAnimation}>
                     <div className='md:flex'>
                         <div className='md:flex-shrink-0 px-3'>
                             <img className='h-64 w-full object-cover md:w-48 lg:w-64' src={Prime} alt='' />
