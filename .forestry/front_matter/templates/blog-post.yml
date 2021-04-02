@@ -1,0 +1,59 @@
+---
+label: Blog Post
+hide_body: false
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: Add a title.
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+  description: Add a brief description.
+- name: date
+  type: datetime
+  label: Date
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+  description: Add a date.
+- name: thumbnail
+  type: file
+  config:
+    maxSize: 64
+  label: Thumbnail
+  description: Add a thumbnail image.
+- name: author_info
+  type: field_group
+  config: {}
+  fields:
+  - name: author_name
+    type: text
+    config:
+      required: false
+    label: Author name
+    description: Author name.
+  - name: author_bio
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Author bio
+    description: Auther bio.
+  label: Author Information
+  description: Add author information.
+pages:
+- src/content/posts/first-post.md
