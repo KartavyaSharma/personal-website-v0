@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/Content/posts`
+        name: `posts`,
+        path: `${__dirname}/src/content/posts`
       },
     },
     `gatsby-transformer-sharp`,
