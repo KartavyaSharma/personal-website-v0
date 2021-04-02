@@ -10,7 +10,7 @@ sections:
   create: documents
   match: "**/*"
   templates:
-  - blog
+  - blog-post
 upload_dir: static/uploads
 public_path: static/uploads
 front_matter_path: ''
