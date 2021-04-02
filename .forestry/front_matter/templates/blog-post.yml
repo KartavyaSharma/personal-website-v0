@@ -33,16 +33,6 @@ fields:
     maxSize: 64
   label: Thumbnail
   description: Add a thumbnail image.
-- name: content
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Content
-  description: Add post content.
 - name: author_info
   type: field_group
   config: {}
