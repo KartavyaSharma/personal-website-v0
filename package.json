@@ -41,7 +41,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "forestry:preview": "gatsby develop -p 8080 -H 0.0.0.0"
   },
   "repository": {
     "type": "git",
