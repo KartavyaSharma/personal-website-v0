@@ -3,9 +3,16 @@ new_page_extension: md
 auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
-sections: 
+sections:
+- type: directory
+  path: src/content/posts
+  label: Posts
+  create: documents
+  match: "**/*"
+  templates:
+  - blog
 upload_dir: static/uploads
-public_path: "static/uploads"
+public_path: static/uploads
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
@@ -16,12 +23,3 @@ build:
   mount_path: "/srv"
   working_dir: "/srv"
   instant_preview_command: npm run forestry:preview
-sections:
-  - type: directory
-    path: src/content/posts
-    label: Posts
-    create: documents
-    match: "**/*"
-    templates:
-      - blog
----
