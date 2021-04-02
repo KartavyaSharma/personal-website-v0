@@ -65,3 +65,5 @@ fields:
     description: Auther bio.
   label: Author Information
   description: Add author information.
+pages:
+- src/content/posts/first-post.md
