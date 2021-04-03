@@ -18,10 +18,10 @@ function intro(props) {
             </div>
             <br />
             <nav className='justify-between items-center relative font-semibold text-xl lg:text-4xl py-0 xl:py-4 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500' role='navigation'>
-                <Link activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline">About</Link>
-                <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline">Projects</Link>
-                <Link activeClass="active" to="blog" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline">Blog</Link>
-                <Link activeClass="active" to="contact-me" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline">Contact</Link>
+                <Link activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">About</Link>
+                <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</Link>
+                <Link activeClass="active" to="blog" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
+                <Link activeClass="active" to="contact-me" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
             </nav>
             <div className='text-white text-xl lg:text-2xl py-8 md:py-12 lg:py-16 xl:w-4/5'>
                 I'm a freshman at UC Berkeley studying Electrical Engineering and Computer Science. I'm interested in Competitive Programming,
