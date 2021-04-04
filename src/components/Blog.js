@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-function blog(props) {
+function Blog(props) {
     return (
         <div className={props.header} id="blog">
             <div className={props.topNum}>03</div>

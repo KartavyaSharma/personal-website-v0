@@ -1,6 +1,6 @@
 import React from 'react'
 
-function aboutme(props) {
+function AboutMe(props) {
     return (
         <div className={props.header} id="about-me">
             <div className={props.topNum}>01</div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-scroll'
 
-function intro(props) {
+function Intro(props) {
     return (
         <div className={props.header}>
             <div className='text-5xl font-extrabold'>

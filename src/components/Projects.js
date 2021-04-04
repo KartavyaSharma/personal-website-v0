@@ -5,7 +5,7 @@ import Prime from "../images/Prime_logo.png"
 
 const cardAnimation = "transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110";
 
-function projects(props) {
+function Projects(props) {
     return (
         <div className={props.header} id="projects">
             <div className={props.topNum}>02</div>

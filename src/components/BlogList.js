@@ -1,6 +1,6 @@
 import React from 'react'
 
-function bloglist() {
+function BlogList() {
     return (
         <div>
             

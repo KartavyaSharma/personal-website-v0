@@ -1,6 +1,6 @@
 import React from 'react'
 
-function contact(props) {
+function Contact(props) {
     return (
         <div id="contact-me" className={props.header}>
             <div className={props.topNum}>04</div>
