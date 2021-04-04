@@ -11,9 +11,15 @@ export default function GetBlogList() {
                     title
                     description
                     date
+                    thumbnail {
+                      childImageSharp {
+                        fluid(maxWidth: 1000) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                    }
                     author_info {
                         author_name
-                        author_bio
                     }
                   }
                 }

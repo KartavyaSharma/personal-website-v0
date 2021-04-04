@@ -1,4 +1,5 @@
 import React from 'react'
+import Img from 'gatsby-plugin-image'
 
 function BlogList(props) {
 
@@ -9,10 +10,13 @@ function BlogList(props) {
                     props.listData.filter(blog => blog.node.title !== "")
                     .map(blog => {
                         return(
-                            <div>
-                                <h1>{blog.node.frontmatter.title}</h1>
-                                <h5>{blog.node.frontmatter.description}</h5>
-                                <p>{blog.node.frontmatter.author_info.author_name}<br/><br/>{blog.node.frontmatter.author_info.author_bio}</p>
+                            <div className='flex'>
+                                <div className='pt-4 pr-8'>
+                                    <div className='text-3xl md:text-5xl font-semibold'>{blog.node.frontmatter.title}</div>
+                                    <div className='text-base md:text-xl lg:text-2xl text-gray-400 italic'>{blog.node.frontmatter.description}</div>
+                                    <div className='text-lg md:text-base text-white font-bold py-4'>By {blog.node.frontmatter.author_info.author_name}</div>
+                                </div>
+
                             </div>
                         );
                     })
@@ -21,7 +25,7 @@ function BlogList(props) {
         );
     }
     return (
-        <div>
+        <div className='text-white py-10 md:py-14 lg:py-20'>
             <ul>{renderBlogData()}</ul>
         </div>
     )
