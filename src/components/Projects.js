@@ -114,4 +114,4 @@ function Projects(props) {
     )
 }
 
-export default projects
+export default Projects

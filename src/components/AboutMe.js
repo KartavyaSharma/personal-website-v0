@@ -29,4 +29,4 @@ function AboutMe(props) {
     )
 }
 
-export default aboutme
+export default AboutMe

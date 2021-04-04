@@ -13,4 +13,4 @@ function Blog(props) {
     )
 }
 
-export default blog;
+export default Blog;

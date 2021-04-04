@@ -8,4 +8,4 @@ function BlogList() {
     )
 }
 
-export default bloglist
+export default BlogList

@@ -57,4 +57,4 @@ function Intro(props) {
     )
 }
 
-export default intro
+export default Intro
