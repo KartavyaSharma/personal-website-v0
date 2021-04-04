@@ -1,7 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Particles from 'react-tsparticles';
+import { graphql } from "gatsby"
 
 import Intro from "../components/intro"
 import Aboutme from "../components/aboutme"
@@ -14,14 +12,31 @@ const sectionHeaderNum = "text-lg sm:text-xl md:text-2xl lg:text-4xl font-semibo
 const sectionHeaderTitle = "text-3xl sm:text-4xl md:text-5xl lg:text-8xl xl:text-10xl font-bold font-mono text-white";
 const sectionBody = "text-white text-xl py-8 md:py-12 lg:py-16";
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <div className='bg-black bg-opacity-90'>
     <Intro header={mobileHeaders} body={sectionBody} />
     <Aboutme header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
     <Projects header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
-    <Blog header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
+    <Blog header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} blogData={data}/>
     <Contact header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
   </div>
 )
 
 export default IndexPage
+
+export const pageQuery = graphql`
+query {
+  markdownRemark {
+    id
+    frontmatter {
+      title
+      date
+      description
+      author_info {
+        author_name
+        author_bio
+      }
+    }
+  }
+}
+`;

@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 function blog(props) {
     return (
@@ -6,10 +7,10 @@ function blog(props) {
             <div className={props.topNum}>03</div>
             <div className={props.topTitle}>My blog</div>
             <div className={props.body}>
-                In dev.
+                {props.blogData.markdownRemark.frontmatter.title}
             </div>
         </div>
     )
 }
 
-export default blog
+export default blog;
