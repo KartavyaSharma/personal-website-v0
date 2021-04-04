@@ -1,10 +1,6 @@
 import React from 'react'
 import { Link } from 'react-scroll'
 
-import Aboutme from "../components/aboutme"
-import Projects from "../components/projects"
-import Blog from "../components/blog"
-
 function intro(props) {
     return (
         <div className={props.header}>
