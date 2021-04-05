@@ -22,7 +22,7 @@ function Projects(props) {
                 <div className={cardElemnentStyle + cardAnimation}>
                     <div className='md:flex'>
                         <div className='md:flex-shrink-0 px-3'>
-                            <img className='h-64 object-cover md:w-48 lg:w-64' src={Myself} alt='' />
+                            <img className='hidden lg:block h-64 object-cover md:w-48 lg:w-64' src={Myself} alt='' />
                         </div>
                         <div className={cardBodyPaddingLeft}>
                             <div className={cardBodyCategory}>Project</div>
@@ -84,7 +84,7 @@ function Projects(props) {
                             </div>
                         </div>
                         <div className='md:flex-shrink-0 px-3'>
-                            <img className='h-64 w-full object-cover md:w-48 lg:w-64' src={Roze} alt='' />
+                            <img className='hidden lg:block h-64 w-full object-cover md:w-48 lg:w-64' src={Roze} alt='' />
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ function Projects(props) {
                 <div className={cardElemnentStyle + cardAnimation}>
                     <div className='md:flex'>
                         <div className='md:flex-shrink-0 px-3'>
-                            <img className='h-64 w-full object-cover md:w-48 lg:w-64' src={Prime} alt='' />
+                            <img className='hidden lg:block h-64 w-full object-cover md:w-48 lg:w-64' src={Prime} alt='' />
                         </div>
                         <div className={cardBodyPaddingLeft}>
                             <div className={cardBodyCategory}>Project</div>
