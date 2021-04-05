@@ -57,3 +57,4 @@ fields:
   description: Add author information.
 pages:
 - src/content/posts/first-post.md
+- src/content/posts/second-post.md
