@@ -1,9 +1,17 @@
 import React from 'react'
-import Myself from "../images/android-chrome-512x512.png"
-import Roze from "../images/HELA_512x512.png"
+import { Link } from 'gatsby'
+
+import Myself from "../images/Salkatech.png"
+import Roze from "../images/ROZE.png"
 import Prime from "../images/Prime_logo.png"
 
-const cardAnimation = "transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110";
+const cardAnimation = "transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 ";
+const cardElemnentStyle = "max-w-md mr-auto border border-gray-500 hover:border-green-500 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4 ";
+const cardBodyPaddingLeft = "pl-4 pr-8 pt-8 pb-4 ";
+const cardBodyPaddingRight = "pr-4 pl-8 pt-8 pb-4 ";
+const cardBodyCategory = "uppercase tracking-wide text-sm text-green-500 font-semibold ";
+const cardBodyTitle = "block mt-1 text-lg leading-tight font-medium text-white hover:underline ";
+const cardBodyText = "mt-2 text-gray-400 ";
 
 function Projects(props) {
     return (
@@ -11,15 +19,33 @@ function Projects(props) {
             <div className={props.topNum}>02</div>
             <div className={props.topTitle}>Projects</div>
             <div className='flex flex-row mt-4 mx-auto py-4 md:py-8 lg:py-12'>
-                <div className={'max-w-md mr-auto bg-gray-300 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4 ' + cardAnimation}>
+                <div className={cardElemnentStyle + cardAnimation}>
                     <div className='md:flex'>
                         <div className='md:flex-shrink-0 px-3'>
                             <img className='h-64 object-cover md:w-48 lg:w-64' src={Myself} alt='' />
                         </div>
-                        <div className='pl-4 pr-8 pt-8 pb-8'>
-                            <div className='uppercase tracking-wide text-sm text-indigo-500 font-semibold'>Project</div>
-                            <a href='#' className='block mt-1 text-lg leading-tight font-medium text-black hover:underline'>Project Title</a>
-                            <p class="mt-2 text-gray-500">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+                        <div className={cardBodyPaddingLeft}>
+                            <div className={cardBodyCategory}>Project</div>
+                            <a href='https://salkatech.com' className={cardBodyTitle}>Salkatech Website</a>
+                            <p class={cardBodyText}>Created the company's primary website for its telecommunications business using JQuery, HTML, CSS, and GIMP.</p>
+                            <div className='py-2 flex'>
+                                <Link to='https://salkatech.com'>
+                                    <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
+                                        Visit
+                                        <svg className='ml-2 mt-0.5' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                                        </svg>
+                                    </button>
+                                </Link>
+                                <div className='pr-4'></div>
+                                <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
+                                    Project Info
+                                    <svg className='ml-2 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -42,12 +68,20 @@ function Projects(props) {
                     <path d="M273.10743,549.934l-.20339-.42749c-.09719-.20454-9.807-20.68365-17.292-42.57146a32.28512,32.28512,0,0,1,2.23858-25.87344,32.6374,32.6374,0,0,1,20.81263-16.00426h0A32.677,32.677,0,0,1,316.591,484.62709c5.93722,14.84708,4.045,30.69452,2.26429,43.15723l-.03547.24967-.22711.10872Z" transform="translate(-180.86417 -106.46046)" fill="#3f3d56" /><path d="M310.12378,420.05358H273.32992V404.01523c8.07584-3.20838,15.97847-5.93693,20.75551,0a16.03844,16.03844,0,0,1,16.03835,16.03833Z" transform="translate(-180.86417 -106.46046)" fill="#2f2e41" /><path d="M271.29289,401.18493c-21.99607,0-28.15279,27.57121-28.15279,43.12552,0,8.67446,3.923,11.777,10.08753,12.8268l2.17708-11.611,5.09905,12.11064c1.73162.00864,3.55077-.02488,5.43671-.05989l1.72886-3.55986,3.85527,3.496c15.44087.023,27.92061,2.27382,27.92061-13.20269C299.44521,428.75614,294.04582,401.18493,271.29289,401.18493Z" transform="translate(-180.86417 -106.46046)" fill="#2f2e41" /><path d="M373.86417,767.93324h-192a1,1,0,1,1,0-2h192a1,1,0,0,1,0,2Z" transform="translate(-180.86417 -106.46046)" fill="#ccc" /><path d="M377.47441,438.93324h-43a9.51081,9.51081,0,0,1-9.5-9.5v-43a9.51081,9.51081,0,0,1,9.5-9.5h43a9.51081,9.51081,0,0,1,9.5,9.5v43A9.51081,9.51081,0,0,1,377.47441,438.93324Z" transform="translate(-180.86417 -106.46046)" fill="#fff" />
                     <path d="M377.47441,438.93324h-43a9.51081,9.51081,0,0,1-9.5-9.5v-43a9.51081,9.51081,0,0,1,9.5-9.5h43a9.51081,9.51081,0,0,1,9.5,9.5v43A9.51081,9.51081,0,0,1,377.47441,438.93324Zm-43-60a7.50836,7.50836,0,0,0-7.5,7.5v43a7.50836,7.50836,0,0,0,7.5,7.5h43a7.50836,7.50836,0,0,0,7.5-7.5v-43a7.50836,7.50836,0,0,0-7.5-7.5Z" transform="translate(-180.86417 -106.46046)" fill="#3f3d56" /><path d="M369.97441,421.43324h-28a3.00328,3.00328,0,0,1-3-3v-21a3.00328,3.00328,0,0,1,3-3h7.88232a2.98117,2.98117,0,0,1,2.55518,1.42724l2.19824,3.57276h15.36426a3.00328,3.00328,0,0,1,3,3v16A3.00328,3.00328,0,0,1,369.97441,421.43324Z" transform="translate(-180.86417 -106.46046)" fill="#34d399" /><path d="M369.06364,432.04239q.20986.38415.38766.79029a10.38021,10.38021,0,0,1-6.39269,14.10854,9.72022,9.72022,0,0,1-.98807.24953l-19.09943,49.40482a8.06134,8.06134,0,0,1-8.16324,5.09887l-.096-.01816-41.39664-12.46211a8.89853,8.89853,0,1,1,5.28606-16.99313l29.29033,9.40382,22.6764-40.20175a9.87622,9.87622,0,0,1-.51127-1.28942,10.38005,10.38005,0,0,1,19.0069-8.0913Z" transform="translate(-180.86417 -106.46046)" fill="#a0616a" />
                 </svg>
-                <div className={'max-w-md ml-auto bg-gray-300 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-8 ' + cardAnimation}>
+                <div className={cardElemnentStyle + cardAnimation}>
                     <div className='md:flex'>
-                        <div className='pr-4 pl-8 pt-8 pb-8'>
-                            <div className='uppercase tracking-wide text-sm text-indigo-500 font-semibold'>Project</div>
-                            <a href='#' className='block mt-1 text-lg leading-tight font-medium text-black hover:underline'>Project Title</a>
-                            <p class="mt-2 text-gray-500">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+                        <div className={cardBodyPaddingRight}>
+                            <div className={cardBodyCategory}>Project</div>
+                            <div className={cardBodyTitle + 'hover:no-underline'}>ROZE - Digital Assistant</div>
+                            <p class={cardBodyText}>Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+                            <div className='py-2 flex'>
+                                <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
+                                    Project Info
+                                    <svg className='ml-2 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                         <div className='md:flex-shrink-0 px-3'>
                             <img className='h-64 w-full object-cover md:w-48 lg:w-64' src={Roze} alt='' />
@@ -56,15 +90,23 @@ function Projects(props) {
                 </div>
             </div>
             <div className='flex flex-row mt-4 mx-auto py-4 md:py-8 lg:py-12'>
-                <div className={'max-w-md mr-auto bg-gray-300 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4 ' + cardAnimation}>
+                <div className={cardElemnentStyle + cardAnimation}>
                     <div className='md:flex'>
                         <div className='md:flex-shrink-0 px-3'>
                             <img className='h-64 w-full object-cover md:w-48 lg:w-64' src={Prime} alt='' />
                         </div>
-                        <div className='pl-4 pr-8 pt-8 pb-8'>
-                            <div className='uppercase tracking-wide text-sm text-indigo-500 font-semibold'>Project</div>
-                            <a href='#' className='block mt-1 text-lg leading-tight font-medium text-black hover:underline'>Project Title</a>
-                            <p class="mt-2 text-gray-500">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+                        <div className={cardBodyPaddingLeft}>
+                            <div className={cardBodyCategory}>Project</div>
+                            <div className={cardBodyTitle + 'hover:no-underline'}>Prime Academy Website</div>
+                            <p class={cardBodyText}>Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+                            <div className='py-2 flex'>
+                                <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
+                                    Project Info
+                                    <svg className='ml-2 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
