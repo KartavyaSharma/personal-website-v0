@@ -13,8 +13,8 @@ sections:
   - blog-post
 upload_dir: src/content/images
 public_path: ''
-front_matter_path: ''
-use_front_matter_path: false
+front_matter_path: "../images"
+use_front_matter_path: true
 file_template: ":filename:"
 build:
   preview_output_directory: public
@@ -23,4 +23,3 @@ build:
   mount_path: "/srv"
   working_dir: "/srv"
   instant_preview_command: npm run forestry:preview
-frontmatter_file_url_template: "../images/"
