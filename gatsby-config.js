@@ -5,43 +5,31 @@ module.exports = {
     author: `Kartavya Sharma`,
   },
   plugins: [
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/content/posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: 'content-images',
         path: `${__dirname}/src/content/images`,
+        name: 'content-images',
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/content/posts`,
+        name: `posts`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          {
-            resolve: "gatsby-remark-normalize-paths",
-            options: {
-              pathFields: ["content-images", "cover"]
-            },
-          },
-          {
-            resolve: "gatsby-remark-relative-images",
-            options: {
-              name: "content-images",
-            },
-          },
+          "gatsby-remark-normalize-paths",
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 1000,
-              linkImagesToOriginal: false,
+              maxWidth: 2048,
             },
           },
         ],
