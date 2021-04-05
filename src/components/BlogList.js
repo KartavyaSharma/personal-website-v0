@@ -12,7 +12,7 @@ function BlogList(props) {
                         return(
                             <div className='flex'>
                                 <div className='pt-4 pr-8'>
-                                    <div className='text-3xl md:text-5xl font-semibold'>{blog.node.frontmatter.title}</div>
+                                    <div className='text-2xl md:text-4xl font-semibold'>{blog.node.frontmatter.title}</div>
                                     <div className='text-base md:text-xl lg:text-2xl text-gray-400 italic'>{blog.node.frontmatter.description}</div>
                                     <div className='text-lg md:text-base text-white font-bold py-4'>By {blog.node.frontmatter.author_info.author_name}</div>
                                 </div>
