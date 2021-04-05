@@ -58,3 +58,4 @@ fields:
 pages:
 - src/content/posts/first-post.md
 - src/content/posts/second-post.md
+- src/content/posts/third-post.md
