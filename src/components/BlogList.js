@@ -13,13 +13,13 @@ function BlogList(props) {
                         const img = getImage(blog.node.frontmatter.thumbnail);
                         return(
                             <Link to={blog.node.fields.slug} key={blog.node.id}>
-                                <div className='border-b-2 border-dashed border-green-500 md:border-none md:grid md:grid-cols-3'>
-                                    <div className='pt-7 md:pt-10 lg:pt-14 md:col-span-2'>
+                                <div className='border-b-2 border-dashed border-green-500 lg:border-none lg:grid lg:grid-cols-3'>
+                                    <div className='pt-7 md:pt-10 lg:pt-14 lg:col-span-2'>
                                         <div className='text-2xl md:text-4xl font-semibold pb-4'>{blog.node.frontmatter.title}</div>
                                         <div className='text-base md:text-xl text-gray-400 italic'>{blog.node.frontmatter.description}</div>
                                         <div className='text-lg md:text-base text-white font-bold py-4'>By {blog.node.frontmatter.author_info.author_name}</div>
                                     </div>
-                                    <div className='hidden md:block'>
+                                    <div className='hidden lg:block'>
                                         <div className='pt-7 md:pt-10 lg:pt-14'></div>
                                         <div className='flex justify-end items-center'>
                                             <GatsbyImage image={img} alt={blog.node.frontmatter.title} />
