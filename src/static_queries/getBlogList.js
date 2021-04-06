@@ -3,29 +3,39 @@ import { graphql, useStaticQuery } from "gatsby";
 export default function GetBlogList() {
     const data = useStaticQuery(
         graphql`
-            query getBlogData {
+          query MyQuery {
             allMarkdownRemark(limit: 3, sort: {order: DESC, fields: frontmatter___date}) {
               edges {
                 node {
                   frontmatter {
-                    title
+                    author_info {
+                      author_name
+                    }
+                    date(formatString: "Do MMMM YYYY")
                     description
-                    date
+                    title
                     thumbnail {
                       childImageSharp {
-                        fluid(maxWidth: 1000) {
-                          ...GatsbyImageSharpFluid
-                        }
+                        gatsbyImageData(
+                          placeholder: DOMINANT_COLOR
+                          formats: AUTO
+                          transformOptions: {fit: COVER}
+                          layout: CONSTRAINED
+                          width: 300
+                          height: 200
+                        )
                       }
-                    }
-                    author_info {
-                        author_name
+                      relativePath
                     }
                   }
+                  fields {
+                    slug
+                  }
+                  id
                 }
               }
             }
-          }          
+          }                  
         `
     );
     return data.allMarkdownRemark.edges;
