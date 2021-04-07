@@ -22,7 +22,7 @@ function BlogList(props) {
                                     <div className='hidden lg:block'>
                                         <div className='pt-7 md:pt-10 lg:pt-14'></div>
                                         <div className='flex justify-end items-center'>
-                                            <GatsbyImage image={img} alt={blog.node.frontmatter.title} />
+                                            <GatsbyImage image={img} alt={blog.node.frontmatter.title} className='border' />
                                             <div className='pr-7'></div>
                                         </div>
                                     </div>

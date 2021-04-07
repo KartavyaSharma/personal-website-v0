@@ -8,7 +8,7 @@ import Prime from "../images/Prime_logo.png"
 const cardAnimation = "transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 ";
 const cardElemnentStyle = "max-w-md mr-auto border border-gray-500 hover:border-green-500 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4 ";
 const cardBodyPaddingLeft = "pl-4 pr-8 pt-8 pb-4 ";
-const cardBodyPaddingRight = "pr-4 pl-8 pt-8 pb-4 ";
+const cardBodyPaddingRight = "xl:pr-4 xl:pl-8 xl:pt-8 xl:pb-4 ";
 const cardBodyCategory = "uppercase tracking-wide text-sm text-green-500 font-semibold ";
 const cardBodyTitle = "block mt-1 text-lg leading-tight font-medium text-white hover:underline ";
 const cardBodyText = "mt-2 text-gray-400 ";
@@ -40,7 +40,7 @@ function Projects(props) {
                                 </Link>
                                 <div className='pr-4'></div>
                                 <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
-                                    Project Info
+                                    Know more
                                     <svg className='ml-2 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                                     </svg>
@@ -70,13 +70,13 @@ function Projects(props) {
                 </svg>
                 <div className={cardElemnentStyle + cardAnimation}>
                     <div className='md:flex'>
-                        <div className={cardBodyPaddingRight}>
+                        <div className={cardBodyPaddingRight + cardBodyPaddingLeft}>
                             <div className={cardBodyCategory}>Project</div>
                             <div className={cardBodyTitle + 'hover:no-underline'}>ROZE - Digital Assistant</div>
                             <p class={cardBodyText}>Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
                             <div className='py-2 flex'>
                                 <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
-                                    Project Info
+                                    Know more
                                     <svg className='ml-2 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                                     </svg>
@@ -101,7 +101,7 @@ function Projects(props) {
                             <p class={cardBodyText}>Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
                             <div className='py-2 flex'>
                                 <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
-                                    Project Info
+                                    Know more
                                     <svg className='ml-2 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                                     </svg>
