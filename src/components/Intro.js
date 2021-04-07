@@ -5,15 +5,15 @@ function Intro(props) {
     return (
         <div className={props.header}>
             <div className='text-5xl font-extrabold'>
-                <span className='bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500'>
+                <span className='bg-clip-text text-green-500'>
                     Hello there!
                 </span>
             </div>
             <div className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-extrabold">
-                I'm Kartavya Sharma<span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">.</span>
+                I'm Kartavya Sharma<span className="bg-clip-text text-green-500">.</span>
             </div>
             <br />
-            <nav className='justify-between items-center relative font-semibold text-xl lg:text-4xl py-0 xl:py-4 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500' role='navigation'>
+            <nav className='justify-between items-center relative font-semibold text-xl lg:text-4xl py-0 xl:py-4 bg-clip-text text-green-500'>
                 <Link activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">About</Link>
                 <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</Link>
                 <Link activeClass="active" to="blog" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>

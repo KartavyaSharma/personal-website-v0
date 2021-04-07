@@ -5,8 +5,9 @@ import Myself from "../images/Salkatech.png"
 import Roze from "../images/ROZE.png"
 import Prime from "../images/Prime_logo.png"
 
-const cardAnimation = "transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 ";
-const cardElemnentStyle = "max-w-md mr-auto border border-gray-500 hover:border-green-500 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4 ";
+// const cardAnimation = "transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 ";
+const cardAnimation = "";
+const cardElemnentStyle = "max-w-md mr-auto border border-gray-500 hover:border-green-500 hover:bg-green-500 hover:bg-opacity-5 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4 ";
 const cardBodyPaddingLeft = "pl-4 pr-8 pt-8 pb-4 ";
 const cardBodyPaddingRight = "xl:pr-4 xl:pl-8 xl:pt-8 xl:pb-4 ";
 const cardBodyCategory = "uppercase tracking-wide text-sm text-green-500 font-semibold ";
