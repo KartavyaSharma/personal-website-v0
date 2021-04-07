@@ -7,6 +7,11 @@ content: This is sample post content.
 author_info:
   author_name: Kartavya Sharma
   author_bio: Student at UC Berkeley EECS.
+tags:
+- Some
+- more
+- example
+- tags
 
 ---
 # This is my first post.
