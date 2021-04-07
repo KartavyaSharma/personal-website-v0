@@ -24,7 +24,7 @@ function BlogList(props) {
                                             .map(tag => {
                                                 return (
                                                     <div className='pr-4 pt-4'>
-                                                        <button className='text-xs rounded-full py-2 px-4 border border-white'>{tag}</button>
+                                                        <button className='text-xs rounded-full py-1 px-3 border border-green-500'>{tag}</button>
                                                     </div>
                                                 );
                                             })
