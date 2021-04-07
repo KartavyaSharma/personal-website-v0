@@ -3,7 +3,7 @@ import { Link } from 'react-scroll'
 
 function Intro(props) {
     return (
-        <div className={props.header}>
+        <div className={props.header} id="home">
             <div className='text-5xl font-extrabold'>
                 <span className='bg-clip-text text-green-500'>
                     Hello there!
@@ -17,7 +17,7 @@ function Intro(props) {
                 <Link activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">About</Link>
                 <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</Link>
                 <Link activeClass="active" to="blog" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
-                <Link activeClass="active" to="contact-me" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
+                <Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
             </nav>
             <div className='text-white text-xl lg:text-2xl py-8 md:py-12 lg:py-16 xl:w-4/5'>
                 I'm a freshman at UC Berkeley studying Electrical Engineering and Computer Science. I'm interested in Competitive Programming,

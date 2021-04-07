@@ -15,7 +15,7 @@ function BlogList(props) {
                             <div className='border-b-2 border-dashed border-green-500 lg:border-none lg:grid lg:grid-cols-3'>
                                 <div className='pt-7 md:pt-10 lg:pt-14 lg:col-span-2'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id}>
-                                        <div className='text-2xl md:text-4xl font-semibold pb-4'>{blog.node.frontmatter.title}</div>
+                                        <div className='text-2xl md:text-4xl font-semibold pb-4 hover:text-green-500 hover:underline'>{blog.node.frontmatter.title}</div>
                                     </Link>
                                     <div className='text-base md:text-xl text-gray-400 italic'>{blog.node.frontmatter.description}</div>
                                     <div className='flex'>
@@ -24,7 +24,7 @@ function BlogList(props) {
                                             .map(tag => {
                                                 return (
                                                     <div className='pr-4 pt-4'>
-                                                        <button className='text-xs rounded-full py-1 px-3 border border-green-500'>{tag}</button>
+                                                        <button className='text-xs rounded-full py-1 px-3 border border-green-500 hover:text-green-500'>{tag}</button>
                                                     </div>
                                                 );
                                             })
