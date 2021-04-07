@@ -27,6 +27,7 @@ export default function GetBlogList() {
                       }
                       relativePath
                     }
+                    tags
                   }
                   fields {
                     slug
