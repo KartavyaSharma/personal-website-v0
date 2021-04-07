@@ -17,12 +17,14 @@ function BlogList(props) {
                                     <div className='pt-7 md:pt-10 lg:pt-14 lg:col-span-2'>
                                         <div className='text-2xl md:text-4xl font-semibold pb-4'>{blog.node.frontmatter.title}</div>
                                         <div className='text-base md:text-xl text-gray-400 italic'>{blog.node.frontmatter.description}</div>
-                                        <div className='text-lg md:text-base text-white font-bold py-4'>By {blog.node.frontmatter.author_info.author_name}</div>
+                                        <div className='text-lg md:text-base text-white font-bold py-4'>
+                                            By {blog.node.frontmatter.author_info.author_name} | {blog.node.frontmatter.date}
+                                        </div>
                                     </div>
                                     <div className='hidden lg:block'>
                                         <div className='pt-7 md:pt-10 lg:pt-14'></div>
                                         <div className='flex justify-end items-center'>
-                                            <GatsbyImage image={img} alt={blog.node.frontmatter.title} className='border' />
+                                            <GatsbyImage image={img} alt={blog.node.frontmatter.title} className='border border-white' />
                                             <div className='pr-7'></div>
                                         </div>
                                     </div>
