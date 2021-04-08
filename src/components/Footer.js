@@ -16,22 +16,22 @@ function Footer(props) {
                         <div className="flex mt-8 flex-col md:flex-row md:justify-between">
                             <p className="w-full md:w-2/3 text-gray-400">I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!</p>
                             <div className="w-44 pt-6 md:pt-0">
-                                <a className="bg-green-500 hover:bg-green-600 justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">Contact Me</a>
+                                <a className="bg-orange-500 hover:bg-orange-600 rounded-lg justify-center text-center shadow px-10 py-3 flex items-center">Contact Me</a>
                             </div>
                         </div>
                         <div className="flex flex-col">
                             <div className="flex mt-24 mb-12 flex-row justify-between">
                                 <div>
-                                    <Link activeClass="active" to="home" spy={true} smooth={true} duration={500} className="cursor-pointer text-green-500">
+                                    <Link activeClass="active" to="home" spy={true} smooth={true} duration={500} className="cursor-pointer text-orange-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16" className='hover:text-white'>
                                             <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
                                         </svg>
                                     </Link>
                                 </div>
-                                <Link activeClass="active" to="home" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-green-500 uppercase">Home</Link>
-                                <Link activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-green-500 uppercase">About</Link>
-                                <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-green-500 uppercase">Projects</Link>
-                                <Link activeClass="active" to="blog" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-green-500 uppercase">Blog</Link>
+                                <Link activeClass="active" to="home" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Home</Link>
+                                <Link activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">About</Link>
+                                <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Projects</Link>
+                                <Link activeClass="active" to="blog" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Blog</Link>
                                 <div className="flex flex-row space-x-8 items-center justify-between">
                                     <a href='https://github.com/KartavyaSharma' target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-github" viewBox="0 0 16 16" className='hover:fill-green'>
@@ -50,9 +50,9 @@ function Footer(props) {
                                     </a>
                                 </div>
                             </div>
-                            <hr className="border-green-500" />
+                            <hr className="border-orange-500" />
                             <p className="w-full text-center my-12 text-white">&lt;&gt; with &#10084;&#65039; by Kartavya Sharma |
-                            <a href='https://github.com/KartavyaSharma/personal-website' target="_blank" className='hover:text-green-500 cursor-pointer'> <span className='underline'>Source Code</span></a> on Github</p>
+                            <a href='https://github.com/KartavyaSharma/personal-website' target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>Source Code</span></a> on Github</p>
                         </div>
                     </div>
                 </div>

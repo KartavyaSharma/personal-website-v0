@@ -4,10 +4,10 @@ import Particles from 'react-particles-js'
 const config = {
     "particles": {
         "number": {
-            "value": 60,
+            "value": 50,
             "density": {
                 "enable": true,
-                "value_area": 1000
+                "value_area": 1200
             }
         },
         "color": {
@@ -39,7 +39,7 @@ const config = {
             }
         },
         "size": {
-            "value": 3,
+            "value": 2,
             "random": true,
             "anim": {
                 "enable": true,

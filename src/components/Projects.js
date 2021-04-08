@@ -7,10 +7,10 @@ import Prime from "../images/Prime_logo.png"
 
 // const cardAnimation = "transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 ";
 const cardAnimation = "";
-const cardElemnentStyle = "max-w-md mr-auto border border-gray-500 hover:border-green-500 hover:bg-green-500 hover:bg-opacity-5 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4 ";
+const cardElemnentStyle = "max-w-md mr-auto border border-gray-500 hover:border-orange-500 hover:bg-orange-500 hover:bg-opacity-5 rounded-xl shadow-md overflow-hidden md:max-w-2xl mt-4 ";
 const cardBodyPaddingLeft = "pl-4 pr-8 pt-8 pb-4 ";
 const cardBodyPaddingRight = "xl:pr-4 xl:pl-8 xl:pt-8 xl:pb-4 ";
-const cardBodyCategory = "uppercase tracking-wide text-sm text-green-500 font-semibold ";
+const cardBodyCategory = "uppercase tracking-wide text-sm text-orange-500 font-semibold ";
 const cardBodyTitle = "block mt-1 text-lg leading-tight font-medium text-white hover:underline ";
 const cardBodyText = "mt-2 text-gray-400 ";
 
@@ -31,7 +31,7 @@ function Projects(props) {
                             <p class={cardBodyText}>Created the company's primary website for its telecommunications business using JQuery, HTML, CSS, and GIMP.</p>
                             <div className='py-2 flex'>
                                 <Link to='https://salkatech.com'>
-                                    <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
+                                    <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-orange-500 hover:bg-orange-500 flex'>
                                         Visit
                                         <svg className='ml-2 mt-0.5' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
@@ -40,7 +40,7 @@ function Projects(props) {
                                     </button>
                                 </Link>
                                 <div className='pr-4'></div>
-                                <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
+                                <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-orange-500 hover:bg-orange-500 flex'>
                                     Know more
                                     <svg className='ml-2 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
@@ -76,7 +76,7 @@ function Projects(props) {
                             <div className={cardBodyTitle + 'hover:no-underline'}>ROZE - Digital Assistant</div>
                             <p class={cardBodyText}>Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
                             <div className='py-2 flex'>
-                                <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
+                                <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-orange-500 hover:bg-orange-500 flex'>
                                     Know more
                                     <svg className='ml-2 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
@@ -101,7 +101,7 @@ function Projects(props) {
                             <div className={cardBodyTitle + 'hover:no-underline'}>Prime Academy Website</div>
                             <p class={cardBodyText}>Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
                             <div className='py-2 flex'>
-                                <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-green-500 hover:bg-green-500 flex'>
+                                <button className='py-2 px-4 text-white rounded-lg border border-white hover:border-orange-500 hover:bg-orange-500 flex'>
                                     Know more
                                     <svg className='ml-2 mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />

@@ -15,15 +15,15 @@ function Intro(props) {
             <ParticleBg canvasClassName='block' className='absolute inset-0 z-0' isMobile={isMobile} />
             <div className='z-10 relative'>
                 <div className='text-5xl font-extrabold'>
-                    <span className='bg-clip-text text-green-500'>
-                        Hello there!
+                    <span className='bg-clip-text text-orange-500'>
+                        Hello there! I'm
                 </span>
                 </div>
                 <div className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-extrabold">
-                    I'm Kartavya Sharma<span className="bg-clip-text text-green-500">.</span>
+                    Kartavya Sharma<span className="bg-clip-text text-orange-500">.</span>
                 </div>
                 <br />
-                <nav className='justify-between items-center relative font-semibold text-xl lg:text-4xl py-0 xl:py-4 bg-clip-text text-green-500'>
+                <nav className='justify-between items-center relative font-semibold text-xl lg:text-4xl py-0 xl:py-4 bg-clip-text text-orange-500'>
                     <Link activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">About</Link>
                     <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</Link>
                     <Link activeClass="active" to="blog" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
