@@ -4,14 +4,14 @@ import { Helmet } from 'react-helmet'
 
 import Logo from "../images/logo.png";
 
-function footer(props) {
+function Footer(props) {
     return (
         <div className='font-mono' id="contact">
             <div className="h-1/2 overflow-hidden flex items-center justify-center">
                 <div className="w-full flex items-center justify-center">
                     <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
-                        <div className="w-full text-7xl font-bold">
-                            <h1 className="w-full md:w-2/3">Let's get in touch!</h1>
+                        <div className="w-full text-6xl font-bold">
+                            <h1 className="w-full md:w-2/3">Starting somthing new? <br/> Let's get in touch!</h1>
                         </div>
                         <div className="flex mt-8 flex-col md:flex-row md:justify-between">
                             <p className="w-full md:w-2/3 text-gray-400">I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!</p>
@@ -20,9 +20,13 @@ function footer(props) {
                             </div>
                         </div>
                         <div className="flex flex-col">
-                            <div className="flex mt-24 mb-12 flex-row justify-between items-baseline">
+                            <div className="flex mt-24 mb-12 flex-row justify-between">
                                 <div>
-                                    <img src={Logo} className='w-36' />
+                                    <Link activeClass="active" to="home" spy={true} smooth={true} duration={500} className="cursor-pointer text-green-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16" className='hover:text-white'>
+                                            <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
+                                        </svg>
+                                    </Link>
                                 </div>
                                 <Link activeClass="active" to="home" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-green-500 uppercase">Home</Link>
                                 <Link activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-green-500 uppercase">About</Link>
@@ -48,7 +52,7 @@ function footer(props) {
                             </div>
                             <hr className="border-green-500" />
                             <p className="w-full text-center my-12 text-white">&lt;&gt; with &#10084;&#65039; by Kartavya Sharma |
-                            <Link to='https://github.com/KartavyaSharma/personal-website' className='hover:text-green-500 cursor-pointer'> <span className='underline'>Source Code</span></Link> on Github</p>
+                            <a href='https://github.com/KartavyaSharma/personal-website' target="_blank" className='hover:text-green-500 cursor-pointer'> <span className='underline'>Source Code</span></a> on Github</p>
                         </div>
                     </div>
                 </div>
@@ -57,4 +61,4 @@ function footer(props) {
     )
 }
 
-export default footer
+export default Footer
