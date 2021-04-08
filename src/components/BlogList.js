@@ -12,7 +12,7 @@ function BlogList(props) {
                     .map(blog => {
                         const img = getImage(blog.node.frontmatter.thumbnail);
                         return(
-                            <div className='border-b-2 border-dashed border-green-500 lg:border-none lg:grid lg:grid-cols-3'>
+                            <div className='border-b-2 border-dashed border-green-500 lg:border-none lg:grid lg:grid-cols-3 lg:w-full'>
                                 <div className='pt-7 md:pt-10 lg:pt-14 lg:col-span-2'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id}>
                                         <div className='text-2xl md:text-4xl font-semibold pb-4 hover:text-green-500 hover:underline'>{blog.node.frontmatter.title}</div>
