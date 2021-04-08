@@ -7,7 +7,7 @@ import Logo from "../images/logo.png";
 function footer(props) {
     return (
         <div className='font-mono' id="contact">
-            <body className="h-1/2 overflow-hidden flex items-center justify-center">
+            <div className="h-1/2 overflow-hidden flex items-center justify-center">
                 <div className="w-full flex items-center justify-center">
                     <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
                         <div className="w-full text-7xl font-bold">
@@ -52,7 +52,7 @@ function footer(props) {
                         </div>
                     </div>
                 </div>
-            </body>
+            </div>
         </div>
     )
 }
