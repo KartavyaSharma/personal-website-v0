@@ -33,7 +33,7 @@ function Intro(props) {
                     I'm a freshman at UC Berkeley studying Electrical Engineering and Computer Science. I'm interested in Competitive Programming,
                     Web Development Technologies, and Machine Learning. I dabble in C++ and Python. As of recently, I am exploring Jamstack with React,
                     GraphQL, and headless CMS platforms.
-            </div>
+                </div>
                 <div className='flex flex-row 2xl:py-8'>
                     <div className='flex flex-row text-2xl'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-github" viewBox="0 0 16 16" className='hidden md:block'>
