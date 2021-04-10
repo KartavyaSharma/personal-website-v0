@@ -4,6 +4,7 @@ import allBlogdata from "../static_queries/getBlogList"
 import Img from 'gatsby-image'
 
 import Header from "../components/Header"
+import PageFooter from "../components/PageFooter"
 
 function BlogPost({ data }) {
     const allData = allBlogdata();
@@ -24,7 +25,8 @@ function BlogPost({ data }) {
 
     return (
         <div className='bg-trueGray-900'>
-            <Header />            
+            <Header />
+            <PageFooter />
         </div>
     )
 }

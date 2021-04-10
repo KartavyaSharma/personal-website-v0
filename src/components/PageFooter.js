@@ -1,15 +1,15 @@
 import React from 'react'
-import { Link } from 'react-scroll'
+import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import Logo from "../images/logo.png";
 
-function Footer(props) {
+function PageFooter(props) {
     return (
         <div className='font-mono' id="contact">
             <div className="h-1/2 overflow-hidden flex items-center justify-center">
                 <div className="w-full flex items-center justify-center">
-                    <div className="w-full px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 mx-auto max-w-screen-2xl text-white flex flex-col">
+                    <div className="px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto text-white flex flex-col">
                         <div className="w-full text-6xl font-bold">
                             <h1 className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></h1>
                         </div>
@@ -22,16 +22,16 @@ function Footer(props) {
                         <div className="flex flex-col">
                             <div className="flex mt-24 mb-12 flex-row justify-between">
                                 <div>
-                                    <Link activeClass="active" to="home" spy={true} smooth={true} duration={500} className="cursor-pointer text-orange-500">
+                                    <Link to="/" className="cursor-pointer text-orange-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16" className='hover:text-white'>
                                             <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
                                         </svg>
                                     </Link>
                                 </div>
-                                <Link activeClass="active" to="home" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Home</Link>
-                                <Link activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">About</Link>
-                                <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Projects</Link>
-                                <Link activeClass="active" to="blog" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Blog</Link>
+                                <Link to="/" className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Home</Link>
+                                <Link to="/#about-me" className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">About</Link>
+                                <Link to="/#projects" className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Projects</Link>
+                                <Link to="/#blog" className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Blog</Link>
                                 <div className="flex flex-row space-x-8 items-center justify-between">
                                     <a href='https://github.com/KartavyaSharma' target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-github" viewBox="0 0 16 16" className='hover:fill-orange'>
@@ -61,4 +61,4 @@ function Footer(props) {
     )
 }
 
-export default Footer
+export default PageFooter
