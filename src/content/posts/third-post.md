@@ -14,7 +14,7 @@ tags:
 - Python
 
 ---
-## This is my third post. Woohoo.
+# This is my third post. Woohoo.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras est velit, ultricies sit amet lorem nec, fringilla imperdiet ex. Nulla libero tortor, lobortis eu aliquam id, iaculis at tellus. Duis rutrum turpis nulla, vel tempus turpis sagittis ut. Cras sem elit, placerat ut egestas nec, auctor id ex. Sed scelerisque pulvinar tristique. In hac habitasse platea dictumst. Donec eleifend tortor nisi, at fermentum elit aliquam id. Sed mattis luctus consectetur. Suspendisse potenti. Nullam vitae lacus nec ligula blandit facilisis vel ac dui.
 
@@ -42,6 +42,6 @@ Praesent id nisi eu libero venenatis varius lacinia a lectus. Cras interdum soda
         solve();
     }
 
-This was a very exciting code blow.
+This was a very exciting code block.
 
 Peace out.
