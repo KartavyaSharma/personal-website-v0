@@ -7,9 +7,9 @@ import Logo from "../images/logo.png";
 function PageFooter(props) {
     return (
         <div className='font-mono' id="contact">
-            <div className="h-1/2 overflow-hidden flex items-center justify-center">
+            <div className="h-1/2 overflow-hidden flex items-center justify-center px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto">
                 <div className="w-full flex items-center justify-center">
-                    <div className="px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto text-white flex flex-col">
+                    <div className=" text-white flex flex-col">
                         <div className="w-full text-6xl font-bold">
                             <h1 className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></h1>
                         </div>
