@@ -36,9 +36,8 @@ function BlogPost({ data }) {
                         src={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid.src}
                         fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}
                         alt={data.markdownRemark.frontmatter.title}
-                        className='pb-5 h-1/2'
                     />
-                    <div className='pt-6'>
+                    <div className='pt-16'>
                         <div className='text-white' dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
                     </div>
                     <div className='flex pt-20'>
