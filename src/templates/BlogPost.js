@@ -15,7 +15,7 @@ function BlogPost({ data }) {
             return blog.node.fields.slug
         })
         const nextSlug = allSlugs[allSlugs.indexOf(slug) + 1]
-        if(nextSlug !== undefined && nextSlug !== '') {
+        if (nextSlug !== undefined && nextSlug !== '') {
             return nextSlug
         } else {
             return allSlugs[0]
@@ -29,11 +29,30 @@ function BlogPost({ data }) {
             <Header />
             <div className="py-6 md:py-10 lg:pb-48 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto font-mono flex flex-col">
                 <div className='px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 flex flex-col justify-center'>
-                    <h1 className='text-2xl md:text-3xl lg:text-5xl text-white font-bold'>{data.markdownRemark.frontmatter.title}</h1>
-                    <p className='text-xl text-trueGray-500 italic mt-4'>{data.markdownRemark.frontmatter.description}</p>
-                    <p className='text-white font-semibold text-xl mt-6'>{data.markdownRemark.frontmatter.date}</p>
+                    <div className='text-2xl md:text-3xl lg:text-5xl text-white font-bold'>{data.markdownRemark.frontmatter.title}</div>
+                    <div className='text-xl text-trueGray-500 italic mt-4'>{data.markdownRemark.frontmatter.description}</div>
+                    <div className='text-white font-semibold text-xl mt-6 mb-6'>{data.markdownRemark.frontmatter.date}</div>
+                    <Img
+                        src={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid.src}
+                        fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}
+                        alt={data.markdownRemark.frontmatter.title}
+                        className='pb-5 h-1/2'
+                    />
                     <div className='pt-6'>
-                        <div className='text-white text-xl' dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
+                        <div className='text-white' dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
+                    </div>
+                    <div className='flex pt-20'>
+                        <div className='text-xl text-white pr-4 pt-2'>Tags: </div>
+                        {
+                            data.markdownRemark.frontmatter.tags.filter(tag => data.markdownRemark.frontmatter.tags !== null)
+                                .map(tag => {
+                                    return (
+                                        <div className='pr-4 pt-1'>
+                                            <button className='text-lg rounded-full py-1 px-3 border border-trueGray-600 hover:text-orange-500 text-white'>{tag}</button>
+                                        </div>
+                                    );
+                                })
+                        }
                     </div>
                     <Author />
                 </div>
@@ -45,7 +64,7 @@ function BlogPost({ data }) {
 
 export default BlogPost
 
-export const getPostData = graphql `
+export const getPostData = graphql`
     query ($slug: String!) {
         markdownRemark(fields: {slug: {eq: $slug}}) {
             fields {
@@ -62,8 +81,8 @@ export const getPostData = graphql `
                 tags
                 thumbnail {
                     childImageSharp {
-                        fluid {
-                        ...GatsbyImageSharpFluid
+                        fluid(maxHeight: 500 maxWidth: 800) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }

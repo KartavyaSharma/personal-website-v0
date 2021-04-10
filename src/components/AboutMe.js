@@ -7,7 +7,7 @@ function AboutMe(props) {
             <div className={props.topTitle}>About me</div>
             <div className='flex flex-row'>
                 <div className={props.body}>
-                    <p>
+                    <div>
                         Hi! I'm a freshman at UC Berkeley studying Electrical Engineering and Computer science.
                         <br /><br />
                         As a programmer, I have experience in computational thinking, data structures, abstraction, and problem solving. I am passionate about
@@ -22,7 +22,7 @@ function AboutMe(props) {
                         <br /><br />
                         I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Reach out
                         using the contact form below or through email to connect!
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>

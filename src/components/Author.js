@@ -16,7 +16,7 @@ function Author() {
                 alt={data.name} className='rounded' />
             <div className='flex flex-col'>
                 <h1 className='text-white text-2xl'>{data.name}</h1>
-                <p className='text-white text-xl pt-3'>{data.bio}</p>
+                <p className='text-white text-xl'>{data.bio}</p>
             </div>
         </div>
     )

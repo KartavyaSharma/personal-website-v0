@@ -11,10 +11,10 @@ function Footer(props) {
                 <div className="w-full flex items-center justify-center">
                     <div className="w-full px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 mx-auto max-w-screen-2xl text-white flex flex-col">
                         <div className="w-full text-6xl font-bold">
-                            <h1 className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></h1>
+                            <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></div>
                         </div>
                         <div className="flex mt-8 flex-col md:flex-row md:justify-between">
-                            <p className="w-full md:w-2/3 text-gray-400">I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!</p>
+                            <div className="w-full md:w-2/3 text-gray-400">I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!</div>
                             <div className="w-44 pt-6 md:pt-0">
                                 <a className="bg-orange-500 hover:bg-orange-600 rounded-lg justify-center text-center shadow px-10 py-3 flex items-center">Contact Me</a>
                             </div>

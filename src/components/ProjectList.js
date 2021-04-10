@@ -19,9 +19,9 @@ function ProjectList(props) {
                                                     <div className="">
                                                         <div className="pt-10 px-2 sm:px-6">
                                                             <span className="inline-block py-1 px-2 rounded-full bg-orange-500 text-white  text-xs font-bold tracking-widest mb-2">{project.node.category}</span>
-                                                            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">{project.node.name}</h1>
-                                                            <p className="text-indigo-200 text-base pb-6">From local banks to local government, we partner with organizations on their journey to digital transformation. Our customers include 15 million professionals in 175 countries and 800 of the fortune 1000.</p>
-                                                            <p className="text-indigo-200 text-base pb-8">We can't believe how far we have come in the last 6 months. I really did not think this awesome career move would come so quickly. Thanks to each of you put into SI and the partner relationships.</p>
+                                                            <div className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">{project.node.name}</div>
+                                                            <div className="text-indigo-200 text-base pb-6">From local banks to local government, we partner with organizations on their journey to digital transformation. Our customers include 15 million professionals in 175 countries and 800 of the fortune 1000.</div>
+                                                            <div className="text-indigo-200 text-base pb-8">We can't believe how far we have come in the last 6 months. I really did not think this awesome career move would come so quickly. Thanks to each of you put into SI and the partner relationships.</div>
                                                             <div className="flex items-center justify-between">
                                                                 <div className="flex items-center pb-12">
                                                                     {

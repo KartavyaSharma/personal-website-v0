@@ -11,7 +11,7 @@ function PageFooter(props) {
                 <div className="w-full flex items-center justify-center">
                     <div className=" text-white flex flex-col">
                         <div className="w-full text-6xl font-bold">
-                            <h1 className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></h1>
+                            <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></div>
                         </div>
                         <div className="flex mt-8 flex-col md:flex-row md:justify-between">
                             <p className="w-full md:w-2/3 text-gray-400">I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!</p>
@@ -51,8 +51,8 @@ function PageFooter(props) {
                                 </div>
                             </div>
                             <hr className="border-orange-500" />
-                            <p className="w-full text-center my-12 text-white">&lt;&gt; with &#10084;&#65039; by Kartavya Sharma |
-                            <a href='https://github.com/KartavyaSharma/personal-website' target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>Source Code</span></a> on Github</p>
+                            <div className="w-full text-center my-12 text-white">&lt;&gt; with &#10084;&#65039; by Kartavya Sharma |
+                            <a href='https://github.com/KartavyaSharma/personal-website' target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>Source Code</span></a> on Github</div>
                         </div>
                     </div>
                 </div>
