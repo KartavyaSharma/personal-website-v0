@@ -12,7 +12,7 @@ function BlogList(props) {
                     .map(blog => {
                         const img = getImage(blog.node.frontmatter.thumbnail);
                         return(
-                            <div className='border-b-2 border-dashed border-orange-500 lg:border-none lg:grid lg:grid-cols-3 lg:w-full'>
+                            <div className='lg:grid lg:grid-cols-3 lg:w-full'>
                                 <div className='pt-7 md:pt-10 lg:pt-14 lg:col-span-2'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id}>
                                         <div className='text-2xl md:text-4xl font-semibold pb-3 hover:text-orange-500 hover:cursor-pointer hover:no-underline'>{blog.node.frontmatter.title}</div>
@@ -30,7 +30,7 @@ function BlogList(props) {
                                             })
                                         }
                                     </div>
-                                    <div className='text-lg md:text-base text-white font-bold py-4'>
+                                    <div className='hidden md:block text-lg md:text-base text-white font-bold py-4'>
                                         By {blog.node.frontmatter.author_info.author_name} | {blog.node.frontmatter.date}
                                     </div>
                                 </div>

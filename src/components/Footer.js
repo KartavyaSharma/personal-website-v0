@@ -51,8 +51,7 @@ function Footer(props) {
                                 </div>
                             </div>
                             <hr className="border-orange-500" />
-                            <p className="w-full text-center my-12 text-white">&lt;&gt; with &#10084;&#65039; by Kartavya Sharma |
-                            <a href='https://github.com/KartavyaSharma/personal-website' target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>Source Code</span></a> on Github</p>
+                            <div className="w-full text-center my-12 text-trueGray-400">This site was made using <a href='https://www.gatsbyjs.com/' className='underline hover:text-orange-500'>Gatsby.js</a>, <a href='https://tailwindcss.com/' className='underline hover:text-orange-500'>Tailwind CSS</a>, and <a href='https://forestry.io/' className='underline hover:text-orange-500'>Forestry</a>. View <a href='https://github.com/KartavyaSharma/personal-website' target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>Source Code</span></a> on Github</div>
                         </div>
                     </div>
                 </div>

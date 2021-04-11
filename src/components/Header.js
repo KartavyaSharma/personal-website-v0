@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 function Header() {
     return (
-        <div className="py-8 md:py-12 lg:py-16 lg:pb-48 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto font-mono flex flex-row">
+        <div className="pt-8 md:pt-12 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto font-mono flex flex-row">
             <div>
                 <Link to="/">
                     <div className='text-xl sm:text-2xl md:text-3xl font-extrabold'>

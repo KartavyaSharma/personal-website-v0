@@ -28,7 +28,7 @@ function BlogPost({ data }) {
         <div className='bg-trueGray-900'>
             <Header />
             <div className="py-6 md:py-10 lg:pb-48 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto font-mono flex flex-col">
-                <div className='px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 flex flex-col justify-center'>
+                <div className='pr-6 md:pr-8 lg:pr-12 xl:pr-20 2xl:pr-36 flex flex-col justify-center'>
                     <div className='text-2xl md:text-3xl lg:text-5xl text-white font-bold'>{data.markdownRemark.frontmatter.title}</div>
                     <div className='text-xl text-trueGray-500 italic mt-4'>{data.markdownRemark.frontmatter.description}</div>
                     <div className='text-white font-semibold text-xl mt-6 mb-6'>{data.markdownRemark.frontmatter.date}</div>
