@@ -2,7 +2,7 @@ import React from 'react'
 
 function AboutMe(props) {
     return (
-        <div className={props.header} id="about-me">
+        <div className={props.header} id="about-me" data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
             <div className={props.topNum}>01</div>
             <div className={props.topTitle}>About me</div>
             <div className='flex flex-row'>

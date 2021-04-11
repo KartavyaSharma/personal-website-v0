@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import ProjectList from "../components/ProjectList"
 import getProjectList from "../static_queries/getProjectList"
@@ -7,7 +6,7 @@ import getProjectList from "../static_queries/getProjectList"
 function Projects(props) {
     const data = getProjectList();
     return (
-        <div className={props.header} id="projects">
+        <div className={props.header} id="projects" data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
             <div className={props.topNum}>02</div>
             <div className={props.topTitle}>Projects</div>
             <ProjectList listData={data}/>
