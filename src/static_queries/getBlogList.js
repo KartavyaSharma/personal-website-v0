@@ -23,6 +23,7 @@ export default function GetBlogList() {
                           layout: CONSTRAINED
                           width: 300
                           height: 200
+                          quality: 100
                         )
                       }
                       relativePath

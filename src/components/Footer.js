@@ -1,8 +1,5 @@
 import React from 'react'
 import { Link } from 'react-scroll'
-import { Helmet } from 'react-helmet'
-
-import Logo from "../images/logo.png";
 
 function Footer(props) {
     return (
@@ -16,7 +13,7 @@ function Footer(props) {
                         <div className="flex mt-8 flex-col md:flex-row md:justify-between">
                             <div className="w-full md:w-2/3 text-gray-400">I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!</div>
                             <div className="w-44 pt-6 md:pt-0">
-                                <a className="bg-orange-500 hover:bg-orange-600 rounded-lg justify-center text-center shadow px-10 py-3 flex items-center">Contact Me</a>
+                                <a href='/contact/' className="bg-orange-500 hover:bg-orange-600 rounded-lg justify-center text-center shadow px-10 py-3 flex items-center">Contact Me</a>
                             </div>
                         </div>
                         <div className="flex flex-col">

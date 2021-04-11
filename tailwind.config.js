@@ -12,6 +12,9 @@ module.exports = {
       'orange': theme('colors.orange.500'),
     }),
     extend: {
+      maxHeight: {
+        blogImg: '800px',
+      },
       colors: {
         'terminalGreen': '#16C60C',
         orange: colors.orange,

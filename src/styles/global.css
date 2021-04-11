@@ -17,7 +17,7 @@
         @apply py-7
     }
     pre code {
-        @apply bg-trueGray-800 border border-white block text-white px-5 pt-5 pb-12;
+        @apply bg-trueGray-800 border border-white block text-white px-5 pt-5 pb-12 rounded-md;
     }
 }
 

@@ -36,6 +36,7 @@ function BlogPost({ data }) {
                         src={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid.src}
                         fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}
                         alt={data.markdownRemark.frontmatter.title}
+                        className='max-h-blogImg'
                     />
                     <div className='pt-16'>
                         <div className='text-white' dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
@@ -80,7 +81,7 @@ export const getPostData = graphql`
                 tags
                 thumbnail {
                     childImageSharp {
-                        fluid(maxHeight: 500 maxWidth: 800) {
+                        fluid(quality: 100) {
                             ...GatsbyImageSharpFluid
                         }
                     }
