@@ -1,9 +1,9 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  important: true,
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false, // or 'media' or 'class'
-  important: true,
   theme: {
     fill: theme => ({
       'red': theme('colors.red.500'),
@@ -19,6 +19,9 @@ module.exports = {
         'terminalGreen': '#16C60C',
         orange: colors.orange,
         trueGray: colors.trueGray,
+      },
+      fontFamily: {
+        'blogBody': ['sans-serif']
       }
     }
   },
