@@ -23,7 +23,7 @@ function BlogList(props) {
                                             blog.node.frontmatter.tags.filter(tag => blog.node.frontmatter.tags !== null)
                                             .map(tag => {
                                                 return (
-                                                    <div className='pr-4 pt-1'>
+                                                    <div className='pr-4 pt-1 hidden md:block'>
                                                         <div className='text-xs rounded-full py-1 px-3 border cursor-default border-trueGray-600 hover:text-orange-500'>{tag}</div>
                                                     </div>
                                                 );

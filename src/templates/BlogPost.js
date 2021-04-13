@@ -12,10 +12,24 @@ import Author from "../components/Author"
 class Content extends React.Component {
     componentDidMount() {
         hljs.highlightAll();
+
+        let script = document.createElement('script');
+        let anchor = document.getElementById('inject-comments');
+        script.setAttribute("src", "https://utteranc.es/client.js");
+        script.setAttribute("repo", "KartavyaSharma/personal-website");
+        script.setAttribute("issue-term", "pathname");
+        script.setAttribute("theme", "github-dark");
+        script.setAttribute("crossorigin", "anonymous");
+        script.setAttribute("async", true);
+        anchor.appendChild(script);
     }
     render() {
         return (
-            <div className='text-white font-blogBody' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>
+            <div>
+                <div className='text-white font-blogBody' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>
+                <Author />
+                <div id='inject-comments' className='pt-10 pr-32 pb-10'></div>
+            </div>
         );
     }
 }
@@ -45,7 +59,7 @@ function BlogPost({ data }) {
                     <div className='text-3xl md:text-5xl lg:text-7xl text-white font-bold font-mono'>{data.markdownRemark.frontmatter.title}</div>
                     <div className='text-lg lg:text-xl text-trueGray-500 italic mt-4 font-mono'>{data.markdownRemark.frontmatter.description}</div>
                     <div className='flex items-center'>
-                    <div className='text-white font-semibold text-xl mt-6 mb-6 mr-4 font-mono'>{data.markdownRemark.frontmatter.date} | </div>
+                        <div className='text-white font-semibold text-xl mt-6 mb-6 mr-4 font-mono'>{data.markdownRemark.frontmatter.date} | </div>
                         {
                             data.markdownRemark.frontmatter.tags.filter(tag => data.markdownRemark.frontmatter.tags !== null)
                                 .map(tag => {
@@ -64,9 +78,8 @@ function BlogPost({ data }) {
                         className='max-h-blogImg'
                     />
                     <div className='pt-16'>
-                        <Content hData={data}/>
+                        <Content hData={data} />
                     </div>
-                    <Author />
                 </div>
             </div>
             <PageFooter />
