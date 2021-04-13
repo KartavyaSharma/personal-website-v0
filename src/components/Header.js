@@ -1,30 +1,34 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { useState, useEffect } from 'react'
+
+import Menu from '../components/Menu'
+import Burger from '../components/Burger'
 
 function Header() {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => {
+        setIsOpen(!isOpen);
+    };
+
+    useEffect(() => {
+        const hideMenu = () => {
+            if(window.innerWidth > 1024 && isOpen) {
+                setIsOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', hideMenu);
+
+        return () => {
+            window.removeEventListener('resize', hideMenu);
+        }
+    });
+
     return (
-        <div className="pt-8 md:pt-12 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto font-mono flex flex-row">
-            <div>
-                <Link to="/">
-                    <div className='text-xl sm:text-2xl md:text-3xl font-extrabold'>
-                        <span className='text-orange-500'>
-                            Hello there! I'm
-                        </span>
-                    </div>
-                    <div className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold">
-                        Kartavya Sharma<span className="bg-clip-text text-orange-500">.</span>
-                    </div>
-                </Link>
-            </div>
-            <div className='mx-auto mr-1'>
-                <nav className='justify-between items-center relative font-semibold text-xl lg:text-2xl py-0 xl:py-4 text-orange-500'>
-                    <Link to="/" className="hover:underline cursor-pointer">Home</Link>
-                    <Link to="/#about-me" className="pl-5 md:pl-14 hover:underline cursor-pointer">About</Link>
-                    <Link to="/#projects" className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</Link>
-                    <Link to="/#blog" className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
-                    <Link to="#contact" className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
-                </nav>
-            </div>
+        <div>
+            <Menu toggle={toggle}/>
+            <Burger isOpen={isOpen} toggle={toggle}/>
         </div>
     )
 }

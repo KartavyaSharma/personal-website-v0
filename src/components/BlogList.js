@@ -12,8 +12,8 @@ function BlogList(props) {
                     .map(blog => {
                         const img = getImage(blog.node.frontmatter.thumbnail);
                         return(
-                            <div className='lg:grid lg:grid-cols-3 lg:w-full'>
-                                <div className='pt-7 md:pt-10 lg:pt-14 lg:col-span-2'>
+                            <div className='lg:grid lg:grid-cols-4 lg:w-full border-b-2 border-trueGray-800'>
+                                <div className='pt-7 md:pt-10 lg:pt-14 lg:col-span-3'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id}>
                                         <div className='text-2xl md:text-4xl font-semibold pb-3 hover:text-orange-500 hover:cursor-pointer hover:no-underline'>{blog.node.frontmatter.title}</div>
                                     </Link>
@@ -52,7 +52,6 @@ function BlogList(props) {
     }
     return (
         <div className='text-white py-8 md:py-12 lg:py-15'>
-            <div className='font-semibold text-3xl md:text-5xl border-b-2 border-orange-500 pb-3'>Latest Posts</div>
             <ul>{renderBlogData()}</ul>
         </div>
     )

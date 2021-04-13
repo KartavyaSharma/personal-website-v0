@@ -8,7 +8,7 @@
         @apply text-2xl;
     }
     h3 {
-        @apply text-lg;
+        @apply text-xl leading-7 !important;
     }
     p {
         @apply text-lg mb-6;  

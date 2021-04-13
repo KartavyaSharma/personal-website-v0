@@ -28,7 +28,7 @@ class Content extends React.Component {
             <div>
                 <div className='text-white font-blogBody' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>
                 <Author />
-                <div id='inject-comments' className='pt-10 pr-32 pb-10'></div>
+                <div id='inject-comments' className='pt-16 pr-32 pb-10'></div>
             </div>
         );
     }
@@ -55,7 +55,7 @@ function BlogPost({ data }) {
         <div className='bg-trueGray-900'>
             <Header />
             <div className="pt-8 md:pt-12 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col">
-                <div className='pr-6 md:pr-8 lg:pr-12 xl:pr-20 2xl:pr-36 max-w-screen-lg flex flex-col justify-center'>
+                <div className='max-w-4xl flex flex-col justify-center'>
                     <div className='text-3xl md:text-5xl lg:text-7xl text-white font-bold font-mono'>{data.markdownRemark.frontmatter.title}</div>
                     <div className='text-lg lg:text-xl text-trueGray-500 italic mt-4 font-mono'>{data.markdownRemark.frontmatter.description}</div>
                     <div className='flex items-center'>

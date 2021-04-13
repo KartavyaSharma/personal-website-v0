@@ -13,7 +13,7 @@ module.exports = {
     }),
     extend: {
       maxHeight: {
-        blogImg: '800px',
+        blogImg: '600px',
       },
       colors: {
         'terminalGreen': '#16C60C',
@@ -21,7 +21,7 @@ module.exports = {
         trueGray: colors.trueGray,
       },
       fontFamily: {
-        'blogBody': ['sans-serif']
+        'blogBody': ['Inter', 'sans-serif']
       }
     }
   },
