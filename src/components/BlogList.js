@@ -12,10 +12,11 @@ function BlogList(props) {
                     .map(blog => {
                         const img = getImage(blog.node.frontmatter.thumbnail);
                         return(
-                            <div className='lg:grid lg:grid-cols-4 lg:w-full border-b-2 border-trueGray-800'>
-                                <div className='pt-7 md:pt-10 lg:pt-14 lg:col-span-3'>
-                                    <Link to={blog.node.fields.slug} key={blog.node.id}>
-                                        <div className='text-2xl md:text-4xl font-semibold pb-3 hover:text-orange-500 hover:cursor-pointer hover:no-underline'>{blog.node.frontmatter.title}</div>
+                            <div className='grid sm:grid-cols-4 lg:grid-cols-3 lg:w-full'>
+                                <div className='pt-7 md:pt-10 lg:pt-14 sm:col-span-3 lg:col-span-2'>
+                                    <Link to={blog.node.fields.slug} key={blog.node.id} >
+                                        <div className='text-2xl md:text-4xl font-semibold pb-3 hover:text-orange-500 hover:cursor-pointer hover:no-underline
+                                        hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300'>{blog.node.frontmatter.title}</div>
                                     </Link>
                                     {/* <div className='text-base md:text-xl text-gray-400 italic'>{blog.node.frontmatter.description}</div> */}
                                     <div className='flex'>
@@ -30,7 +31,7 @@ function BlogList(props) {
                                             })
                                         }
                                     </div>
-                                    <div className='hidden md:block text-lg md:text-base text-white font-bold py-4'>
+                                    <div className='sm:text-sm md:text-base text-white font-bold sm:py-px md:py-4'>
                                         By {blog.node.frontmatter.author_info.author_name} | {blog.node.frontmatter.date}
                                     </div>
                                 </div>

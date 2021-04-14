@@ -7,7 +7,7 @@ export default function GetAuthorData () {
         name
         image {
           childImageSharp {
-            fluid(maxWidth: 320 maxHeight: 320) {
+            fluid(maxWidth: 320 maxHeight: 320 quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

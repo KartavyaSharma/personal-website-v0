@@ -11,7 +11,7 @@ function Blog(props) {
       <div className='flex flex-col'>
         <div className='flex flex-row items-center'>
           <div className={props.topTitle}>My blog</div>
-          <div className='font-semibold text-white text-2xl md:text-3xl pl-5'>| Latest Posts</div>
+          <div className='font-semibold text-white text-sm md:text-2xl lg:text-3xl pl-2 md:pl-5'>| Latest Posts</div>
         </div>
       </div>
       <div>

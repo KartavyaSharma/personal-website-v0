@@ -27,7 +27,7 @@ function Header() {
 
     return (
         <div>
-            <Menu toggle={toggle}/>
+            <Menu isOpen={isOpen} toggle={toggle}/>
             <Burger isOpen={isOpen} toggle={toggle}/>
         </div>
     )
