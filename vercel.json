@@ -1,6 +1,6 @@
 {
     "redirects": [
-      { "source": "/", "destination": "https://www.kartavas.com/blog" }
+      { "source": "https://blog.kartavyas.com", "destination": "https://www.kartavas.com/blog" }
     ]
   }
   
