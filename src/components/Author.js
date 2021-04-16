@@ -9,7 +9,7 @@ function Author() {
     const data = AuthorData();
 
     return (
-        <div className='flex flex-col pt-10'>
+        <div className='flex flex-col pt-10 font-mono'>
             <div className='flex items-center pb-6'>
                 <Img
                     src={data.image.childImageSharp.fluid.src}

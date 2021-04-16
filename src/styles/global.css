@@ -11,7 +11,7 @@
         @apply text-xl leading-7 !important;
     }
     p {
-        @apply text-lg mb-6;  
+        @apply text-xl mb-6;  
     }
     pre {
         @apply mb-6 !important;
