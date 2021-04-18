@@ -16,7 +16,7 @@ class Content extends React.Component {
         let script = document.createElement('script');
         let anchor = document.getElementById('inject-comments');
         script.setAttribute("src", "https://utteranc.es/client.js");
-        script.setAttribute("repo", "KartavyaSharma/personal-website");
+        script.setAttribute("repo", "KartavyaSharma/personal-website-utterances-comments");
         script.setAttribute("issue-term", "pathname");
         script.setAttribute("theme", "github-dark");
         script.setAttribute("crossorigin", "anonymous");
@@ -83,7 +83,7 @@ function BlogPost({ data }) {
                         <Content hData={data} />
                     </div>
                 </div>
-                <div className='px-14 font-mono text-white font-semibold text-2xl sticky top-5 h-screen overflow-y-auto'>Table of contents</div>
+                {/* <div className='px-14 font-mono text-white font-semibold text-2xl sticky top-5 h-screen overflow-y-auto'>Table of contents</div> */}
             </div>
             <PageFooter />
         </div>
