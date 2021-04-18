@@ -45,6 +45,8 @@ export default class Contact extends React.Component {
             document.contactForm.action = "https://api.web3forms.com/submit";
             document.contactForm.method = "POST";
             return false;
+        } else {
+            alert("Incomplete form!");
         }
     }
 
@@ -61,7 +63,7 @@ export default class Contact extends React.Component {
                             Let's Get In <span className="text-orange-500">Touch</span>!
                         </h3>
                     </div>
-                    <form className="w-full" autoComplete="off" name="contactForm">
+                    <form className="w-full" autoComplete="new-password" name="contactForm">
                         <input type="hidden" name="apikey" value="f5c68998-5d13-4604-b787-dbaf32f95af4"/>
                         <input type="checkbox" name="botcheck" id="" className='hidden'></input>
                         <div className="flex flex-wrap -mx-3 mb-6">
@@ -70,10 +72,10 @@ export default class Contact extends React.Component {
                                     First Name
                                 </label>
                                 <input
-                                    type="text" name="firstName" placeholder="Jane" value={this.state.firstName} onChange={e => this.change(e)}
-                                    className={`appearance-none bg-transparent border-b ${this.validate ? "border-red-500" : ""} w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800`}
+                                    type="text" name="firstName" placeholder="Jane" value={this.state.firstName} onChange={e => this.change(e)} autoComplete="new-password"
+                                    className={`appearance-none bg-transparent border-b ${this.validate ? "" : ""} w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800`}
                                     requried />
-                                {this.validate ? <p className="text-red-500 text-xs italic mt-1">Please fill out this field.</p> : null}
+                                {/* {this.validate ? <p className="text-red-500 text-xs italic mt-1">Please fill out this field.</p> : null} */}
                                 
                             </div>
                             <div className="w-full md:w-1/2 px-3">
@@ -81,7 +83,7 @@ export default class Contact extends React.Component {
                                     Last Name
                                 </label>
                                 <input
-                                    type="text" name="lastName" placeholder="Doe" value={this.state.lastName} onChange={e => this.change(e)}
+                                    type="text" name="lastName" placeholder="Doe" value={this.state.lastName} onChange={e => this.change(e)} autoComplete="new-password"
                                     className="appearance-none bg-transparent border-b border-trueGray-200 w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800" 
                                     requried />
                             </div>
@@ -92,7 +94,7 @@ export default class Contact extends React.Component {
                                     Email Address
                                 </label>
                                 <input
-                                    type="email" name="email" placeholder="janedoe@youremail.com" value={this.state.email} onChange={e => this.change(e)}
+                                    type="email" name="email" placeholder="janedoe@youremail.com" value={this.state.email} onChange={e => this.change(e)} autoComplete="new-password"
                                     className="appearance-none bg-transparent border-b border-trueGray-200 w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800" 
                                     requried />
                             </div>
@@ -103,7 +105,7 @@ export default class Contact extends React.Component {
                                     Your Message
                                 </label>
                                 <textarea 
-                                    rows="10" type="message" name="message" placeholder="Looking forward to hearing from you!" value={this.state.message} onChange={e => this.setState({ message: e.target.value })}
+                                    rows="10" type="message" name="message" placeholder="Looking forward to hearing from you!" value={this.state.message} onChange={e => this.setState({ message: e.target.value })} autoComplete="new-password"
                                     className="appearance-none bg-transparent border-b border-trueGray-200 w-full text-gray-50 mr-3 p-4 focus:bg-trueGray-800 leading-tight focus:outline-none" 
                                     requried>
 
