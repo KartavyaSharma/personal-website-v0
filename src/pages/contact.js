@@ -2,127 +2,15 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Header from "../components/Header"
+import ContactForm from "../components/ContactForm"
 
 export default class Contact extends React.Component {
-    state = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        message: "",
-    };
-
-    change = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    };
-
-    validate = () => {
-        let isError = false;
-        const errors = {
-            firstNameError: "",
-            lastNameError: "",
-            emailError:  "",
-            messageError: "",
-        };
-
-        if(this.state.firstName.length < 3) {
-            isError = true;
-            errors.firstNameError = "Field input should be longer than 3";
-        }
-
-        this.setState({
-            ...this.state,
-            ...errors
-        });
-
-        return isError;
-    };
-
-    onSubmit = () => {
-        const err = this.validate();
-        if(!err) {
-            document.contactForm.action = "https://api.web3forms.com/submit";
-            document.contactForm.method = "POST";
-            return false;
-        } else {
-            alert("Incomplete form!");
-        }
-    }
 
     render() {
         return (
             <div className='bg-trueGray-900'>
                 <Header />
-                <div className="p-5 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto font-mono" data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
-                    <div className="text-center mb-16">
-                        <p className="mt-4 text-base leading-7 text-gray-200 font-regular uppercase">
-                            Contact
-                        </p>
-                        <h3 className="text-5xl leading-normal font-extrabold tracking-tight text-gray-100">
-                            Let's Get In <span className="text-orange-500">Touch</span>!
-                        </h3>
-                    </div>
-                    <form className="w-full" autoComplete="new-password" name="contactForm">
-                        <input type="hidden" name="apikey" value="f5c68998-5d13-4604-b787-dbaf32f95af4"/>
-                        <input type="checkbox" name="botcheck" id="" className='hidden'></input>
-                        <div className="flex flex-wrap -mx-3 mb-6">
-                            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                <label className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2" for="grid-first-name">
-                                    First Name
-                                </label>
-                                <input
-                                    type="text" name="firstName" placeholder="Jane" value={this.state.firstName} onChange={e => this.change(e)} autoComplete="new-password"
-                                    className={`appearance-none bg-transparent border-b ${this.validate ? "" : ""} w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800`}
-                                    requried />
-                                {/* {this.validate ? <p className="text-red-500 text-xs italic mt-1">Please fill out this field.</p> : null} */}
-                                
-                            </div>
-                            <div className="w-full md:w-1/2 px-3">
-                                <label className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2" for="grid-last-name">
-                                    Last Name
-                                </label>
-                                <input
-                                    type="text" name="lastName" placeholder="Doe" value={this.state.lastName} onChange={e => this.change(e)} autoComplete="new-password"
-                                    className="appearance-none bg-transparent border-b border-trueGray-200 w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800" 
-                                    requried />
-                            </div>
-                        </div>
-                        <div className="flex flex-wrap -mx-3 mb-6">
-                            <div className="w-full px-3">
-                                <label className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2" for="grid-password">
-                                    Email Address
-                                </label>
-                                <input
-                                    type="email" name="email" placeholder="janedoe@youremail.com" value={this.state.email} onChange={e => this.change(e)} autoComplete="new-password"
-                                    className="appearance-none bg-transparent border-b border-trueGray-200 w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800" 
-                                    requried />
-                            </div>
-                        </div>
-                        <div className="flex flex-wrap -mx-3 mb-6">
-                            <div className="w-full px-3">
-                                <label className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2" for="grid-password">
-                                    Your Message
-                                </label>
-                                <textarea 
-                                    rows="10" type="message" name="message" placeholder="Looking forward to hearing from you!" value={this.state.message} onChange={e => this.setState({ message: e.target.value })} autoComplete="new-password"
-                                    className="appearance-none bg-transparent border-b border-trueGray-200 w-full text-gray-50 mr-3 p-4 focus:bg-trueGray-800 leading-tight focus:outline-none" 
-                                    requried>
-
-                                </textarea>
-                            </div>
-                            <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-                            <div className="flex justify-between w-full px-3 py-4">
-                                <button 
-                                    type="submit"
-                                    onClick={this.onSubmit}
-                                    className="shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded">
-                                    Send Message
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <ContactForm />
                 <div className='font-mono pt-20'>
                     <div className="h-1/2 overflow-hidden flex items-center justify-center">
                         <div className="w-full flex items-center justify-center">
