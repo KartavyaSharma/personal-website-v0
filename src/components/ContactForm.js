@@ -3,14 +3,14 @@ import { useFormik } from 'formik'
 
 const validate = (values) => {
     const errors = {};
-    if(!values.firstName) {
-        errors.firstName = "This is a required field";
+    if(!/^[A-Za-z][A-Za-z0-9]*$/.test(values.firstName)) {
+        errors.firstName = "This field cannot be empty";
     } else if(values.firstName.length < 3) {
         errors.firstName = "Must be greater than 3 characters";
     }
 
-    if(!values.lastName) {
-        errors.lastName = "This is a required field";
+    if(!/^[A-Za-z][A-Za-z0-9]*$/.test(values.lastName)) {
+        errors.lastName = "This field cannot be empty";
     } else if(values.lastName.length < 3) {
         errors.lastName = "Must be greater than 3 characters";
     }
@@ -21,7 +21,7 @@ const validate = (values) => {
         errors.email = "Invalid email address";
     }
 
-    if(!values.message) {
+    if(!/^[A-Za-z][A-Za-z0-9]*$/.test(values.message)) {
         errors.message = "Message is required";
     } else if(values.message.length < 10) {
         errors.message = "Message must be greater than 10 characters"
@@ -86,7 +86,8 @@ function ContactFields(props) {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.firstName}
-                            className="appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800"
+                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800 
+                                ${ formik.touched.firstName && formik.errors.firstName ? ('border-red-500') : 'border-white' }`}
                             placeholder="Jane"
                         />
                         {formik.touched.firstName && formik.errors.firstName ? (
@@ -108,7 +109,8 @@ function ContactFields(props) {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.lastName}
-                            className="appearance-none bg-transparent border-b border-trueGray-200 w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800"
+                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800
+                                ${ formik.touched.lastName && formik.errors.lastName ? ('border-red-500') : 'border-white' }`}
                             placeholder="Doe"
                         />
                         {formik.touched.lastName && formik.errors.lastName ? (
@@ -131,7 +133,8 @@ function ContactFields(props) {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.email}
-                            className="appearance-none bg-transparent border-b border-trueGray-200 w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800"
+                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800
+                                ${ formik.touched.email && formik.errors.email ? ('border-red-500') : 'border-white' }`}
                             placeholder="janedoe@example.com"
                         />
                         {formik.touched.email && formik.errors.email ? (
@@ -155,7 +158,8 @@ function ContactFields(props) {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.message}
-                            className="appearance-none bg-transparent border-b border-trueGray-200 w-full text-gray-50 mr-3 p-4 focus:bg-trueGray-800 leading-tight focus:outline-none"
+                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 focus:bg-trueGray-800 leading-tight focus:outline-none
+                                ${ formik.touched.message && formik.errors.message ? ('border-red-500') : 'border-white' }`}
                             placeholder="Looking forward to hearing from you!"
                         >
                         </textarea>
