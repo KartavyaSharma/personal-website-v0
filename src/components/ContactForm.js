@@ -21,7 +21,7 @@ const validate = (values) => {
         errors.email = "Invalid email address";
     }
 
-    if(!/^[A-Za-z][A-Za-z0-9]*$/.test(values.message)) {
+    if(!values.message) {
         errors.message = "Message is required";
     } else if(values.message.length < 10) {
         errors.message = "Message must be greater than 10 characters"
