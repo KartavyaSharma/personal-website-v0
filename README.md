@@ -19,7 +19,7 @@ This repository contains the source code for my [personal website](https://www.k
 
 This website was deployed using Vercel.
 
-Forms are handled by [Formik](https://formik.org/) and blog post comments by [Utterances](https://utteranc.es/).
+Forms are handled by [Formik](https://formik.org/) and [Web3forms](https://web3forms.com/). Blog post comments are handled by [Utterances](https://utteranc.es/).
 
 ### Contact
 
