@@ -7,7 +7,7 @@ const validate = (values) => {
         errors.firstName = "Invalid field entry"
     } else if(!/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/.test(values.firstName)) {
         errors.firstName = "This field cannot be empty";
-    } else if(!values.firstName.length > 3) {
+    } else if(values.firstName.length < 3) {
         errors.firstName = "Must be greater than 3 characters";
     }
 
@@ -15,7 +15,7 @@ const validate = (values) => {
         errors.lastName = "Invalid field entry"
     } else if(!/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/.test(values.lastName)) {
         errors.lastName = "This field cannot be empty";
-    } else if(!values.lastName.length > 3) {
+    } else if(values.lastName.length < 3) {
         errors.lastName = "Must be greater than 3 characters";
     }
 
