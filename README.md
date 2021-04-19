@@ -23,4 +23,4 @@ Forms are handled by [Formik](https://formik.org/) and [Web3forms](https://web3f
 
 ### Contact
 
-You can contact me through the [contact form](https://kartavyas.com/contact) on my website, or you can send me a mail on [this](mailto:kartavya@berkeley.edu) email address.
+You can contact me through the [contact form](https://kartavyas.com/contact) on my website, or you can send me a email on [this](mailto:kartavya@berkeley.edu) email address.
