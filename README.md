@@ -17,7 +17,7 @@ This repository contains the source code for my [personal website](https://www.k
 - Tailwind CSS
 - Forestry
 
-This website was deployed using vercel.
+This website was deployed using Vercel.
 
 Forms are handled by [Formik](https://formik.org/) and blog post comments by [Utterances](https://utteranc.es/).
 
