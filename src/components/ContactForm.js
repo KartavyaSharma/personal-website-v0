@@ -3,15 +3,19 @@ import { useFormik } from 'formik'
 
 const validate = (values) => {
     const errors = {};
-    if(!/^[A-Za-z][A-Za-z0-9]*$/.test(values.firstName)) {
+    if(values.firstName[0] === " ") {
+        errors.firstName = "Invalid field entry"
+    } else if(!/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/.test(values.firstName)) {
         errors.firstName = "This field cannot be empty";
-    } else if(values.firstName.length < 3) {
+    } else if(!values.firstName.length > 3) {
         errors.firstName = "Must be greater than 3 characters";
     }
 
-    if(!/^[A-Za-z][A-Za-z0-9]*$/.test(values.lastName)) {
+    if(values.lastName[0] === " ") {
+        errors.lastName = "Invalid field entry"
+    } else if(!/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/.test(values.lastName)) {
         errors.lastName = "This field cannot be empty";
-    } else if(values.lastName.length < 3) {
+    } else if(!values.lastName.length > 3) {
         errors.lastName = "Must be greater than 3 characters";
     }
 
@@ -21,7 +25,9 @@ const validate = (values) => {
         errors.email = "Invalid email address";
     }
 
-    if(!values.message) {
+    if(values.message[0] === " ") {
+        errors.message = "Invalid field entry"
+    } else if(!values.message) {
         errors.message = "Message is required";
     } else if(values.message.length < 10) {
         errors.message = "Message must be greater than 10 characters"
@@ -171,7 +177,8 @@ function ContactFields(props) {
                 <button
                     disabled={!(formik.isValid && formik.dirty)}
                     type="submit"
-                    className="shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
+                    className={`shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded
+                        ${ !(formik.isValid && formik.dirty) ? 'disabled:opacity-50' : '' }`}
                 >
                     Send Message
                 </button>
