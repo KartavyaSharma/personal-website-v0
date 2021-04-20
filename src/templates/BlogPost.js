@@ -6,7 +6,8 @@ import hljs from 'highlight.js'
 import '../../node_modules/highlight.js/styles/a11y-dark.css';
 
 import Header from "../components/Header"
-import PageFooter from "../components/PageFooter"
+// import PageFooter from "../components/PageFooter"
+import Footer from "../components/Footer"
 import Author from "../components/Author"
 
 class Content extends React.Component {
@@ -85,7 +86,7 @@ function BlogPost({ data }) {
                 </div>
                 {/* <div className='px-14 font-mono text-white font-semibold text-2xl sticky top-5 h-screen overflow-y-auto'>Table of contents</div> */}
             </div>
-            <PageFooter />
+            <Footer isPage={true} />
         </div>
     )
 }

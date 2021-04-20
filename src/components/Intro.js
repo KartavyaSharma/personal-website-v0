@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { Link } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll'
+import { Link } from 'gatsby'
 import classNames from 'classnames'
 import ParticleBg from "../components/Particles"
 
@@ -24,10 +25,10 @@ function Intro(props) {
                 </div>
                 <br />
                 <nav className='justify-between items-center relative font-semibold text-xl lg:text-4xl py-0 xl:py-4 bg-clip-text text-orange-500'>
-                    <Link activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">About</Link>
-                    <Link activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</Link>
-                    <Link activeClass="active" to="blog" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
-                    <Link activeClass="active" to="contact" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
+                    <ScrollLink activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">About</ScrollLink>
+                    <ScrollLink activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</ScrollLink>
+                    <Link to="/blog" className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
+                    <Link to="/contact" className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
                 </nav>
                 <div className='text-white text-xl lg:text-2xl py-8 md:py-12 lg:py-16 xl:w-4/5'>
                     I'm a freshman at UC Berkeley studying Electrical Engineering and Computer Science. I'm interested in Competitive Programming,
