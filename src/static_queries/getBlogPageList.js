@@ -5,33 +5,40 @@ export default function BlogPageList() {
         graphql`
         {
             allMarkdownRemark(limit: 10, sort: {order: DESC, fields: frontmatter___date}) {
-              distinct(field: id)
-              edges {
-                node {
-                  frontmatter {
-                    author_info {
-                      author_name
-                    }
-                    date(formatString: "Do MMMM YYYY")
-                    description
-                    tags
-                    thumbnail {
-                      childImageSharp {
-                        fluid(quality: 100, maxHeight: 100, maxWidth: 100, pngQuality: 100) {
-                          ...GatsbyImageSharpFluid
+                distinct(field: id)
+                edges {
+                    node {
+                        frontmatter {
+                            author_info {
+                                author_name
+                            }
+                            date(formatString: "Do MMMM YYYY")
+                            description
+                            tags
+                            thumbnail {
+                                childImageSharp {
+                                    gatsbyImageData(
+                                        placeholder: DOMINANT_COLOR
+                                        formats: AUTO
+                                        transformOptions: {fit: COVER}
+                                        layout: CONSTRAINED
+                                        width: 200
+                                        height: 133
+                                        quality: 100
+                                    )
+                                }
+                                relativePath
+                            }
+                            title
                         }
-                      }
-                      relativePath
+                        fields {
+                            slug
+                        }
+                        id
                     }
-                  }
-                  fields {
-                    slug
-                  }
-                  id
                 }
-              }
             }
-          }
+        }
         `
     );
     return data.allMarkdownRemark.edges;
