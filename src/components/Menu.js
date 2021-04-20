@@ -26,7 +26,7 @@ function Menu({ toggle, isOpen }) {
                     <Link to="/" className="hover:underline cursor-pointer">Home</Link>
                     <Link to="/#about-me" className="pl-5 md:pl-14 hover:underline cursor-pointer">About</Link>
                     <Link to="/#projects" className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</Link>
-                    <Link to="/#blog" className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
+                    <Link to="/blog" className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
                     <Link to="/contact" className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
                 </nav>
             </div>
