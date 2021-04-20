@@ -1,7 +1,8 @@
 import React from 'react'
 
 import Header from '../components/Header'
-import PageFooter from '../components/PageFooter'
+// import PageFooter from '../components/PageFooter'
+import Footer from "../components/Footer"
 import pageBlogList from '../static_queries/getBlogPageList'
 import BlogHomeList from '../components/BlogHomeList'
 
@@ -15,7 +16,7 @@ export default function BlogPage() {
             <div className={headerStyle}>
                 <BlogHomeList listData={data}/>
             </div>
-            <PageFooter />
+            <Footer isPage={true} />
         </div>
     );
 }
