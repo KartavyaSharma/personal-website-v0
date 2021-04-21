@@ -57,7 +57,7 @@ function BlogPost({ data }) {
     return (
         <div className='bg-trueGray-900'>
             <Header />
-            <div className="pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex">
+            <div className="pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex" data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
                 <div className='max-w-4xl flex flex-col justify-center'>
                     <div className='text-5xl md:text-6xl lg:text-7xl text-white font-bold font-mono'>{data.markdownRemark.frontmatter.title}</div>
                     <div className='text-lg lg:text-xl text-trueGray-500 italic mt-4 font-mono'>{data.markdownRemark.frontmatter.description}</div>

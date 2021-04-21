@@ -26,7 +26,7 @@ function Header() {
     });
 
     return (
-        <div>
+        <div data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
             <Menu isOpen={isOpen} toggle={toggle}/>
             <Burger isOpen={isOpen} toggle={toggle}/>
         </div>
