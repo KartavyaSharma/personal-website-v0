@@ -1,5 +1,4 @@
 import React from "react"
-import { Helmet } from 'react-helmet'
 
 import Intro from "../components/Intro"
 import Aboutme from "../components/AboutMe"
@@ -15,14 +14,6 @@ const sectionBody = "text-white text-xl py-8 md:py-12 lg:py-16";
 function IndexPage() {
   return (
     <div className='bg-trueGray-900'>
-      <Helmet>
-        <meta charSet='utf-8' />
-        <meta property='og:title' content='Kartavya Sharma'/>
-        <meta property='og:image' content='../images/logo.png'/>
-        <meta property='og:description' content="Kartavya Sharma's personal website."/>
-        <meta property='og:url' content='https://kartavyas.com'/>
-        <title>Kartavya Sharma</title>
-      </Helmet>
       <Intro header={mobileHeaders} body={sectionBody} />
       <Aboutme header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
       <Projects header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />

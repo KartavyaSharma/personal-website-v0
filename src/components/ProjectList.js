@@ -63,7 +63,7 @@ function ProjectList(props) {
         );
     }
     return (
-        <div>
+        <div data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
             <ul>{renderProjectData()}</ul>
         </div>
     )

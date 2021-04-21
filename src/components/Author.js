@@ -18,7 +18,6 @@ function Author() {
                 <Link to="/#about-me" className='text-white text-2xl pl-6 hover:underline hover:text-orange-500'>{data.name}</Link>
             </div>
             <div className='text-white text-xl pb-20'>{data.bio}</div>
-            <hr className='border-orange-500 hidden md:block'/>
         </div>
     )
 }

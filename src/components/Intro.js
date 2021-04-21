@@ -14,7 +14,7 @@ function Intro(props) {
     return (
         <div className={classNames(props.header, 'min-h-screen')} id="home">
             <ParticleBg canvasClassName='block' className='absolute inset-0 z-0' isMobile={isMobile} />
-            <div className='z-10 relative' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
+            <div className='z-10 relative' data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
                 <div className='text-5xl font-extrabold'>
                     <span className='bg-clip-text text-orange-500'>
                         Hello there! I'm
@@ -30,7 +30,7 @@ function Intro(props) {
                     <Link to="/blog" className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
                     <Link to="/contact" className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
                 </nav>
-                <div className='text-white text-xl lg:text-2xl py-8 md:py-12 lg:py-16 xl:w-4/5'>
+                <div className='text-white sm:text-base md:text-xl lg:text-2xl py-8 md:py-12 lg:py-16 xl:w-4/5'>
                     I'm a freshman at UC Berkeley studying Electrical Engineering and Computer Science. I'm interested in Competitive Programming,
                     Web Development Technologies, and Machine Learning. I dabble in C++ and Python. As of recently, I am exploring Jamstack with React,
                     GraphQL, and headless CMS platforms.

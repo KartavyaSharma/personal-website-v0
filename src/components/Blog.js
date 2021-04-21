@@ -7,9 +7,9 @@ import getBlogList from '../static_queries/getBlogList'
 function Blog(props) {
     const data = getBlogList();
     return (
-        <div className={props.header} id="blog" data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
-            <div className={props.topNum}>03</div>
-            <div className='flex flex-col'>
+        <div className={props.header} id="blog">
+            <div className={props.topNum} data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">03</div>
+            <div className='flex flex-col' data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
                 <div className='flex flex-row items-center'>
                     <div className={props.topTitle}>My blog</div>
                     <div className='font-semibold text-white text-sm md:text-2xl lg:text-3xl pl-2 md:pl-5'>| Latest Posts</div>
@@ -18,7 +18,7 @@ function Blog(props) {
             <div>
                 <BlogList listData={data} />
             </div>
-            <div className='mt-10'>
+            <div className='mt-10' data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
                 <Link to='/blog'>
                     <button className='px-4 py-3 font-semibold text-lg hover:bg-orange-500 bg-trueGray-800 rounded-md text-white'>
                         <div className='flex flex-col'>

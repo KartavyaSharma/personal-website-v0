@@ -29,7 +29,9 @@ class Content extends React.Component {
             <div>
                 <div className='text-white font-blogBody' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>
                 <Author />
-                <div id='inject-comments' className='pt-16 pr-32 pb-10 hidden md:block'></div>
+                <div className='text-3xl font-mono text-white font-semibold'>Comments</div>
+                <hr className='border-orange-500 hidden md:block'/>
+                <div id='inject-comments' className='md:pt-16 md:pr-32 md:pb-10'></div>
             </div>
         );
     }

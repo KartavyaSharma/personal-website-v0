@@ -113,7 +113,7 @@ const config = {
 };
 
 const mobile = JSON.parse(JSON.stringify(config));
-mobile.particles.number.value = 20;
+mobile.particles.number.value = 40;
 mobile.interactivity.events.onhover.enable = false;
 
 function Particle(props) {
