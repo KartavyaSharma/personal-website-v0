@@ -50,7 +50,7 @@ function BlogList(props) {
         );
     }
     return (
-        <div className='text-white py-8 md:py-12 lg:py-15 max-w-full flex flex-col' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
+        <div className='text-white py-8 md:py-12 lg:py-15 max-w-full flex flex-col'>
             <ul>{renderBlogData()}</ul>
         </div>
     )

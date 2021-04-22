@@ -27,10 +27,9 @@ class Content extends React.Component {
     render() {
         return (
             <div>
-                <div className='text-white font-blogBody' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>
-                <Author />
-                <div className='text-3xl font-mono text-white font-semibold'>Comments</div>
-                <hr className='border-orange-500 hidden md:block'/>
+                <div className='text-white font-blogBody pb-10' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>
+                <div className='text-3xl font-mono text-white font-semibold pb-2'>Comments</div>
+                <hr className='border-orange-500 hidden md:block md:min-w-keepWmd lg:min-w-keepWlg'/>
                 <div id='inject-comments' className='md:pt-16 md:pr-32 md:pb-10'></div>
             </div>
         );
@@ -76,6 +75,7 @@ function BlogPost({ data }) {
                                 })
                         }
                     </div>
+                    <Author />
                     <Img
                         src={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid.src}
                         fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}

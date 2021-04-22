@@ -15,6 +15,11 @@ module.exports = {
       maxHeight: {
         blogImg: '600px',
       },
+      minWidth: {
+        keepWlg: '56rem',
+        keepWmd: '42rem',
+        keepWsm: '32rem',
+      },
       colors: {
         'terminalGreen': '#16C60C',
         orange: colors.orange,
