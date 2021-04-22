@@ -25,7 +25,7 @@ function BlogList(props) {
                                             .map(tag => {
                                                 return (
                                                     <div className='pr-4 py-4 hidden md:block'>
-                                                        <div className='text-xs rounded-full py-1 px-3 border cursor-default border-trueGray-600 hover:text-orange-500'>{tag}</div>
+                                                        <div className='text-xs rounded px-2 py-0.5 border border-trueGray-800 cursor-default bg-trueGray-700 text-white'>{tag}</div>
                                                     </div>
                                                 );
                                             })

@@ -2,11 +2,15 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
+import authorData from "../static_queries/getAuthorData"
+
 function BlogHomeList(props) {
+
+    const data = authorData();
 
     function renderBlogPostList() {
         return (
-            <div className='grid grid-rows-3 justify-center items-center gap-y-4'>
+            <div className='grid grid-rows-3 justify-center items-center gap-y-7'>
                 {
                     props.listData.filter(post => post.node.frontmatter.title !== "")
                     .map(post => {
@@ -19,7 +23,7 @@ function BlogHomeList(props) {
                                             hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 max'>{post.node.frontmatter.title}</div>
                                         </Link>
                                         <div className='sm:text-sm md:text-base text-white font-bold pt-3'>
-                                            By {post.node.frontmatter.author_info.author_name} | {post.node.frontmatter.date}
+                                            By {data.name} | {post.node.frontmatter.date}
                                         </div>
                                     </div>
                                     <div className='hidden lg:block justify-center items-center col-span-1'>

@@ -8,9 +8,6 @@ export default function GetBlogList() {
                     edges {
                         node {
                             frontmatter {
-                                author_info {
-                                    author_name
-                                }
                                 date(formatString: "Do MMMM YYYY")
                                 description
                                 title

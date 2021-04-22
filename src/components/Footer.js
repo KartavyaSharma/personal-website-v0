@@ -2,6 +2,8 @@ import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import { Link } from 'gatsby'
 
+const linkStyle = "hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase";
+
 function Footer(props) {
     return (
         <div className='font-mono' id="contact">
@@ -29,17 +31,17 @@ function Footer(props) {
                                     </Link>
                                 </div>
                                 {!props.isPage ? 
-                                    <ScrollLink activeClass="active" to="home" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Home</ScrollLink> : 
-                                    <Link to="/" className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Home</Link> }
+                                    <ScrollLink activeClass="active" to="home" spy={true} smooth={true} duration={500} className={linkStyle}>Home</ScrollLink> : 
+                                    <Link to="/" className={linkStyle}>Home</Link> }
                                 {!props.isPage ? 
-                                    <ScrollLink activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">About</ScrollLink> : 
-                                    <Link to="/#about-me" className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">About</Link> }
+                                    <ScrollLink activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className={linkStyle}>About</ScrollLink> : 
+                                    <Link to="/#about-me" className={linkStyle}>About</Link> }
                                 {!props.isPage ? 
-                                    <ScrollLink activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Projects</ScrollLink> : 
-                                    <Link to="/#projects" className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Projects</Link> }
+                                    <ScrollLink activeClass="active" to="projects" spy={true} smooth={true} duration={500} className={linkStyle}>Projects</ScrollLink> : 
+                                    <Link to="/#projects" className={linkStyle}>Projects</Link> }
                                 {!props.isPage ? 
-                                    <ScrollLink activeClass="active" to="blog" spy={true} smooth={true} duration={500} className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Blog</ScrollLink> : 
-                                    <Link to="/blog" className="hidden md:block cursor-pointer text-gray-400 hover:text-orange-500 uppercase">Blog</Link> }
+                                    <ScrollLink activeClass="active" to="blog" spy={true} smooth={true} duration={500} className={linkStyle}>Blog</ScrollLink> : 
+                                    <Link to="/blog" className={linkStyle}>Blog</Link> }
                                 <div className="flex flex-row space-x-8 items-center justify-between">
                                     <a href='https://github.com/KartavyaSharma' target="_blank" rel="noreferrer">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-github" viewBox="0 0 16 16" className='hover:fill-orange'>
