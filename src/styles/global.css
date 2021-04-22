@@ -26,6 +26,6 @@
 
 @layer utilities {
     .utterances {
-        max-width: 100%;
+        max-width: 56rem !important;
     }
 }
