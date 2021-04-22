@@ -40,5 +40,6 @@ fields:
   description: Add tags.
 pages:
 - src/content/posts/first-post.md
+- src/content/posts/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit.md
 - src/content/posts/second-post.md
 - src/content/posts/third-post.md
