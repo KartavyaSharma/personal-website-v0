@@ -28,4 +28,8 @@
     .utterances {
         max-width: 100% !important;
     }
+    
+    .utterances-frame {
+        max-width: 100% !important;
+    }
 }

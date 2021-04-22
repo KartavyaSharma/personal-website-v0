@@ -1,4 +1,5 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   important: true,
@@ -36,5 +37,19 @@ module.exports = {
       fill: ['hover', 'focus'],
     },
   },
-  plugins: [],
+  plugins: [
+      plugin(function({ addUtilities }) {
+        const newUtilities = {
+            '.utterances': {
+                maxWidth: '100%',
+                margin: '0',
+            },
+            '.utterances-frame': {
+                maxWidth: '100%',
+                margin: '0',
+            },
+        }
+        addUtilities(newUtilities);
+      })
+  ],
 }
