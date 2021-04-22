@@ -56,7 +56,7 @@ function BlogPost({ data }) {
     return (
         <div className='bg-trueGray-900'>
             <Header />
-            <div className="pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex" data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
+            <div className="pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 mb-16 lg:mb-4 max-w-screen-2xl w-full mx-auto flex" data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
                 <div className='max-w-4xl flex flex-col justify-center'>
                     <div className='text-5xl md:text-6xl lg:text-7xl text-white font-bold font-mono'>{data.markdownRemark.frontmatter.title}</div>
                     <div className='text-lg lg:text-xl text-trueGray-500 italic mt-4 font-mono'>{data.markdownRemark.frontmatter.description}</div>
@@ -69,7 +69,7 @@ function BlogPost({ data }) {
                                 .map(tag => {
                                     return (
                                         <div className='pr-4'>
-                                            <div className='hidden md:block text-sm rounded-sm px-2 py-0.5 border cursor-default border-orange-500 hover:border-white bg-orange-500 text-white'>{tag}</div>
+                                            <div className='hidden md:block text-sm rounded px-2 py-0.5 border border-trueGray-800 cursor-default bg-trueGray-700 text-white'>{tag}</div>
                                         </div>
                                     );
                                 })
