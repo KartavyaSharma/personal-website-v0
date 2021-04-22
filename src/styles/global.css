@@ -24,12 +24,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-    .utterances {
-        max-width: 100% !important;
-    }
-    
-    .utterances-frame {
-        max-width: 100% !important;
-    }
+.utterances {
+    margin: -16px 0;
+    padding: 0 -4px;
 }
