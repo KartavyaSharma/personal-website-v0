@@ -2,7 +2,11 @@ import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
+import authorData from "../static_queries/getAuthorData"
+
 function BlogList(props) {
+
+    const data = authorData();
 
     function renderBlogData() {
         return(
@@ -32,7 +36,7 @@ function BlogList(props) {
                                         }
                                     </div>
                                     <div className='sm:text-sm md:text-base text-white font-bold'>
-                                        By {blog.node.frontmatter.author_info.author_name} | {blog.node.frontmatter.date}
+                                        By {data.name} | {blog.node.frontmatter.date}
                                     </div>
                                 </div>
                                 <div className='hidden lg:block justify-center items-center col-span-1'>
