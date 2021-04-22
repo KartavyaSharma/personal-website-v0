@@ -23,3 +23,9 @@
 
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .utterances {
+        max-width: 100%;
+    }
+}

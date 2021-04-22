@@ -30,7 +30,7 @@ class Content extends React.Component {
                 <div className='text-white font-blogBody pb-10' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>
                 <div className='text-3xl font-mono text-white font-semibold pb-2'>Comments</div>
                 <hr className='border-orange-500 hidden md:block md:min-w-keepWmd lg:min-w-keepWlg'/>
-                <div id='inject-comments' className='md:pt-16 md:pr-32 md:pb-10'></div>
+                <div id='inject-comments' className='md:pt-8'></div>
             </div>
         );
     }
@@ -69,7 +69,7 @@ function BlogPost({ data }) {
                                 .map(tag => {
                                     return (
                                         <div className='pr-4'>
-                                            <div className='hidden md:block text-base rounded-full py-0.5 px-3 border cursor-default border-orange-500 hover:border-white bg-orange-500 text-white'>{tag}</div>
+                                            <div className='hidden md:block text-sm rounded-sm px-2 py-0.5 border cursor-default border-orange-500 hover:border-white bg-orange-500 text-white'>{tag}</div>
                                         </div>
                                     );
                                 })
