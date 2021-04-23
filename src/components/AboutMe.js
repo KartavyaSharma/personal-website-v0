@@ -3,8 +3,10 @@ import React from 'react'
 function AboutMe(props) {
     return (
         <div className={props.header} id="about-me">
-            <div className={props.topNum} data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">01</div>
-            <div className={props.topTitle} data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">About me</div>
+            <div data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
+                <div className={props.topNum}>01</div>
+                <div className={props.topTitle}>About me</div>
+            </div>
             <div className='flex flex-row' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
                 <div className={props.body}>
                     <div>

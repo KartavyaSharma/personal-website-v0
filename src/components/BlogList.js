@@ -10,7 +10,7 @@ function BlogList(props) {
 
     function renderBlogData() {
         return(
-            <div className='grid grid-rows-3 justify-center items-center gap-y-7'>
+            <div className='grid grid-rows-3 justify-center items-center gap-y-5 md:gap-y-7'>
                 {
                     props.listData.filter(blog => blog.node.title !== "")
                     .map(blog => {
@@ -19,7 +19,7 @@ function BlogList(props) {
                             <div className='grid grid-cols-3 items-center'>
                                 <div className='justify-start items-center col-span-2'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id} >
-                                        <div className='text-2xl md:text-4xl font-semibold hover:text-orange-500 hover:cursor-pointer hover:no-underline
+                                        <div className='text-lg md:text-3xl lg:text-4xl font-semibold hover:text-orange-500 hover:cursor-pointer hover:no-underline
                                         hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300'>{blog.node.frontmatter.title}</div>
                                     </Link>
                                     {/* <div className='text-base md:text-xl text-gray-400 italic'>{blog.node.frontmatter.description}</div> */}
@@ -35,11 +35,11 @@ function BlogList(props) {
                                             })
                                         }
                                     </div>
-                                    <div className='sm:text-sm md:text-base text-white font-bold'>
+                                    <div className='text-sm pt-2 md:p-0 text-white font-bold'>
                                         By {data.name} | {blog.node.frontmatter.date}
                                     </div>
                                 </div>
-                                <div className='hidden lg:block justify-center items-center col-span-1'>
+                                <div className='justify-end items-end col-span-1'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id}>
                                         <div className='flex justify-end items-center'>
                                             <GatsbyImage image={img} alt={blog.node.frontmatter.title} className='rounded' />

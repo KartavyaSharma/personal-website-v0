@@ -16,6 +16,9 @@ module.exports = {
       maxHeight: {
         blogImg: '600px',
       },
+      maxWidth: {
+        mobileImg: '100px',
+      },
       minWidth: {
         keepWlg: '56rem',
         keepWmd: '42rem',
