@@ -178,7 +178,7 @@ function ContactFields(props) {
                     disabled={!(formik.isValid && formik.dirty)}
                     type="submit"
                     className={`shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded
-                        ${ !(formik.isValid && formik.dirty) ? 'disabled:opacity-50' : '' }`}
+                        ${ !(formik.isValid && formik.dirty) ? 'disabled:opacity-50 disabled:cursor-not-allowed' : '' }`}
                 >
                     Send Message
                 </button>
