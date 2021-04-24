@@ -19,10 +19,10 @@ function BlogHomeList(props) {
                             <div className='grid grid-cols-3 items-center'>
                                     <div className='justify-start items-center gap-y-4 col-span-2'>
                                         <Link to={post.node.fields.slug} key={post.node.id}>
-                                            <div className='text-2xl md:text-3xl font-semibold hover:text-orange-500 hover:cursor-pointer hover:no-underline
-                                            hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 max'>{post.node.frontmatter.title}</div>
+                                            <div className='text-lg md:text-2xl font-blogBody hover:text-orange-500 hover:cursor-pointer hover:no-underline
+                                            hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 max opacity-80'>{post.node.frontmatter.title}</div>
                                         </Link>
-                                        <div className='sm:text-sm md:text-base text-white font-bold pt-3'>
+                                        <div className='sm:text-sm font-bold text-white pt-3 opacity-80'>
                                             By {data.name} | {post.node.frontmatter.date}
                                         </div>
                                     </div>

@@ -8,7 +8,7 @@ import Footer from "../components/Footer"
 
 //Test
 
-const mobileHeaders = "pt-32 md:pt-0 py-12 md:py-16 lg:py-24 2xl:py-48 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto";
+const mobileHeaders = "pt-24 md:pt-0 py-12 md:py-16 lg:py-18 2xl:py-48 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto";
 const sectionHeaderNum = "text-lg sm:text-xl md:text-2xl lg:text-4xl font-semibold font-mono bg-clip-text text-white";
 const sectionHeaderTitle = "text-5xl md:text-5xl lg:text-8xl xl:text-10xl font-bold font-mono text-orange-500";
 const sectionBody = "text-white text-base sm:text-lg lg:text-xl py-8 md:py-12 lg:py-16";
