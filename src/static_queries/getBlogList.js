@@ -18,8 +18,8 @@ export default function GetBlogList() {
                                         formats: AUTO
                                         transformOptions: {fit: COVER}
                                         layout: CONSTRAINED
-                                        width: 300
-                                        height: 200
+                                        width: 200
+                                        height: 133
                                         quality: 100
                                         )
                                     }

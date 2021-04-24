@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 function AboutMe(props) {
     return (
@@ -8,7 +9,7 @@ function AboutMe(props) {
                 <div className={props.topTitle}>About me</div>
             </div>
             <div className='flex flex-row' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
-                <div className={props.body}>
+                <div className={classNames(props.body, 'text-opacity-80')}>
                     <div>
                         Hi! I'm a freshman at UC Berkeley studying Electrical Engineering and Computer science.
                         <br /><br />
