@@ -19,8 +19,8 @@ function BlogList(props) {
                             <div className='grid grid-cols-3 items-center'>
                                 <div className='justify-start items-center col-span-2'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id} >
-                                        <div className='text-lg md:text-3xl hover:text-orange-500 hover:cursor-pointer hover:no-underline
-                                        hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 opacity-80'>{blog.node.frontmatter.title}</div>
+                                        <div className='text-base md:text-3xl pr-2 hover:text-orange-500 hover:cursor-pointer hover:no-underline
+                                        hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 opacity-80 hover:text-opacity-100'>{blog.node.frontmatter.title}</div>
                                     </Link>
                                     {/* <div className='text-base md:text-xl text-gray-400 italic'>{blog.node.frontmatter.description}</div> */}
                                     <div className='flex'>
@@ -35,8 +35,8 @@ function BlogList(props) {
                                             })
                                         }
                                     </div>
-                                    <div className='text-sm pt-2 md:p-0 text-white font-bold text-opacity-80'>
-                                        By {data.name} | {blog.node.frontmatter.date}
+                                    <div className='text-sm pt-2 md:p-0 text-white font-bold text-opacity-80 flex'>
+                                        <span className='hidden md:block pr-1'>By {data.name} |</span> {blog.node.frontmatter.date}
                                     </div>
                                 </div>
                                 <div className='justify-end items-end col-span-1'>
