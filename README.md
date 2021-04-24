@@ -14,6 +14,7 @@ This repository contains the source code for my [personal website](https://www.k
 [kartavyas.com](https://www.kartavyas.com/) was built using the following technologies:
 
 - Gatsby.js
+- GraphQL
 - Tailwind CSS
 - Forestry
 
