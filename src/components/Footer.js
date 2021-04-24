@@ -22,7 +22,7 @@ function Footer(props) {
                             </div>
                         </div>
                         <div className="flex flex-col">
-                            <div className="flex mt-24 mb-12 flex-row justify-between">
+                            <div className="flex mt-12 lg:mt-24 mb-6 md:mb-12 flex-row justify-between">
                                 <div>
                                     <Link activeClass="active" to="home" spy={true} smooth={true} duration={500} className="cursor-pointer text-orange-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16" className='hover:text-white'>
@@ -61,7 +61,7 @@ function Footer(props) {
                                 </div>
                             </div>
                             <hr className="border-orange-500" />
-                            <div className="w-full text-center my-12 text-trueGray-400">This site was made using <a href='https://www.gatsbyjs.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Gatsby.js</a>, <a href='https://tailwindcss.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Tailwind CSS</a>, and <a href='https://forestry.io/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Forestry</a>. View <a href='https://github.com/KartavyaSharma/personal-website' rel="noreferrer" target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>Source Code</span></a> on Github</div>
+                            <div className="w-full text-center text-sm md:text-base my-6 md:my-12 text-trueGray-400">This site was made using <a href='https://www.gatsbyjs.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Gatsby.js</a>, <a href='https://tailwindcss.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Tailwind CSS</a>, and <a href='https://forestry.io/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Forestry</a>. View <a href='https://github.com/KartavyaSharma/personal-website' rel="noreferrer" target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>Source Code</span></a> on Github</div>
                         </div>
                     </div>
                 </div>

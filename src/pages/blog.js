@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import Header from '../components/Header'
 // import PageFooter from '../components/PageFooter'
@@ -13,7 +14,7 @@ export default function BlogPage() {
     return(
         <div className='bg-trueGray-900'>
             <Header />
-            <div className={headerStyle}>
+            <div className={classNames(headerStyle, 'mb-12 md:mb-0')}>
                 <div className='text-white font-semibold text-4xl pb-2 font-mono'>Latest Posts</div>
                 <hr className='border-orange-500 hidden md:block max-w-4xl'/>
                 <BlogHomeList listData={data}/>

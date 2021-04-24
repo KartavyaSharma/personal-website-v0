@@ -11,13 +11,13 @@ function ProjectList(props) {
                     props.listData.map(project => {
                         return (
                             <div className="h-full mt-14 mb-10 overflow-hidden flex items-center justify-center rounded-lg" style={{ background: '#edf2f7' }}>
-                                <section className="text-indigo-200 body-font p-5 bg-trueGray-800 pb-10">
+                                <section className="text-indigo-200 body-font p-1 md:p-5 bg-trueGray-800 md:pb-10">
                                     <div>
-                                        <div className="mx-auto flex px-5  md:flex-row flex-col items-center">
-                                            <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center">
+                                        <div className="mx-auto flex px-1 md:px-5 md:flex-row flex-col items-center">
+                                            <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left items-center">
                                                 <figure className="visible">
                                                     <div className="">
-                                                        <div className="pt-10 px-2 sm:px-6">
+                                                        <div className="pt-5 md:pt-10 px-2 sm:px-6">
                                                             <span className="inline-block py-1 px-2 rounded-full bg-orange-500 text-white  text-xs font-bold tracking-widest mb-2">{project.node.category}</span>
                                                             <div className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100 text-opacity-80">{project.node.name}</div>
                                                             {/* Replace this with project.node.description */}

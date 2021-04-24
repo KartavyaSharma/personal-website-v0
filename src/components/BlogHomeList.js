@@ -19,14 +19,14 @@ function BlogHomeList(props) {
                             <div className='grid grid-cols-3 items-center'>
                                     <div className='justify-start items-center gap-y-4 col-span-2'>
                                         <Link to={post.node.fields.slug} key={post.node.id}>
-                                            <div className='text-lg md:text-2xl font-blogBody hover:text-orange-500 hover:cursor-pointer hover:no-underline
-                                            hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 max opacity-80'>{post.node.frontmatter.title}</div>
+                                            <div className='text-base md:text-3xl pr-3 font-blogBody hover:text-orange-500 hover:cursor-pointer hover:no-underline
+                                            transition-none md:hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 max opacity-80'>{post.node.frontmatter.title}</div>
                                         </Link>
-                                        <div className='sm:text-sm font-bold text-white pt-3 opacity-80 flex'>
+                                        <div className='text-sm pt-2 md:p-0 text-white font-bold text-opacity-80 flex'>
                                             <span className='hidden md:block pr-1'>By {data.name} |</span> {post.node.frontmatter.date}
                                         </div>
                                     </div>
-                                    <div className='hidden lg:block justify-center items-center col-span-1'>
+                                    <div className='justify-center items-center col-span-1'>
                                         <Link to={post.node.fields.slug} key={post.node.id}>
                                             <div className='flex justify-end items-center'>
                                                 <GatsbyImage image={img} alt={post.node.frontmatter.title} className='rounded' />

@@ -11,7 +11,7 @@ export default class Contact extends React.Component {
             <div className='bg-trueGray-900'>
                 <Header />
                 <ContactForm />
-                <div className='font-mono pt-20'>
+                <div className='font-mono pt-5'>
                     <div className="h-1/2 overflow-hidden flex items-center justify-center">
                         <div className="w-full flex items-center justify-center">
                             <div className="w-full px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 mx-auto max-w-screen-2xl text-white flex flex-col">

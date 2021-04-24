@@ -58,7 +58,7 @@ function ContactFields(props) {
             data-sal-duration="1000"
         >
             <div className="text-center mb-16">
-                <p className="mt-4 text-base leading-7 text-gray-200 font-regular uppercase">
+                <p className="mt-10 md:mt-4 text-base leading-7 text-gray-200 font-regular uppercase">
                     Contact
                 </p>
                 <div className="text-5xl leading-normal font-extrabold tracking-tight text-gray-100">

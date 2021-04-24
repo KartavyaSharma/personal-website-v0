@@ -13,7 +13,7 @@ function Burger({ isOpen, toggle }) {
             <Link to='/#projects' className='p-4'>
                 Projects
             </Link>
-            <Link to='/#blog' className='p-4'>
+            <Link to='/blog' className='p-4'>
                 Blog
             </Link>
             <Link to='/contact' className='p-4'>

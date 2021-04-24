@@ -19,8 +19,8 @@ function BlogList(props) {
                             <div className='grid grid-cols-3 items-center'>
                                 <div className='justify-start items-center col-span-2'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id} >
-                                        <div className='text-base md:text-3xl pr-2 hover:text-orange-500 hover:cursor-pointer hover:no-underline
-                                        hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 opacity-80 hover:text-opacity-100'>{blog.node.frontmatter.title}</div>
+                                        <div className='text-base md:text-3xl pr-3 hover:text-orange-500 hover:cursor-pointer transition-none hover:no-underline
+                                        md:hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 opacity-80 hover:opacity-100'>{blog.node.frontmatter.title}</div>
                                     </Link>
                                     {/* <div className='text-base md:text-xl text-gray-400 italic'>{blog.node.frontmatter.description}</div> */}
                                     <div className='flex'>
