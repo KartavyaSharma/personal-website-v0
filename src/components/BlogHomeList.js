@@ -22,8 +22,8 @@ function BlogHomeList(props) {
                                             <div className='text-lg md:text-2xl font-blogBody hover:text-orange-500 hover:cursor-pointer hover:no-underline
                                             hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 max opacity-80'>{post.node.frontmatter.title}</div>
                                         </Link>
-                                        <div className='sm:text-sm font-bold text-white pt-3 opacity-80'>
-                                            By {data.name} | {post.node.frontmatter.date}
+                                        <div className='sm:text-sm font-bold text-white pt-3 opacity-80 flex'>
+                                            <span className='hidden md:block pr-1'>By {data.name} |</span> {post.node.frontmatter.date}
                                         </div>
                                     </div>
                                     <div className='hidden lg:block justify-center items-center col-span-1'>

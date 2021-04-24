@@ -41,7 +41,7 @@ function BlogList(props) {
                                 </div>
                                 <div className='justify-end items-end col-span-1'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id}>
-                                        <div className='flex justify-end items-center'>
+                                        <div className='flex justify-end items-start md:items-center'>
                                             <GatsbyImage image={img} alt={blog.node.frontmatter.title} className='rounded' />
                                         </div>
                                     </Link>
