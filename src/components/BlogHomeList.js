@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import authorData from "../static_queries/getAuthorData"
 
 function BlogHomeList(props) {
+
+    const [isMobile, setIsMobile] = useState(undefined);
+    useEffect(() => {
+        setIsMobile(window.innerWidth <= 768);
+    }, []);
 
     const data = authorData();
 
@@ -19,10 +24,12 @@ function BlogHomeList(props) {
                             <div className='grid grid-cols-3 items-center'>
                                     <div className='justify-start items-center gap-y-4 col-span-2'>
                                         <Link to={post.node.fields.slug} key={post.node.id}>
-                                            <div className='text-base md:text-3xl pr-3 font-blogBody hover:text-orange-500 hover:cursor-pointer hover:no-underline
-                                            transition-none md:hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 max opacity-80'>{post.node.frontmatter.title}</div>
+                                            <div className={`text-base md:text-3xl pr-3 hover:text-orange-500 hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100
+                                                ${ !isMobile ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : '' }`}>
+                                                {post.node.frontmatter.title}
+                                            </div>
                                         </Link>
-                                        <div className='text-sm pt-2 md:p-0 text-white font-bold text-opacity-80 flex'>
+                                        <div className='text-sm pt-2 md:p-0 md:pt-3 text-white font-bold text-opacity-60 flex'>
                                             <span className='hidden md:block pr-1'>By {data.name} |</span> {post.node.frontmatter.date}
                                         </div>
                                     </div>

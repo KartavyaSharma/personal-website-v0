@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
 import authorData from "../static_queries/getAuthorData"
 
 function BlogList(props) {
+
+    const [isMobile, setIsMobile] = useState(undefined);
+    useEffect(() => {
+        setIsMobile(window.innerWidth <= 768);
+    }, []);
 
     const data = authorData();
 
@@ -19,8 +24,11 @@ function BlogList(props) {
                             <div className='grid grid-cols-3 items-center'>
                                 <div className='justify-start items-center col-span-2'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id} >
-                                        <div className='text-base md:text-3xl pr-3 hover:text-orange-500 hover:cursor-pointer transition-none hover:no-underline
-                                        md:hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300 opacity-80 hover:opacity-100'>{blog.node.frontmatter.title}</div>
+                                        <div 
+                                        className={`text-base md:text-3xl pr-3 hover:text-orange-500 hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100 
+                                            ${ !isMobile ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : ''}`}>
+                                            {blog.node.frontmatter.title}
+                                        </div>
                                     </Link>
                                     {/* <div className='text-base md:text-xl text-gray-400 italic'>{blog.node.frontmatter.description}</div> */}
                                     <div className='flex'>
@@ -35,7 +43,7 @@ function BlogList(props) {
                                             })
                                         }
                                     </div>
-                                    <div className='text-sm pt-2 md:p-0 text-white font-bold text-opacity-80 flex'>
+                                    <div className='text-sm pt-2 md:p-0 text-white font-bold text-opacity-60 flex'>
                                         <span className='hidden md:block pr-1'>By {data.name} |</span> {blog.node.frontmatter.date}
                                     </div>
                                 </div>
