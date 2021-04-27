@@ -3,21 +3,23 @@ import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import authorData from "../static_queries/getAuthorData"
+import featuredPost from '../static_queries/getFeaturedPost'
 
 function BlogHomeList(props) {
+
+    const featuredPostData = featuredPost();
+    const data = authorData();
 
     const [isMobile, setIsMobile] = useState(undefined);
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768);
     }, []);
 
-    const data = authorData();
-
     function renderBlogPostList() {
         return (
             <div className='grid grid-rows-3 justify-center items-center gap-y-7'>
                 {
-                    props.listData.filter(post => post.node.frontmatter.title !== "")
+                    props.listData.filter(post => (post.node.frontmatter.title !== "" && featuredPostData[0].node.frontmatter.title !== post.node.frontmatter.title))
                     .map(post => {
                         const img = getImage(post.node.frontmatter.thumbnail);
                         return (
