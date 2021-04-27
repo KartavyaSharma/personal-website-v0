@@ -22,7 +22,7 @@ export default function BlogPage(props) {
 
     return (
         <div className='bg-trueGray-900'>
-            <Header />
+            <Header paginationAnim={currentPage === 1 ? true : false} />
             <div className={classNames(headerStyle, 'mb-12 md:mb-0')}>
                 {currentPage === 1 ? <Featured postData={featuredPostData} /> : null}
                 {currentPage === 1 ? (

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Menu from '../components/Menu'
 import Burger from '../components/Burger'
 
-function Header() {
+function Header(props) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -26,9 +26,20 @@ function Header() {
     });
 
     return (
-        <div data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
-            <Menu isOpen={isOpen} toggle={toggle}/>
-            <Burger isOpen={isOpen} toggle={toggle}/>
+        <div>
+        {
+            props.paginationAnim || props.paginationAnim === undefined ? (
+                <div data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
+                    <Menu isOpen={isOpen} toggle={toggle}/>
+                    <Burger isOpen={isOpen} toggle={toggle}/>
+                </div>
+            ) : (
+                <div>
+                    <Menu isOpen={isOpen} toggle={toggle}/>
+                    <Burger isOpen={isOpen} toggle={toggle}/>
+                </div>
+            )
+        }
         </div>
     )
 }
