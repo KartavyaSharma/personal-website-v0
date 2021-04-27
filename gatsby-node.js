@@ -39,7 +39,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
     }
 
     const posts = response.data.allMarkdownRemark.edges;
-    const postsPerPage = 6;
+    const postsPerPage = 5;
     const numPages = Math.ceil(posts.length / postsPerPage);
     
     Array.from({ length: numPages }).forEach((_,i) => {

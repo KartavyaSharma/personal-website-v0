@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
 
 import Header from '../components/Header'
 import Footer from "../components/Footer"
@@ -18,7 +19,7 @@ export default function BlogPage(props) {
     const { currentPage, numPages } = props.pageContext;
     const isFirst = currentPage === 0;
     const isLast = currentPage === numPages;
-    const prevPage = currentPage - 1 === 1 ? '/blog' : `/blog/${currentPage-1}`;
+    const prevPage = currentPage - 1 <= 1 ? '/blog' : `/blog/${currentPage-1}`;
     const nextPage = `/blog/${currentPage+1}`;
 
     return(
