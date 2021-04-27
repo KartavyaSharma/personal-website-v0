@@ -19,7 +19,7 @@ export default function GetFeaturedPost() {
                                         formats: AUTO
                                         transformOptions: {fit: COVER}
                                         layout: CONSTRAINED
-                                        width: 2000
+                                        width: 4000
                                         quality: 100
                                     )
                                 }

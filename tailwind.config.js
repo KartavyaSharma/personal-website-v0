@@ -28,6 +28,11 @@ module.exports = {
         keepWmd: '42rem',
         keepWsm: '32rem',
       },
+      minHeight: {
+        featuredlg: '400px',
+        featuredmd: '300px',
+        featuredbase: '200px',
+      },
       colors: {
         'terminalGreen': '#16C60C',
         orange: colors.orange,
