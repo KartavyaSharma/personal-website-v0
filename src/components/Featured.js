@@ -11,7 +11,7 @@ export default function Featured(props) {
                     props.postData.map(post => {
                         const img = getImage(post.node.frontmatter.thumbnail);
                         return(
-                            <div style={{ marginTop: '-60px' }}>
+                            <div className='lg:-mt-16'>
                                 <div className='absolute z-50 border border-white text-white font-semibold text-xl md:text-2xl bg-trueGray-900 px-4 py-2' style={{ marginTop: '-24px'}}>
                                     Featured Post
                                 </div>

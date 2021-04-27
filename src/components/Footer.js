@@ -24,11 +24,11 @@ function Footer(props) {
                         <div className="flex sm:mt-2 md:mt-4 lg:mt-8 flex-col md:flex-row md:justify-between">
                             {
                                 props.paginationAnim ? (
-                                    <div className="w-full md:w-2/3 text-gray-400 text-xs md:text-base" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
+                                    <div className="w-full md:w-2/3 text-gray-400 text-xs md:text-base hidden md:block" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
                                         I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!
                                     </div>
                                 ) : (
-                                    <div className="w-full md:w-2/3 text-gray-400 text-xs md:text-base">
+                                    <div className="w-full md:w-2/3 text-gray-400 text-xs md:text-base hidden md:block">
                                         I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!
                                     </div>
                                 )

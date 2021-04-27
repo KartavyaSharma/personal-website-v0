@@ -40,7 +40,11 @@ module.exports = {
       },
       fontFamily: {
         'blogBody': ['Inter', 'sans-serif']
-      }
+      },
+      marginTop: {
+        'featuredPadlg': '-60px',
+        'featuredPad': '-20px',
+      },
     }
   },
   variants: {
