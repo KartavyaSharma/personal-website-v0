@@ -15,7 +15,7 @@ export default function GetFeaturedPost() {
                             thumbnail {
                                 childImageSharp {
                                     gatsbyImageData(
-                                        placeholder: DOMINANT_COLOR
+                                        placeholder: BLURRED
                                         formats: AUTO
                                         transformOptions: {fit: COVER}
                                         layout: CONSTRAINED

@@ -14,7 +14,7 @@ function Footer(props) {
                             <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></div>
                         </div>
                         <div className="flex sm:mt-2 md:mt-4 lg:mt-8 flex-col md:flex-row md:justify-between">
-                            <div className="w-full md:w-2/3 text-gray-400" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!</div>
+                            <div className="w-full md:w-2/3 text-gray-400 text-xs md:text-base" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!</div>
                             <div className="w-44 pt-6 md:pt-0">
                                 <a href='/contact/' className="bg-orange-500 hover:bg-orange-600 rounded-lg justify-center text-center shadow px-4 py-2  md:px-4 md:py-3 lg:px-10 lg:py-3 flex items-center"
                                 data-sal="slide-left" data-sal-easing="ease" data-sal-duration="1000"
@@ -61,7 +61,7 @@ function Footer(props) {
                                 </div>
                             </div>
                             <hr className="border-orange-500" />
-                            <div className="w-full text-center text-sm md:text-base my-6 md:my-12 text-trueGray-400">This site was made using <a href='https://www.gatsbyjs.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Gatsby.js</a>, <a href='https://tailwindcss.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Tailwind CSS</a>, and <a href='https://forestry.io/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Forestry</a>. View <a href='https://github.com/KartavyaSharma/personal-website' rel="noreferrer" target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>Source Code</span></a> on Github</div>
+                            <div className="w-full text-center text-sm md:text-base my-6 md:my-12 text-trueGray-400">This site was made using <a href='https://www.gatsbyjs.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Gatsby.js</a>, <a href='https://tailwindcss.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Tailwind CSS</a>, and <a href='https://forestry.io/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Forestry</a>. View <a href='https://github.com/KartavyaSharma/personal-website' rel="noreferrer" target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>Source code</span></a> on Github</div>
                         </div>
                     </div>
                 </div>
