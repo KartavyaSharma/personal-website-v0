@@ -50,7 +50,7 @@ function ProjectList(props) {
                                                     src={project.node.img.childImageSharp.fluid.src}
                                                     fluid={project.node.img.childImageSharp.fluid}
                                                     alt={project.node.alt}
-                                                    className='object-cover object-center rounded' />
+                                                    className='object-cover object-center rounded max-h-96' />
                                             </div>
                                         </div>
                                     </div>

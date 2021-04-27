@@ -1,9 +1,9 @@
 [
     {
         "index": "1",
-        "img": "../images/salkatech_project.png",
+        "img": "../images/android-chrome-512x512.png",
         "alt": "Salkatech Hero",
-        "category": "contract",
+        "category": "Contract",
         "name": "Salkatech Website",
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "https://salkatech.com",
@@ -12,10 +12,10 @@
     },
     {
         "index": "2",
-        "img": "../images/salkatech_project.png",
-        "alt": "Salkatech Hero",
-        "category": "contract",
-        "name": "Salkatech Website",
+        "img": "../images/ROZE_scaled.png",
+        "alt": "ROZE Hero",
+        "category": "Project",
+        "name": "ROZE - Assistant",
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "",
         "githublink": "",
@@ -23,13 +23,13 @@
     },
     {
         "index": "3",
-        "img": "../images/salkatech_project.png",
-        "alt": "Salkatech Hero",
-        "category": "contract",
-        "name": "Salkatech Website",
+        "img": "../images/logo_scaled.png",
+        "alt": "Personal Website Hero",
+        "category": "Project",
+        "name": "Personal Website",
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
-        "projectlink": "",
-        "githublink": "",
+        "projectlink": "https://kartavyas.com",
+        "githublink": "https://github.com/KartavyaSharma/personal-webiste",
         "description": ""
     }
 ]
