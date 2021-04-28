@@ -1,10 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
 export default function ProjectPage(props) {
     return(
-        <div>
-            {props.data.allProjectDataJson.edges[0].node.name}
+        <div className='bg-trueGray-900'>
+            <Header />
+            <Footer isPage={true} />
         </div>
     );
 }

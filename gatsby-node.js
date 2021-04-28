@@ -41,7 +41,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
     }
 
     projectJson.forEach(project => {
-        var path = `project/${project.name.split(' ').join('-').toLowerCase()}`;
+        var path = `project/${project.name.replace(' -','').split(' ').join('-').toLowerCase()}`;
         createPage({
             path: path,
             component: projectTemplate,
