@@ -22,6 +22,7 @@ module.exports = {
       },
       maxWidth: {
         mobileImg: '100px',
+        '8': '32px',
       },
       minWidth: {
         keepWlg: '56rem',

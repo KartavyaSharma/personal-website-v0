@@ -13,9 +13,16 @@ function GetProjectList() {
                             index
                             img {
                                 childImageSharp {
-                                    fluid {
-                                      ...GatsbyImageSharpFluid
-                                    }
+                                    gatsbyImageData(
+                                        blurredOptions: {toFormat: AUTO}
+                                        formats: AUTO
+                                        layout: CONSTRAINED
+                                        placeholder: BLURRED
+                                        quality: 100
+                                        width: 64
+                                        height: 64
+                                        transformOptions: {fit: COVER}
+                                    )
                                 }
                             }
                             id

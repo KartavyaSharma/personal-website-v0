@@ -8,28 +8,39 @@
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "https://salkatech.com",
         "githublink": "",
-        "description": ""
+        "description": "Public facing website built using JQuery, HTML, and CSS for a satellite telecom company."
     },
     {
         "index": "2",
-        "img": "../images/ROZE_scaled.png",
+        "img": "../images/HELA_512x512.png",
         "alt": "ROZE Hero",
         "category": "Project",
         "name": "ROZE - Assistant",
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "",
         "githublink": "",
-        "description": ""
+        "description": "A digital voice assistant that aims to reduce distractions while driving by narrating all notifications."
     },
     {
         "index": "3",
-        "img": "../images/logo_scaled.png",
+        "img": "../images/logo.png",
         "alt": "Personal Website Hero",
         "category": "Project",
         "name": "Personal Website",
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "https://kartavyas.com",
         "githublink": "https://github.com/KartavyaSharma/personal-webiste",
-        "description": ""
+        "description": "My personal website (the one you are viewing) built using Gatsby.js, Tailwind CSS, and Forestry CMS."
+    },
+    {
+        "index": "4",
+        "img": "../images/Prime_logo.png",
+        "alt": "Prime Academy Hero",
+        "category": "Contract",
+        "name": "Prime Academy Site",
+        "tags": ["HTML", "CSS", "JQuery", "GIMP"],
+        "projectlink": "",
+        "githublink": "",
+        "description": "A school's website built using HTML, CSS, Bootstrap and JQuery. Currently a work in progress."
     }
 ]
