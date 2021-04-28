@@ -1,7 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { graphql } from 'gatsby'
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import Header from '../components/Header'
 import Footer from "../components/Footer"
@@ -10,7 +9,7 @@ import Featured from '../components/Featured'
 
 import featuredPost from '../static_queries/getFeaturedPost'
 
-const headerStyle = "pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col items-center justify-center";
+const headerStyle = "pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col";
 
 export default function BlogPage(props) {
     const featuredPostData = featuredPost();
@@ -29,7 +28,7 @@ export default function BlogPage(props) {
                     <div className='text-white font-semibold text-4xl pb-2 font-mono' id='post-anchor'>Latest Posts</div>)
                     : <div className='text-white font-semibold text-4xl pb-2 font-mono' id='post-anchor'>More Posts</div>}
                 <BlogHomeList listData={props.data.allMarkdownRemark.edges} />
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-start items-center'>
                     {true && (
                         <Link to={isFirst ? '' : `${prevPage}`} rel="prev" className={`${isFirst ? 'pointer-events-none' : ''}`}>
                             <button className={`bg-trueGray-800 px-3 py-1 flex rounded mr-1 ${isFirst ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`} disabled={isFirst}>

@@ -15,22 +15,22 @@ function Intro(props) {
         <div className={classNames(props.header, 'min-h-screen')} id="home">
             <ParticleBg canvasClassName='block' className='absolute inset-0 z-0' isMobile={isMobile} />
             <div className='z-10 relative' data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
-                <div className='text-xl xl:text-2xl font-extrabold font-mono'>
+                <div className='text-xl xl:text-3xl font-extrabold font-mono'>
                     <span className='bg-clip-text text-orange-500'>
                         Hello there! I'm
-                </span>
+                    </span>
                 </div>
                 <div className="text-white text-4xl sm:text-5xl md:text-6xl xl:text-8xl font-extrabold font-mono">
                     Kartavya Sharma<span className="bg-clip-text text-orange-500">.</span>
                 </div>
                 <br />
-                <nav className='justify-between items-center relative font-semibold text-lg lg:text-2xl py-0 xl:py-3 bg-clip-text text-orange-500 font-mono'>
+                <nav className='justify-between items-center relative font-semibold text-base md:text-xl lg:text-3xl py-0 xl:py-3 bg-clip-text text-orange-500 font-mono'>
                     <ScrollLink activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">About</ScrollLink>
                     <ScrollLink activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</ScrollLink>
                     <Link to="/blog" className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
                     <Link to="/contact" className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
                 </nav>
-                <div className='inline-blockblock text-white text-base sm:text-lg lg:text-xl py-6 md:py-10 lg:py-12 xl:w-4/5 font-blogBody sm:leading-5 lg:leading-9 text-opacity-80'>
+                <div className='inline-blockblock text-white text-base sm:text-lg lg:text-xl py-6 md:py-10 xl:w-4/5 font-blogBody sm:leading-5 lg:leading-9 text-opacity-80'>
                     I'm a freshman at UC Berkeley studying Electrical Engineering and Computer Science. I'm interested in Competitive Programming,
                     Web Development Technologies, and Machine Learning. I dabble in C++ and Python. As of recently, I am exploring Jamstack with React,
                     GraphQL, and headless CMS platforms.

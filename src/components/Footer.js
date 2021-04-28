@@ -11,42 +11,48 @@ function Footer(props) {
                 <div className="w-full flex items-center justify-center">
                     <div className="w-full px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 mx-auto max-w-screen-2xl text-white flex flex-col">
                         {
-                            props.paginationAnim || props.paginationAnim === undefined ? (
-                                <div className="w-full text-3xl md:text-4xl lg:text-6xl font-bold" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
-                                    <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></div>
+                            !props.isContact || props.isContact === undefined ? (
+                                <div>
+                                    {
+                                        props.paginationAnim || props.paginationAnim === undefined ? (
+                                            <div className="w-full text-3xl md:text-4xl lg:text-6xl font-bold" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
+                                                <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></div>
+                                            </div>
+                                        ) : (
+                                            <div className="w-full text-3xl md:text-4xl lg:text-6xl font-bold">
+                                                <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></div>
+                                            </div>
+                                        )
+                                    }
+                                    <div className="flex sm:mt-2 md:mt-4 lg:mt-8 flex-col md:flex-row md:justify-between">
+                                        {
+                                            props.paginationAnim || props.paginationAnim === undefined ? (
+                                                <div className="w-full md:w-2/3 text-gray-400 text-xs md:text-base hidden md:block" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
+                                                    I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!
+                                                </div>
+                                            ) : (
+                                                <div className="w-full md:w-2/3 text-gray-400 text-xs md:text-base hidden md:block">
+                                                    I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!
+                                                </div>
+                                            )
+                                        }
+                                        <div className="w-44 pt-6 md:pt-0">
+                                            {
+                                                props.paginationAnim || props.paginationAnim === undefined ? (
+                                                    <a href='/contact/' className="bg-orange-500 hover:bg-orange-600 rounded-lg justify-center text-center shadow px-4 py-2  md:px-4 md:py-3 lg:px-10 lg:py-3 flex items-center"
+                                                        data-sal="slide-left" data-sal-easing="ease" data-sal-duration="1000"
+                                                    >Contact Me</a>
+                                                ) : (
+                                                    <a href='/contact/' className="bg-orange-500 hover:bg-orange-600 rounded-lg justify-center text-center shadow px-4 py-2  md:px-4 md:py-3 lg:px-10 lg:py-3 flex items-center">
+                                                        Contact Me
+                                                    </a>
+                                                )
+                                            }
+                                        </div>
+                                    </div>
                                 </div>
-                            ) : (
-                                <div className="w-full text-3xl md:text-4xl lg:text-6xl font-bold">
-                                    <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-orange-500'>Let's get in touch!</span></div>
-                                </div>
-                            )
+                            ) : null
                         }
-                        <div className="flex sm:mt-2 md:mt-4 lg:mt-8 flex-col md:flex-row md:justify-between">
-                            {
-                                props.paginationAnim || props.paginationAnim === undefined ? (
-                                    <div className="w-full md:w-2/3 text-gray-400 text-xs md:text-base hidden md:block" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
-                                        I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!
-                                    </div>
-                                ) : (
-                                    <div className="w-full md:w-2/3 text-gray-400 text-xs md:text-base hidden md:block">
-                                        I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Let's connect!
-                                    </div>
-                                )
-                            }
-                            <div className="w-44 pt-6 md:pt-0">
-                                {
-                                    props.paginationAnim || props.paginationAnim === undefined ? (
-                                        <a href='/contact/' className="bg-orange-500 hover:bg-orange-600 rounded-lg justify-center text-center shadow px-4 py-2  md:px-4 md:py-3 lg:px-10 lg:py-3 flex items-center"
-                                            data-sal="slide-left" data-sal-easing="ease" data-sal-duration="1000"
-                                        >Contact Me</a>
-                                    ) : (
-                                        <a href='/contact/' className="bg-orange-500 hover:bg-orange-600 rounded-lg justify-center text-center shadow px-4 py-2  md:px-4 md:py-3 lg:px-10 lg:py-3 flex items-center">
-                                            Contact Me
-                                        </a>
-                                    )
-                                }
-                            </div>
-                        </div>
                         <div className="flex flex-col">
                             <div className="flex mt-12 lg:mt-24 mb-6 md:mb-12 flex-row justify-between">
                                 <div>
