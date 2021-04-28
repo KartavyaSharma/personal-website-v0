@@ -1,5 +1,6 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { isExportDeclaration } = require("typescript");
+const projectJson = require('./src/data/projectData.json');
 
 exports.onCreateNode = ({ node, getNode, actions}) => {
     const { createNodeField } = actions;
@@ -17,6 +18,7 @@ exports.onCreateNode = ({ node, getNode, actions}) => {
 module.exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions
     const blogTemplate = require.resolve(`./src/templates/BlogPost.js`)
+    const projectTemplate = require.resolve(`./src/templates/ProjectPage.js`)
     
     const response = await graphql(`
         query MyQuery {
@@ -37,6 +39,17 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
         reporter.panicOnBuild(`Error while running GraphQL query.`)
         return
     }
+
+    projectJson.forEach(project => {
+        var path = `project/${project.name.split(' ').join('-').toLowerCase()}`;
+        createPage({
+            path: path,
+            component: projectTemplate,
+            context: {
+                name: project.name,
+            }
+        });
+    });
 
     const posts = response.data.allMarkdownRemark.edges;
     const postsPerPage = 5;

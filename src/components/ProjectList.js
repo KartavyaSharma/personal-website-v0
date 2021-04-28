@@ -23,9 +23,9 @@ function ProjectList(props) {
                                                 <GatsbyImage image={img} alt={project.node.name} />
                                             </div>
                                         </div>
-                                        <div className='text-xs md:text-base text-white text-opacity-80 italic font-mono pt-3'>{project.node.description}</div>
+                                        <div className='text-xs md:text-base text-white text-opacity-80 font-mono pt-3'>{project.node.description}</div>
                                         <div className='flex flex-row items-center h-full'>
-                                            <Link>
+                                            <Link to={`/project/${project.node.name.split(' ').join('-').toLowerCase()}`}>
                                                 <button className='rounded px-2 py-1 hover:bg-trueGray-800 border border-white border-opacity-50 text-white text-opacity-80 font-mono mr-3'>
                                                     Details
                                                 </button>
