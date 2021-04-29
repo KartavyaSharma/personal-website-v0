@@ -8,7 +8,19 @@
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "https://salkatech.com",
         "githublink": "",
-        "description": "Public facing website built using JQuery, HTML, and CSS for a satellite telecom company."
+        "description": "Public facing website built using JQuery, HTML, and CSS for a satellite telecom company.",
+        "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas.",
+        "tech": [
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "JQuery",
+            "FTP Clients",
+            "Git"
+        ],
+        "images": [
+
+        ]
     },
     {
         "index": "2",
@@ -19,7 +31,18 @@
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "",
         "githublink": "",
-        "description": "A digital voice assistant that aims to reduce distractions while driving by narrating all notifications."
+        "description": "A digital voice assistant that aims to reduce distractions while driving by narrating all notifications.",
+        "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas.",
+        "tech": [
+            "Java",
+            "XML",
+            "Android Studio",
+            "Google Cloud Services",
+            "Git"
+        ],
+        "images": [
+
+        ]
     },
     {
         "index": "3",
@@ -30,7 +53,19 @@
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "https://kartavyas.com",
         "githublink": "https://github.com/KartavyaSharma/personal-webiste",
-        "description": "My personal website (the one you are viewing) built using Gatsby.js, Tailwind CSS, and Forestry CMS."
+        "description": "My personal website (the one you are viewing) built using Gatsby.js, Tailwind CSS, and Forestry CMS.",
+        "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas.",
+        "tech": [
+            "React.js",
+            "Gatsby.js",
+            "Tailwind CSS",
+            "Forestry CMS",
+            "Formik",
+            "Git"
+        ],
+        "images": [
+
+        ]
     },
     {
         "index": "4",
@@ -41,6 +76,17 @@
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "",
         "githublink": "",
-        "description": "A school's website built using HTML, CSS, Bootstrap and JQuery. Currently a work in progress."
+        "description": "A school's website built using HTML, CSS, Bootstrap and JQuery. Currently a work in progress.",
+        "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas.",
+        "tech": [
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "JQuery",
+            "Git"
+        ],
+        "images": [
+
+        ]
     }
 ]

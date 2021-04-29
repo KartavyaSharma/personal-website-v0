@@ -18,12 +18,12 @@ function ProjectList(props) {
                                 <div className='relative z-10 border h-full border-trueGray-500 w-full rounded md:group-hover:bg-trueGray-400 md:group-hover:bg-opacity-10 md:group-hover:border-orange-500'>
                                     <div className='grid grid-rows-3 h-full p-4 md:p-8 md:pb-0 md:pt-5'>
                                         <div className='grid grid-cols-3 items-center w-full'>
-                                            <div className='text-lg md:text-xl text-opacity-80 font-semibold font-mono text-orange-500 md:group-hover:text-orange-400 col-span-2'>{project.node.name}</div>
+                                            <div className='text-lg md:text-xl font-semibold font-mono text-orange-500 md:group-hover:text-orange-400 col-span-2'>{project.node.name}</div>
                                             <div className='flex justify-end items-center'>
                                                 <GatsbyImage image={img} alt={project.node.name} />
                                             </div>
                                         </div>
-                                        <div className='text-sm md:text-base text-white text-opacity-80 font-mono pt-2'>{project.node.description}</div>
+                                        <div className='text-sm md:text-base text-white text-opacity-80 font-blogbody pt-2'>{project.node.description}</div>
                                         <div className='flex flex-row items-center h-full'>
                                             <Link to={`/project/${project.node.name.replace(' -','').split(' ').join('-').toLowerCase()}`}>
                                                 <button className='rounded px-2 py-1 hover:bg-trueGray-800 border border-white hover:border-orange-500 border-opacity-50 text-white text-opacity-80 font-mono mr-3'>
