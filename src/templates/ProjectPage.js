@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+import { getImage, GatsbyImage} from 'gatsby-plugin-image'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default function ProjectPage(props) {
     const queryData = props.data.projectDataJson;
-    const img = getImage(queryData.img);
+    const logo = getImage(queryData.img);
     return (
         <div className='bg-trueGray-900'>
             <Header />
@@ -16,12 +16,25 @@ export default function ProjectPage(props) {
                     <div className='grid grid-rows-1 grid-cols-5 w-full items-center'>
                         <div className='text-5xl md:text-6xl lg:text-7xl text-white font-bold font-mono col-span-4'>{queryData.name}</div>
                         <div className='flex justify-end items-center'>
-                            <GatsbyImage image={img} alt={queryData.alt} />
+                            <GatsbyImage image={logo} alt={queryData.alt} />
                         </div>
                     </div>                    
                     <div className='text-3xl text-white text-opacity-80 font-mono font-semibold mt-10'>Project details</div>
                     <p className='text-white font-blogBody pt-5'>{queryData.about}</p>
                     <div className='text-3xl text-white text-opacity-80 font-mono font-semibold mt-5'>Technology stack and API usage</div>
+                    <div className={`grid grid-cols-${queryData.tech.length} w-full items-center mt-5`}>
+                        {
+                            queryData.tech.map(t => {
+                                const tech_stack = getImage(t.src);
+                                return(
+                                    <div className='flex flex-col items-center justify-center'>
+                                        <GatsbyImage image={tech_stack} alt={t.name} className='m-4' />
+                                        <a href={t.link} className='text-white no-underline hover:underline text-base font-mono m-2'>{t.name}</a>
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
                     <div className='text-3xl text-white text-opacity-80 font-mono font-semibold mt-5'>My experience</div>
                 </div>
             </div>
@@ -37,7 +50,23 @@ export const projectQuery = graphql`
             name
             projectlink
             tags
-            tech
+            tech {
+                name
+                link
+                src {
+                    childImageSharp {
+                        gatsbyImageData(
+                            formats: AUTO
+                            placeholder: BLURRED
+                            quality: 100
+                            transformOptions: {fit: COVER}
+                            height: 64
+                            width: 64
+                            layout: CONSTRAINED
+                        )
+                    }
+                }
+            }
             description
             githublink
             category
