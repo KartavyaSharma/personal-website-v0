@@ -35,7 +35,16 @@ export default function ProjectPage(props) {
                             })
                         }
                     </div>
-                    <div className='text-3xl text-white text-opacity-80 font-mono font-semibold mt-5'>My experience</div>
+                    {
+                        queryData.expFlag ? (
+                            <div>
+                                <div className='text-3xl text-white text-opacity-80 font-mono font-semibold mt-5'>My experience</div>
+                                <p className='text-white font-blogBody pt-5'>{queryData.mexp}</p>
+                            </div>
+                        ) : (
+                            null
+                        )
+                    }
                 </div>
             </div>
             <Footer isPage={true} />
@@ -85,6 +94,8 @@ export const projectQuery = graphql`
                     )
                 }
             }
+            mexp
+            expFlag
         }
     }
 `

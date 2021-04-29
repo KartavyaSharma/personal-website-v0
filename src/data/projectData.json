@@ -36,7 +36,9 @@
                 "link": "https://git-scm.com",
                 "src": "../images/tech_stacks/git.png"
             }
-        ]
+        ],
+        "expFlag": true,
+        "mexp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas."
     },
     {
         "index": "2",
@@ -75,7 +77,9 @@
                 "link": "https://git-scm.com",
                 "src": "../images/tech_stacks/git.png"
             }
-        ]
+        ],
+        "expFlag": true,
+        "mexp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas."
     },
     {
         "index": "3",
@@ -114,7 +118,9 @@
                 "link": "https://git-scm.com",
                 "src": "../images/tech_stacks/git.png"
             }
-        ]
+        ],
+        "expFlag": true,
+        "mexp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas."
     },
     {
         "index": "4",
@@ -153,6 +159,8 @@
                 "link": "https://git-scm.com",
                 "src": "../images/tech_stacks/git.png"
             }
-        ]
+        ],
+        "expFlag": false,
+        "mexp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas."
     }
 ]
