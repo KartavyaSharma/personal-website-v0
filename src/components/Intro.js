@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState} from "react"
 import { Link as ScrollLink } from 'react-scroll'
 import { Link } from 'gatsby'
 import classNames from 'classnames'
+
 import ParticleBg from "../components/Particles"
+import Dropdown from '../components/Dropdown'
+
 
 function Intro(props) {
 
     const [isMobile, setIsMobile] = useState(undefined);
+
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768);
     }, []);
@@ -26,7 +30,8 @@ function Intro(props) {
                 <br />
                 <nav className='justify-between items-center relative font-semibold text-base md:text-xl lg:text-3xl py-0 xl:py-3 bg-clip-text text-orange-500 font-mono'>
                     <ScrollLink activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">About</ScrollLink>
-                    <ScrollLink activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</ScrollLink>
+                    {/* <ScrollLink activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</ScrollLink> */}
+                    <Dropdown menuItems={['projects']} />
                     <Link to="/blog" className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
                     <Link to="/contact" className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
                 </nav>

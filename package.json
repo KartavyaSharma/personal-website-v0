@@ -7,9 +7,12 @@
   "dependencies": {
     "@animated-burgers/burger-squeeze": "^1.1.2",
     "@ap.cx/react-fullpage": "^0.2.0",
+    "@headlessui/react": "^1.1.1",
+    "@heroicons/react": "^1.0.1",
     "@material-ui/core": "^4.11.3",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "alpinejs": "^2.8.2",
     "array-each": "^1.0.1",
     "array-slice": "^1.1.0",
     "classnames": "^2.3.1",
