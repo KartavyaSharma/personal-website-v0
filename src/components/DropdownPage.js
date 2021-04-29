@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-scroll'
+import { Link } from 'gatsby'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
@@ -7,13 +7,13 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function Dropdown(props) {
+export default function DropdownPage(props) {
     return (
         <Menu as="div" className="relative inline-block text-right">
             {({ open }) => (
                 <div>
                     <div>
-                        <Menu.Button className="flex justify-center items-center pl-5 md:pl-14 cursor-pointer font-semibold text-base md:text-xl lg:text-3xl py-0 xl:py-3 outline-none">
+                        <Menu.Button className="flex justify-center items-center pl-5 md:pl-14 cursor-pointer font-semibold text-xl lg:text-2xl py-0 xl:py-3 outline-none">
                             Experience
                         <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-white" aria-hidden="true" />
                         </Menu.Button>
@@ -31,13 +31,13 @@ export default function Dropdown(props) {
                     >
                         <Menu.Items
                             static
-                            className="origin-top-right absolute right-0 mt-2 w-56 rounded shadow-xl bg-trueGray-800"
+                            className="origin-top-right absolute z-50 right-0 mt-2 w-56 rounded shadow-xl bg-trueGray-800"
                         >
                             <div className="py-1">
                                 <Menu.Item>
                                     {({ active }) => (
                                         <Link
-                                        to="projects"
+                                        to="/#projects"
                                         className={classNames(
                                             active ? 'bg-trueGray-700 text-orange-500 cursor-pointer' : 'bg-trueGray-800 text-white text-opacity-80',
                                             'block px-4 py-2 text-base'
@@ -52,7 +52,7 @@ export default function Dropdown(props) {
                                 <Menu.Item>
                                     {({ active }) => (
                                         <Link
-                                        to="projects"
+                                        to="/#projects"
                                         className={classNames(
                                             active ? 'bg-trueGray-700 text-orange-500 cursor-pointer' : 'bg-trueGray-800 text-white text-opacity-80',
                                             'block px-4 py-2 text-base'
@@ -67,7 +67,7 @@ export default function Dropdown(props) {
                                 <Menu.Item>
                                     {({ active }) => (
                                         <Link
-                                        to="projects"
+                                        to="/#projects"
                                         className={classNames(
                                             active ? 'bg-trueGray-700 text-orange-500 cursor-pointer' : 'bg-trueGray-800 text-white text-opacity-80',
                                             'block px-4 py-2 text-base'

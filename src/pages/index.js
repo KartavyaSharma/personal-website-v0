@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 
 import Intro from "../components/Intro"
 import Aboutme from "../components/AboutMe"
@@ -12,15 +12,27 @@ const sectionHeaderTitle = "text-5xl md:text-5xl lg:text-8xl xl:text-10xl font-b
 const sectionBody = "text-white text-base sm:text-lg lg:text-xl py-8 md:py-12 lg:py-16";
 
 function IndexPage() {
-  return (
-    <div className='bg-trueGray-900'>
-      <Intro header={mobileHeaders} body={sectionBody} />
-      <Aboutme header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
-      <Projects header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
-      <Blog header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
-      <Footer />
-    </div>
-  );
+
+    const [isMobile, setIsMobile] = useState(undefined);
+    useEffect(() => {
+        setIsMobile(window.innerWidth <= 768);
+    },[]);
+
+    return (
+        <div className='bg-trueGray-900'>
+            {
+                !isMobile ? (
+                    <Intro header={mobileHeaders} body={sectionBody} />
+                ) : (
+                    null
+                )
+            }
+            <Aboutme header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
+            <Projects header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
+            <Blog header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
+            <Footer />
+        </div>
+    );
 }
 
 export default IndexPage

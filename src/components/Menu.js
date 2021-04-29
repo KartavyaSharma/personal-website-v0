@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 import Burger from '@animated-burgers/burger-squeeze'
 import '@animated-burgers/burger-squeeze/dist/styles.css'
 
+import DropdownPage from '../components/DropdownPage'
+
 function Menu({ toggle, isOpen }) {
     return (
         <div className="pt-8 md:pt-12 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto font-mono flex flex-row justify-center items-center">
@@ -25,7 +27,8 @@ function Menu({ toggle, isOpen }) {
                 <nav className='justify-between items-center relative font-semibold text-xl lg:text-2xl py-0 xl:py-4 text-orange-500 hidden lg:block'>
                     <Link to="/" className="hover:underline cursor-pointer">Home</Link>
                     <Link to="/#about-me" className="pl-5 md:pl-14 hover:underline cursor-pointer">About</Link>
-                    <Link to="/#projects" className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</Link>
+                    {/* <Link to="/#projects" className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</Link> */}
+                    <DropdownPage />
                     <Link to="/blog" className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
                     <Link to="/contact" className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
                 </nav>

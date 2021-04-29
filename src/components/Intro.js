@@ -16,7 +16,7 @@ function Intro(props) {
     }, []);
 
     return (
-        <div className={classNames(props.header, 'min-h-screen')} id="home">
+        <div className={classNames(props.header, 'min-h-screen max-h-screen')} id="home">
             <ParticleBg canvasClassName='block' className='absolute inset-0 z-0' isMobile={isMobile} />
             <div className='z-10 relative' data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
                 <div className='text-xl xl:text-3xl font-extrabold font-mono'>
@@ -24,14 +24,13 @@ function Intro(props) {
                         Hello there! I'm
                     </span>
                 </div>
-                <div className="text-white text-4xl sm:text-5xl md:text-6xl xl:text-8xl font-extrabold font-mono">
+                <div className="text-white text-6xl 2xl:text-8xl font-extrabold font-mono">
                     Kartavya Sharma<span className="bg-clip-text text-orange-500">.</span>
                 </div>
                 <br />
                 <nav className='justify-between items-center relative font-semibold text-base md:text-xl lg:text-3xl py-0 xl:py-3 bg-clip-text text-orange-500 font-mono'>
                     <ScrollLink activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">About</ScrollLink>
-                    {/* <ScrollLink activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="pl-5 md:pl-14 hover:underline cursor-pointer">Projects</ScrollLink> */}
-                    <Dropdown menuItems={['projects']} />
+                    <Dropdown />
                     <Link to="/blog" className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
                     <Link to="/contact" className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
                 </nav>
