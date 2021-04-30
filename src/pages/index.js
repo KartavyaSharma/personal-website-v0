@@ -20,13 +20,7 @@ function IndexPage() {
 
     return (
         <div className='bg-trueGray-900'>
-            {
-                !isMobile ? (
-                    <Intro header={mobileHeaders} body={sectionBody} />
-                ) : (
-                    null
-                )
-            }
+            <Intro header={mobileHeaders} body={sectionBody} />
             <Aboutme header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
             <Projects header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
             <Blog header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
