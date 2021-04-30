@@ -12,7 +12,7 @@ function Intro(props) {
     const [isMobile, setIsMobile] = useState(undefined);
 
     useEffect(() => {
-        setIsMobile(window.innerWidth <= 768);
+        setIsMobile(window.innerWidth <= 768)
     }, []);
 
     return (
