@@ -24,20 +24,21 @@ function Intro(props) {
                         Hello there! I'm
                     </span>
                 </div>
-                <div className="text-white text-6xl 2xl:text-8xl font-extrabold font-mono">
+                <div className="text-white text-8xl font-extrabold font-mono">
                     Kartavya Sharma<span className="bg-clip-text text-orange-500">.</span>
                 </div>
-                <br />
-                <nav className='justify-between items-center relative font-semibold text-base md:text-xl lg:text-3xl py-0 xl:py-3 bg-clip-text text-orange-500 font-mono'>
+                <nav className='justify-between items-center relative text-base md:text-xl lg:text-2xl 2xl:text-3xl py-0 xl:py-3 bg-clip-text text-orange-500 font-mono'>
                     <ScrollLink activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:underline cursor-pointer">About</ScrollLink>
                     <Dropdown />
                     <Link to="/blog" className="pl-5 md:pl-14 hover:underline cursor-pointer">Blog</Link>
                     <Link to="/contact" className="pl-5 md:pl-14 hover:underline cursor-pointer">Contact</Link>
                 </nav>
-                <div className='inline-blockblock text-white text-base sm:text-lg lg:text-xl py-6 md:py-10 xl:w-4/5 font-blogBody sm:leading-5 lg:leading-9 text-opacity-80'>
-                    I'm a freshman at UC Berkeley studying Electrical Engineering and Computer Science. I'm interested in Competitive Programming,
-                    Web Development Technologies, and Machine Learning. I dabble in C++ and Python. As of recently, I am exploring Jamstack with React,
-                    GraphQL, and headless CMS platforms.
+                <div className='grid grid-cols-4 text-white text-base sm:text-lg lg:text-xl py-6 xl:w-4/5 font-blogBody sm:leading-5 lg:leading-9 text-opacity-80'>
+                    <div className='flex items-center justify-center col-span-full lg:col-span-3 2xl:col-span-2'>
+                        <div className='text-white text-2xl md:text-4xl font-blogBody'>
+                            I'm a <span className='font-bold text-orange-500'>software engineer</span> &#38; an incoming freshman majoring in EECS at <span className='font-bold text-orange-500'>UC Berkeley</span>
+                        </div>
+                    </div>
                 </div>
                 <div className='flex flex-row pt-4 2xl:py-8 font-mono'>
                     <div className='flex flex-row text-2xl'>

@@ -13,6 +13,12 @@ function Burger({ isOpen, toggle }) {
             <Link to='/#projects' className='p-4'>
                 Projects
             </Link>
+            <Link to='/#skills' className='p-4'>
+                Skills
+            </Link>
+            <Link to='/#work' className='p-4'>
+                Work
+            </Link>
             <Link to='/blog' className='p-4'>
                 Blog
             </Link>

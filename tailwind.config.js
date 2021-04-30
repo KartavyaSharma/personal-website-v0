@@ -26,7 +26,7 @@ module.exports = {
       },
       minWidth: {
         keepWlg: '56rem',
-        keepWmd: '42rem',
+        keepWmd: '48rem',
         keepWsm: '32rem',
       },
       minHeight: {

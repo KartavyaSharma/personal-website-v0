@@ -12,11 +12,11 @@ export default function ProjectPage(props) {
         <div className='bg-trueGray-900'>
             <Header />
             <div className="lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 mb-16 lg:mb-4 max-w-screen-2xl w-full mx-auto flex" data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
-                <div className='max-w-4xl flex flex-col justify-center'>
+                <div className='max-w-3xl 2xl:max-w-4xl flex flex-col justify-center'>
                     <div className='grid grid-cols-1 md:grid-rows-1 md:grid-cols-5 w-full items-center pt-10 md:pt-0'>
                         <div className='col-span-4'>
                             <div className='text-xl text-orange-500 font-mono'>{queryData.category}</div>
-                            <div className='text-5xl md:text-6xl lg:text-7xl text-white font-bold font-mono'>{queryData.name}</div>
+                            <div className='text-4xl lg:text-6xl 2xl:text-7xl text-white font-bold font-mono'>{queryData.name}</div>
                         </div>
                         <div className='flex justify-center md:justify-end items-center'>
                             <GatsbyImage image={logo} alt={queryData.alt} />

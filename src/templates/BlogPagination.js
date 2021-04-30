@@ -25,8 +25,8 @@ export default function BlogPage(props) {
             <div className={classNames(headerStyle, 'mb-12 md:mb-0')}>
                 {currentPage === 1 ? <Featured postData={featuredPostData} /> : null}
                 {currentPage === 1 ? (
-                    <div className='text-white font-semibold text-4xl pb-2 font-mono' id='post-anchor'>Latest Posts</div>)
-                    : <div className='text-white font-semibold text-4xl pb-2 font-mono' id='post-anchor'>More Posts</div>}
+                    <div className='text-white font-semibold text-4xl pb-2 pt-3 font-mono' id='post-anchor'>Latest Posts</div>)
+                    : <div className='text-white font-semibold text-4xl pb-2 pt-3 font-mono' id='post-anchor'>More Posts</div>}
                 <BlogHomeList listData={props.data.allMarkdownRemark.edges} />
                 <div className='flex justify-start items-center'>
                     {true && (

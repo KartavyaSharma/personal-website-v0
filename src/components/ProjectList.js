@@ -18,8 +18,8 @@ function ProjectList(props) {
                                 <div className='relative z-10 border h-full border-trueGray-500 w-full rounded md:group-hover:bg-trueGray-400 md:group-hover:bg-opacity-10 md:group-hover:border-orange-500'>
                                     <div className='grid grid-rows-3 h-full p-4 md:p-8 md:pb-0 md:pt-5'>
                                         <div className='grid grid-cols-3 items-center w-full'>
-                                            <div className='text-lg md:text-xl font-semibold font-mono text-orange-500 md:group-hover:text-orange-400 col-span-2'>{project.node.name}</div>
-                                            <div className='flex justify-end items-center'>
+                                            <div id="proj-name" className='text-lg md:text-xl font-semibold font-mono text-orange-500 md:group-hover:text-orange-400 col-span-full md:col-span-2'>{project.node.name}</div>
+                                            <div id="proj-logo" className='hidden md:flex justify-end items-center'>
                                                 <GatsbyImage image={img} alt={project.node.name} />
                                             </div>
                                         </div>

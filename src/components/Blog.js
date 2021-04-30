@@ -10,12 +10,7 @@ function Blog(props) {
         <div className={props.header} id="blog">
             <div data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
                 <div className={props.topNum}>03</div>
-                <div className='flex flex-col'>
-                    <div className='flex md:flex-row md:items-center flex-col items-start'>
-                        <div className={props.topTitle}>My blog</div>
-                        <div className='font-semibold text-white text-base md:text-2xl lg:text-3xl pt-3 md:pt-0 md:pl-5 flex'><span className='hidden md:block pr-2'>|</span> Latest Posts</div>
-                    </div>
-                </div>
+                <div className={props.topTitle}>Blog</div>
             </div>
             <div data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
                 <div>
