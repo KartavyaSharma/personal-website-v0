@@ -9,7 +9,7 @@ function classNames(...classes) {
 
 export default function DropdownPage(props) {
     return (
-        <Menu as="div" className="relative inline-block text-right">
+        <Menu as="div" className="relative inline-block text-right z-50">
             {({ open }) => (
                 <div>
                     <div>

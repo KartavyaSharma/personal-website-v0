@@ -109,7 +109,6 @@ function BlogPost({ data }) {
                         <Content hData={data} />
                     </div>
                 </div>
-                {/* <div className='px-14 font-mono text-white font-semibold text-2xl sticky top-5 h-screen overflow-y-auto'>Table of contents</div> */}
                 <div className='hidden lg:flex flex-col items-end w-full'>
                     <ToC headings={data.markdownRemark.headings} />
                 </div>
