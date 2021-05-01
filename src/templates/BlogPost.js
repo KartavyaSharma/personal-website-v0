@@ -53,15 +53,15 @@ function BlogPost({ data }) {
 
     const nextSlug = getNextSlug(data.markdownRemark.fields.slug);
 
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(undefined);
 
     useEffect(() => {
         const hideToC = () => {
             if(window.innerWidth > 1024 && isMobile) {
                 setIsMobile(false);
-            } else {
-                setIsMobile(true);
             }
+
+            setIsMobile(window.innerWidth <= 1024);
         };
 
         window.addEventListener('resize', hideToC);
