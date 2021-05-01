@@ -56,12 +56,9 @@ function BlogPost({ data }) {
     const [isMobile, setIsMobile] = useState(undefined);
 
     useEffect(() => {
+        setIsMobile(!(window.innerWidth >= 1024));
         const hideToC = () => {
-            if(window.innerWidth > 1024 && isMobile) {
-                setIsMobile(false);
-            }
-
-            setIsMobile(window.innerWidth <= 1024);
+            setIsMobile(!(window.innerWidth >= 1024));
         };
 
         window.addEventListener('resize', hideToC);
@@ -97,7 +94,7 @@ function BlogPost({ data }) {
                     <Author />
                     {
                         isMobile ? (
-                            <div className='flex flex-col items-start w-1/2 pb-10'>
+                            <div className='flex flex-col items-start w-full pb-10'>
                                 <ToC mobile={isMobile} headings={data.markdownRemark.headings} />
                             </div>
                         ) : null
