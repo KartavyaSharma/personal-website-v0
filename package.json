@@ -29,6 +29,7 @@
     "gatsby-plugin-react-helmet": "^4.1.0",
     "gatsby-plugin-scroll-reveal": "^0.0.7",
     "gatsby-plugin-sharp": "^3.1.2",
+    "gatsby-remark-autolink-headers": "^4.1.0",
     "gatsby-remark-images": "^4.2.0",
     "gatsby-remark-normalize-paths": "^1.1.0",
     "gatsby-remark-relative-images": "^2.0.2",

@@ -1,14 +1,14 @@
-import React from 'react'
-import { graphql, Link } from 'gatsby'
+import React, { useEffect, useState } from 'react'
+import { graphql} from 'gatsby'
 import allBlogdata from "../static_queries/getBlogList"
 import Img from 'gatsby-image'
 import hljs from 'highlight.js'
 import '../../node_modules/highlight.js/styles/a11y-dark.css';
 
 import Header from "../components/Header"
-// import PageFooter from "../components/PageFooter"
 import Footer from "../components/Footer"
 import Author from "../components/Author"
+import ToC from "../components/ToC"
 
 class Content extends React.Component {
     componentDidMount() {
@@ -53,6 +53,25 @@ function BlogPost({ data }) {
 
     const nextSlug = getNextSlug(data.markdownRemark.fields.slug);
 
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const hideToC = () => {
+            if(window.innerWidth > 1024 && isMobile) {
+                setIsMobile(false);
+            } else {
+                setIsMobile(true);
+            }
+        };
+
+        window.addEventListener('resize', hideToC);
+
+        return () => {
+            window.removeEventListener('resize', hideToC);
+        }
+
+    }, []);
+
     return (
         <div className='bg-trueGray-900'>
             <Header />
@@ -76,6 +95,13 @@ function BlogPost({ data }) {
                         }
                     </div>
                     <Author />
+                    {
+                        isMobile ? (
+                            <div className='flex flex-col items-start w-1/2 pb-10'>
+                                <ToC mobile={isMobile} headings={data.markdownRemark.headings} />
+                            </div>
+                        ) : null
+                    }
                     <Img
                         src={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid.src}
                         fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}
@@ -87,6 +113,9 @@ function BlogPost({ data }) {
                     </div>
                 </div>
                 {/* <div className='px-14 font-mono text-white font-semibold text-2xl sticky top-5 h-screen overflow-y-auto'>Table of contents</div> */}
+                <div className='hidden lg:flex flex-col items-end w-full'>
+                    <ToC headings={data.markdownRemark.headings} />
+                </div>
             </div>
             <Footer isPage={true} />
         </div>
@@ -119,6 +148,11 @@ export const getPostData = graphql`
                 }
             }
             html
+            headings {
+                depth
+                value
+                id
+            }
         }
     }
 `

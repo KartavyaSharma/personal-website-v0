@@ -29,6 +29,7 @@ module.exports = {
       options: {
         plugins: [
           "gatsby-remark-normalize-paths",
+          "gatsby-remark-autolink-headers",
           {
             resolve: "gatsby-remark-images",
             options: {
