@@ -89,9 +89,9 @@
         "name": "Personal Website",
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "https://kartavyas.com",
-        "githublink": "https://github.com/KartavyaSharma/personal-webiste",
+        "githublink": "https://github.com/KartavyaSharma/personal-website",
         "description": "My personal website (the one you are viewing) built using Gatsby.js, Tailwind CSS, and Forestry CMS.",
-        "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas.",
+        "about": "<div><a href='https://kartavyas.com' target='_blank'>kartavyas.com</a> is a personal website I built as a learning experience for web development. It acts as a primer to front-end web technologies for me.<br /><br />This website was developed using a React.js-based static-site-generator called Gatsby.js. The current iteration of my website makes use of many technologies such as GraphQL, Formik, and Forestry CMS, to name a few (you can find the complete list below).<br /><br />The blog is set up using a Git-based CMS called Forestry. It commits all blog post content as Markdown (.md) files to the source repository. All Markdown files have a frontmatter section before the content; this section contains all the information that Gatsby sources using its markdown-remark plugin, which is then made available for GraphQL to query. The frontmatter contains core information about each blog post - i.e. the title, post description, publication date, and similar data. The query returns a JSON object, data from which is then injected into the react component to display to the user.<br /><br />A similar approach was taken to source data for all individual project pages (such as this page). Except for in this instance, Gatsby uses gatsby-transformer-json to source all JSON data.<br /><br />Gatsby generates all pages dynamically during build-time on the server. All page-generation logic is stored in the gatsby-node.js file, which uses templates to make page routes and content.<br /><br />The contact form is managed by Web3Forms, and all validation is handled by Formik (a frontend form library for React).<br /><br />If you feel the website could use some upgrades, feel free to reach out to me using my email or the contact form.</div>",
         "tech": [
             {
                 "name": "React",
@@ -117,10 +117,20 @@
                 "name": "Git",
                 "link": "https://git-scm.com",
                 "src": "../../images/tech_stacks/git.png"
+            },
+            {
+                "name": "Formik",
+                "link": "https://formik.org",
+                "src": "../../images/tech_stacks/formik.png"
+            },
+            {
+                "name": "Utterances",
+                "link": "https://utteranc.es",
+                "src": "../../images/tech_stacks/utterances.png"
             }
         ],
-        "expFlag": true,
-        "mexp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas."
+        "expFlag": false,
+        "mexp": ""
     },
     {
         "index": "4",
