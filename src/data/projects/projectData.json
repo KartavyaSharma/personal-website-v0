@@ -9,22 +9,22 @@
         "projectlink": "https://salkatech.com",
         "githublink": "",
         "description": "Public facing website built using JQuery, HTML, and CSS for a satellite telecom company.",
-        "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas.",
+        "about": "Salkatech is a global satellite and telecom integration company based in Noida, India. I made their website as part of a contract with the company.<br/><br/>The website's core consists mostly of HTML and CSS with Bootstrap. I used JQuery to enable certain run-time functionality, such as navbar scroll detection and mobile menus. The website consists of static product pages with options to inquire about said products. To elaborate on the company's services and its previous projects, I created individual project pages that contained carousels and project descriptions. I also made use of Google Maps APIs to embed a static geolocation frame in the footer.<br/><br/>Salkatech's goal with this website was to create a public-facing online presence, and a static website was an ideal solution. Since the website has minimal dynamic content, its load times are relatively faster, and the website uses minimal client-side processing, ensuring a smoother overall browsing experience.",
         "tech": [
             {
-                "name": "React",
-                "link": "https://reactjs.org",
-                "src": "../../images/tech_stacks/react.png"
+                "name": "HTML",
+                "link": "https://html.spec.whatwg.org/",
+                "src": "../../images/tech_stacks/html.png"
             },
             {
-                "name": "Gatsby",
-                "link": "https://gatsbyjs.com",
-                "src": "../../images/tech_stacks/gatsby.png"
+                "name": "CSS",
+                "link": "https://www.w3.org/TR/CSS/#css",
+                "src": "../../images/tech_stacks/css.png"
             },
             {
-                "name": "Forestry",
-                "link": "https://forestry.io",
-                "src": "../../images/tech_stacks/forestry.png"
+                "name": "Bootstrap",
+                "link": "https://getbootstrap.com/",
+                "src": "../../images/tech_stacks/bootstrap.png"
             },
             {
                 "name": "JavaScript",
@@ -32,12 +32,12 @@
                 "src": "../../images/tech_stacks/javascript.png"
             },
             {
-                "name": "Git",
-                "link": "https://git-scm.com",
-                "src": "../../images/tech_stacks/git.png"
+                "name": "JQuery",
+                "link": "https://jquery.com/",
+                "src": "../../images/tech_stacks/jquery.png"
             }
         ],
-        "expFlag": true,
+        "expFlag": false,
         "mexp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas."
     },
     {
