@@ -16,6 +16,7 @@ module.exports = {
       maxHeight: {
         blogImg: '600px',
         featured: '450px',
+        about: '550px',
       },
       padding: {
         18: '72px',

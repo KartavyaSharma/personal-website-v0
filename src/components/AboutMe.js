@@ -1,7 +1,30 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import classNames from 'classnames'
 
 function AboutMe(props) {
+    const data = useStaticQuery(graphql`
+        {
+            aboutJson {
+                content
+                img {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            formats: AUTO
+                            transformOptions: {fit: COVER}
+                            layout: CONSTRAINED
+                            width: 600
+                            quality: 100
+                        )
+                    }
+                }
+            }
+        }
+    `)
+    const about = data.aboutJson.content.replace(/\n/g, '<br />');
+    const img = getImage(data.aboutJson.img);
     return (
         <div className={props.header} id="about-me">
             <div data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
@@ -10,21 +33,9 @@ function AboutMe(props) {
             </div>
             <div className='flex flex-row' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
                 <div className={classNames(props.body, 'text-opacity-80')}>
-                    <div>
-                        Hi! I'm a freshman at UC Berkeley studying Electrical Engineering and Computer science.
-                        <br /><br />
-                        As a programmer, I have experience in computational thinking, data structures, abstraction, and problem solving. I am passionate about
-                        issues our society faces as a consequence of technological proliferation and coming up with solutions to address said issues. I am
-                        actively involved in Competitive Programming as a hobby and as a means to hone my problem solving skills. I'm always on the lookout to
-                        learn new optimization techniques and algorithms I'm yet not privy to.
-                        <br /><br />
-                        To keep up with the industry, I can often be found enrolled in coursework for new technologies. My current
-                        interests include learning new Web Dev frameworks, and learning more about ML and its applicability.
-                        In the future, I hope to utilize my skills to address social issues and to come up with extensible
-                        and adaptive solutions to some of the large scale problems we face today.
-                        <br /><br />
-                        I am currently involved with freelance web development for small to medium projects and am always interested in a challenge. Reach out
-                        using the contact form below or through email to connect!
+                    <div className='flex flex-col lg:flex-row justify-start'>
+                        <GatsbyImage image={img} alt="About me" className='max-h-96 max-w-sm lg:max-h-about lg:max-w-none rounded-md'/>
+                        <div dangerouslySetInnerHTML={{ __html: about }} className='w-full lg:p-8 pr-0 pt-5 lg:pt-0 text-lg text-opacity-80 font-blogBody' />
                     </div>
                 </div>
             </div>

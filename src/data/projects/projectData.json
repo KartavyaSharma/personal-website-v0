@@ -1,7 +1,7 @@
 [
     {
         "index": "1",
-        "img": "../images/android-chrome-512x512.png",
+        "img": "../../images/android-chrome-512x512.png",
         "alt": "Salkatech Hero",
         "category": "Contract",
         "name": "Salkatech Website",
@@ -14,27 +14,27 @@
             {
                 "name": "React",
                 "link": "https://reactjs.org",
-                "src": "../images/tech_stacks/react.png"
+                "src": "../../images/tech_stacks/react.png"
             },
             {
                 "name": "Gatsby",
                 "link": "https://gatsbyjs.com",
-                "src": "../images/tech_stacks/gatsby.png"
+                "src": "../../images/tech_stacks/gatsby.png"
             },
             {
                 "name": "Forestry",
                 "link": "https://forestry.io",
-                "src": "../images/tech_stacks/forestry.png"
+                "src": "../../images/tech_stacks/forestry.png"
             },
             {
                 "name": "JavaScript",
                 "link": "https://javascript.com",
-                "src": "../images/tech_stacks/javascript.png"
+                "src": "../../images/tech_stacks/javascript.png"
             },
             {
                 "name": "Git",
                 "link": "https://git-scm.com",
-                "src": "../images/tech_stacks/git.png"
+                "src": "../../images/tech_stacks/git.png"
             }
         ],
         "expFlag": true,
@@ -42,7 +42,7 @@
     },
     {
         "index": "2",
-        "img": "../images/HELA_512x512.png",
+        "img": "../../images/HELA_512x512.png",
         "alt": "ROZE Hero",
         "category": "Project",
         "name": "ROZE - Assistant",
@@ -55,27 +55,27 @@
             {
                 "name": "React",
                 "link": "https://reactjs.org",
-                "src": "../images/tech_stacks/react.png"
+                "src": "../../images/tech_stacks/react.png"
             },
             {
                 "name": "Gatsby",
                 "link": "https://gatsbyjs.com",
-                "src": "../images/tech_stacks/gatsby.png"
+                "src": "../../images/tech_stacks/gatsby.png"
             },
             {
                 "name": "Forestry",
                 "link": "https://forestry.io",
-                "src": "../images/tech_stacks/forestry.png"
+                "src": "../../images/tech_stacks/forestry.png"
             },
             {
                 "name": "JavaScript",
                 "link": "https://javascript.com",
-                "src": "../images/tech_stacks/javascript.png"
+                "src": "../../images/tech_stacks/javascript.png"
             },
             {
                 "name": "Git",
                 "link": "https://git-scm.com",
-                "src": "../images/tech_stacks/git.png"
+                "src": "../../images/tech_stacks/git.png"
             }
         ],
         "expFlag": true,
@@ -83,7 +83,7 @@
     },
     {
         "index": "3",
-        "img": "../images/logo.png",
+        "img": "../../images/logo.png",
         "alt": "Personal Website Hero",
         "category": "Project",
         "name": "Personal Website",
@@ -96,27 +96,27 @@
             {
                 "name": "React",
                 "link": "https://reactjs.org",
-                "src": "../images/tech_stacks/react.png"
+                "src": "../../images/tech_stacks/react.png"
             },
             {
                 "name": "Gatsby",
                 "link": "https://gatsbyjs.com",
-                "src": "../images/tech_stacks/gatsby.png"
+                "src": "../../images/tech_stacks/gatsby.png"
             },
             {
                 "name": "Forestry",
                 "link": "https://forestry.io",
-                "src": "../images/tech_stacks/forestry.png"
+                "src": "../../images/tech_stacks/forestry.png"
             },
             {
                 "name": "JavaScript",
                 "link": "https://javascript.com",
-                "src": "../images/tech_stacks/javascript.png"
+                "src": "../../images/tech_stacks/javascript.png"
             },
             {
                 "name": "Git",
                 "link": "https://git-scm.com",
-                "src": "../images/tech_stacks/git.png"
+                "src": "../../images/tech_stacks/git.png"
             }
         ],
         "expFlag": true,
@@ -124,7 +124,7 @@
     },
     {
         "index": "4",
-        "img": "../images/Prime_logo.png",
+        "img": "../../images/Prime_logo.png",
         "alt": "Prime Academy Hero",
         "category": "Contract",
         "name": "Prime Academy Website",
@@ -137,27 +137,27 @@
             {
                 "name": "React",
                 "link": "https://reactjs.org",
-                "src": "../images/tech_stacks/react.png"
+                "src": "../../images/tech_stacks/react.png"
             },
             {
                 "name": "Gatsby",
                 "link": "https://gatsbyjs.com",
-                "src": "../images/tech_stacks/gatsby.png"
+                "src": "../../images/tech_stacks/gatsby.png"
             },
             {
                 "name": "Forestry",
                 "link": "https://forestry.io",
-                "src": "../images/tech_stacks/forestry.png"
+                "src": "../../images/tech_stacks/forestry.png"
             },
             {
                 "name": "JavaScript",
                 "link": "https://javascript.com",
-                "src": "../images/tech_stacks/javascript.png"
+                "src": "../../images/tech_stacks/javascript.png"
             },
             {
                 "name": "Git",
                 "link": "https://git-scm.com",
-                "src": "../images/tech_stacks/git.png"
+                "src": "../../images/tech_stacks/git.png"
             }
         ],
         "expFlag": false,

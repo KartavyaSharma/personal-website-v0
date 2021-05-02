@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 export default function GetAuthorData () {
   const data = useStaticQuery(graphql`
     {
-      dataJson {
+      authorJson {
         name
         image {
           childImageSharp {
@@ -16,5 +16,5 @@ export default function GetAuthorData () {
       }
     }
   `);
-  return data.dataJson
+  return data.authorJson
 }

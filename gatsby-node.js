@@ -1,6 +1,6 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { isExportDeclaration } = require("typescript");
-const projectJson = require('./src/data/projectData.json');
+const projectJson = require('./src/data/projects/projectData.json');
 
 exports.onCreateNode = ({ node, getNode, actions}) => {
     const { createNodeField } = actions;
