@@ -32,7 +32,7 @@ export default function ProjectPage(props) {
                                 return (
                                     <div className='flex flex-col items-center justify-center'>
                                         <GatsbyImage image={tech_stack} alt={t.name} className='m-4' />
-                                        <a href={t.link} className='text-white no-underline hover:underline text-base font-mono m-2'>{t.name}</a>
+                                        <a href={t.link} target='_blank' rel='noreferrer' className='text-white no-underline hover:underline text-base font-mono m-2'>{t.name}</a>
                                     </div>
                                 );
                             })

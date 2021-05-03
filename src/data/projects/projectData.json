@@ -91,7 +91,7 @@
         "projectlink": "https://kartavyas.com",
         "githublink": "https://github.com/KartavyaSharma/personal-website",
         "description": "My personal website (the one you are viewing) built using Gatsby.js, Tailwind CSS, and Forestry CMS.",
-        "about": "<div><a href='https://kartavyas.com' target='_blank'>kartavyas.com</a> is a personal website I built as a learning experience for web development. It acts as a primer to front-end web technologies for me.<br /><br />This website was developed using a React.js-based static-site-generator called Gatsby.js. The current iteration of my website makes use of many technologies such as GraphQL, Formik, and Forestry CMS, to name a few (you can find the complete list below).<br /><br />The blog is set up using a Git-based CMS called Forestry. It commits all blog post content as Markdown (.md) files to the source repository. All Markdown files have a frontmatter section before the content; this section contains all the information that Gatsby sources using its markdown-remark plugin, which is then made available for GraphQL to query. The frontmatter contains core information about each blog post - i.e. the title, post description, publication date, and similar data. The query returns a JSON object, data from which is then injected into the react component to display to the user.<br /><br />A similar approach was taken to source data for all individual project pages (such as this page). Except for in this instance, Gatsby uses gatsby-transformer-json to source all JSON data.<br /><br />Gatsby generates all pages dynamically during build-time on the server. All page-generation logic is stored in the gatsby-node.js file, which uses templates to make page routes and content.<br /><br />The contact form is managed by Web3Forms, and all validation is handled by Formik (a frontend form library for React).<br /><br />If you feel the website could use some upgrades, feel free to reach out to me using my email or the contact form.</div>",
+        "about": "<div><a href='https://kartavyas.com' target='_blank' rel='noreferrer'>kartavyas.com</a> is a personal website I built as a learning experience for web development.<br /><br />The website was developed using a React.js-based static-site-generator called Gatsby.js. The current iteration of it makes use of many technologies such as GraphQL, Formik, and Forestry CMS, to name a few (you can find the complete list below).<br /><br />The contact form is managed by Web3Forms, and all validation is handled by Formik (a frontend form library for React).<br /><br />In addition to forms, all blog posts are integrated within the website, and each post has a dedicated comments section based on Github's issue interface. Moreover, all posts have an SEO component which enables sharing across multiple platforms. Each project (similar to this one) has a dedicated page generated through a template.<br /><br />If you feel the website could use some upgrades, feel free to reach out to me using my email or the contact form.<br /><br />If you wish to know more about how I built this website, stick around; I will be writing posts outlining how to code each component once a week.</div>",
         "tech": [
             {
                 "name": "React",
@@ -102,6 +102,11 @@
                 "name": "Gatsby",
                 "link": "https://gatsbyjs.com",
                 "src": "../../images/tech_stacks/gatsby.png"
+            },
+            {
+                "name": "Tailwind CSS",
+                "link": "https://tailwindcss.com",
+                "src": "../../images/tech_stacks/tailwind.png"
             },
             {
                 "name": "Forestry",
