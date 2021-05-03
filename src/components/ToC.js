@@ -29,8 +29,8 @@ export default function ToC({ headings, mobile }) {
     }
 
     return (
-        <div className={`${!mobile ? 'sticky top-20 max-h-screen' : 'p-5 bg-trueGray-800 rounded'}`}>
-            <div className='p-4'>
+        <div className={`${!mobile ? 'sticky top-20 max-h-screen' : 'p-3 bg-trueGray-800 rounded max-w-full'}`}>
+            <div className='p-2'>
                 <div className='text-white font-mono text-lg lg:text-2xl'>Table of contents</div>
                 <ul className={`pt-4 flex flex-col ${mobile ? 'items-start' : 'items-end'}`}>
                     {renderToC()}

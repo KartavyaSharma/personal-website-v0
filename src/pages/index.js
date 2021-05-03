@@ -14,14 +14,24 @@ const sectionBody = "text-white text-base sm:text-lg lg:text-xl py-8 md:py-12 lg
 function IndexPage() {
 
     const [isMobile, setIsMobile] = useState(undefined);
+    
     useEffect(() => {
-        setIsMobile(window.innerWidth <= 768);
+        setIsMobile(window.innerWidth <= 1024);
+        const hideElement = () => {
+            setIsMobile(window.innerWidth <= 1024);
+        };
+
+        window.addEventListener('resize', hideElement());
+
+        return () => {
+            window.removeEventListener('resize', hideElement());
+        };
     },[]);
 
     return (
         <div className='bg-trueGray-900'>
             <Intro header={mobileHeaders} body={sectionBody} />
-            <Aboutme header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
+            <Aboutme header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} mobile={isMobile} />
             <Projects header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
             <Blog header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
             <Footer />

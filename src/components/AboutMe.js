@@ -34,7 +34,12 @@ function AboutMe(props) {
             <div className='flex flex-row' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
                 <div className={classNames(props.body, 'text-opacity-80')}>
                     <div className='flex flex-col lg:flex-row justify-start'>
-                        <GatsbyImage image={img} alt="About me" className='max-h-96 max-w-sm lg:max-h-about lg:max-w-none rounded-md'/>
+                    <GatsbyImage 
+                        image={img} 
+                        alt="About me" 
+                        className={`max-h-96 max-w-sm lg:max-h-about lg:max-w-none rounded-md 
+                            ${!props.mobile ? 'transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-105' : ''}`}
+                    />
                         <div dangerouslySetInnerHTML={{ __html: about }} className='w-full lg:p-8 pr-0 pt-5 lg:pt-0 text-lg text-opacity-80 font-blogBody' />
                     </div>
                 </div>
