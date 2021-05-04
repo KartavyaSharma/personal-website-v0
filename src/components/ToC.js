@@ -1,5 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-scroll'
+
+function useOnScreenId(itemIds) {
+    const [activeId, setActiveId ] = useState(``);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if(entry.isIntersecting) {
+                        setActiveId(entry.target.id);
+                    }
+                })
+            },
+            { rootMargin: `0% 0% -80% 0%` }
+        )
+
+        itemIds.forEach((item) => {
+            observer.observe(document.getElementById(item.id));
+        });
+
+    }, [itemIds])
+
+    return activeId;
+}
 
 export default function ToC({ headings, mobile }) {
 
@@ -23,9 +47,9 @@ export default function ToC({ headings, mobile }) {
         }
     })
 
-    console.log(items);
+    const activeID = useOnScreenId(headings);
 
-    function renderToC() {
+    function renderToC(currID) {
 
         return (
             <div>
@@ -39,7 +63,8 @@ export default function ToC({ headings, mobile }) {
                                     spy={true}
                                     smooth={true}
                                     duration={500} 
-                                    className='cursor-pointer hover:text-orange-500 hover:text-opacity-100 text-white text-opacity-80 text-base font-blogBody'
+                                    className={`cursor-pointer hover:text-orange-500 hover:text-opacity-100 text-white text-opacity-80 text-base font-blogBody
+                                                    ${currID === _.url ? 'text-orange-500 text-opacity-100' : '' }`}
                                 >
                                     {_.name}
                                 </Link>
@@ -56,7 +81,8 @@ export default function ToC({ headings, mobile }) {
                                                                 spy={true}
                                                                 smooth={true}
                                                                 duration={500} 
-                                                                className='cursor-pointer hover:text-orange-500 hover:text-opacity-100 text-white text-opacity-80 text-base font-blogBody'
+                                                                className={`cursor-pointer hover:text-orange-500 hover:text-opacity-100 text-white text-opacity-80 text-base font-blogBody
+                                                                                ${currID === sub.url ? 'text-orange-500 text-opacity-100' : ''}`}
                                                             >
                                                                 {sub.name}
                                                             </Link>
@@ -82,7 +108,7 @@ export default function ToC({ headings, mobile }) {
             <div className='p-2 md:pt-0'>
                 <div className='text-white font-mono text-lg lg:text-2xl'>Table of contents</div>
                 <ul className='pt-4 flex flex-col items-start list-decimal list-inside text-white text-opacity-80'>
-                    {renderToC()}
+                    {renderToC(activeID)}
                 </ul>
             </div>
         </div>
