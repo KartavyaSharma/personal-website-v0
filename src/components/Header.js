@@ -28,7 +28,7 @@ function Header(props) {
     return (
         <div>
         {
-            props.paginationAnim || props.paginationAnim === undefined ? (
+            false && (props.paginationAnim || props.paginationAnim === undefined) ? (
                 <div data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
                     <Menu isOpen={isOpen} toggle={toggle}/>
                     <Burger isOpen={isOpen} toggle={toggle}/>
