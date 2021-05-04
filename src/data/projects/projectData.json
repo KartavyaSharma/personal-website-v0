@@ -9,7 +9,7 @@
         "projectlink": "https://salkatech.com",
         "githublink": "",
         "description": "Public facing website built using JQuery, HTML, and CSS for a satellite telecom company.",
-        "about": "Salkatech is a global satellite and telecom integration company based in Noida, India. I made their website as part of a contract with the company.<br/><br/>The website's core consists mostly of HTML and CSS with Bootstrap. I used JQuery to enable certain run-time functionality, such as navbar scroll detection and mobile menus. The website consists of static product pages with options to inquire about said products. To elaborate on the company's services and its previous projects, I created individual project pages that contained carousels and project descriptions. I also made use of Google Maps APIs to embed a static geolocation frame in the footer.<br/><br/>Salkatech's goal with this website was to create a public-facing online presence, and a static website was an ideal solution. Since the website has minimal dynamic content, its load times are relatively faster, and the website uses minimal client-side processing, ensuring a smoother overall browsing experience.",
+        "about": "Salkatech is a global satellite and telecom integration company based in Noida, India. I made their website as part of a contract with the company.<br/><br/>The website's core consists mostly of HTML and CSS with Bootstrap. I used JQuery to enable certain run-time functionality, such as navbar scroll detection and mobile menus. The website consists of static product pages with options to inquire about said products. To elaborate on the company's services and its previous projects, I created individual project pages that contained carousels and project descriptions. I also made use of Google Maps APIs to embed a static geolocation frame in the footer.<br/><br/>Salkatech's goal with this website was to create a public-facing online presence, and a static site was an ideal solution. Since the website has minimal dynamic content, its load times are relatively faster, and the website uses minimal client-side processing, ensuring a smoother overall browsing experience.",
         "tech": [
             {
                 "name": "HTML",
@@ -48,7 +48,7 @@
         "name": "ROZE - Assistant",
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "",
-        "githublink": "",
+        "githublink": "https://github.com/KartavyaSharma/ROZE-Voice-Assistant",
         "description": "A digital voice assistant that aims to reduce distractions while driving by narrating all notifications.",
         "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas.",
         "tech": [
