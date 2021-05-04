@@ -13,6 +13,15 @@ function Intro(props) {
 
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768)
+        const changeMenu = () => {
+            setIsMobile(window.innerWidth <= 768);
+        }
+
+        window.addEventListener('resize', changeMenu);
+
+        return () => {
+            window.removeEventListener('resize', changeMenu);
+        }
     }, []);
 
     return (
