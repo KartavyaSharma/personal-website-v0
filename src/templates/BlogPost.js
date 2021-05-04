@@ -109,7 +109,7 @@ function BlogPost({ data }) {
                         <Content hData={data} />
                     </div>
                 </div>
-                <div className='hidden lg:flex flex-col items-end w-full'>
+                <div className='hidden lg:flex flex-col items-center w-full'>
                     <ToC headings={data.markdownRemark.headings} />
                 </div>
             </div>
@@ -149,6 +149,7 @@ export const getPostData = graphql`
                 value
                 id
             }
+            tableOfContents
         }
     }
 `

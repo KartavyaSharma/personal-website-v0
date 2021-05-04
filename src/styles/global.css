@@ -2,13 +2,13 @@
 
 @layer base {
     h1 {
-        @apply text-3xl mb-6;
+        @apply text-4xl font-semibold mb-6;
     }
     h2 {
-        @apply text-2xl;
+        @apply text-3xl;
     }
     h3 {
-        @apply text-xl leading-7 !important;
+        @apply text-2xl font-semibold mb-3 leading-7 !important;
     }
     p {
         @apply text-xl mb-6;  
