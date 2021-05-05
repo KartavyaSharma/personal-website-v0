@@ -12,10 +12,10 @@ export default function Featured(props) {
                         const img = getImage(post.node.frontmatter.thumbnail);
                         return(
                             <div className='lg:-mt-16'>
-                                <div className='absolute z-50 border border-white text-white font-semibold text-xl md:text-2xl bg-trueGray-900 px-4 py-2' style={{ marginTop: '-24px'}}>
+                                <div className='absolute z-50 border border-trueGray-800 text-white font-semibold text-xl md:text-2xl bg-trueGray-900 px-4 py-2' style={{ marginTop: '-24px'}}>
                                     Featured Post
                                 </div>
-                                <div className='flex flex-col relative z-10 border border-white'>
+                                <div className='flex flex-col relative z-10 border border-trueGray-800'>
                                     <Link to={post.node.fields.slug} key={post.node.id}>
                                         <GatsbyImage image={img} alt={post.node.frontmatter.title} className='max-h-featured' />
                                     </Link>
