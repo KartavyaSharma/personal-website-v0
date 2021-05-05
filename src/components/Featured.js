@@ -15,7 +15,7 @@ export default function Featured(props) {
                                 <div className='absolute z-50 border border-trueGray-800 text-white font-semibold text-xl md:text-2xl bg-trueGray-900 px-4 py-2' style={{ marginTop: '-24px'}}>
                                     Featured Post
                                 </div>
-                                <div className='flex flex-col relative z-10 border border-trueGray-800'>
+                                <div className='flex flex-col relative z-10 border border-trueGray-800 rounded'>
                                     <Link to={post.node.fields.slug} key={post.node.id}>
                                         <GatsbyImage image={img} alt={post.node.frontmatter.title} className='max-h-featured' />
                                     </Link>

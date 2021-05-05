@@ -53,8 +53,8 @@ export default function BlogPage(props) {
                         )}
                     </div>
                 </div>
-                <div className={`hidden lg:flex flex-col w-full items-center ${currentPage === 1 ? 'lg:-mt-16' : ''}`}>
-                    <FromAuthor />
+                <div className={`hidden lg:flex flex-col w-full items-center lg:-mt-16`}>
+                    {currentPage !== 1 ? null : <FromAuthor />}
                 </div>
             </div>
             <Footer isPage={true} paginationAnim={currentPage === 1 ? true : false} />
