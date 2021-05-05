@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby'
 
 import Header from '../components/Header'
 import Footer from "../components/Footer"
+import FromAuthor from '../components/FromAuthor'
 import BlogHomeList from '../components/BlogHomeList'
 import Featured from '../components/Featured'
 
@@ -52,7 +53,9 @@ export default function BlogPage(props) {
                         )}
                     </div>
                 </div>
-                <div className={`flex flex-col w-full items-center ${currentPage === 1 ? 'lg:-mt-16' : ''}`}>Hullo</div>
+                <div className={`hidden lg:flex flex-col w-full items-center ${currentPage === 1 ? 'lg:-mt-16' : ''}`}>
+                    <FromAuthor />
+                </div>
             </div>
             <Footer isPage={true} paginationAnim={currentPage === 1 ? true : false} />
         </div>
