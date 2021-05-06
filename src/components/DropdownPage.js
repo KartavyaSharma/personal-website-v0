@@ -55,7 +55,7 @@ export default function DropdownPage(props) {
                                         to="/"
                                         className={classNames(
                                             active ? 'bg-trueGray-700 text-orange-500' : 'bg-trueGray-800 text-white text-opacity-80',
-                                            'block px-4 py-2 text-lg'
+                                            'block px-4 py-2 text-lg pointer-events-none'
                                         )}
                                         activeClass="active"
                                         spy={true} smooth={true} duration={500}
@@ -70,7 +70,7 @@ export default function DropdownPage(props) {
                                         to="/"
                                         className={classNames(
                                             active ? 'bg-trueGray-700 text-orange-500' : 'bg-trueGray-800 text-white text-opacity-80',
-                                            'block px-4 py-2 text-lg'
+                                            'block px-4 py-2 text-lg pointer-events-none'
                                         )}
                                         activeClass="active"
                                         spy={true} smooth={true} duration={500}

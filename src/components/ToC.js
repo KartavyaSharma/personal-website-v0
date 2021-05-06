@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-scroll'
 
-function useOnScreenId(itemIds) {
+function useOnScreenId(itemIds, firstElem) {
     const [activeId, setActiveId ] = useState(``);
 
     useEffect(() => {
@@ -47,7 +47,7 @@ export default function ToC({ headings, mobile }) {
         }
     })
 
-    const activeID = useOnScreenId(headings);
+    const activeID = useOnScreenId(headings, items[0].url);
 
     function renderToC(currID) {
 
