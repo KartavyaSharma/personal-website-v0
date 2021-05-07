@@ -9,9 +9,6 @@ export default function SearchResults(props) {
 
         const name = authorData().name;
 
-        console.log(props.postArray)
-        console.log(props.isEmpty)
-
         return (
             <div>
                 {

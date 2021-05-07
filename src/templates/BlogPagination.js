@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import classNames from 'classnames'
 import { graphql, Link } from 'gatsby'
 import { useFlexSearch } from 'react-use-flexsearch'
@@ -26,7 +26,7 @@ export default function BlogPage(props) {
     const results = useFlexSearch(searchQuery, index, store);
 
     function unFlattenResults(results) {
-        return(results.map(post => {
+        return (results.map(post => {
             const { title, slug, date } = post;
             return { slug, frontmatter: { title, date } };
         }))
@@ -51,7 +51,7 @@ export default function BlogPage(props) {
         window.addEventListener('resize', updateIsMobile);
 
         document.onkeydown = function (event) {
-            if(event.key === "Escape") {
+            if (event.key === "Escape") {
                 setFocus(false);
                 document.getElementById('header-search').blur();
             }
@@ -60,7 +60,7 @@ export default function BlogPage(props) {
         return () => {
             window.removeEventListener('resize', updateIsMobile);
         }
-    },[])
+    }, [])
 
     return (
         <div className='bg-trueGray-900'>
@@ -70,8 +70,13 @@ export default function BlogPage(props) {
                     action='/'
                     method='get'
                     autoComplete='off'
-                    className={`lg:-mt-16 ${currentPage !== 1 ? 'hidden' : ''}`}
+                    className={`lg:-mt-16 flex flex-row items-center ${currentPage !== 1 ? 'hidden' : ''}`}
                 >
+                    <label htmlFor='header-search' className='-mr-2 ml-2 absolute'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16" className={`${hasFocus ? 'text-orange-500' : ''}`}>
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </label>
                     <input
                         value={searchQuery}
                         onInput={(e) => setSearchQuery(e.target.value)}
@@ -80,16 +85,18 @@ export default function BlogPage(props) {
                         id='header-search'
                         placeholder='Search blog posts'
                         name='res'
+                        className={`appearance-none bg-transparent border-b w-full text-white text-xl text-opacity-80 font-semibold p-4 pl-8 leading-tight focus:outline-none focus:bg-trueGray-800 
+                            ${hasFocus ? 'border-orange-500' : ''}`}
                     />
                 </form>
-                <div className='flex lg:pt-16'>
+                <div className={`flex ${currentPage === 1 ? 'lg:pt-16' : ''}`}>
                     {
                         !hasFocus ? (
                             <div className='max-w-3xl 2xl:max-w-4xl flex flex-col justify-center'>
                                 {currentPage === 1 ? <Featured postData={featuredPostData} /> : null}
                                 {currentPage === 1 ? (
                                     <div className='text-white font-semibold text-4xl pb-2 pt-3 font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Latest Posts</div>)
-                                    : <div className='text-white font-semibold text-4xl pb-2 pt-3 font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>More Posts</div>}
+                                    : <div className='text-white font-semibold text-4xl pb-2 font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>More Posts</div>}
                                 <BlogHomeList listData={props.data.allMarkdownRemark.edges} />
                                 <div className='flex justify-start items-center'>
                                     {true && (
@@ -117,7 +124,7 @@ export default function BlogPage(props) {
                         ) : (
                             <div>
                                 <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results</div>
-                                <SearchResults postArray={postData} isEmpty={searchQuery} mobile={isMobile}/>
+                                <SearchResults postArray={postData} isEmpty={searchQuery} mobile={isMobile} />
                             </div>
                         )
                     }
