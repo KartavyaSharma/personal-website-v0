@@ -127,7 +127,7 @@ export default function BlogPage(props) {
                         ) : (
                             <div>
                                 <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results 
-                                {hasFocus ? <span className='text-base text-opacity-80 text-white pl-4'>(Press the 'esc' key to return)</span> : null}</div>
+                                {hasFocus ? <span className='text-xs text-opacity-80 text-orange-500 pl-4'>(Press the 'esc' key to return)</span> : null}</div>
                                 <SearchResults postArray={postData} isEmpty={searchQuery} mobile={isMobile} />
                             </div>
                         )
