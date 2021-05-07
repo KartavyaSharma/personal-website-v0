@@ -36,7 +36,7 @@ export default function ToC({ headings, mobile }) {
             obj.name = _.value;
             items.push(obj);
             prevOne.idx = i;
-        } else {
+        } else if(_.depth === 3) {
             if(items[prevOne.idx].items === undefined) {
                 items[prevOne.idx].items = []
             }
@@ -70,11 +70,11 @@ export default function ToC({ headings, mobile }) {
                                 </Link>
                                 {
                                     _.items !== undefined ? (
-                                        <ul className='list-inside' style={{ listStyleType: "circle" }}>
+                                        <ul className='list-inside'>
                                             {
                                                 _.items.map(sub => {
                                                     return (
-                                                        <li className='pt-2 pl-6'>
+                                                        <li className='pt-2 pl-10'>
                                                             <Link
                                                                 activeClass="active" 
                                                                 to={`${sub.url}`} 
@@ -107,7 +107,7 @@ export default function ToC({ headings, mobile }) {
         <div className={`${!mobile ? 'sticky top-20 max-h-screen' : 'p-3 bg-trueGray-800 rounded max-w-full'}`}>
             <div className='p-2 md:pt-0'>
                 <div className='text-white font-mono text-lg lg:text-2xl'>Table of contents</div>
-                <ul className='pt-4 flex flex-col items-start list-decimal list-inside text-white text-opacity-80'>
+                <ul className='pt-4 flex flex-col items-start list-inside text-white text-opacity-80'>
                     {renderToC(activeID)}
                 </ul>
             </div>
