@@ -77,7 +77,7 @@ function BlogPost({ data }) {
                     <div className='text-4xl lg:text-6xl 2xl:text-7xl text-white font-bold font-mono'>{data.markdownRemark.frontmatter.title}</div>
                     <div className='text-lg lg:text-xl text-trueGray-500 italic mt-4 font-mono'>{data.markdownRemark.frontmatter.description}</div>
                     <div className='flex items-center'>
-                        <div className='text-white font-semibold text-xl mt-6 mb-6 mr-4 font-mono flex flex-row'>
+                        <div className='text-white text-xl mt-6 mb-6 mr-4 font-mono flex flex-row'>
                             {data.markdownRemark.frontmatter.date} <span className='hidden md:block'>&nbsp;|</span> 
                         </div>
                         {

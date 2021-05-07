@@ -4,7 +4,7 @@ export default function BlogPageList() {
     const data = useStaticQuery(
         graphql`
         {
-            allMarkdownRemark(limit: 10, sort: {order: DESC, fields: frontmatter___date}, skip: 1) {
+            allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}, skip: 1) {
                 distinct(field: id)
                 edges {
                     node {
