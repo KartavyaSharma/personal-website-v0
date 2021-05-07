@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect} from 'react'
 import classNames from 'classnames'
 import { graphql, Link } from 'gatsby'
 import { useFlexSearch } from 'react-use-flexsearch'
@@ -16,6 +16,8 @@ import getBlogPageList from '../static_queries/getBlogPageList'
 const headerStyle = "pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col";
 
 export default function BlogPage(props) {
+
+    const [isMobile, setIsMobile] = useState(undefined);
 
     const { index, store } = props.data.localSearchSearchPosts;
     const allPostData = getBlogPageList();
@@ -41,6 +43,25 @@ export default function BlogPage(props) {
     const prevPage = currentPage - 1 <= 1 ? '/blog' : `/blog/${currentPage - 1}`;
     const nextPage = `/blog/${currentPage + 1}`;
 
+    useEffect(() => {
+        function updateIsMobile() {
+            setIsMobile(window.innerWidth <= 768);
+        }
+
+        window.addEventListener('resize', updateIsMobile);
+
+        document.onkeydown = function (event) {
+            if(event.key === "Escape") {
+                setFocus(false);
+                document.getElementById('header-search').blur();
+            }
+        }
+
+        return () => {
+            window.removeEventListener('resize', updateIsMobile);
+        }
+    },[])
+
     return (
         <div className='bg-trueGray-900'>
             <Header paginationAnim={currentPage === 1 ? true : false} />
@@ -55,7 +76,6 @@ export default function BlogPage(props) {
                         value={searchQuery}
                         onInput={(e) => setSearchQuery(e.target.value)}
                         onFocus={() => setFocus(true)}
-                        onBlur={() => setFocus(false)}
                         type='text'
                         id='header-search'
                         placeholder='Search blog posts'
@@ -96,7 +116,8 @@ export default function BlogPage(props) {
                             </div>
                         ) : (
                             <div>
-                                <SearchResults postArray={postData} isEmpty={searchQuery}/>
+                                <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results</div>
+                                <SearchResults postArray={postData} isEmpty={searchQuery} mobile={isMobile}/>
                             </div>
                         )
                     }

@@ -116,7 +116,20 @@ module.exports = {
                                 frontmatter {
                                     title
                                     date(formatString: "Do MMMM YYYY")
-
+                                    thumbnail {
+                                        childImageSharp {
+                                            gatsbyImageData(
+                                                placeholder: DOMINANT_COLOR
+                                                formats: AUTO
+                                                transformOptions: {fit: COVER}
+                                                layout: CONSTRAINED
+                                                width: 200
+                                                height: 133
+                                                quality: 100
+                                            )
+                                        }
+                                        relativePath
+                                    }
                                 }
                                 excerpt
                             }
