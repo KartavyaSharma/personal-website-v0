@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState} from 'react'
 import classNames from 'classnames'
 import { graphql, Link } from 'gatsby'
 import { useFlexSearch } from 'react-use-flexsearch'

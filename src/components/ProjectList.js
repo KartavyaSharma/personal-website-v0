@@ -11,7 +11,7 @@ function ProjectList(props) {
                     props.listData.map(project => {
                         const img = getImage(project.node.img);
                         return (
-                            <div class='group'>
+                            <div className='group'>
                                 <div className='absolute z-50 border text-opacity-80 border-trueGray-800 md:group-hover:border-orange-500 text-white font-mono font-semibold text-base md:text-lg bg-trueGray-900 px-2 py-1 -mt-4'>
                                     {project.node.category}
                                 </div>

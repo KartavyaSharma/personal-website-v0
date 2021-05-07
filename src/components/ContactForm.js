@@ -5,16 +5,16 @@ const validate = (values) => {
     const errors = {};
     if(values.firstName[0] === " ") {
         errors.firstName = "Invalid field entry"
-    } else if(!/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/.test(values.firstName)) {
-        errors.firstName = "This field cannot be empty";
+    } else if(!/^[A-Za-z][A-Za-z'-]+([A-Za-z][A-Za-z'-]+)*/.test(values.firstName)) {
+        errors.firstName = "Invalid field entry";
     } else if(values.firstName.length < 3) {
         errors.firstName = "Must be greater than 3 characters";
     }
 
     if(values.lastName[0] === " ") {
         errors.lastName = "Invalid field entry"
-    } else if(!/^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*/.test(values.lastName)) {
-        errors.lastName = "This field cannot be empty";
+    } else if(!/^[A-Za-z][A-Za-z'-]+([A-Za-z][A-Za-z'-]+)*/.test(values.lastName)) {
+        errors.lastName = "Invalid field entry";
     } else if(values.lastName.length < 3) {
         errors.lastName = "Must be greater than 3 characters";
     }
@@ -79,6 +79,7 @@ function ContactFields(props) {
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label
+                            htmlFor='firstName'
                             className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2"
                             for="grid-first-name"
                         >
@@ -102,6 +103,7 @@ function ContactFields(props) {
                     </div>
                     <div className="w-full md:w-1/2 px-3">
                         <label
+                            htmlFor='lastName'
                             className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2"
                             for="grid-last-name"
                         >
@@ -126,7 +128,8 @@ function ContactFields(props) {
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
-                        <label 
+                        <label
+                            htmlFor='email' 
                             className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2" 
                             for="grid-password"
                         >
@@ -151,6 +154,7 @@ function ContactFields(props) {
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
                         <label
+                            htmlFor='message'
                             className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2"
                             for="grid-password"
                         >

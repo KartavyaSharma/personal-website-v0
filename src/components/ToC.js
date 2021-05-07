@@ -28,10 +28,10 @@ function useOnScreenId(itemIds, firstElem) {
 export default function ToC({ headings, mobile }) {
 
     let items = [];
-    let prevOne = new Object();
+    let prevOne = {};
     headings.forEach((_,i) => {
         if(_.depth === 1) {
-            let obj = new Object();
+            let obj = {};
             obj.url = _.id;
             obj.name = _.value;
             items.push(obj);
@@ -40,7 +40,7 @@ export default function ToC({ headings, mobile }) {
             if(items[prevOne.idx].items === undefined) {
                 items[prevOne.idx].items = []
             }
-            let obj = new Object();
+            let obj = {};
             obj.url = _.id;
             obj.name = _.value;
             items[prevOne.idx].items.push(obj);
