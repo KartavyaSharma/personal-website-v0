@@ -64,7 +64,7 @@ export default function ToC({ headings, mobile }) {
                                     smooth={true}
                                     duration={500} 
                                     className={`cursor-pointer hover:text-orange-500 hover:text-opacity-100 text-white text-opacity-80 text-base font-blogBody
-                                                    ${currID === _.url && !mobile ? 'text-orange-500 text-opacity-100' : '' }`}
+                                                    ${currID === _.url && !mobile ? 'text-orange-500 text-opacity-100 font-semibold underline' : '' }`}
                                 >
                                     {_.name}
                                 </Link>
@@ -82,7 +82,7 @@ export default function ToC({ headings, mobile }) {
                                                                 smooth={true}
                                                                 duration={500} 
                                                                 className={`cursor-pointer hover:text-orange-500 hover:text-opacity-100 text-white text-opacity-80 text-base font-blogBody
-                                                                                ${currID === sub.url && !mobile ? 'text-orange-500 text-opacity-100' : ''}`}
+                                                                                ${currID === sub.url && !mobile ? 'text-orange-500 text-opacity-100 font-semibold underline' : ''}`}
                                                             >
                                                                 {sub.name}
                                                             </Link>
