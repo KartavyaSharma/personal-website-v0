@@ -66,29 +66,32 @@ export default function BlogPage(props) {
         <div className='bg-trueGray-900'>
             <Header paginationAnim={currentPage === 1 ? true : false} />
             <div className={classNames(headerStyle, 'mb-12 md:mb-0')}>
-                <form
-                    action='/'
-                    method='get'
-                    autoComplete='off'
-                    className={`lg:-mt-16 flex flex-row items-center ${currentPage !== 1 ? 'hidden' : ''}`}
-                >
-                    <label htmlFor='header-search' className='-mr-2 ml-2 absolute'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16" className={`${hasFocus ? 'text-orange-500' : ''}`}>
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>
-                    </label>
-                    <input
-                        value={searchQuery}
-                        onInput={(e) => setSearchQuery(e.target.value)}
-                        onFocus={() => setFocus(true)}
-                        type='text'
-                        id='header-search'
-                        placeholder='Search blog posts'
-                        name='res'
-                        className={`appearance-none bg-transparent border-b w-full text-white text-xl text-opacity-80 font-semibold p-4 pl-8 leading-tight focus:outline-none focus:bg-trueGray-800 
-                            ${hasFocus ? 'border-orange-500' : ''}`}
-                    />
-                </form>
+                {
+                    isMobile ? (null) : (
+                    <form
+                        action='/'
+                        method='get'
+                        autoComplete='off'
+                        className={`lg:-mt-16 flex flex-row items-center ${currentPage !== 1 ? 'hidden' : ''}`}
+                    >
+                        <label htmlFor='header-search' className='-mr-2 ml-2 absolute'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16" className={`${hasFocus ? 'text-orange-500' : ''}`}>
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </label>
+                        <input
+                            value={searchQuery}
+                            onInput={(e) => setSearchQuery(e.target.value)}
+                            onFocus={() => setFocus(true)}
+                            type='text'
+                            id='header-search'
+                            placeholder='Search blog posts'
+                            name='res'
+                            className={`appearance-none bg-transparent border-b w-full text-white text-xl text-opacity-80 font-semibold p-4 pl-8 leading-tight focus:outline-none focus:bg-trueGray-800 
+                                ${hasFocus ? 'border-orange-500' : ''}`}
+                        />
+                    </form>)
+                }
                 <div className={`flex ${currentPage === 1 ? 'lg:pt-16' : ''}`}>
                     {
                         !hasFocus ? (
@@ -123,7 +126,8 @@ export default function BlogPage(props) {
                             </div>
                         ) : (
                             <div>
-                                <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results</div>
+                                <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results 
+                                {hasFocus ? <span className='text-base text-opacity-80 text-white pl-4'>(Press the 'esc' key to return)</span> : null}</div>
                                 <SearchResults postArray={postData} isEmpty={searchQuery} mobile={isMobile} />
                             </div>
                         )
