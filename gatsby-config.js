@@ -6,7 +6,7 @@ module.exports = {
         description: `Kartavya Sharma's personal website. An aggregation of all his projects and blog posts.`,
         author: `Kartavya Sharma`,
         url: "https://www.kartavyas.com",
-        image: "../images/logo.png",
+        image: "../src/images/logo.png",
         twitterUsername: "floatyvariable"
     },
     plugins: [

@@ -5,6 +5,7 @@ import Aboutme from "../components/AboutMe"
 import Projects from "../components/Projects"
 import Blog from "../components/Blog"
 import Footer from "../components/Footer"
+import SEO from '../components/SEO'
 
 const mobileHeaders = "py-12 md:py-16 lg:py-18 2xl:py-48 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto";
 const sectionHeaderNum = "text-lg sm:text-xl md:text-2xl lg:text-4xl font-semibold font-mono bg-clip-text text-white";
@@ -30,6 +31,7 @@ function IndexPage() {
 
     return (
         <div className='bg-trueGray-900'>
+            <SEO title='Kartavya Sharma'/>
             <Intro header={mobileHeaders} body={sectionBody} />
             <Aboutme header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} mobile={isMobile} />
             <Projects header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
