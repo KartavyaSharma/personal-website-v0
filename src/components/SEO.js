@@ -35,8 +35,8 @@ export default function SEO({ title, description, slug, isPost = false }) {
     const slugWithoutSlashes = () => isPost ? slug.replace(/\//g, '') : slug;
 
     const socialImage = !isPost
-    ? `${site.siteUrl}/images/logo.png`
-    : `${site.siteUrl}/${slugWithoutSlashes()}-share.png`;
+    ? `${siteUrl}/images/logo.png`
+    : `${siteUrl}/${slugWithoutSlashes()}-share.png`;
 
     return (
         <Helmet 
@@ -44,7 +44,7 @@ export default function SEO({ title, description, slug, isPost = false }) {
                 lang: 'en'
             }}
             title={seo.title}
-            titleTemplate={`%s . ${seo.title}`}
+            titleTemplate={`%s ${title ? '' : '. '+seo.title}`}
             defaultTitle={seo.title}
             meta={[
                 {
