@@ -9,6 +9,7 @@ import FromAuthor from '../components/FromAuthor'
 import BlogHomeList from '../components/BlogHomeList'
 import Featured from '../components/Featured'
 import SearchResults from '../components/SearchResults'
+import SEO from '../components/SEO'
 
 import featuredPost from '../static_queries/getFeaturedPost'
 import getBlogPageList from '../static_queries/getBlogPageList'
@@ -65,6 +66,7 @@ export default function BlogPage(props) {
     return (
         <div className='bg-trueGray-900'>
             <Header paginationAnim={currentPage === 1 ? true : false} />
+            <SEO title="Kartavya's Blog" description="Kartavya Sharma's blog. A collection of writing focused on the current state of tech and web development tutorials."/>
             <div className={classNames(headerStyle, 'mb-12 md:mb-0')}>
                 {
                     isMobile ? (null) : (
