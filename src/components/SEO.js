@@ -23,7 +23,6 @@ export default function SEO({ title, description, slug, isPost = false }) {
         defaultTitle,
         defaultDescription,
         siteUrl,
-        twitterUsername,
     } = site.siteMetadata
 
     const seo = {
