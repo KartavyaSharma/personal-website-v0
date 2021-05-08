@@ -31,7 +31,7 @@ function IndexPage() {
 
     return (
         <div className='bg-trueGray-900'>
-            <SEO title='Kartavya Sharma'/>
+            <SEO title='Kartavya Sharma' image="../images/logo.png"/>
             <Intro header={mobileHeaders} body={sectionBody} />
             <Aboutme header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} mobile={isMobile} />
             <Projects header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
