@@ -4,9 +4,7 @@ module.exports = {
     siteMetadata: {
         title: `Kartavya Sharma`,
         description: `Kartavya Sharma's personal website. An aggregation of all his projects and blog posts.`,
-        author: `Kartavya Sharma`,
         url: "https://www.kartavyas.com",
-        image: "../src/images/logo.png",
         twitterUsername: "floatyvariable"
     },
     plugins: [
