@@ -70,7 +70,7 @@ export default function SearchResults(props) {
     }
 
     return (
-        <div className='text-white py-8 md:py-12 lg:py-15 max-w-4xl flex flex-col'>
+        <div className='text-white py-8 md:py-12 lg:py-15 max-w-4xl flex flex-col' id='search-results'>
             <div>{renderSearchResults()}</div>
         </div>
     );

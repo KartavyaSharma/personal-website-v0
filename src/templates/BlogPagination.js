@@ -43,6 +43,7 @@ export default function BlogPage(props) {
     const prevPage = currentPage - 1 <= 1 ? '/blog' : `/blog/${currentPage - 1}`;
     const nextPage = `/blog/${currentPage + 1}`;
 
+
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768);
         const updateIsMobile = () => {
@@ -128,8 +129,10 @@ export default function BlogPage(props) {
                             </div>
                         ) : (
                             <div>
-                                <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results 
-                                {hasFocus ? <span className='text-xs text-opacity-80 text-orange-500 pl-4'>(Press the 'esc' key to return)</span> : null}</div>
+                                <div className='flex flex-col'>
+                                    <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results </div>
+                                    <span className='text-xs text-opacity-80 text-orange-500'>(Press the 'esc' key to return)</span>
+                                </div>
                                 <SearchResults postArray={postData} isEmpty={searchQuery} mobile={isMobile} />
                             </div>
                         )
