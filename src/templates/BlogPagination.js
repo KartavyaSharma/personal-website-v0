@@ -45,7 +45,7 @@ export default function BlogPage(props) {
     const nextPage = `/blog/${currentPage + 1}`;
 
     useEffect(() => {
-        function updateIsMobile() {
+        const updateIsMobile = () => {
             setIsMobile(window.innerWidth <= 768);
         }
 
