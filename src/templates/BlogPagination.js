@@ -18,8 +18,6 @@ const headerStyle = "pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:
 
 export default function BlogPage(props) {
 
-    const [isMobile, setIsMobile] = useState(undefined);
-
     const { index, store } = props.data.localSearchSearchPosts;
     const allPostData = getBlogPageList();
 
@@ -36,6 +34,7 @@ export default function BlogPage(props) {
     const postData = searchQuery ? unFlattenResults(results) : allPostData;
 
     const [hasFocus, setFocus] = useState(false);
+    const [isMobile, setIsMobile] = useState(undefined);
 
     const featuredPostData = featuredPost();
     const { currentPage, numPages } = props.pageContext;
@@ -45,6 +44,7 @@ export default function BlogPage(props) {
     const nextPage = `/blog/${currentPage + 1}`;
 
     useEffect(() => {
+        setIsMobile(window.innerWidth <= 768);
         const updateIsMobile = () => {
             setIsMobile(window.innerWidth <= 768);
         }
