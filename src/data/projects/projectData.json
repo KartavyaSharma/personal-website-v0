@@ -136,46 +136,5 @@
         ],
         "expFlag": false,
         "mexp": ""
-    },
-    {
-        "index": "4",
-        "img": "../../images/Prime_logo.png",
-        "alt": "Prime Academy Hero",
-        "category": "Contract",
-        "name": "Prime Academy Website",
-        "tags": ["HTML", "CSS", "JQuery", "GIMP"],
-        "projectlink": "",
-        "githublink": "",
-        "description": "A school's website built using HTML, CSS, Bootstrap and JQuery. Currently a work in progress.",
-        "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas.",
-        "tech": [
-            {
-                "name": "React",
-                "link": "https://reactjs.org",
-                "src": "../../images/tech_stacks/react.png"
-            },
-            {
-                "name": "Gatsby",
-                "link": "https://gatsbyjs.com",
-                "src": "../../images/tech_stacks/gatsby.png"
-            },
-            {
-                "name": "Forestry",
-                "link": "https://forestry.io",
-                "src": "../../images/tech_stacks/forestry.png"
-            },
-            {
-                "name": "JavaScript",
-                "link": "https://javascript.com",
-                "src": "../../images/tech_stacks/javascript.png"
-            },
-            {
-                "name": "Git",
-                "link": "https://git-scm.com",
-                "src": "../../images/tech_stacks/git.png"
-            }
-        ],
-        "expFlag": false,
-        "mexp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas."
     }
 ]
