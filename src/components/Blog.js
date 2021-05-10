@@ -6,7 +6,7 @@ import IndexLayout from '../components/layout/IndexLayout'
 import BlogList from '../components/BlogList'
 import getBlogList from '../static_queries/getBlogList'
 
-function Blog(props) {
+function Blog() {
     const data = getBlogList();
     return (
         <IndexLayout ident='blog' idx="04" name="Blog">

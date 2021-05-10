@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import classNames from 'classnames'
@@ -27,6 +27,22 @@ function AboutMe(props) {
     `)
     const about = data.aboutJson.content.replace(/\n/g, '<br />');
     const img = getImage(data.aboutJson.img);
+
+    const [isMobile, setIsMobile] = useState(undefined);
+    
+    useEffect(() => {
+        setIsMobile(window.innerWidth <= 1024);
+        const hideElement = () => {
+            setIsMobile(window.innerWidth <= 1024);
+        };
+
+        window.addEventListener('resize', hideElement());
+
+        return () => {
+            window.removeEventListener('resize', hideElement());
+        };
+    },[]);
+
     return (
         <IndexLayout ident="about-me" idx="01" name="About me">
             <div className='flex flex-row' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
@@ -36,7 +52,7 @@ function AboutMe(props) {
                         image={img} 
                         alt="About me" 
                         className={`max-h-96 max-w-sm lg:max-h-about lg:max-w-none rounded-md 
-                            ${!props.mobile ? 'transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-105' : ''}`}
+                            ${!isMobile ? 'transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-105' : ''}`}
                     />
                         <div dangerouslySetInnerHTML={{ __html: about }} className='w-full lg:p-8 pr-0 pt-5 lg:pt-0 text-lg text-opacity-80 font-blogBody' />
                     </div>
