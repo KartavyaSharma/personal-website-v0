@@ -1,17 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import IndexLayout from '../components/layout/IndexLayout'
+
 import BlogList from '../components/BlogList'
 import getBlogList from '../static_queries/getBlogList'
 
 function Blog(props) {
     const data = getBlogList();
     return (
-        <div className={props.header} id="blog">
-            <div data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
-                <div className={props.topNum}>04</div>
-                <div className={props.topTitle}>Blog</div>
-            </div>
+        <IndexLayout ident='blog' idx="04" name="Blog">
             <div data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
                 <div>
                     <BlogList listData={data} />
@@ -31,7 +29,7 @@ function Blog(props) {
                     </Link>
                 </div>
             </div>
-        </div>
+        </IndexLayout>
     )
 }
 

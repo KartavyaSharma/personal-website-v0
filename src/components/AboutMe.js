@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import classNames from 'classnames'
 
+import IndexLayout from '../components/layout/IndexLayout'
+
 function AboutMe(props) {
     const data = useStaticQuery(graphql`
         {
@@ -26,11 +28,7 @@ function AboutMe(props) {
     const about = data.aboutJson.content.replace(/\n/g, '<br />');
     const img = getImage(data.aboutJson.img);
     return (
-        <div className={props.header} id="about-me">
-            <div data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
-                <div className={props.topNum}>01</div>
-                <div className={props.topTitle}>About me</div>
-            </div>
+        <IndexLayout ident="about-me" idx="01" name="About me">
             <div className='flex flex-row' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
                 <div className={classNames(props.body, 'text-opacity-80')}>
                     <div className='flex flex-col lg:flex-row justify-start'>
@@ -44,7 +42,7 @@ function AboutMe(props) {
                     </div>
                 </div>
             </div>
-        </div>
+        </IndexLayout>
     )
 }
 
