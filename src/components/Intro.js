@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { Link as ScrollLink } from 'react-scroll'
 import { Link } from 'gatsby'
-import classNames from 'classnames'
 
 import ParticleBg from "../components/Particles"
 import Dropdown from '../components/Dropdown'
 
 
-function Intro(props) {
+function Intro() {
 
     const [isMobile, setIsMobile] = useState(undefined);
 
@@ -25,7 +24,7 @@ function Intro(props) {
     }, []);
 
     return (
-        <div className={classNames(props.header, 'h-screen flex items-center')} id="home">
+        <div className='py-12 md:py-16 lg:py-18 2xl:py-48 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto h-screen flex items-center' id="home">
             <ParticleBg canvasClassName='block' className='absolute inset-0 z-0' isMobile={isMobile} />
             <div className='flex flex-col'>
                 <div className='z-10 relative' data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
