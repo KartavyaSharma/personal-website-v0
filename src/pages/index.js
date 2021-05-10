@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react"
 import Intro from "../components/Intro"
 import Aboutme from "../components/AboutMe"
 import Projects from "../components/Projects"
+import Work from '../components/Work'
 import Blog from "../components/Blog"
 import Footer from "../components/Footer"
+
 import SEO from '../components/SEO'
 
 const mobileHeaders = "py-12 md:py-16 lg:py-18 2xl:py-48 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto";
@@ -35,6 +37,7 @@ function IndexPage() {
             <Intro header={mobileHeaders} body={sectionBody} />
             <Aboutme header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} mobile={isMobile} />
             <Projects header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
+            <Work />
             <Blog header={mobileHeaders} topNum={sectionHeaderNum} topTitle={sectionHeaderTitle} body={sectionBody} />
             <Footer />
         </div>

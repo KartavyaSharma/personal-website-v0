@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 function Burger({ isOpen, toggle }) {
     return (
-        <div role='button' className={isOpen ? 'grid grid-rows-4 text-center bg-trueGray-800 text-white font-mono text-xl mt-5' : 'hidden'} onClick={toggle} onKeyDown={toggle}>
+        <div role='button' tabIndex='0' className={isOpen ? 'grid grid-rows-4 text-center bg-trueGray-800 text-white font-mono text-xl mt-5' : 'hidden'} onClick={toggle} onKeyDown={toggle}>
             <Link to='/' className='p-4'>
                 Home
             </Link>

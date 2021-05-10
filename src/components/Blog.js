@@ -9,7 +9,7 @@ function Blog(props) {
     return (
         <div className={props.header} id="blog">
             <div data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
-                <div className={props.topNum}>03</div>
+                <div className={props.topNum}>04</div>
                 <div className={props.topTitle}>Blog</div>
             </div>
             <div data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
