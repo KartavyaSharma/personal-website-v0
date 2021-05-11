@@ -27,7 +27,7 @@ function useOnScreenId(itemIds, firstElem) {
     return activeId;
 }
 
-export default function ToC({ headings, mobile }) {
+export default function ToC({ headings, mobile, currPath }) {
 
     let items = [];
     let prevOne = {};
@@ -112,7 +112,7 @@ export default function ToC({ headings, mobile }) {
                 <ul className='pt-4 flex flex-col items-start list-inside text-white text-opacity-80'>
                     {renderToC(activeID)}
                 </ul>
-                <ShareIcons isPost={true} className='mt-5' />
+                <ShareIcons isPost={true} url={currPath} className='mt-5' />
             </div>
         </div>
     );

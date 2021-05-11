@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import { useLocation } from '@reach/router'
 import { graphql, useStaticQuery } from 'gatsby'
 
-export default function SEO({ title, description, slug, isPost = false }) {
-    const { pathname } = useLocation();
+export default function SEO({ title, description, image, isPost = false }) {
     const { site } = useStaticQuery(graphql`
         {
             site {
@@ -28,14 +26,12 @@ export default function SEO({ title, description, slug, isPost = false }) {
     const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-        url: `${siteUrl}${pathname}`,
+        url: isPost ? `https://www.kartavyas.com/content/posts/${title.split(' ').join('-').toLowerCase()}` : 'https://www.kartavyas.com',
     }
-
-    const slugWithoutSlashes = () => isPost ? slug.replace(/\//g, '') : slug;
 
     const socialImage = !isPost
     ? `${siteUrl}/images/logo.png`
-    : `${siteUrl}/${slugWithoutSlashes()}-share.png`;
+    : `https://www.kartavyas.com/${image}`;
 
     return (
         <Helmet 
@@ -60,7 +56,7 @@ export default function SEO({ title, description, slug, isPost = false }) {
                 },
                 {
                     property: 'og:url',
-                    content: slug ? `${siteUrl}/content/posts/${slug}` : `${siteUrl}`,
+                    content: seo.url,
                 },
                 {
                     property: 'og:image',
