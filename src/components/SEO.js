@@ -31,7 +31,7 @@ export default function SEO({ title, description, image, isPost = false }) {
 
     const socialImage = !isPost
     ? `${siteUrl}/images/logo.png`
-    : `https://www.kartavyas.com/${image}`;
+    : `https://www.kartavyas.com${image}`;
 
     return (
         <Helmet 

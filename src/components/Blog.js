@@ -14,7 +14,7 @@ function Blog() {
                 <div>
                     <BlogList listData={data} />
                 </div>
-                <div className='mt-2 mb-12 md:mt-10 md:mb-0'>
+                <div className='mt-2 mb-10 md:mb-0'>
                     <Link to='/blog'>
                         <button className='px-2 py-1.5 md:px-3 md:py-2 font-semibold text-base hover:bg-orange-500 bg-trueGray-800 rounded-md text-white outline-none'>
                             <div className='flex flex-col'>
