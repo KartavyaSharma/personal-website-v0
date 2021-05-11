@@ -8,9 +8,14 @@ import {
 
 export default function ShareIcons({ isPost, title, url, tags, summary, quote, subject, emailBody }) {
     return (
-        <div className={`max-h-screen ${isPost ? 'sticky top-10' : ''} ml-6 w-full`}>
-            <div className='p-5'>
-                <div className='text-white text-opacity-80 font-mono text-3xl pt-6 flex flex-row items-start w-full'>Share</div>
+        <div className={`max-h-screen ${isPost ? 'sticky top-10' : 'w-full ml-6'}`}>
+            <div className={`${isPost ? 'pt-10' : 'p-5'}`}>
+                { !isPost ? (
+                        <div className='text-white text-opacity-80 font-mono text-3xl pt-6 flex flex-row items-start w-full'>Share</div>
+                    ) : (
+                        <div className='text-white font-mono text-lg lg:text-2xl'>Share</div>
+                    )
+                }
                 <div className='flex flex-col items-start'>
                     <TwitterShareButton className='flex flex-row justify-center mt-5 outline-none' url={isPost ? url : 'https://www.kartavyas.com/blog'} title={isPost ? title : "Kartavya Sharma's blog"} hashtags={isPost ? tags : []} >
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-twitter" viewBox="0 0 16 16" className="opacity-80" className='mr-4 opacity-80'>

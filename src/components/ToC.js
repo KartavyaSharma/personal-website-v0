@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-scroll'
 
+import ShareIcons from '../components/ShareIcons'
+
 function useOnScreenId(itemIds, firstElem) {
     const [activeId, setActiveId ] = useState(``);
 
@@ -110,6 +112,7 @@ export default function ToC({ headings, mobile }) {
                 <ul className='pt-4 flex flex-col items-start list-inside text-white text-opacity-80'>
                     {renderToC(activeID)}
                 </ul>
+                <ShareIcons isPost={true} className='mt-5' />
             </div>
         </div>
     );
