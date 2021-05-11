@@ -1,0 +1,26 @@
+[
+    {
+        "company": "Salkatech",
+        "position": "Web Developer",
+        "companyLogo": "../../images/android-chrome-512x512.png",
+        "alt": "Salkatech",
+        "dates": {
+            "start": "Jan 2021",
+            "end": "Mar 2021"
+        },
+        "companyWebsite": "https://www.salkatech.com",
+        "roleDescription": "During my time as a web developer at Salkatech, I developed their website from ground up using JQuery, HTML, CSS, and Bootstrap."
+    },
+    {
+        "company": "Salkatech",
+        "position": "Web Developer",
+        "companyLogo": "../../images/android-chrome-512x512.png",
+        "alt": "Salkatech",
+        "dates": {
+            "start": "Jan 2021",
+            "end": "Mar 2021"
+        },
+        "companyWebsite": "https://www.salkatech.com",
+        "roleDescription": "During my time as a web developer at Salkatech, I developed their website from ground up using JQuery, HTML, CSS, and Bootstrap."
+    }
+]
