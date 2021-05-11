@@ -9,18 +9,42 @@
             "end": "Mar 2021"
         },
         "companyWebsite": "https://www.salkatech.com",
-        "roleDescription": "During my time as a web developer at Salkatech, I developed their website from ground up using JQuery, HTML, CSS, and Bootstrap."
+        "roleDescription": "During my time as a web developer at Salkatech, I developed their public-facing website from ground up using JQuery, HTML, CSS, and Bootstrap. <br/><br/> Implemented a product inquiry system along with static location data from Google Map APIs."
     },
     {
-        "company": "Salkatech",
-        "position": "Web Developer",
-        "companyLogo": "../../images/android-chrome-512x512.png",
-        "alt": "Salkatech",
+        "company": "ROZE",
+        "position": "Founder/Developer",
+        "companyLogo": "../../images/ROZE.png",
+        "alt": "ROZE",
         "dates": {
-            "start": "Jan 2021",
-            "end": "Mar 2021"
+            "start": "Jun 2018",
+            "end": "Nov 2020"
         },
-        "companyWebsite": "https://www.salkatech.com",
-        "roleDescription": "During my time as a web developer at Salkatech, I developed their website from ground up using JQuery, HTML, CSS, and Bootstrap."
+        "companyWebsite": "",
+        "roleDescription": "Developed ROZE as a utility to prevent distracted driving. ROZE uses Google's text-to-speech (TTI) API to narrate all incoming notifications. <br /><br />Implemented localization through Google's Cloud Translate API, and added location based services through Google's Geolocation API."
+    },
+    {
+        "company": "Prime Academy",
+        "position": "Computer Science Teacher",
+        "companyLogo": "../../images/Prime_logo.png",
+        "alt": "PrimeCS",
+        "dates": {
+            "start": "Oct 2018",
+            "end": "Nov 2019"
+        },
+        "companyWebsite": "",
+        "roleDescription": "Taught Computer Science to students at a school school outside Indore, MP. Designed their curriculum to be more inclusive of a broad range of concepts in computing and programming. <br/><br/> Covered languages such as Python, C++, Java, and SQLite3."
+    },
+    {
+        "company": "Prime Academy",
+        "position": "Web Developer",
+        "companyLogo": "../../images/Prime_logo.png",
+        "alt": "PrimeDev",
+        "dates": {
+            "start": "Dec 2019",
+            "end": "May 2020"
+        },
+        "companyWebsite": "",
+        "roleDescription": "Worked with Bootstrap, JQuery, and markup languages to develop a web-interface for the institution capable of delivering dynamic content through plugins and JavaScript libraries."
     }
 ]
