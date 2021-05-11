@@ -100,7 +100,7 @@ function BlogPost({ data }) {
                     </div>
                 </div>
                 <div className='hidden lg:flex flex-col items-center w-full'>
-                    <ToC headings={data.markdownRemark.headings} currPath={`https://www.kartavyas.com/content/posts/${data.markdownRemark.frontmatter.title.split(' ').join('-').toLowerCase()}`} />
+                    <ToC headings={data.markdownRemark.headings} currPath={`https://www.kartavyas.com/content/posts/${data.markdownRemark.frontmatter.title.replace(/[\=?;:'",.]/gi, '').split(' ').join('-').toLowerCase()}`} />
                 </div>
             </div>
             <Footer isPage={true} />
