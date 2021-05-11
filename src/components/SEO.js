@@ -65,10 +65,12 @@ export default function SEO({ title, description, image, isPost = false }) {
                     property: 'og:type',
                     content: 'website',
                 },
+                {
+                    property: 'author',
+                    content: 'Kartavya Sharma',
+                },
             ]}
-        > 
-            <meta name="author" content="Kartavya Sharma" />
-        </Helmet>
+        /> 
     )
 }
 
