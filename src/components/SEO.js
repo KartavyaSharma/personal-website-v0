@@ -47,7 +47,7 @@ export default function SEO({ title, description, image, isPost = false }) {
                 },
                 {
                     property: `og:title`,
-                    content: seo.title,
+                    content: isPost ? `${seo.title} | Kartavya Sharma` : seo.title,
                 },
                 {
                     property: 'og:description',
