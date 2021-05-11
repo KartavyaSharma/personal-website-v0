@@ -102,13 +102,13 @@ export default function BlogPage(props) {
                             <div className='max-w-3xl 2xl:max-w-4xl flex flex-col justify-center'>
                                 {currentPage === 1 ? <Featured postData={featuredPostData} /> : null}
                                 {currentPage === 1 ? (
-                                    <div className='text-white font-semibold text-4xl pb-2 pt-3 font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Latest Posts</div>)
-                                    : <div className='text-white font-semibold text-4xl pb-2 font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>More Posts</div>}
+                                    <div className='text-white text-opacity-80 font-semibold text-4xl pb-2 pt-3 font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Latest Posts</div>)
+                                    : <div className='text-white text-opacity-80 font-semibold text-4xl pb-2 font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>More Posts</div>}
                                 <BlogHomeList listData={props.data.allMarkdownRemark.edges} />
                                 <div className='flex justify-start items-center'>
                                     {true && (
                                         <Link to={isFirst ? '' : `${prevPage}`} rel="prev" className={`${isFirst ? 'pointer-events-none' : ''}`}>
-                                            <button className={`bg-trueGray-800 px-3 py-1 flex rounded mr-1 ${isFirst ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`} disabled={isFirst}>
+                                            <button className={`bg-trueGray-800 px-3 py-1 flex rounded outline-none mr-1 ${isFirst ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`} disabled={isFirst}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
                                                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
                                                 </svg>
@@ -118,7 +118,7 @@ export default function BlogPage(props) {
                                     )}
                                     {true && (
                                         <Link disabled={isLast} to={isLast ? '' : `${nextPage}`} rel="next" className={`${isLast ? 'pointer-events-none' : ''}`}>
-                                            <button className={`bg-trueGray-800 px-3 py-1 flex rounded ml-1 ${isLast ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`} disabled={isLast}>
+                                            <button className={`bg-trueGray-800 px-3 py-1 flex rounded outline-none ml-1 ${isLast ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`} disabled={isLast}>
                                                 {/* <div className='text-white'>Next Page</div> */}
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
