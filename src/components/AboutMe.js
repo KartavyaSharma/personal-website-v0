@@ -47,14 +47,14 @@ function AboutMe(props) {
         <IndexLayout ident="about-me" idx="01" name="About me">
             <div className='flex flex-row' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
                 <div className={classNames(props.body, 'text-opacity-80')}>
-                    <div className='flex flex-col lg:flex-row justify-start'>
+                    <div className='flex flex-col lg:flex-row justify-start border border-trueGray-800 rounded'>
                     <GatsbyImage 
                         image={img} 
                         alt="About me" 
-                        className={`max-h-96 max-w-sm lg:max-h-full lg:max-w-none rounded-md 
+                        className={`max-h-96 max-w-sm lg:max-h-full my-8 mx-8 lg:max-w-none rounded
                             ${!isMobile ? 'transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-105' : ''}`}
                     />
-                        <div id='ab-me' dangerouslySetInnerHTML={{ __html: about }} className='w-full lg:p-8 pr-0 pt-5 lg:pt-0 text-lg text-opacity-80 font-blogBody' />
+                        <div id='ab-me' dangerouslySetInnerHTML={{ __html: about }} className='w-full lg:py-8 pr-8 text-lg text-opacity-80 font-blogBody' />
                     </div>
                 </div>
             </div>
