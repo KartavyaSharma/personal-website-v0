@@ -23,7 +23,7 @@ function BlogList(props) {
                         return(
                             <div className='grid grid-cols-3 items-center'>
                                 <div className='justify-start items-center col-span-2'>
-                                    <Link to={blog.node.fields.slug} key={blog.node.id} >
+                                    <Link to={blog.node.fields.slug.replace(/[\=?;:'",.]/gi, '')} key={blog.node.id} >
                                         <div 
                                         className={`text-base md:text-2xl pr-3 font-semibold hover:text-orange-500 hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100 
                                             ${ !isMobile ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : ''}`}>
@@ -48,7 +48,7 @@ function BlogList(props) {
                                     </div>
                                 </div>
                                 <div className='justify-end items-center col-span-1'>
-                                    <Link to={blog.node.fields.slug} key={blog.node.id}>
+                                    <Link to={blog.node.fields.slug.replace(/[\=?;:'",.]/gi, '')} key={blog.node.id}>
                                         <div className='flex justify-end items-start md:items-center'>
                                             <GatsbyImage image={img} alt={blog.node.frontmatter.title} className='rounded h-full' />
                                         </div>

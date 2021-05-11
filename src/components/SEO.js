@@ -26,7 +26,7 @@ export default function SEO({ title, description, image, isPost = false }) {
     const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-        url: isPost ? `https://www.kartavyas.com/content/posts/${title.split(' ').join('-').toLowerCase()}` : 'https://www.kartavyas.com',
+        url: isPost ? `https://www.kartavyas.com/content/posts/${title.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '').split(' ').join('-').toLowerCase()}` : 'https://www.kartavyas.com',
     }
 
     const socialImage = !isPost
