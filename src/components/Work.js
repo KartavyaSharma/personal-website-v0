@@ -50,7 +50,7 @@ export default function Work() {
     }
 
     return (
-        <IndexLayout ident="work" idx='03' name="Work">
+        <IndexLayout ident="work" idx='03' name="work">
             <ul className='mt-10 md:mt-15' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
                 {renderWorkList()}
             </ul>
