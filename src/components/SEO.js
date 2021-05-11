@@ -38,7 +38,7 @@ export default function SEO({ title, description, image, isPost = false }) {
             htmlAttributes={{
                 lang: 'en'
             }}
-            title={isPost ? `Kartavya Sharma | ${seo.title}` : seo.title}
+            title={isPost ? `${seo.title} | Kartavya Sharma` : seo.title}
             defaultTitle={seo.title}
             meta={[
                 {
