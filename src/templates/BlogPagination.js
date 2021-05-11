@@ -10,6 +10,7 @@ import BlogHomeList from '../components/BlogHomeList'
 import Featured from '../components/Featured'
 import SearchResults from '../components/SearchResults'
 import SEO from '../components/SEO'
+import ShareIcons from '../components/ShareIcons'
 
 import featuredPost from '../static_queries/getFeaturedPost'
 import getBlogPageList from '../static_queries/getBlogPageList'
@@ -138,7 +139,13 @@ export default function BlogPage(props) {
                         )
                     }
                     <div className={`hidden lg:flex flex-col w-full items-center`}>
-                        {currentPage !== 1 ? null : <FromAuthor />}
+                        {currentPage !== 1 ? null : (
+                                <>
+                                    <FromAuthor />
+                                    <ShareIcons isPost={false} className='mt-5' />
+                                </>
+                            )
+                        }
                     </div>
                 </div>
             </div>
