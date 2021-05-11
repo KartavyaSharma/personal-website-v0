@@ -38,8 +38,7 @@ export default function SEO({ title, description, image, isPost = false }) {
             htmlAttributes={{
                 lang: 'en'
             }}
-            title={seo.title}
-            titleTemplate={`%s ${title ? '' : '. '+seo.title}`}
+            title={isPost ? `Kartavya Sharma | ${seo.title}` : seo.title}
             defaultTitle={seo.title}
             meta={[
                 {
@@ -67,7 +66,9 @@ export default function SEO({ title, description, image, isPost = false }) {
                     content: 'website',
                 },
             ]}
-        />
+        > 
+            <meta name="author" content="Kartavya Sharma" />
+        </Helmet>
     )
 }
 
