@@ -51,10 +51,10 @@ function AboutMe(props) {
                     <GatsbyImage 
                         image={img} 
                         alt="About me" 
-                        className={`max-h-96 max-w-sm lg:max-h-about lg:max-w-none rounded-md 
+                        className={`max-h-96 max-w-sm lg:max-h-full lg:max-w-none rounded-md 
                             ${!isMobile ? 'transition duration-700 ease-in-out transform hover:-translate-y-1 hover:scale-105' : ''}`}
                     />
-                        <div dangerouslySetInnerHTML={{ __html: about }} className='w-full lg:p-8 pr-0 pt-5 lg:pt-0 text-lg text-opacity-80 font-blogBody' />
+                        <div id='ab-me' dangerouslySetInnerHTML={{ __html: about }} className='w-full lg:p-8 pr-0 pt-5 lg:pt-0 text-lg text-opacity-80 font-blogBody' />
                     </div>
                 </div>
             </div>
