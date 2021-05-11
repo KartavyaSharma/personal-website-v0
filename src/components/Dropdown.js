@@ -52,21 +52,6 @@ export default function Dropdown(props) {
                                 <Menu.Item>
                                     {({ active }) => (
                                         <Link
-                                        to="/"
-                                        className={classNames(
-                                            active ? 'bg-trueGray-700 text-orange-500' : 'bg-trueGray-800 text-white text-opacity-80',
-                                            'block px-4 py-2 text-lg pointer-events-none'
-                                        )}
-                                        activeClass="active"
-                                        spy={true} smooth={true} duration={500}
-                                        >
-                                        <span className='text-trueGray-400 text-xs'>(coming soon) </span>Skills
-                                        </Link>
-                                    )}
-                                </Menu.Item>
-                                <Menu.Item>
-                                    {({ active }) => (
-                                        <Link
                                         to="work"
                                         className={classNames(
                                             active ? 'bg-trueGray-700 text-orange-500 cursor-pointer' : 'bg-trueGray-800 text-white text-opacity-80',
