@@ -10,7 +10,7 @@ thumbnail: "../images/01.png"
 
 This being my first post, I'll mostly talk about why and how I started this blog, and what you can expect as a reader going forward.
 
-In its essence, this is, quite simply put, a blog. It will act as a canvas (or a notepad, for the lack of a better word) for my ideas, and the occasional step-by-step. I won't restrict myself to a particular domain of topics just yet; however, you will find a slightly ambiguous categorization of the topics/posts I plan on writing about.
+In its essence, this is, quite simply put, a blog. It will act as a canvas (or a notepad, for the lack of a better word) for my ideas, and the occasional step-by-step. I won't restrict myself to a particular domain of topics just yet; however, you will find a slightly ambiguous categorization of the topics/posts I plan on writing about further down this post.
 
 ### Why a blog?
 
