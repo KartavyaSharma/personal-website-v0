@@ -52,3 +52,15 @@ A short C++ program to generate all subsets in a range of consecutive numbers.
 If this all seems like gibberish to you, don't worry! I will be making a series of posts in the near future about how this website was developed.
 
 # What you can expect
+
+I'll be writing about a range of topics I take interest in, mostly about programming and some related to new developments in the world of Computer Science.
+
+As my development phase for this project comes to an end, I am looking forward to exploring backend technologies and delving into Blockchain and its applications. As I am learning about these new domains, I will be sure to post related content here on my blog.
+
+In addition to that, I am also involved in competitive programming. You can expect to find data-structure-related introductory articles too in the future.
+
+# A parting note
+
+I hope this post gave you an insight into the ideas and motivations that went behind developing this blog and website. Feel free to leave a comment! Feedback is always appreciated!
+
+Looking forward to seeing you around!
