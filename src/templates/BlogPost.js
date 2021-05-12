@@ -119,10 +119,6 @@ export const getPostData = graphql`
                 slug
             }
             frontmatter {
-                author_info {
-                    author_name
-                    author_bio
-                }
                 title
                 date(formatString: "Do MMMM YYYY")
                 description
