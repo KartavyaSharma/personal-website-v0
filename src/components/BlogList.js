@@ -15,7 +15,7 @@ function BlogList(props) {
 
     function renderBlogData() {
         return(
-            <div className='grid grid-rows-3 items-center gap-y-5 md:gap-y-7 min-w-full'>
+            <div className={`grid grid-rows-${props.listData.length < 3 ? props.listData.length : '3'} items-center gap-y-5 md:gap-y-7 min-w-full`}>
                 {
                     props.listData.filter(blog => blog.node.title !== "")
                     .map(blog => {
