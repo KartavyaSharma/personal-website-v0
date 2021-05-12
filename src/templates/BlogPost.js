@@ -37,6 +37,7 @@ class Content extends React.Component {
 }
 
 function BlogPost({ data }) {
+
     const [isMobile, setIsMobile] = useState(undefined);
 
     useEffect(() => {
@@ -61,6 +62,7 @@ function BlogPost({ data }) {
                 description={data.markdownRemark.frontmatter.description} 
                 isPost={true} 
                 image={data.markdownRemark.frontmatter.thumbnail.publicURL}
+                where={`https://www.kartavyas.com${data.markdownRemark.fields.slug}`}
             />
             <div className="pt-10 2xl:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 mb-16 lg:mb-4 max-w-screen-2xl w-full mx-auto flex">
                 <div className='max-w-3xl 2xl:max-w-4xl flex flex-col justify-center'>
@@ -100,7 +102,7 @@ function BlogPost({ data }) {
                     </div>
                 </div>
                 <div className='hidden lg:flex flex-col items-center w-full'>
-                    <ToC headings={data.markdownRemark.headings} currPath={`https://www.kartavyas.com/content/posts/${data.markdownRemark.frontmatter.title.replace(/[\=?;:'",.]/gi, '').split(' ').join('-').toLowerCase()}`} />
+                    <ToC headings={data.markdownRemark.headings} currPath={`https://www.kartavyas.com${data.markdownRemark.fields.slug}`} />
                 </div>
             </div>
             <Footer isPage={true} />

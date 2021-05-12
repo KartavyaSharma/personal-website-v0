@@ -8,10 +8,10 @@
         @apply text-3xl;
     }
     h3 {
-        @apply text-2xl font-semibold mb-3 leading-7 !important;
+        @apply text-2xl font-semibold mb-4 leading-7 !important;
     }
     p {
-        @apply text-xl mb-6;  
+        @apply text-lg mb-6;  
     }
     pre {
         @apply mb-6 !important;
@@ -28,4 +28,8 @@
     margin: -16px 0;
     padding: 0 -4px;
     max-width: 56rem;
+}
+
+p {
+    color: #edf2f7 !important;
 }

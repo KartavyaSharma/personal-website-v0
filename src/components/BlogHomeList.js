@@ -25,7 +25,7 @@ function BlogHomeList(props) {
                         return (
                             <div className='grid grid-cols-3 items-center'>
                                     <div className='justify-start items-center gap-y-4 col-span-2'>
-                                        <Link to={post.node.fields.slug.replace(/[\=?;:'",.]/gi, '')} key={post.node.id}>
+                                        <Link to={post.node.fields.slug} key={post.node.id}>
                                             <div className={`text-base md:text-2xl font-semibold pr-3 hover:text-orange-500 hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100
                                                 ${ !isMobile ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : '' }`}>
                                                 {post.node.frontmatter.title}
@@ -36,7 +36,7 @@ function BlogHomeList(props) {
                                         </div>
                                     </div>
                                     <div className='justify-center items-center col-span-1'>
-                                        <Link to={post.node.fields.slug.replace(/[\=?;:'",.]/gi, '')} key={post.node.id}>
+                                        <Link to={post.node.fields.slug} key={post.node.id}>
                                             <div className='flex justify-end items-center'>
                                                 <GatsbyImage image={img} alt={post.node.frontmatter.title} className='rounded' />
                                             </div>

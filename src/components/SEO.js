@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
-export default function SEO({ title, description, image, isPost = false }) {
+export default function SEO({ title, description, image, where, isPost = false }) {
     const { site } = useStaticQuery(graphql`
         {
             site {
@@ -26,7 +26,7 @@ export default function SEO({ title, description, image, isPost = false }) {
     const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-        url: isPost ? `https://www.kartavyas.com/content/posts/${title.replace(/[\=?;:'",.]/gi, '').split(' ').join('-').toLowerCase()}` : 'https://www.kartavyas.com',
+        url: isPost ? where : 'https://www.kartavyas.com',
     }
 
     const socialImage = !isPost

@@ -10,7 +10,7 @@ exports.onCreateNode = ({ node, getNode, actions}) => {
         createNodeField({
             node,
             name: `slug`,
-            value: `/content${slug}`,
+            value: `/content${slug.replace(/\./gi, ' ').split(' ').join('-')}`,
         });
     }
 };
@@ -71,7 +71,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
     response.data.allMarkdownRemark.edges.forEach(edge => {
         createPage({
             component: blogTemplate,
-            path: edge.node.fields.slug.replace(/[\=?;:'",.]/gi, ''),
+            path: edge.node.fields.slug,
             context: {
                 slug: edge.node.fields.slug,
             },
