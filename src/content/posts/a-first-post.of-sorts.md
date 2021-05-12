@@ -3,18 +3,18 @@ tags: []
 title: A first post, of sorts
 description: A commemorative post to mark the beginning of my blog.
 date: 2021-05-11T18:30:00.000+00:00
-thumbnail: "../images/01.png"
+thumbnail: "../images/01_r.png"
 
 ---
 # Welcome
 
 This being my first post, I'll mostly talk about why and how I started this blog, and what you can expect as a reader going forward.
 
-In its essence, this is, quite simply put, a blog. It will act as a canvas (or a notepad, for the lack of a better word) for my ideas, and the occasional step-by-step. I won't restrict myself to a particular domain of topics just yet; however, you will find a slightly ambiguous categorization of the topics/posts I plan on writing about.
+In its essence, this is, quite simply put, a blog. It will act as a canvas (or a notepad, for the lack of a better word) for my ideas, and the occasional step-by-step. I won't restrict myself to a particular domain of topics just yet; however, you will find a slightly ambiguous categorization of the topics/areas I plan on writing about below.
 
 ### Why a blog?
 
-Throughout this website and blog's development process, I kept returning to a question: "Why exactly am I starting a blog?" I wouldn't call myself an avid writer. Moreover, it took me more than half an hour to write up to this point. What reason could there possibly be for me to develop a personal blogging website?
+Throughout this blog's development process, I kept returning to a question: "Why exactly am I starting a blog?" I wouldn't call myself an avid writer. Moreover, it took me more than half an hour to write up to this point. What reason could there possibly be for me to develop a personal blogging website?
 
 There is a sea of blog-starter options to choose from out there. Most options provide a one-size-fits-all solution that gets you started right out of the box. However, starting a blog was more of a peripheral purpose behind this project. My primary goal was to build a somewhat large web development project. This website + blog gave me a good opportunity to build something while getting a primer on popular web development technologies.
 
@@ -52,3 +52,15 @@ A short C++ program to generate all subsets in a range of consecutive numbers.
 If this all seems like gibberish to you, don't worry! I will be making a series of posts in the near future about how this website was developed.
 
 # What you can expect
+
+I'll be writing about a range of topics I take interest in, mostly about programming and some related to new developments in the world of Computer Science.
+
+As my development phase for this project comes to an end, I am looking forward to exploring backend technologies and delving into Blockchain and its applications. As I am learning about these new domains, I will be sure to post related content here on my blog.
+
+In addition to that, I am also involved in competitive programming. You can expect to find data-structure-related introductory articles too in the future.
+
+# A parting note
+
+I hope this post gave you an insight into the ideas and motivations that went behind developing this blog. Feel free to leave a comment. Feedback is always appreciated!
+
+Looking forward to seeing you around!
