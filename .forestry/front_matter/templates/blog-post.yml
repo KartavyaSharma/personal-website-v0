@@ -40,5 +40,3 @@ fields:
   description: Add tags.
 pages:
 - src/content/posts/a-first-post.of-sorts.md
-- src/content/posts/third-post.md
-- src/content/posts/this-post-is-for-testing-multiple-headings.md
