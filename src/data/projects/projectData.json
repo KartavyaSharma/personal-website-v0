@@ -50,35 +50,35 @@
         "projectlink": "",
         "githublink": "https://github.com/KartavyaSharma/ROZE-Voice-Assistant",
         "description": "A digital voice assistant that aims to reduce distractions while driving by narrating all notifications.",
-        "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas.",
+        "about": "ROZE is an assistant utility mobile application catering to devices running on the Android OS. It was created to assist you while driving in a multitude of ways. ROZE can narrate your notifications while you are driving, deliver you speed alerts in real-time, and provide accurate geography-based localization using Google's Cloud Translate services.",
         "tech": [
             {
-                "name": "React",
-                "link": "https://reactjs.org",
-                "src": "../../images/tech_stacks/react.png"
+                "name": "Java",
+                "link": "https://www.java.com/en/",
+                "src": "../../images/tech_stacks/java.png"
             },
             {
-                "name": "Gatsby",
-                "link": "https://gatsbyjs.com",
-                "src": "../../images/tech_stacks/gatsby.png"
+                "name": "Google Cloud",
+                "link": "https://cloud.google.com",
+                "src": "../../images/tech_stacks/googlecloud.png"
             },
             {
-                "name": "Forestry",
-                "link": "https://forestry.io",
-                "src": "../../images/tech_stacks/forestry.png"
+                "name": "Cloud Translate",
+                "link": "https://cloud.google.com/translate",
+                "src": "../../images/tech_stacks/cloudtranslate.png"
             },
             {
-                "name": "JavaScript",
-                "link": "https://javascript.com",
-                "src": "../../images/tech_stacks/javascript.png"
+                "name": "Google NLP",
+                "link": "https://cloud.google.com/natural-language",
+                "src": "../../images/tech_stacks/nlp.png"
             },
             {
-                "name": "Git",
-                "link": "https://git-scm.com",
-                "src": "../../images/tech_stacks/git.png"
+                "name": "Google TTS",
+                "link": "https://cloud.google.com/text-to-speech",
+                "src": "../../images/tech_stacks/tts.png"
             }
         ],
-        "expFlag": true,
+        "expFlag": false,
         "mexp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas."
     },
     {
