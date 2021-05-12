@@ -3,7 +3,7 @@ tags: []
 title: A first post, of sorts
 description: A commemorative post to mark the beginning of my blog.
 date: 2021-05-11T18:30:00.000+00:00
-thumbnail: "../images/01.png"
+thumbnail: "../images/01_r.png"
 
 ---
 # Welcome
