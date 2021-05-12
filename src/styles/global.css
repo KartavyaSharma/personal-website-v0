@@ -2,13 +2,13 @@
 
 @layer base {
     h1 {
-        @apply text-4xl font-semibold mb-6;
+        @apply text-4xl font-semibold mb-6 text-white;
     }
     h2 {
-        @apply text-3xl;
+        @apply text-3xl text-white;
     }
     h3 {
-        @apply text-2xl font-semibold mb-4 leading-7 !important;
+        @apply text-2xl font-semibold mb-4 leading-7 text-white !important;
     }
     p {
         @apply text-lg mb-6;  
@@ -32,4 +32,13 @@
 
 p {
     color: #edf2f7 !important;
+}
+
+p > a {
+    color: #F97316 !important;
+    text-decoration: underline !important;
+}
+
+p > ul {
+    list-style-type: disc !important;
 }
