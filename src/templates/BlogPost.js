@@ -70,7 +70,7 @@ function BlogPost({ data }) {
                     <div className='text-lg lg:text-xl text-trueGray-500 italic mt-4 font-mono'>{data.markdownRemark.frontmatter.description}</div>
                     <div className='flex items-center'>
                         <div className='text-white text-xl mt-6 mb-6 mr-4 font-mono flex flex-row'>
-                            {data.markdownRemark.frontmatter.date} <span className='hidden md:block'>&nbsp;|</span> 
+                            {data.markdownRemark.frontmatter.date} {data.markdownRemark.frontmatter.tags.length ? <span className='hidden md:block'>&nbsp;|</span> : null}
                         </div>
                         {
                             data.markdownRemark.frontmatter.tags.filter(tag => data.markdownRemark.frontmatter.tags !== null)
