@@ -39,6 +39,7 @@ fields:
   label: Tags
   description: Add tags.
 pages:
+- src/content/posts/a-first-post.of-sorts.md
 - src/content/posts/first-post.md
 - src/content/posts/in-erat-est-hendrerit-non-lectus-vitae-imperdiet-molestie-purus.md
 - src/content/posts/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit.md
