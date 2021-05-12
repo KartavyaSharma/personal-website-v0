@@ -45,7 +45,10 @@ In addition to all those plugins, I also incorporated a for-React subset of the 
         }
         
         //printing all subsets
-        for(auto x : set_store) cout << x << endl;
+        for(auto x : set_store) {
+        	for(auto y : x) cout << y << ' ';
+            cout << endl;
+        }
     }
 
 A short C++ program to generate all subsets in a range of consecutive numbers.
