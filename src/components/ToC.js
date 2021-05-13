@@ -36,7 +36,7 @@ export default function ToC({ headings, mobile, currPath }) {
             let obj = {};
             obj.url = _.id;
             obj.name = _.value;
-            items.push(obj);
+            items[i] = obj;
             prevOne.idx = i;
         } else if(_.depth === 3) {
             if(items[prevOne.idx].items === undefined) {
@@ -47,6 +47,10 @@ export default function ToC({ headings, mobile, currPath }) {
             obj.name = _.value;
             items[prevOne.idx].items.push(obj);
         }
+    })
+
+    items.forEach((_,i) => {
+        console.log('Main heading: ', items[i].name, ' at', i);
     })
 
     const activeID = useOnScreenId(headings, items[0].url);
