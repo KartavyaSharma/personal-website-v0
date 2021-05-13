@@ -12,3 +12,6 @@ date: 2021-05-12T18:30:00Z
 thumbnail: "../images/cygwinsetupcp.png"
 
 ---
+# Getting started
+
+If you haven't already, you'll need to install a couple of things before you can start the actual setup process. 
