@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
 export default function Featured(props) {
+
+    const [isMobile, setIsMobile] = useState(undefined);
+    useEffect(() => {
+        setIsMobile(window.innerWidth <= 768);
+        const toggleMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        }
+
+        window.addEventListener('resize', toggleMobile);
+
+        return () => {
+            window.removeEventListener('resize', toggleMobile);
+        }
+    }, [])
 
     function renderFeaturedPost() {
         return(
@@ -10,8 +24,9 @@ export default function Featured(props) {
                 {
                     props.postData.map(post => {
                         const img = getImage(post.node.frontmatter.thumbnail);
-                        if(post.node.frontmatter.description.length > 150) {
-                            post.node.frontmatter.description = post.node.frontmatter.description.substr(0, 149) + '...'
+                        const compare = isMobile ? 100 : 150;
+                        if(post.node.frontmatter.description.length > compare) {
+                            post.node.frontmatter.description = post.node.frontmatter.description.substr(0, compare - 1) + '...'
                         }
                         return(
                             <div className=''>

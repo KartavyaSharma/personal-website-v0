@@ -112,7 +112,11 @@ export default function ToC({ headings, mobile, currPath }) {
                 <ul className='pt-4 flex flex-col items-start list-inside text-white text-opacity-80'>
                     {renderToC(activeID)}
                 </ul>
-                <ShareIcons isPost={true} url={currPath} className='mt-5' />
+                {
+                    !mobile ? (
+                        <ShareIcons isPost={true} url={currPath} className='mt-5' />
+                    ) : null
+                }
             </div>
         </div>
     );
