@@ -49,10 +49,6 @@ export default function ToC({ headings, mobile, currPath }) {
         }
     })
 
-    items.forEach((_,i) => {
-        console.log('Main heading: ', items[i].name, ' at', i);
-    })
-
     const activeID = useOnScreenId(headings, items[0].url);
 
     function renderToC(currID) {
