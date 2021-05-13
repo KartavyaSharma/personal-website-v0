@@ -74,7 +74,7 @@ A template pre-defines C++ macros for you, this way a shorthand code snippet wil
 
 In addition to this, you can also add loop macros; however, you have to be careful using them. Loop macros can make your code hard to read and might lead to bugs. On that note, here are some of the loop macros I find myself using regularly:
 
-    // loop_macros.cpp
+    // loopMacros.cpp
     
     #define f(i,a,b) for(ll i=a; i<b; i++)
     #define f0(i,a) for(ll i=0; i<a; i++)
