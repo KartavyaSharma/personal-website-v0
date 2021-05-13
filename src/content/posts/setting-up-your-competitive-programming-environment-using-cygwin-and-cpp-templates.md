@@ -46,8 +46,41 @@ You can use any editor you prefer in this step since we will be handling compila
 Currently, my daily editors include GVim and Notepad++ for competitive programming. None of these require any special setup; however, if you have never used Vim before, you might want to check out some resources first due to a steep learning curve:
 
 * Vim tutorial video - [https://www.youtube.com/watch?v=IiwGbcd8S7I](https://www.youtube.com/watch?v=IiwGbcd8S7I "https://www.youtube.com/watch?v=IiwGbcd8S7I")
-* Vim cheat sheet - [https://www.cs.cmu.edu/\~15131/f17/topics/vim/vim-cheatsheet.pdf](https://www.cs.cmu.edu/\~15131/f17/topics/vim/vim-cheatsheet.pdf "https://www.cs.cmu.edu/~15131/f17/topics/vim/vim-cheatsheet.pdf")'
+* Vim cheat sheet - [https://www.cs.cmu.edu/\~15131/f17/topics/vim/vim-cheatsheet.pdf](https://www.cs.cmu.edu/\~15131/f17/topics/vim/vim-cheatsheet.pdf "https://www.cs.cmu.edu/~15131/f17/topics/vim/vim-cheatsheet.pdf")
 
 # An all-purpose C++ template
 
-This can come quite in handy when you don't want to spend time writing loops and defining nested pairs in maps. A template pre-defines C++ macros for you, this way a shorthand code snippet will be at your disposal during practice or competition.
+This can come quite in handy when you don't want to spend time writing loops and defining nested pairs in maps, or other data structures that might be tedious to write in time-constrained situations.
+
+### Macros
+
+A template pre-defines C++ macros for you, this way a shorthand code snippet will be at your disposal during practice or competition.
+
+    // macros.cpp
+    // some macros you can define for often used code
+    
+    #define ar array
+    #define endl "\n
+    
+    #define sz(x) (int)x.size() // sz('Hello!') -> (int)'Hello!'.size() = 6
+    #define all(x) x.begin(), x.end()
+    #define pb push_back
+    #define mp make_pair
+    
+    // You can also define type definitions
+    
+    typedef long long ll;
+    typedef long double ld;
+
+In addition to this, you can also add loop macros; however, you have to be careful using them. Loop macros can make your code hard to read and might lead to bugs. On that note, here are some of the loop macros I find myself using regularly:
+
+    // loop_macros.cpp
+    
+    #define f(i,a,b) for(ll i=a; i<b; i++)
+    #define f0(i,a) for(ll i=0; i<a; i++)
+    #define fa(a) for(auto x:a) cout << x << ' '; // useful for printing elements of arrays and vectors
+    #define tr(it, a) for(auto it=a.begin(); it!=a.end(); it++)
+
+You can find the complete list of macros in the template below.
+
+### Template functions
