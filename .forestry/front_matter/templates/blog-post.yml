@@ -40,3 +40,4 @@ fields:
   description: Add tags.
 pages:
 - src/content/posts/a-first-post.of-sorts.md
+- src/content/posts/setting-up-your-competitive-programming-environment-using-cygwin-and-cpp-templates.md
