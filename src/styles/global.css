@@ -41,7 +41,8 @@ p > a {
 
 #body_content > ul > li > a {
     color: #F97316 !important;
-    text-decoration: underline !important;   
+    text-decoration: underline !important;
+    word-wrap: break-word !important;
 }
 
 #body_content > ul {

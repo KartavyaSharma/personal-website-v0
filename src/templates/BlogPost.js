@@ -29,7 +29,7 @@ class Content extends React.Component {
         deckDeckGoHighlightElement();
         return (
             <div>
-                <div id="body_content" className='font-blogBody pb-10 max-w-full' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>
+                <div id="body_content" className='font-blogBody pb-10 max-w-full --deckgo-highlight-code-carbon-overflow' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>
                 <div className='text-3xl font-mono text-white font-semibold pb-2'>Comments</div>
                 <hr className='border-orange-500 hidden md:block md:min-w-keepWmd 2xl:min-w-keepWlg'/>
                 <div id='inject-comments' className='md:pt-8'></div>
