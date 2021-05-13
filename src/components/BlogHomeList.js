@@ -17,7 +17,7 @@ function BlogHomeList(props) {
 
     function renderBlogPostList() {
         return (
-            <div className='grid grid-rows-3 justify-center items-center gap-y-7'>
+            <div className={`grid grid-rows-${props.listData.length - 1 < 4 ? props.listData.length - 1 : 4} items-center gap-y-7`}>
                 {
                     props.listData.filter(post => (post.node.frontmatter.title !== "" && featuredPostData[0].node.frontmatter.title !== post.node.frontmatter.title))
                     .map(post => {
@@ -52,7 +52,7 @@ function BlogHomeList(props) {
 
     return (
         <div className='text-white py-8 md:py-12 lg:py-15 max-w-4xl flex flex-col'>
-            <div>{renderBlogPostList()}</div>
+            <div className='w-full'>{renderBlogPostList()}</div>
         </div>
     )
 }
