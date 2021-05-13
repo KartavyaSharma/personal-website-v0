@@ -3,6 +3,7 @@ import { graphql} from 'gatsby'
 import Img from 'gatsby-image'
 import hljs from 'highlight.js'
 import '../../node_modules/highlight.js/styles/a11y-dark.css';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -12,7 +13,7 @@ import SEO from "../components/SEO"
 
 class Content extends React.Component {
     componentDidMount() {
-        hljs.highlightAll();
+        // hljs.highlightAll();
 
         let script = document.createElement('script');
         let anchor = document.getElementById('inject-comments');
@@ -25,6 +26,7 @@ class Content extends React.Component {
         anchor.appendChild(script);
     }
     render() {
+        deckDeckGoHighlightElement();
         return (
             <div>
                 <div id="body_content" className='font-blogBody pb-10 max-w-full' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>

@@ -14,10 +14,10 @@
         @apply text-lg mb-6;  
     }
     pre {
-        @apply mb-6 max-w-full overflow-x-auto !important;
+        /*@apply mb-6 max-w-full overflow-x-auto !important;*/
     }
     code {
-        @apply p-5 bg-trueGray-800 block rounded-md overflow-x-auto !important;
+        /*@apply p-5 bg-trueGray-800 block rounded-md overflow-x-auto !important;*/
     }
 }
 

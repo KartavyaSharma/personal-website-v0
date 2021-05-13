@@ -28,6 +28,13 @@ module.exports = {
             resolve: "gatsby-transformer-remark",
             options: {
                 plugins: [
+                    {
+                        resolve: `gatsby-remark-highlight-code`,
+                        options: {
+                            terminal: 'carbon',
+                            theme: 'base16-dark'
+                        }
+                    },
                     "gatsby-remark-normalize-paths",
                     "gatsby-remark-autolink-headers",
                     {
