@@ -56,31 +56,35 @@ This can come quite in handy when you don't want to spend time writing loops and
 
 A template pre-defines C++ macros for you, this way a shorthand code snippet will be at your disposal during practice or competition.
 
-    // macros.cpp
-    // some macros you can define for often used code
-    
     #define ar array
-    #define endl "\n
+    #define endl "\n"
     
-    #define sz(x) (int)x.size() // sz('Hello!') -> (int)'Hello!'.size() = 6
+    #define sz(x) (int)x.size()
     #define all(x) x.begin(), x.end()
     #define pb push_back
     #define mp make_pair
-    
-    // You can also define type definitions
     
     typedef long long ll;
     typedef long double ld;
 
 In addition to this, you can also add loop macros; however, you have to be careful using them. Loop macros can make your code hard to read and might lead to bugs. On that note, here are some of the loop macros I find myself using regularly:
 
-    // loop_macros.cpp
-    
     #define f(i,a,b) for(ll i=a; i<b; i++)
     #define f0(i,a) for(ll i=0; i<a; i++)
-    #define fa(a) for(auto x:a) cout << x << ' '; // useful for printing elements of arrays and vectors
+    #define fa(a) for(auto x:a) cout << x << ' ';
     #define tr(it, a) for(auto it=a.begin(); it!=a.end(); it++)
 
 You can find the complete list of macros in the template below.
 
 ### Template functions
+
+In addition to macros, coding functions like binary search during a competition is counterproductive, to address this, you can also include some template functions in your template that apply an algorithm to dynamic types.
+
+    template <typename T> ll search(T *param, ll size, T value) {
+    	int idx = 0;
+    	for(int jump = size/2; jump >= 1; jump /= 2) {
+    		while(idx+jump < size && param[idx+jump] <= value) idx += jump;
+    	}
+    	if(param[idx] == value) return idx;
+    	return -1;
+    }
