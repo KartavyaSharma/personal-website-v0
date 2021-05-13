@@ -32,7 +32,7 @@ module.exports = {
                         resolve: `gatsby-remark-highlight-code`,
                         options: {
                             terminal: 'carbon',
-                            theme: 'paraiso'
+                            theme: 'base16-dark'
                         }
                     },
                     "gatsby-remark-normalize-paths",
