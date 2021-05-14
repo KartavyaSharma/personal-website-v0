@@ -13,9 +13,6 @@
     p {
         @apply text-lg mb-6;  
     }
-    pre {
-        /*@apply mb-6 max-w-full overflow-x-auto !important;*/
-    }
     code {
         /*@apply p-5 bg-trueGray-800 block rounded-md overflow-x-auto !important;*/
     }
@@ -28,6 +25,20 @@
     margin: -16px 0;
     padding: 0 -4px;
     max-width: 56rem;
+}
+
+@media (min-width: 768px) {
+    deckgo-highlight-code {
+        margin-top: 32px !important;
+        margin-bottom: 32px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    deckgo-highlight-code {
+        margin-top: 24px !important;
+        margin-bottom: 24px !important;
+    }   
 }
 
 p {

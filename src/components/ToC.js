@@ -65,7 +65,7 @@ export default function ToC({ headings, mobile, currPath }) {
                                     spy={true}
                                     smooth={true}
                                     duration={500} 
-                                    className={`cursor-pointer hover:text-orange-500 hover:text-opacity-100 text-white text-opacity-80 text-base font-blogBody
+                                    className={`cursor-pointer hover:text-orange-500 hover:text-opacity-100 text-white text-opacity-80 text-sm 2xl:text-base font-blogBody
                                                     ${currID === _.url && !mobile ? 'text-orange-500 text-opacity-100 font-semibold underline' : '' }`}
                                 >
                                     {_.name}
@@ -83,7 +83,7 @@ export default function ToC({ headings, mobile, currPath }) {
                                                                 spy={true}
                                                                 smooth={true}
                                                                 duration={500} 
-                                                                className={`cursor-pointer hover:text-orange-500 hover:text-opacity-100 text-white text-opacity-80 text-base font-blogBody
+                                                                className={`cursor-pointer hover:text-orange-500 hover:text-opacity-100 text-white text-opacity-80 text-sm 2xl:text-base font-blogBody
                                                                                 ${currID === sub.url && !mobile ? 'text-orange-500 text-opacity-100 font-semibold underline' : ''}`}
                                                             >
                                                                 {sub.name}
@@ -106,10 +106,10 @@ export default function ToC({ headings, mobile, currPath }) {
     }
 
     return (
-        <div className={`${!mobile ? 'sticky top-20 max-h-screen' : 'p-3 bg-trueGray-800 rounded max-w-full'}`}>
+        <div className={`${!mobile ? 'sticky top-10 2xl:top-20 max-h-screen' : 'p-3 bg-trueGray-800 rounded max-w-full'}`}>
             <div className='p-2 md:pt-0'>
-                <div className='text-white font-mono text-lg lg:text-2xl'>Table of contents</div>
-                <ul className='pt-4 flex flex-col items-start list-inside text-white text-opacity-80'>
+                <div className='text-white font-mono text-lg lg:text-xl 2xl:text-2xl'>Table of contents</div>
+                <ul className='pt-1 2xl:pt-4 flex flex-col items-start list-inside text-white text-opacity-80'>
                     {renderToC(activeID)}
                 </ul>
                 {
