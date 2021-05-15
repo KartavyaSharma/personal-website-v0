@@ -33,7 +33,8 @@ module.exports = {
                         options: {
                             theme: 'Dark+ (default dark)',
                             inlineCode: {
-                                marker: '**'
+                                marker: '**',
+                                className: 'inline-code-wrapper'
                             }
                         },
                     },

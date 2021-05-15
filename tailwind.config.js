@@ -17,6 +17,7 @@ module.exports = {
         blogImg: '600px',
         featured: '450px',
         about: '550px',
+        '5/6': '83.333333%',
       },
       padding: {
         18: '72px',
