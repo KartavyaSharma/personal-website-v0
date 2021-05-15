@@ -383,7 +383,7 @@ First, it `bash**cd`s into the directory `bash**__master.cpp` is in, then it per
 
 This was an unexpectedly long post; however, I felt that a shorter version would have left out many details on how to set up a practical and efficient competitive programming environment. I hope this gives you a complete idea of how you can use Bash scripts to automate frequently used processes and have a template that will work with most beginner to intermediate problems.
 
-You can refer to other Bash guides to further customize this system to your needs, and change the template according to the platforms and the I/O formats you frequently inquire. Spending time configuring your environment saves a lot of time down the line.
+You can refer to other Bash guides to further customize this system to your needs and change the template according to the platforms and the I/O formats you frequently require. Spending time configuring your environment saves a lot of time down the line.
 
 If you feel this post leaves out certain crucial parts or if you feel it could use improvement, feel free to leave a comment or open a pull request in my Github repository.
 
