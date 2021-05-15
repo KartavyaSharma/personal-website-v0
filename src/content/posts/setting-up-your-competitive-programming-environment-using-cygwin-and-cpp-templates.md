@@ -55,24 +55,27 @@ This can come quite in handy when you don't want to spend time writing loops and
 ### Macros
 
 A template pre-defines C++ macros for you, this way a shorthand code snippet will be at your disposal during practice or competition.
-
-    #define ar array
-    #define endl "\n"
+```c++
+#define ar array
+#define endl "\n"
     
-    #define sz(x) (int)x.size() // sz("Hello") -> (int)"Hello".size() = 5
-    #define all(x) x.begin(), x.end()
-    #define pb push_back
-    #define mp make_pair
+#define sz(x) (int)x.size() // sz("Hello") -> (int)"Hello".size() = 5
+#define all(x) x.begin(), x.end()
+#define pb push_back
+#define mp make_pair
     
-    typedef long long ll;
-    typedef long double ld;
+typedef long long ll;
+typedef long double ld;
+```
 
 In addition to this, you can also add loop macros; however, you have to be careful using them. Loop macros can make your code hard to read and might lead to bugs. On that note, here are some of the loop macros I find myself using regularly:
 
-    #define f(i,a,b) for(ll i=a; i<b; i++)
-    #define f0(i,a) for(ll i=0; i<a; i++)
-    #define fa(a) for(auto x:a) cout << x << ' '; // useful for printing numbers from an array/vector
-    #define tr(it, a) for(auto it=a.begin(); it!=a.end(); it++)
+```c++
+#define f(i,a,b) for(ll i=a; i<b; i++)
+#define f0(i,a) for(ll i=0; i<a; i++)
+#define fa(a) for(auto x:a) cout << x << ' '; // useful for printing numbers from an array/vector
+#define tr(it, a) for(auto it=a.begin(); it!=a.end(); it++)
+```
 
 You can find the complete list of macros in the template below.
 
@@ -80,20 +83,22 @@ You can find the complete list of macros in the template below.
 
 In addition to macros, writing functions like binary search during a competition is counterproductive, to address this, you can include some template functions where you can specify what type of data you providing to the function without modifying its contents.
 
-    // this function uses binary search to find an element in the param
-    // array/vector. Binary search will only work if the array is sorted
-    template <typename T> ll search(T *param, ll size, T value) {
-    	int idx = 0;
-    	for(int jump = size/2; jump >= 1; jump /= 2) {
-    		while(idx+jump < size && param[idx+jump] <= value) idx += jump;
-    	}
-    	if(param[idx] == value) return idx;
-    	return -1;
-    }
-    
-    // using template functions
-    vector<int> nums(10) = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    cout << search<int>(nums, sz(nums), 5); // will print 4
+```c++
+// this function uses binary search to find an element in the param
+// array/vector. Binary search will only work if the array is sorted
+template <typename T> ll search(T *param, ll size, T value) {
+	int idx = 0;
+	for(int jump = size/2; jump >= 1; jump /= 2) {
+		while(idx+jump < size && param[idx+jump] <= value) idx += jump;
+	}
+	if(param[idx] == value) return idx;
+	return -1;
+}
+
+// using template functions
+vector<int> nums(10) = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+cout << search<int>(nums, sz(nums), 5); // will print 4
+```
 
 ### Cross-platform
 
@@ -101,171 +106,292 @@ To further improve my workflow, I also use conditional preprocessor directives. 
 
 I mostly use USACO, CodeForces, and Google Kickstart while practicing and competing. The next block is specific to these three platforms, but you can modify it to suit your context.
 
-    // defining contest macros
-    // #define kickstart true
-    
-    #define usaco true
-    #define id "guess" // USACO problems require output files named 'id'
+```c++
+// defining contest macros
+// #define kickstart true
+
+#define usaco true
+#define id "guess" // USACO problems require output files named 'id'
+```
 
 You can comment or uncomment any of these macros depending on the platform you are competing on. The conditional preprocessor directives are defined inside the `main` function.
 
-    int main() {
-    
-    	#ifdef kart_local
-    		auto start = std::chrono::steady_clock::now();
-    	#endif
-    	
-    	// iota(arr, arr+mxN, 1);
-    
-    	#ifdef usaco
-    		setIO(id);
-    		solve();
-    	#elif defined(kickstart)
-    		FAST;
-    		int t, i = 1;
-    		cin >> t;
-    		wt(t) {
-    			cout << "Case #" << i << ": ";
-    			solve();
-    			i++;
-    		}
-    	#else
-    		FAST;
-    		int t = 1; 
-    		cin >> t;
-    		f0(i,t) solve();
-    	#endif
-    
-    	#ifdef kart_local
-    		auto end = std::chrono::steady_clock::now();
-    		std::chrono::duration<double> elapsed = end-start;
-    		cout << endl << "+++++++++++++" << endl << "Elapsed time: " << elapsed.count() << " seconds";
-    	#endif
-    }
+```c++
+int main() {
+
+	#ifdef kart_local
+		auto start = std::chrono::steady_clock::now();
+	#endif
+	
+	// iota(arr, arr+mxN, 1);
+
+	#ifdef usaco
+		setIO(id);
+		solve();
+	#elif defined(kickstart)
+		FAST;
+		int t, i = 1;
+		cin >> t;
+		wt(t) {
+			cout << "Case #" << i << ": ";
+			solve();
+			i++;
+		}
+	#else
+		FAST;
+		int t = 1; 
+		cin >> t;
+		f0(i,t) solve();
+	#endif
+
+	#ifdef kart_local
+		auto end = std::chrono::steady_clock::now();
+		std::chrono::duration<double> elapsed = end-start;
+		cout << endl << "+++++++++++++" << endl << "Elapsed time: " << elapsed.count() << " seconds";
+	#endif
+}
+```
 
 I'll be covering using _chrono_ in another post since you would be required to define macros that only work on your local machine and not on the online judge.
 
 ### The complete template
 
-    #include <bits/stdc++.h>
-    #include <chrono>
-    
-    using namespace std;
-    
-    #define FAST ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    
-    typedef long long ll;
-    typedef unsigned long long ull;
-    typedef unsigned long long int ulli;
-    typedef long double ld;
-    
-    #define ar array
-    #define endl "\n"
-    
-    #define sz(x) (int)x.size()
-    #define all(x) x.begin(), x.end()
-    #define pb push_back
-    #define mp make_pair
-    #define S second
-    #define F first
-    #define Ima INT_MAX
-    #define Imi INT_MIN
-    
-    #define vvi vector<vector<int>>
-    #define vvii vector<vector<pii>>
-    #define pii pair<int,int>
-    #define vi vector<int>
-    #define vl vector<long>
-    #define vii vector<pii>
-    #define vs vector<string>
-    
-    #define mi map<int,int>
-    #define mii map<pii,int>
-    
-    #define f(i,a,b) for(ll i=a; i<b; i++)
-    #define f0(i,a) for(ll i=0; i<a; i++)
-    #define rf(i,a,b) for(ll i=b; i>=a; i--)
-    #define rf0(i,a) for(ll i=a; i>=0; i--)
-    #define fa(a) for(auto x:a) cout << x << ' ';
-    #define tr(it, a) for(auto it=a.begin(); it!=a.end(); it++)
-    #define it(x,a) for(auto x:a)
-    #define wt(t) while(t--)
-    
-    #define possibilities(x) while(next_permutation(all(x)))
-    #define getunique(v) {sort(v.begin(), v.end()); v.erase(unique(v.begin(), v.end()), v.end());}
-    #define isthere(v, e) binary_search(all(v), e)
-    
-    #define PI 3.1415926535897932384626
-    
-    template <typename T> ll search(T *param, ll size, T value) {
-    	int idx = 0;
-    	for(int jump = size/2; jump >= 1; jump /= 2) {
-    		while(idx+jump < size && param[idx+jump] <= value) idx += jump;
-    	}
-    	if(param[idx] == value) return idx;
-    	return -1;
-    }
-    
-    int elements(int *param, ll size, ll value) {
-    	auto r = equal_range(param, param+size, value);
-    	return r.S-r.F;
-    }
-     
-    // #define kickstart true
-    
-    // #define usaco true
-    // #define id "guess"
-    
-    void setIO(string name = "") {
-    	FAST;
-    	if(sz(name)) {
-    		freopen((name+".in").c_str(), "r", stdin);
-    		freopen((name+".out").c_str(), "w", stdout);
-    	}
-    }
-    
-    const int mxN = 1e6 + 14000;
-    const ll mod = 1e9+7;
-    
-    ll arr[mxN];
-    
-    void solve() {
-    	// your code goes here
-    }
-    
-    int main() {
-    
-    	#ifdef kart_local
-    		auto start = std::chrono::steady_clock::now();
-    	#endif
-    	
-    	// iota(arr, arr+mxN, 1);
-    
-    	#ifdef usaco
-    		setIO(id);
-    		solve();
-    	#elif defined(kickstart)
-    		FAST;
-    		int t, i = 1;
-    		cin >> t;
-    		wt(t) {
-    			cout << "Case #" << i << ": ";
-    			solve();
-    			i++;
-    		}
-    	#else
-    		FAST;
-    		int t = 1; 
-            // uncomment this if multiple tests cases exist
-    		// cin >> t;
-    		f0(i,t) solve();
-    	#endif
-    
-    	#ifdef kart_local
-    		auto end = std::chrono::steady_clock::now();
-    		std::chrono::duration<double> elapsed = end-start;
-    		cout << endl << "+++++++++++++" << endl << "Elapsed time: " << elapsed.count() << " seconds";
-    	#endif
-    }
+Here's the template I use on a daily basis. It has additional components compared to what I have mentioned up to this point; however, you can modify it as you wish.
+
+```c++
+#include <bits/stdc++.h>
+#include <chrono>
+
+using namespace std;
+
+#define FAST ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+typedef long long ll;
+typedef unsigned long long ull;
+typedef unsigned long long int ulli;
+typedef long double ld;
+
+#define ar array
+#define endl "\n"
+
+#define sz(x) (int)x.size()
+#define all(x) x.begin(), x.end()
+#define pb push_back
+#define mp make_pair
+#define S second
+#define F first
+#define Ima INT_MAX
+#define Imi INT_MIN
+
+#define vvi vector<vector<int>>
+#define vvii vector<vector<pii>>
+#define pii pair<int,int>
+#define vi vector<int>
+#define vl vector<long>
+#define vii vector<pii>
+#define vs vector<string>
+
+#define mi map<int,int>
+#define mii map<pii,int>
+
+#define f(i,a,b) for(ll i=a; i<b; i++)
+#define f0(i,a) for(ll i=0; i<a; i++)
+#define rf(i,a,b) for(ll i=b; i>=a; i--)
+#define rf0(i,a) for(ll i=a; i>=0; i--)
+#define fa(a) for(auto x:a) cout << x << ' ';
+#define tr(it, a) for(auto it=a.begin(); it!=a.end(); it++)
+#define it(x,a) for(auto x:a)
+#define wt(t) while(t--)
+
+#define possibilities(x) while(next_permutation(all(x)))
+#define getunique(v) {sort(v.begin(), v.end()); v.erase(unique(v.begin(), v.end()), v.end());}
+#define isthere(v, e) binary_search(all(v), e)
+
+#define PI 3.1415926535897932384626
+
+template <typename T> ll search(T *param, ll size, T value) {
+	int idx = 0;
+	for(int jump = size/2; jump >= 1; jump /= 2) {
+		while(idx+jump < size && param[idx+jump] <= value) idx += jump;
+	}
+	if(param[idx] == value) return idx;
+	return -1;
+}
+
+int elements(int *param, ll size, ll value) {
+	auto r = equal_range(param, param+size, value);
+	return r.S-r.F;
+}
+ 
+// #define kickstart true
+
+// #define usaco true
+// #define id "guess"
+
+void setIO(string name = "") {
+	FAST;
+	if(sz(name)) {
+		freopen((name+".in").c_str(), "r", stdin);
+		freopen((name+".out").c_str(), "w", stdout);
+	}
+}
+
+const int mxN = 1e6 + 14000;
+const ll mod = 1e9+7;
+
+ll arr[mxN];
+
+void solve() {
+	// your code goes here
+}
+
+int main() {
+
+	#ifdef kart_local
+		auto start = std::chrono::steady_clock::now();
+	#endif
+	
+	// iota(arr, arr+mxN, 1);
+
+	#ifdef usaco
+		setIO(id);
+		solve();
+	#elif defined(kickstart)
+		FAST;
+		int t, i = 1;
+		cin >> t;
+		wt(t) {
+			cout << "Case #" << i << ": ";
+			solve();
+			i++;
+		}
+	#else
+		FAST;
+		int t = 1; 
+        // uncomment this if multiple tests cases exist
+		// cin >> t;
+		f0(i,t) solve();
+	#endif
+
+	#ifdef kart_local
+		auto end = std::chrono::steady_clock::now();
+		std::chrono::duration<double> elapsed = end-start;
+		cout << endl << "+++++++++++++" << endl << "Elapsed time: " << elapsed.count() << " seconds";
+	#endif
+}
+```
 
 # Cygwin scripts
+
+Using Cygwin you can automate certain aspects of testing and debugging our C++ code, this can be accomplished using Bash scripts.
+
+Since we are not setting up a build system in our text editor, we will use Cygwin's *`**gcc`, `**g++`, and `**gdb`* packages to compile and run our C++ program. The compile instruction looks like this:
+
+```bash
+$ g++ -D_GLIBCXX_DEBUG -Wall -o a.exe
+```
+
+However, typing this long statement every time we want to debug or compile our code is tedious. Cygwin has the functionality to alias custom command names to short (or even long) scripts. An alias will act as a short- hand for executing large/complex commands in the shell. We can use aliases for all the commands we would normally type out in BASH.
+
+### Aliasing commands
+
+A common method is to first register aliases with Cygwin's configuration file which is run every time the shell starts. These aliases are then available to use whenever we use or start the shell again next time. In Cygwin, the configuration file is named `bash.bashrc` and can be located from Cygwin's root directory following `etc\bash.bashrc`. Here we can define our aliases and even execute commands (albeit single-line) outside the subshell our alias scripts would run in.
+
+To alias for the compilation script above, we would first need to write our script and save it in a folder named `scripts` (or any name that suits you) and reference that name in `bash.bashrc`.
+
+Our `comp.sh` script file will look something like this:
+
+```bash
+#!/bin/bash
+g++ -D_GLIBCXX_DEBUG -Wall -o a.exe __master.cpp && ./a
+```
+
+That is the entirety of our `comp.sh` file! You will notice that I have included a `bash**&& ./a` addition in the script file, this executes our initial command and `bash**./a` consecutively. This ensures that when the program is finished compiling it automatically runs in the shell ready to accept input.
+
+We can now register our alias inside the `bash.bashrc` file. Simply go to the bottom of the file and type:
+
+```bash
+alias comp = \"/cygdrive/c/Users/your_username/path/to/script/./comp.sh\"
+```
+
+The `bash**bash.bashrc` file takes full paths from Cygwin's `bash**home(~)` directory. The drive letter is denoted by `bash**c` and can be substituted for other letters. `bash**./comp.sh` will tell Cygwin to execute `bash**comp.sh` when `bash**>>comp` is typed in the terminal.
+
+```bash
+$ comp // typing this into the terminal should execute __master.cpp
+```
+
+### Template scripts
+
+For those of you who noticed, the `bash**comp.sh` script is compiling a file named `bash**__master.cpp`. If you were to create a file with a different name and then executing `bash**$ comp` would throw an error, it's because the script is programmed to only run the `bash**__master.cpp` file. This was done to ensure a smoother transition when switching between problems during competition or practice. The `bash**__master.cpp` file contains the template above, all problems are solved within this template inside the `c++**void solve()` function.
+
+To get this script to accept other file names you can simply do:
+
+```bash
+#!/bin/bash
+read -p "Enter name of the file you want to compile `echo $'\n> '`" file_name
+g++ -D_GLIBCXX_DEBUG -Wall -o a.exe "${file_name}.cpp" && ./a
+```
+
+Further details about the commands used in the above script are mentioned below.
+
+Although, with this template problem -approach, we can't really save the `bash**__master.cpp` file. To get around this, I coded a script that copies all the contents of the `bash**__master.cpp` file into another file that I can name from the terminal. It would create a new `bash**.cpp` file after I finished solving a problem. This is what the script looked like.
+
+```bash
+#!/bin/bash
+read -p "Enter Problem Name `echo $'\n> '`" name
+cp __master.cpp "${name}.cpp"
+```
+
+It would prompt the user to enter the problem name on a new line prefixed by a `bash**>` followed by whatever name you want to give the file, in my case it was mostly the name of the problem without the whitespace and special characters. This then copied all the contents from the `bash**__master.cpp` file and created a new file `bash**input_name.cpp`. 
+
+In my `bash**bash.bashrc` file this script was aliased as:
+
+```bash
+alias fin = \"/cygdrive/c/Users/your_username/path/to/script/./fin.sh\"
+```
+
+This would make switching between problems easy as I would only have to give the problem name after typing  `bash**$ fin` into the terminal.
+
+You should note that running `bash**$ fin` outside of the directory `bash**__master.cpp` is located in will cause this to fail.
+
+### Git operations
+
+By now you probably know the drill to save scripts and register aliases. I am going to mention one last script that helps with backing up all the code I write. If you have used Git before, you know that there are three steps you have to follow to push your code to your remote repository.
+
+```
+1. git add .
+2. git commit -m "your commit message/title"
+3. git push
+```
+
+Since all of these are Cygwin commands running inside the terminal, we can simply write them in a script and automate the whole Git push process. Here's what my `bash**update.sh` script looks like:
+
+```bash
+#!/bin/bash
+cd /cygdrive/c/Users/your_username/path/to/__master.cpp
+git add .
+echo "Add commit description: "
+read message
+git commit -m "${message}"
+echo "Pushing to remote"
+git push -u origin master
+```
+
+First, it `bash**cd`s into the directory `bash**__master.cpp` is in, then it performs the first function in our Git push list, then it asks the user for a commit description, you can leave it empty if you wish, after that it indicates the user that it's running the `bash**git push` command and proceeds to push all the code to the `bash**master` branch in your code repository.
+
+# Another parting note
+
+This was an unexpectedly long post; however, I felt that a shorter version would have left out many details on how to set up a practical and efficient competitive programming environment. I hope this gives you a complete idea of how you can use Bash scripts to automate frequently used processes and have a template that will work with most beginner to intermediate problems.
+
+You can refer to other Bash guides to further customize this system to your needs, and change the template according to the platforms and the I/O formats you frequently inquire. Spending time configuring your environment saves a lot of time down the line.
+
+If you feel this post leaves out certain crucial parts or if you feel it could use improvement, feel free to leave a comment or open a pull request in my Github repository.
+
+
+
+
+
+
+
+
+

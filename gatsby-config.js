@@ -29,11 +29,13 @@ module.exports = {
             options: {
                 plugins: [
                     {
-                        resolve: `gatsby-remark-highlight-code`,
+                        resolve: `gatsby-remark-vscode`,
                         options: {
-                            terminal: 'carbon',
-                            theme: 'base16-dark'
-                        }
+                            theme: 'Dark+ (default dark)',
+                            inlineCode: {
+                                marker: '**'
+                            }
+                        },
                     },
                     "gatsby-remark-normalize-paths",
                     "gatsby-remark-autolink-headers",

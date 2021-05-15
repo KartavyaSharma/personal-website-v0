@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { graphql} from 'gatsby'
 import Img from 'gatsby-image'
-import hljs from 'highlight.js'
 import '../../node_modules/highlight.js/styles/a11y-dark.css';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
@@ -13,8 +12,6 @@ import SEO from "../components/SEO"
 
 class Content extends React.Component {
     componentDidMount() {
-        // hljs.highlightAll();
-
         let script = document.createElement('script');
         let anchor = document.getElementById('inject-comments');
         script.setAttribute("src", "https://utteranc.es/client.js");
@@ -29,7 +26,11 @@ class Content extends React.Component {
         deckDeckGoHighlightElement();
         return (
             <div>
-                <div id="body_content" className='font-blogBody md:min-w-keepWmd 2xl:min-w-keepWlg pb-10 lg:max-w-3xl 2xl:max-w-4xl' dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}></div>
+                <div 
+                    id="body_content" 
+                    className='font-blogBody md:min-w-keepWmd 2xl:min-w-keepWlg pb-10 lg:max-w-3xl 2xl:max-w-4xl' 
+                    dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}>
+                </div>
                 <div className='text-3xl font-mono text-white font-semibold pb-2'>Comments</div>
                 <hr className='border-orange-500 hidden md:block md:min-w-keepWmd 2xl:min-w-keepWlg'/>
                 <div id='inject-comments' className='md:pt-8'></div>

@@ -25,31 +25,33 @@ The website itself is developed using React and Gatsby (a static-site-generator.
 
 In addition to all those plugins, I also incorporated a for-React subset of the [Highlight.js](https://www.npmjs.com/package//react-highlight "Highlight.js") code snippet highlighting library. It supports all the latest language features, including JavaScript's new ES versions.
 
-    //a simple program to generate all subsets of numbers from {0...n-1}
-    #include <bits/stdc++.h>
+```c++
+//a simple program to generate all subsets of numbers from {0...n-1}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int n;
+
+int main() {
+	cin >> n;
+    vector<vector<int>> set_store;
     
-    using namespace std;
-    
-    int n;
-    
-    int main() {
-    	cin >> n;
-        vector<vector<int>> set_store;
-        
-        for(int mask = 0; mask < (1 << n); mask++) {
-        	vector<int> subset;
-            for(int i = 0; i < n; i++) {
-            	if(mask & (1 << i)) subset.push_back(i);
-            }
-            set_store.push_back(subset);
+    for(int mask = 0; mask < (1 << n); mask++) {
+    	vector<int> subset;
+        for(int i = 0; i < n; i++) {
+        	if(mask & (1 << i)) subset.push_back(i);
         }
-        
-        //printing all subsets
-        for(auto x : set_store) {
-        	for(auto y : x) cout << y << ' ';
-            cout << endl;
-        }
+        set_store.push_back(subset);
     }
+    
+    //printing all subsets
+    for(auto x : set_store) {
+    	for(auto y : x) cout << y << ' ';
+        cout << endl;
+    }
+}
+```
 
 A short C++ program to generate all subsets in a range of consecutive numbers.
 
