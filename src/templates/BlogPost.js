@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { graphql} from 'gatsby'
 import Img from 'gatsby-image'
-import '../../node_modules/highlight.js/styles/a11y-dark.css';
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -23,7 +21,6 @@ class Content extends React.Component {
         anchor.appendChild(script);
     }
     render() {
-        deckDeckGoHighlightElement();
         return (
             <div>
                 <div 
