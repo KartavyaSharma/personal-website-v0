@@ -17,7 +17,7 @@ If you haven't already, you will need to install a couple of things before you c
 
 You can install Cygwin from [this]() link.
 
-If you don't have CPP build tools installed, you can choose from a number of options, including [CMake](https://cmake.org/download/) and [mingw-w64](http://mingw-w64.org/doku.php/download). These will allow you to compile your C++ without Cygwin.
+If you don't have CPP build tools installed, you can choose from a number of options, including [CMake](https://cmake.org/download/) and [mingw-w64](http://mingw-w64.org/doku.php/download). These will allow you to compile your C++ program without Cygwin.
 
 # Installing Cygwin
 
@@ -37,7 +37,7 @@ There is a default list of pre-selected packages that you should install on the 
 * xinit
 * xorg-server
 
-You should ensure that you install dos2unix, without it you would not be able to convert DOS line endings to UNIX line endings. When you initially save a script file from any text editor, all line endings will be marked as DOS, this would prevent Cygwin from executing the script. dos2unix will convert all line endings to be compatible with Cygwin. You can convert line endings in a file using this command:
+You should ensure that you install dos2unix, without it you would not be able to translate your script file's DOS line endings - `bash**\r\n` - to Unix line endings - `bash**\n`. Since Cygwin runs all commands in a fashion similar to Unix where the line feed ends with `bash**\n`, your script's `bash**\r\n` line endings will cause Cygwin to throw an error. To get around this you can simply use dos2unix to translate all line feed carriages to Unix compatible ones. This can be done using the following command: 
 
 ```bash
 $ dos2unix your_script_file_name.sh
