@@ -37,26 +37,26 @@ There is a default list of pre-selected packages that you should install on the 
 * xinit
 * xorg-server
 
-You should ensure that you install dos2unix, without it you would not be able to convert DOS line ending to UNIX. When you initially save a script file from any text editor, all line endings will be marked as DOS, this would prevent Cygwin from executing the script. dos2unix will convert all line endings to be compatible with Cygwin. You can convert all line endings in a file using this command:
+You should ensure that you install dos2unix, without it you would not be able to convert DOS line endings to UNIX line endings. When you initially save a script file from any text editor, all line endings will be marked as DOS, this would prevent Cygwin from executing the script. dos2unix will convert all line endings to be compatible with Cygwin. You can convert line endings in a file using this command:
 
 ```bash
 $ dos2unix your_script_file_name.sh
 ```
 
-I'll be covering more information on how to actually create and save scripts further ahead in this post, but you can refer to this section later on when you have written your scripts.
+I'll be covering more information on how to actually create and save your scripts further ahead in this post, but you can refer to this section later on.
 
 # Setting up a C++ environment
 
-You can use any editor you prefer in this step since we will be handling compilation through the Cygwin terminal. Initially, I had opted for Sublime Text 3 as my goto editor for CP; however, after installing a few packages, it became bloated a slow to use in general.
+You can use any editor you prefer in this step since we will be handling compilation through the Cygwin terminal. Initially, I had opted for Sublime Text 3 as my go to editor for CP; however, after installing a few packages, it became bloated a slow to use in general.
 
-Currently, my daily editors include GVim and Notepad++ for competitive programming. None of these require any special setup; however, if you have never used Vim before, you might want to check out some resources first due to a steep learning curve:
+Currently, my frequently used editors include Vim and Notepad++. None of them require any special setup; however, if you have never used Vim before, you might want to check out some resources first due to a steep learning curve:
 
 * Vim tutorial video - [https://www.youtube.com/watch?v=IiwGbcd8S7I](https://www.youtube.com/watch?v=IiwGbcd8S7I "https://www.youtube.com/watch?v=IiwGbcd8S7I")
 * Vim cheat sheet - [https://www.cs.cmu.edu/\~15131/f17/topics/vim/vim-cheatsheet.pdf](https://www.cs.cmu.edu/\~15131/f17/topics/vim/vim-cheatsheet.pdf "https://www.cs.cmu.edu/~15131/f17/topics/vim/vim-cheatsheet.pdf")
 
 # An all-purpose C++ template
 
-This can come quite in handy when you don't want to spend time writing loops and defining nested pairs in maps, or other data structures that might be tedious to write in time-constrained situations.
+This can come quite in handy when you don't want to spend time writing loops and defining nested pairs in maps, or other data structure that might be tedious to write in time-constrained situations.
 
 ### Macros
 
