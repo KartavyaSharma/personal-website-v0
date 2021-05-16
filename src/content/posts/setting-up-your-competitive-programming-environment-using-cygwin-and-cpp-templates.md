@@ -21,7 +21,7 @@ If you don't have CPP build tools installed, you can choose from a number of opt
 
 # Installing Cygwin
 
-After installing the setup file for Cygwin, you can go through its installation instructions. Before initial package installation, you'll be prompted to choose a download site. You can choose any; however, I have personally used [http://mirror.cs.vt.edu](http://mirror.cs.vt.edu) and [https://mirrors.kernel.org](https://mirrors.kernel.org).
+After installing the setup file for Cygwin, you can go through its installation instructions. Before initial package installation, you'll be prompted to choose a download site. You can choose any; however, I personally use [http://mirror.cs.vt.edu](http://mirror.cs.vt.edu) and [https://mirrors.kernel.org](https://mirrors.kernel.org).
 
 ### Package installation
 
@@ -37,7 +37,13 @@ There is a default list of pre-selected packages that you should install on the 
 * xinit
 * xorg-server
 
-You should ensure that you install dos2unix, without it, you wouldn't be able to run shell scripts on windows on certain computers where the OS converts all script line endings to DOS.
+You should ensure that you install dos2unix, without it you would not be able to convert DOS line ending to UNIX. When you initially save a script file from any text editor, all line endings will be marked as DOS, this would prevent Cygwin from executing the script. dos2unix will convert all line endings to be compatible with Cygwin. You can convert all line endings in a file using this command:
+
+```bash
+$ dos2unix your_script_file_name.sh
+```
+
+I'll be covering more information on how to actually create and save scripts further ahead in this post, but you can refer to this section later on when you have written your scripts.
 
 # Setting up a C++ environment
 
