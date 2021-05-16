@@ -16,7 +16,6 @@ This repository contains the source code for my [personal website](https://www.k
 - Gatsby.js
 - GraphQL
 - Tailwind CSS
-- Forestry
 
 This website was deployed using Vercel.
 
