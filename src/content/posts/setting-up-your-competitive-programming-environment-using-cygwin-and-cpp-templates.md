@@ -392,12 +392,3 @@ This was an unexpectedly long post; however, I felt that a shorter version would
 You can refer to other Bash guides to further customize this system to your needs and change the template according to the platforms and the I/O formats you frequently require. Spending time configuring your environment saves a lot of time down the line.
 
 If you feel this post leaves out certain crucial parts or if you feel it could use improvement, feel free to leave a comment or open a pull request in my Github repository.
-
-
-
-
-
-
-
-
-
