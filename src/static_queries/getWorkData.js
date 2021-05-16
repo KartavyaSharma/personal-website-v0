@@ -17,8 +17,8 @@ function GetWorkData() {
                                     placeholder: DOMINANT_COLOR
                                     quality: 100
                                     transformOptions: {fit: COVER}
-                                    height: 64
-                                    width: 64
+                                    height: 82
+                                    width: 82
                                 )
                             }
                         }

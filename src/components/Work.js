@@ -11,7 +11,7 @@ export default function Work() {
 
     function renderWorkList() {
         return(
-            <div className={`grid grid-rows-${Math.floor(data.length/2)} lg:grid-cols-2 gap-y-10 lg:gap-y-20 w-full`}>
+            <div className={`grid grid-rows-${Math.floor(data.length/2)} lg:grid-cols-2 lg:gap-x-5 gap-y-10 lg:gap-y-20 w-full`}>
                 {
                     data.map(exp => {
                         const img = getImage(exp.node.companyLogo)
@@ -19,8 +19,7 @@ export default function Work() {
                             <div className='grid grid-cols-1'>
                                 <div className='flex flex-col'>
                                     <div className='flex flex-row items-center w-full'>
-                                        <GatsbyImage image={img} alt={exp.node.company} />
-                                        <div className='text-white text-base lg:text-xl font-semibold px-4'>
+                                        <div className='text-white text-base lg:text-xl w-full font-semibold'>
                                             {exp.node.position}
                                             <br/>
                                             { exp.node.companyWebsite === "" ? (
@@ -35,6 +34,9 @@ export default function Work() {
                                             <span className='text-xs text-white text-opacity-80'>
                                                 {exp.node.dates.start} - {exp.node.dates.end}
                                             </span>
+                                        </div>
+                                        <div className='flex flex-row justify-end items-center max-w-full mr-5'>
+                                            <GatsbyImage image={img} alt={exp.node.company} />
                                         </div>
                                     </div>
                                     <div className='border-l border-trueGray-800 mt-3 h-full'>
