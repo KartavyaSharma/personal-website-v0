@@ -56,11 +56,11 @@ Currently, my frequently used editors include Vim and Notepad++. None of them re
 
 # An all-purpose C++ template
 
-This can come quite in handy when you don't want to spend time writing loops and defining nested pairs in maps, or other data structure that might be tedious to write in time-constrained situations.
+This can come quite in handy when you don't want to spend time writing loops and defining nested pairs in maps, or other data structures that might be tedious to write in time-constrained situations.
 
 ### Macros
 
-A template pre-defines C++ macros for you, this way a shorthand code snippet will be at your disposal during practice or competition.
+A template pre-defines C++ macros for you, this way, a shorthand code snippet will be at your disposal during practice or competition.
 ```c++
 #define ar array
 #define endl "\n"
@@ -74,7 +74,7 @@ typedef long long ll;
 typedef long double ld;
 ```
 
-In addition to this, you can also add loop macros; however, you have to be careful using them. Loop macros can make your code hard to read and might lead to bugs. On that note, here are some of the loop macros I find myself using regularly:
+In addition to this, you can also add loop macros; however, you have to be careful while using them. Loop macros can make your code hard to read and might lead to bugs. On that note, here are some of the loop macros I find myself using regularly:
 
 ```c++
 #define f(i,a,b) for(ll i=a; i<b; i++)
@@ -108,7 +108,7 @@ cout << search<int>(nums, sz(nums), 5); // will print 4
 
 ### Cross-platform
 
-To further improve my workflow, I also use conditional preprocessor directives. These check for if certain types are defined and execute a code block if they are. If you find yourself practicing across multiple platforms and having to write a new input sequence for each one, you can use preprocessor directives to execute platform-specific input sequences that can be controlled using just a macro.
+To further improve my workflow, I also use conditional preprocessor directives. These check for if certain types are defined and execute a code block if they are. If you find yourself practicing across multiple platforms and writing new input sequences for each, you can use preprocessor directives to execute platform-specific input sequences that can be controlled using just a macro.
 
 I mostly use USACO, CodeForces, and Google Kickstart while practicing and competing. The next block is specific to these three platforms, but you can modify it to suit your context.
 
@@ -162,7 +162,7 @@ I'll be covering using _chrono_ in another post since you would be required to d
 
 ### The complete template
 
-Here's the template I use on a daily basis. It has additional components compared to what I have mentioned up to this point; however, you can modify it as you wish.
+Here's the template I use on a daily basis. It has additional components compared to what I have mentioned up to this point; however, you can modify it as you wish. Going ahead, this file will be referenced as `bash**__master.cpp`, instead of creating a new file for each problem we will write our code in this file and run a script when are finished with a problem. Details on how to do this are mentioned later on in this post.
 
 ```c++
 #include <bits/stdc++.h>
@@ -287,23 +287,25 @@ int main() {
 }
 ```
 
+The `bash**__master.cpp` file contains the template above, all problem specific code should be written inside the `c++**void solve()` function.
+
 # Cygwin scripts
 
-Using Cygwin you can automate certain aspects of testing and debugging our C++ code, this can be accomplished using Bash scripts.
+Using Cygwin we can automate certain aspects of testing and debugging our C++ code, this can be accomplished using Bash scripts.
 
-Since we are not setting up a build system in our text editor, we will use Cygwin's *`**gcc`, `**g++`, and `**gdb`* packages to compile and run our C++ program. The compile instruction looks like this:
+Since we are not setting up a build system in our text editor, we will use Cygwin's *`bash**gcc`, `bash**g++`, and `bash**gdb`* packages to compile and run our C++ program. The command for compiling a file named `bash**__master.cpp` is as follows:
 
 ```bash
-$ g++ -D_GLIBCXX_DEBUG -Wall -o a.exe
+$ g++ -D_GLIBCXX_DEBUG -Wall -o a.exe __master.cpp
 ```
 
-However, typing this long statement every time we want to debug or compile our code is tedious. Cygwin has the functionality to alias custom command names to short (or even long) scripts. An alias will act as a short- hand for executing large/complex commands in the shell. We can use aliases for all the commands we would normally type out in BASH.
+However, typing this statement every time we want to debug or compile our code can be tedious. Cygwin has the functionality to alias custom command names to short (or even long) scripts. An alias will act as a short-hand for executing large/complex commands in the shell. We can use aliases for all the commands we would normally type out in BASH.
 
 ### Aliasing commands
 
-A common method is to first register aliases with Cygwin's configuration file which is run every time the shell starts. These aliases are then available to use whenever we use or start the shell again next time. In Cygwin, the configuration file is named `bash.bashrc` and can be located from Cygwin's root directory following `etc\bash.bashrc`. Here we can define our aliases and even execute commands (albeit single-line) outside the subshell our alias scripts would run in.
+A common method is to first register aliases with Cygwin's configuration file which runs every time the shell starts. These aliases are then available to use whenever we use or start the shell again next time. In Cygwin, the configuration file is named `bash.bashrc` and can be located from Cygwin's root directory following `etc\bash.bashrc`. Here we can define our aliases and even execute commands (albeit single-line) outside the subshell our alias scripts would run in.
 
-To alias for the compilation script above, we would first need to write our script and save it in a folder named `scripts` (or any name that suits you) and reference that name in `bash.bashrc`.
+To create an alias for the compilation script above, we would first need to write our script and save it in a folder named `scripts` (or any name that suits you) and reference that name in `bash.bashrc`.
 
 Our `comp.sh` script file will look something like this:
 
@@ -312,7 +314,7 @@ Our `comp.sh` script file will look something like this:
 g++ -D_GLIBCXX_DEBUG -Wall -o a.exe __master.cpp && ./a
 ```
 
-That is the entirety of our `comp.sh` file! You will notice that I have included a `bash**&& ./a` addition in the script file, this executes our initial command and `bash**./a` consecutively. This ensures that when the program is finished compiling it automatically runs in the shell ready to accept input.
+That is the entirety of our `comp.sh` file! You will notice that I have included a `bash**&& ./a` addition in the script file, this executes our initial command and `bash**./a` consecutively. This ensures that when Cygwin has finished compiling our code it automatically runs the `bash**.exe` in the shell ready to accept input.
 
 We can now register our alias inside the `bash.bashrc` file. Simply go to the bottom of the file and type:
 
@@ -320,7 +322,7 @@ We can now register our alias inside the `bash.bashrc` file. Simply go to the bo
 alias comp = \"/cygdrive/c/Users/your_username/path/to/script/./comp.sh\"
 ```
 
-The `bash**bash.bashrc` file takes full paths from Cygwin's `bash**home(~)` directory. The drive letter is denoted by `bash**c` and can be substituted for other letters. `bash**./comp.sh` will tell Cygwin to execute `bash**comp.sh` when `bash**>>comp` is typed in the terminal.
+The `bash**bash.bashrc` file takes full paths from Cygwin's `bash**home(~)` directory. The drive letter is denoted by `bash**c` and can be substituted for other letters. `bash**./comp.sh` will tell Cygwin to execute `bash**comp.sh` when `bash**$ comp` is typed in the terminal.
 
 ```bash
 $ comp // typing this into the terminal should execute __master.cpp
@@ -328,9 +330,7 @@ $ comp // typing this into the terminal should execute __master.cpp
 
 ### Template scripts
 
-For those of you who noticed, the `bash**comp.sh` script is compiling a file named `bash**__master.cpp`. If you were to create a file with a different name and then executing `bash**$ comp` would throw an error, it's because the script is programmed to only run the `bash**__master.cpp` file. This was done to ensure a smoother transition when switching between problems during competition or practice. The `bash**__master.cpp` file contains the template above, all problems are solved within this template inside the `c++**void solve()` function.
-
-To get this script to accept other file names you can simply do:
+For those of you who noticed, the `bash**comp.sh` script is compiling a file named `bash**__master.cpp`. If you were to create a file with a different name,  executing `bash**$ comp` would throw an error, this is because the script is programmed to run the `bash**__master.cpp` file. This was done to ensure a smoother transition when switching between problems during competition or practice. To get this script to accept other file names you can simply do:
 
 ```bash
 #!/bin/bash
@@ -340,7 +340,7 @@ g++ -D_GLIBCXX_DEBUG -Wall -o a.exe "${file_name}.cpp" && ./a
 
 Further details about the commands used in the above script are mentioned below.
 
-Although, with this template problem -approach, we can't really save the `bash**__master.cpp` file. To get around this, I coded a script that copies all the contents of the `bash**__master.cpp` file into another file that I can name from the terminal. It would create a new `bash**.cpp` file after I finished solving a problem. This is what the script looked like.
+Although, with this template problem approach, we can't really save the `bash**__master.cpp` file. To get around this, I coded a script that copies all the contents of the `bash**__master.cpp` file into another file that we can name from the terminal. It would create a new `bash**.cpp` file after we have finished solving a problem. This is what the script looked like.
 
 ```bash
 #!/bin/bash
@@ -348,7 +348,7 @@ read -p "Enter Problem Name `echo $'\n> '`" name
 cp __master.cpp "${name}.cpp"
 ```
 
-It would prompt the user to enter the problem name on a new line prefixed by a `bash**>` followed by whatever name you want to give the file, in my case it was mostly the name of the problem without the whitespace and special characters. This then copied all the contents from the `bash**__master.cpp` file and created a new file `bash**input_name.cpp`. 
+It would prompt the user to enter the problem name on a new line prefixed by a `bash**>` followed by whatever name you want to give the file, in my case it was mostly the name of the problem without the whitespace and special characters. This then copies all the content from the `bash**__master.cpp` file and creates a new file `bash**input_name.cpp`. 
 
 In my `bash**bash.bashrc` file this script was aliased as:
 
@@ -362,7 +362,7 @@ You should note that running `bash**$ fin` outside of the directory `bash**__mas
 
 ### Git operations
 
-By now you probably know the drill to save scripts and register aliases. I am going to mention one last script that helps with backing up all the code I write. If you have used Git before, you know that there are three steps you have to follow to push your code to your remote repository.
+By now you probably know the drill to save scripts and register aliases. I am going to mention one last script that helps with backing up all the code you will write. If you have used Git before, you know that there are three steps you have to follow to push your code to your remote repository (in simple use cases at least).
 
 ```
 1. git add .
@@ -385,10 +385,12 @@ git push -u origin master
 
 First, it `bash**cd`s into the directory `bash**__master.cpp` is in, then it performs the first function in our Git push list, then it asks the user for a commit description, you can leave it empty if you wish, after that it indicates the user that it's running the `bash**git push` command and proceeds to push all the code to the `bash**master` branch in your code repository.
 
+The process to alias our `bash**update.sh` script is very similar to how we've been aliasing our previous scripts.
+
 # Another parting note
 
 This was an unexpectedly long post; however, I felt that a shorter version would have left out many details on how to set up a practical and efficient competitive programming environment. I hope this gives you a complete idea of how you can use Bash scripts to automate frequently used processes and have a template that will work with most beginner to intermediate problems.
 
-You can refer to other Bash guides to further customize this system to your needs and change the template according to the platforms and the I/O formats you frequently require. Spending time configuring your environment saves a lot of time down the line.
+You can refer to other Bash guides to further customize this system to your needs. You can also change the template according to the platforms and I/O formats you frequently require. Spending time configuring your environment can save you a lot of time down the line.
 
-If you feel this post leaves out certain crucial parts or if you feel it could use improvement, feel free to leave a comment or open a pull request in my Github repository.
+If you reckon this post leaves out certain crucial parts or it could use improvement, feel free to leave a comment or open a pull request in my Github repository.
