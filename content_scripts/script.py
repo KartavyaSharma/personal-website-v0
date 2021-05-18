@@ -4,6 +4,7 @@ import datetime
 import re
 import uuid
 from sqlitedict import SqliteDict
+import subprocess
 
 def create_frontmatter():
     #---------DEFINING FRONTMATTER---------
@@ -38,7 +39,7 @@ def create_frontmatter():
         YAML_TAGS += "- "+TAGS[i]+'\n'        
     #-----------------------------------------
     
-    return [YAML_START, YAML_ID, YAML_TITLE, YAML_DATE, YAML_DESCRIPTION, YAML_THUMBNAIL, YAML_TAGS, YAML_END], ID
+    return [YAML_START, YAML_ID, YAML_TITLE, YAML_DATE, YAML_DESCRIPTION, YAML_THUMBNAIL, YAML_TAGS, YAML_END], ID, TITLE
 
 
 def workspace_to_txt():
@@ -53,7 +54,19 @@ def workspace_to_md(ORIGINAL_EXT='.md'):
     
 def temp_to_markdown(file_markdown_name):
     pre, ext = os.path.splitext(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt')
-    os.rename(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt', pre + '.md')
+    try:
+        os.rename(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt', pre + '.md')
+    except FileExistsError:
+        overwrite_flag = input("File already exists, do you want to overwrite it and try again? [y/n]: ")
+        if overwrite_flag == 'y':
+            try:
+                os.remove(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt', pre + '.md')
+            except:
+                raise Exception('File overwrite failed, aborting...')
+            os.rename(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt', pre + '.md')
+            print('Previous file has been overwritten!')
+        else:
+            raise Exception('File overwrite aborted, files cannot have the same name!')
     
     
 def markdown_title_on_create(title):
@@ -108,24 +121,73 @@ def write_markdown_to_file(file_markdown_name):
 
     
 def move_to_posts(create_flag, file_markdown_name):
-    source = os.path.dirname(os.getcwd()+"\\content_scripts\\workspace\\"+file_markdown_name+".md")
-    destination = os.path.dirname(os.getcwd()+"\\content_script\\posts")
+    source = os.path.dirname(os.getcwd())+"\\content_scripts\\workspace\\"+file_markdown_name+".md"
+    destination = os.path.dirname(os.getcwd())+"\\content_scripts\\posts"
     if create_flag == 'c':
-        return shutil.move(source, destination)
+        shutil.move(source, destination)
     elif create_flag == 'e':
-        return os.replace(source, destination)
+        destination += "\\"+file_markdown_name+".md"
+        os.replace(source, destination)
+    print("Success!")
+    
+
+def git_operations():
+    commit_desc = input("Enter commit description: ")
+    standard_git_push = [
+            ["cd", ".."],
+            ["git", "add", "."],
+            ["git", "commit", "-m", '"'+commit_desc+'"'],
+            ["git", "push"],
+        ]
+    
+    for git_op in standard_git_push:
+        try:
+            subprocess.check_call(git_op, shell=True, cwd=os.getcwd())
+        except subprocess.CalledProcessError as error:
+            print("Error: ", error.output)
+            git_pull_flag = input("Can this be resolved using 'git pull'? [y/n]: ")
+            if git_pull_flag == 'y':
+                try:
+                    subprocess.check_call(["git", "pull"], shell=True)
+                except subprocess.CalledProcessError as error:
+                    print("'git pull' failed with error: ", error.output, "aborting process...")
+                    return 0
+            elif git_pull_flag == 'n':
+                print("Since no easy fix exists, aborting process...")
+                return 0
+        subprocess.call(git_op, shell=True, cwd=os.getcwd())
+    print("Success!")
 
     
+def push_to_repo(identification):
+    file_markdown_name = markdown_title_on_edit(identification)
+    source = os.path.dirname(os.getcwd())+"\\content_scripts\\posts\\"+file_markdown_name+".md"
+    destination = os.path.dirname(os.getcwd())+"\\src\\content\\posts"
+    try:
+        print("Adding file to posts repo in website src...")
+        shutil.copy(source, destination)
+        print("Success!")
+    except:
+        print("Seems like you are trying to push and edit for "+file_markdown_name+". Removing existing version...")
+        os.remove(source, destination+"\\"+file_markdown_name+".md")
+        shutil.copy(source, destination)
+    git_flag = input("Do you want to push these changes to remote [y/n]: ")
+    if git_flag == 'y':
+        git_operations()
+    else:
+        return 0
+    
+
 def main_script():
     
-    CREATE_FLAG = input('Create / Edit [c/e]: ')
+    CREATE_FLAG = input('create / edit / exit / push [c/e/o/p]: ')
     
     workspace_to_txt()
     
     if CREATE_FLAG == 'c':
         
         frontmatter = create_frontmatter()
-        frontmatter_title, frontmatter_id = frontmatter[0][2], frontmatter[1]
+        frontmatter_title, frontmatter_id = frontmatter[2], frontmatter[1]
         
         file_markdown_name = markdown_title_on_create(frontmatter_title)
         
@@ -136,9 +198,15 @@ def main_script():
     elif CREATE_FLAG == 'e':
         file_markdown_name = write_frontmatter_to_file(CREATE_FLAG)
         write_markdown_to_file(file_markdown_name)
-    else:
-        print('Please enter valid option!')
+    elif CREATE_FLAG == 'o':
+        workspace_to_md()
         return 0
+    elif CREATE_FLAG == 'p':
+        push_to_repo(input('Enter post ID: '))
+    else:
+        workspace_to_md()
+        print('Please enter a valid option!')
+        main_script()
     
     workspace_to_md()
     
@@ -147,6 +215,5 @@ def main_script():
     move_flag = input('Do you want to move this file to the post dir [y/n]: ')
     move_to_posts(CREATE_FLAG, file_markdown_name) if move_flag == 'y' else None
 
+
 main_script()
-
-
