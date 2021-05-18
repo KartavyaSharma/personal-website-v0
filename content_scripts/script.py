@@ -134,7 +134,6 @@ def move_to_posts(create_flag, file_markdown_name):
 def git_operations():
     commit_desc = input("Enter commit description: ")
     standard_git_push = [
-            ["cd", ".."],
             ["git", "add", "."],
             ["git", "commit", "-m", '"'+commit_desc+'"'],
             ["git", "push"],
@@ -142,7 +141,7 @@ def git_operations():
     
     for git_op in standard_git_push:
         try:
-            subprocess.check_call(git_op, shell=True, cwd=os.getcwd())
+            subprocess.check_call(git_op, shell=True, cwd=os.path.dirname(os.getcwd()))
         except subprocess.CalledProcessError as error:
             print("Error: ", error.output)
             git_pull_flag = input("Can this be resolved using 'git pull'? [y/n]: ")
@@ -155,7 +154,7 @@ def git_operations():
             elif git_pull_flag == 'n':
                 print("Since no easy fix exists, aborting process...")
                 return 0
-        subprocess.call(git_op, shell=True, cwd=os.getcwd())
+        subprocess.call(git_op, shell=True, cwd=os.path.dirname(os.getcwd()))
     print("Success!")
 
     
@@ -202,7 +201,9 @@ def main_script():
         workspace_to_md()
         return 0
     elif CREATE_FLAG == 'p':
+        workspace_to_md()
         push_to_repo(input('Enter post ID: '))
+        return 0
     else:
         workspace_to_md()
         print('Please enter a valid option!')
