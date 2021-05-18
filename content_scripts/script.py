@@ -24,8 +24,7 @@ def create_frontmatter():
     ID = str(uuid.uuid4())
     #------------------------------
     
-    #---------ADDING YAML FRONTMATTER---------
-    
+    #---------ADDING YAML FRONTMATTER---------    
     YAML_START, YAML_END = "---", "---"
     YAML_TITLE = "title: "+TITLE
     YAML_DATE = "date: "+DATE
@@ -36,8 +35,7 @@ def create_frontmatter():
     YAML_ID = "id: "+ID
     
     for i in range(0, number_of_tags):
-        YAML_TAGS += "- "+TAGS[i]+'\n'
-        
+        YAML_TAGS += "- "+TAGS[i]+'\n'        
     #-----------------------------------------
     
     return [YAML_START, YAML_ID, YAML_TITLE, YAML_DATE, YAML_DESCRIPTION, YAML_THUMBNAIL, YAML_TAGS, YAML_END], ID
@@ -53,61 +51,70 @@ def workspace_to_md(ORIGINAL_EXT='.md'):
     os.rename(os.getcwd()+'\\workspace\\__workspace.txt', pre + ORIGINAL_EXT)
     
     
-def temp_to_markdown(FILE_MARKDOWN_NAME):
-    pre, ext = os.path.splitext(os.getcwd()+'\\workspace\\'+FILE_MARKDOWN_NAME+'.txt')
-    os.rename(os.getcwd()+'\\workspace\\'+FILE_MARKDOWN_NAME+'.txt', pre + '.md')
+def temp_to_markdown(file_markdown_name):
+    pre, ext = os.path.splitext(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt')
+    os.rename(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt', pre + '.md')
     
     
 def markdown_title_on_create(title):
     #DO NOT EDIT, removes all whitespaces and special characters from title
     NO_WHITE_SPACE = re.sub("\W+", "-", title)
-    FILE_MARKDOWN_NAME = re.sub("[.,'?]", "", NO_WHITE_SPACE).lower()
-    return FILE_MARKDOWN_NAME
+    file_markdown_name = re.sub("[.,'?]", "", NO_WHITE_SPACE).lower()
+    return file_markdown_name
 
 
 def markdown_title_on_edit(identification):
     ID_RETRIEVE = SqliteDict('KEY_VALUE_STORE.sqlite', autocommit=True)
-    FILE_MARKDOWN_NAME = ID_RETRIEVE[identification]
+    file_markdown_name = ID_RETRIEVE[identification]
     ID_RETRIEVE.close()
-    return FILE_MARKDOWN_NAME
+    return file_markdown_name
 
-def store_markdown_frontmatter_on_create(FILE_MARKDOWN_NAME, identification, frontmatter):
+def store_markdown_frontmatter_on_create(file_markdown_name, identification, frontmatter):
     store_file = open(os.getcwd()+'\\frontmatter_store\\frontmatter_'+identification+'.txt', 'w+')
     for frontmatter_var in frontmatter:
         store_file.write(frontmatter_var+'\n')
     ID_STORE = SqliteDict('KEY_VALUE_STORE.sqlite', autocommit=True)
-    ID_STORE[identification] = FILE_MARKDOWN_NAME
+    ID_STORE[identification] = file_markdown_name
     ID_STORE.close()
     store_file.close()
 
 
-def write_frontmatter_to_file(create_flag, FILE_MARKDOWN_NAME=None, frontmatter=None):
+def write_frontmatter_to_file(create_flag, file_markdown_name=None, frontmatter=None):
     temp_file = None
     if create_flag == 'c':
-        temp_file = open('workspace/'+FILE_MARKDOWN_NAME+'.txt', 'a')
+        temp_file = open('workspace/'+file_markdown_name+'.txt', 'a')
         frontmatter_list = frontmatter
         for frontmatter_var in frontmatter_list:
             temp_file.write(frontmatter_var+'\n')
     elif create_flag == 'e':
         identification = input('Enter post ID: ')
-        FILE_MARKDOWN_NAME = markdown_title_on_edit(identification)
-        temp_file = open('workspace/'+FILE_MARKDOWN_NAME+'.txt', 'a')
+        file_markdown_name = markdown_title_on_edit(identification)
+        temp_file = open('workspace/'+file_markdown_name+'.txt', 'a')
         with open(os.getcwd()+"\\frontmatter_store\\frontmatter_"+identification+".txt", 'r+') as store_file:
             for line in store_file:
                 temp_file.write(line)
                 
     temp_file.close()
     
-    return FILE_MARKDOWN_NAME if create_flag == 'e' else None
+    return file_markdown_name if create_flag == 'e' else None
     
 
-def write_markdown_to_file(FILE_MARKDOWN_NAME):
-    temp_file = open('workspace/'+FILE_MARKDOWN_NAME+'.txt', 'a')
+def write_markdown_to_file(file_markdown_name):
+    temp_file = open('workspace/'+file_markdown_name+'.txt', 'a')
     with open(os.getcwd()+'\\workspace\\__workspace.txt') as file:
         lines = file.readlines()
         temp_file.writelines(lines)
     temp_file.close()
-        
+
+    
+def move_to_posts(create_flag, file_markdown_name):
+    source = os.path.dirname(os.getcwd()+"\\content_scripts\\workspace\\"+file_markdown_name+".md")
+    destination = os.path.dirname(os.getcwd()+"\\content_script\\posts")
+    if create_flag == 'c':
+        return shutil.move(source, destination)
+    elif create_flag == 'e':
+        return os.replace(source, destination)
+
     
 def main_script():
     
@@ -120,23 +127,25 @@ def main_script():
         frontmatter = create_frontmatter()
         frontmatter_title, frontmatter_id = frontmatter[0][2], frontmatter[1]
         
-        FILE_MARKDOWN_NAME = markdown_title_on_create(frontmatter_title)
+        file_markdown_name = markdown_title_on_create(frontmatter_title)
         
-        write_frontmatter_to_file(CREATE_FLAG, FILE_MARKDOWN_NAME, frontmatter[0])
-        store_markdown_frontmatter_on_create(FILE_MARKDOWN_NAME, frontmatter_id, frontmatter[0])
-        write_markdown_to_file(FILE_MARKDOWN_NAME)
+        write_frontmatter_to_file(CREATE_FLAG, file_markdown_name, frontmatter[0])
+        store_markdown_frontmatter_on_create(file_markdown_name, frontmatter_id, frontmatter[0])
+        write_markdown_to_file(file_markdown_name)
         
     elif CREATE_FLAG == 'e':
-        FILE_MARKDOWN_NAME = write_frontmatter_to_file(CREATE_FLAG)
-        write_markdown_to_file(FILE_MARKDOWN_NAME)
+        file_markdown_name = write_frontmatter_to_file(CREATE_FLAG)
+        write_markdown_to_file(file_markdown_name)
     else:
         print('Please enter valid option!')
         return 0
     
     workspace_to_md()
     
-    temp_to_markdown(FILE_MARKDOWN_NAME)
+    temp_to_markdown(file_markdown_name)
     
+    move_flag = input('Do you want to move this file to the post dir [y/n]: ')
+    move_to_posts(CREATE_FLAG, file_markdown_name) if move_flag == 'y' else None
 
 main_script()
 
