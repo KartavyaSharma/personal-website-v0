@@ -160,7 +160,7 @@ def git_operations():
     
 def push_image_to_repo(image_name):
      source = os.getcwd()+"\\workspace\\"+image_name
-     destination = os.path.dirname()+"\\src\\content\\images"
+     destination = os.path.dirname(os.getcwd())+"\\src\\content\\images"
      print("Moving file to repo image dir...")
      shutil.move(source, destination)
      print("Success!")
@@ -201,7 +201,8 @@ def main_script():
         write_frontmatter_to_file(CREATE_FLAG, file_markdown_name, frontmatter[0])
         store_markdown_frontmatter_on_create(file_markdown_name, frontmatter_id, frontmatter[0])
         write_markdown_to_file(file_markdown_name)
-        push_image_to_repo(thumbnail) if thumbnail != "" else None
+        if thumbnail != "default.png":
+            push_image_to_repo(thumbnail)
     elif CREATE_FLAG == 'e':
         file_markdown_name = write_frontmatter_to_file(CREATE_FLAG)
         write_markdown_to_file(file_markdown_name)
