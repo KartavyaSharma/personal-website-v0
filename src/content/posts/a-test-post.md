@@ -1,9 +1,9 @@
 ---
-id: 04e3b9a8-e35d-4857-a970-0975541d6a04
-title: Another sample post
-date: 2021-05-18T10:56:16.857315+01:00
-description: ;laksdjfl;kjaslk;dfjl;sjd
-thumbnail: "../images/img.png"
+id: c52c959f-e478-4cf4-a729-a9b602bbd0cd
+title: A test post
+date: 2021-05-20T09:53:53.576888+01:00
+description: Assume I typed something here
+thumbnail: "../images/default.png"
 tags:
 - Other
 

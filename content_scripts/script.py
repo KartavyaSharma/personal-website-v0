@@ -20,6 +20,7 @@ def create_frontmatter():
     
     DATE = datetime.datetime.now().astimezone().isoformat()
     THUMBNAIL = input('PASTE IMAGE FILE NAME: ')
+    THUMBNAIL = "default.png" if THUMBNAIL == "" else THUMBNAIL
     
     #unique identification for frontmatter store
     ID = str(uuid.uuid4())
@@ -141,20 +142,19 @@ def git_operations():
     
     for git_op in standard_git_push:
         try:
-            subprocess.check_call(git_op, shell=True, cwd=os.path.dirname(os.getcwd()))
+            subprocess.run(git_op, shell=True, cwd=os.path.dirname(os.getcwd()))
         except subprocess.CalledProcessError as error:
             print("Error: ", error.output)
             git_pull_flag = input("Can this be resolved using 'git pull'? [y/n]: ")
             if git_pull_flag == 'y':
                 try:
-                    subprocess.check_call(["git", "pull"], shell=True)
+                    subprocess.run(["git", "pull"], shell=True, cwd=os.path.dirname(os.getcwd()))
                 except subprocess.CalledProcessError as error:
                     print("'git pull' failed with error: ", error.output, "aborting process...")
                     return 0
             elif git_pull_flag == 'n':
                 print("Since no easy fix exists, aborting process...")
                 return 0
-        subprocess.call(git_op, shell=True, cwd=os.path.dirname(os.getcwd()))
     print("Success!")
 
     
