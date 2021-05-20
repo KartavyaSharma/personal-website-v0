@@ -40,7 +40,7 @@ def create_frontmatter():
         YAML_TAGS += "- "+TAGS[i]+'\n'        
     #-----------------------------------------
     
-    return [YAML_START, YAML_ID, YAML_TITLE, YAML_DATE, YAML_DESCRIPTION, YAML_THUMBNAIL, YAML_TAGS, YAML_END], ID, TITLE
+    return [YAML_START, YAML_ID, YAML_TITLE, YAML_DATE, YAML_DESCRIPTION, YAML_THUMBNAIL, YAML_TAGS, YAML_END], ID, TITLE, THUMBNAIL
 
 
 def workspace_to_txt():
@@ -130,13 +130,13 @@ def move_to_posts(create_flag, file_markdown_name):
         destination += "\\"+file_markdown_name+".md"
         os.replace(source, destination)
     print("Success!")
-    
+        
 
 def git_operations():
     commit_desc = input("Enter commit description: ")
     standard_git_push = [
             ["git", "add", "."],
-            ["git", "commit", "-m", '"'+commit_desc+'"'],
+            ["git", "commit", "-m", commit_desc],
             ["git", "push"],
         ]
     
@@ -156,6 +156,14 @@ def git_operations():
                 print("Since no easy fix exists, aborting process...")
                 return 0
     print("Success!")
+    
+    
+def push_image_to_repo(image_name):
+     source = os.getcwd()+"\\workspace\\"+image_name
+     destination = os.path.dirname()+"\\src\\content\\images"
+     print("Moving file to repo image dir...")
+     shutil.move(source, destination)
+     print("Success!")
 
     
 def push_to_repo(identification):
@@ -184,16 +192,16 @@ def main_script():
     workspace_to_txt()
     
     if CREATE_FLAG == 'c':
-        
+        # Retrieving frontmatter 
         frontmatter = create_frontmatter()
-        frontmatter_title, frontmatter_id = frontmatter[2], frontmatter[1]
-        
+        frontmatter_title, frontmatter_id, thumbnail = frontmatter[2], frontmatter[1], frontmatter[3]
+        # Creating title
         file_markdown_name = markdown_title_on_create(frontmatter_title)
-        
+        # Starting file creation process
         write_frontmatter_to_file(CREATE_FLAG, file_markdown_name, frontmatter[0])
         store_markdown_frontmatter_on_create(file_markdown_name, frontmatter_id, frontmatter[0])
         write_markdown_to_file(file_markdown_name)
-        
+        push_image_to_repo(thumbnail) if thumbnail != "" else None
     elif CREATE_FLAG == 'e':
         file_markdown_name = write_frontmatter_to_file(CREATE_FLAG)
         write_markdown_to_file(file_markdown_name)
