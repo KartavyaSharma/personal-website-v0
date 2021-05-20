@@ -33,35 +33,41 @@
     border-radius: 0.125rem;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-#ToC {
-    &::-webkit-scrollbar {
-        width: 3px !important;
-    }
+.TOC::-webkit-scrollbar {
+    width: 3px !important;
 }
 
 .grvsc-container::-webkit-scrollbar {
     height: 8px !important;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #262626;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 3px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media (max-width: 768px) {
+    .TOC {
+        max-height: none !important;
+    }
+}
+
+@media (max-width: 1536px) {
+    .TOC {
+        max-height: 300px !important;
+    }
 }
 
 @media (min-width: 768px) {
