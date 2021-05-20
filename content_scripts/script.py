@@ -160,7 +160,7 @@ def git_operations():
     
 def push_image_to_repo(image_name):
      source = os.getcwd()+"\\workspace\\"+image_name
-     destination = os.path.dirname()+"\\src\\content\\images"
+     destination = os.path.dirname(os.getcwd())+"\\src\\content\\images"
      print("Moving file to repo image dir...")
      shutil.move(source, destination)
      print("Success!")
