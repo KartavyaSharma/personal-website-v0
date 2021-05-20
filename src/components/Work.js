@@ -11,36 +11,30 @@ export default function Work() {
 
     function renderWorkList() {
         return(
-            <div className={`grid grid-rows-${Math.floor(data.length/2)} lg:grid-cols-2 lg:gap-x-5 gap-y-10 lg:gap-y-20 w-full`}>
+            <div className={`grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8`}>
                 {
                     data.map(exp => {
                         const img = getImage(exp.node.companyLogo)
                         return(
-                            <div className='grid grid-cols-1'>
-                                <div className='flex flex-col'>
-                                    <div className='flex flex-row items-center w-full'>
-                                        <div className='text-white text-base lg:text-xl w-full font-semibold'>
+                            <div className='border h-full border-trueGray-800 w-full rounded md:group-hover:bg-trueGray-400 md:group-hover:bg-opacity-10 md:group-hover:border-orange-500
+                            	transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-103'>
+                                <div className='grid grid-cols-1 h-full p-4 md:p-8 md:pt-5'>
+                                    <div className='flex flex-row items-center h-full w-full'>
+                                        <div className='text-white text-base lg:text-xl h-full w-full font-semibold'>
                                             {exp.node.position}
                                             <br/>
-                                            { exp.node.companyWebsite === "" ? (
-                                                    <span className='text-sm lg:text-base'>{exp.node.company}</span>
-                                                ) : (
-                                                    <a href={exp.node.companyWebsite} target='_blank' rel='noreferrer'>
-                                                        <span className='text-sm lg:text-base'>{exp.node.company}</span>
-                                                    </a>
-                                                )
-                                            }
+                                            <span className='text-sm lg:text-base'>{exp.node.company}</span>
                                             <br/>
                                             <span className='text-xs text-white text-opacity-80'>
                                                 {exp.node.dates.start} - {exp.node.dates.end}
                                             </span>
                                         </div>
-                                        <div className='flex flex-row justify-end items-center max-w-full mr-5'>
+                                        {<div className='flex flex-row justify-end items-center max-w-full'>
                                             <GatsbyImage image={img} alt={exp.node.company} />
-                                        </div>
+                                        </div>}
                                     </div>
-                                    <div className='border-l border-trueGray-800 mt-3 h-full'>
-                                        <div dangerouslySetInnerHTML={{ __html: exp.node.roleDescription }} className='text-sm lg:text-base text-white text-opacity-80 font-blogBody p-4' />
+                                    <div className='mt-3'>
+                                        <div dangerouslySetInnerHTML={{ __html: exp.node.roleDescription }} className='text-sm lg:text-base text-white text-opacity-80 font-blogBody py-4' />
                                     </div>
                                 </div>
                             </div>
