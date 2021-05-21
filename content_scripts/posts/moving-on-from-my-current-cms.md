@@ -1,3 +1,14 @@
+---
+id: eaf510df-0387-435c-96ac-5f3bc63d184c
+title: Moving on from my current CMS
+date: 2021-05-21T06:50:01.650354+01:00
+description: Traditional headless CMSs are great for writing in general, but they seem to fall apart when used for technical writing
+thumbnail: "../images/leavingforestry.jpg"
+tags:
+- Forestry
+- Headless-cms
+
+---
 # What is a CMS anyways?
 
 CMSs are a shorthand for content-management-systems. As their name unmistakably suggests, a CMS is used to manage content. But where exactly would you manage your content and where would it go?
