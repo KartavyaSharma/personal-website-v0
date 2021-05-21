@@ -132,7 +132,7 @@ export default function BlogPage(props) {
                             <div>
                                 <div className='flex flex-col'>
                                     <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results </div>
-                                    <span className='text-xs text-opacity-80 text-orange-500'>(Press the 'esc' key to return)</span>
+                                    <span className='text-xs text-opacity-80 text-orange-500'>(press the 'esc' key to return)</span>
                                 </div>
                                 <SearchResults postArray={postData} isEmpty={searchQuery} mobile={isMobile} />
                             </div>
