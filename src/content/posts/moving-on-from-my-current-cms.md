@@ -9,14 +9,6 @@ tags:
 - headless-cms
 
 ---
-# What is a CMS anyways?
-
-CMS is a shorthand for content-management-system. As the name unmistakably suggests, a CMS is used to manage content. But where exactly would you manage your content and where would it go?
-
-In the case of traditional monolithic (all-in-one type) of CMSs, you could use their internal management system to host, create, edit, publish, and deliver your content on the internet. A monolithic CMS allows users to work inside a system that the provider has defined, a very popular example is WordPress, which allows creating your own website as you see fit, although, *inside their system*.
-
-On the other hand, there has been an increase in microservice-architecture-based content management systems, which are more commonly referred to as headless CMSs. These allow you to host your content from anywhere where there is an internet connection and at the least a barebones server that can complete a request-response cycle or a framework that can do the same and make that data available in the data layer. Headless systems work on an API-based content delivery framework, instead of defining a rigid scope for ways you can publish and style your content, these systems simply relay it to you. As a result, you have complete control over how you want to share it on the internet.
-
 # Rational
 
 For [kartavyas.com](https://kartavyas.com), I initially opted for a Git-based CMS, which in a way *was* headless; however, not in the traditional sense. Instead of delivering data through an API which I could then use, it simply committed new content to a designated location in my code repository, similar to how a programmer would commit their changes. This spared me some extra work I would have had to do. With a headless approach, instead of having to query APIs, I could simply point Gatsby to where my Markdown files were stored.
@@ -41,8 +33,8 @@ I won't be going over the details of the script extensively; however, I will tou
 
 # A sequel 
 
-This was a very text-heavy post. I felt that before I delved into how I created my own script, I ought to explain the reason behind having to create in the first place. Although this post didn't have any code, you can expect the second part to have a range of Python and Bash code blocks. Writing my own CM(Script) was a great experience in program composition, and writing large files.
+This was a very text-heavy post. I felt that before I delved into how I created my script, I ought to explain the reasons for why I had to do it. Although this post didn't have any code, you can expect the second part to have a range of Python and Bash code blocks. Overall, Writing my own CMS(cript) was a great experience in program composition, and writing large files.
 
-The script file could probably use some semblance of modularity to make it more readable and manageable, but I plan to address that problem later in the future. As of now, I focused on keeping the file modular in terms of functions. As a result, no function performs more than one job.
+The script file could probably use some semblance of modularity to make it more readable and manageable, but I plan to address that problem in the future. As of now, I focused on keeping the file modular in terms of functions. As a result, no function performs more than one job.
 
 You can expect the second post to go up during the next few days. Until then, if you have any feedback or suggestions, shoot me an email, or comment below.
