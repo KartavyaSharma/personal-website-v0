@@ -101,7 +101,7 @@ function BlogPost({ data }) {
                         <Content hData={data} />
                     </div>
                 </div>
-                <div className='hidden lg:flex flex-col items-center w-full'>
+                <div className='hidden lg:flex flex-col items-start mx-6 xl:mx-12 2xl:mx-10 w-full'>
                     <ToC headings={data.markdownRemark.headings} currPath={`https://www.kartavyas.com${data.markdownRemark.fields.slug}`} />
                 </div>
             </div>
