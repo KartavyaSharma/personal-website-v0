@@ -138,52 +138,11 @@
         "mexp": ""
     },
     {
-        "index": "2",
-        "img": "../../images/HELA_512x512.png",
-        "alt": "ROZE Hero",
-        "category": "Project",
-        "name": "ROZE - Assistant",
-        "tags": ["HTML", "CSS", "JQuery", "GIMP"],
-        "projectlink": "",
-        "githublink": "https://github.com/KartavyaSharma/ROZE-Voice-Assistant",
-        "description": "A digital voice assistant that aims to reduce distractions while driving by narrating all notifications.",
-        "about": "ROZE is an assistant utility mobile application catering to devices running on the Android OS. It was created to assist you while driving in a multitude of ways. ROZE can narrate your notifications while you are driving, deliver you speed alerts in real-time, and provide accurate geography-based localization using Google's Cloud Translate services.",
-        "tech": [
-            {
-                "name": "Java",
-                "link": "https://www.java.com/en/",
-                "src": "../../images/tech_stacks/java.png"
-            },
-            {
-                "name": "Google Cloud",
-                "link": "https://cloud.google.com",
-                "src": "../../images/tech_stacks/googlecloud.png"
-            },
-            {
-                "name": "Cloud Translate",
-                "link": "https://cloud.google.com/translate",
-                "src": "../../images/tech_stacks/cloudtranslate.png"
-            },
-            {
-                "name": "Google NLP",
-                "link": "https://cloud.google.com/natural-language",
-                "src": "../../images/tech_stacks/nlp.png"
-            },
-            {
-                "name": "Google TTS",
-                "link": "https://cloud.google.com/text-to-speech",
-                "src": "../../images/tech_stacks/tts.png"
-            }
-        ],
-        "expFlag": false,
-        "mexp": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at lectus quis dolor tempor facilisis. Donec ut maximus tortor. Quisque in est at nibh finibus feugiat sagittis id justo. In eu efficitur nisi, non consequat massa. Donec urna lorem, mollis ut hendrerit eu, semper lacinia est. Nunc convallis nisl ut urna condimentum lobortis. In lobortis felis turpis, eu tempus lorem dapibus in. Pellentesque vel tincidunt nunc. Curabitur sed sapien accumsan, congue tortor ac, malesuada mi. Vivamus quis efficitur odio. Duis commodo sagittis egestas."
-    },
-    {
         "index": "4",
         "img": "../../images/covaxstatus.png",
         "alt": "COVaxStatus alt",
         "category": "Project",
-        "name": "COVaxStatus",
+        "name": "Vaccine Availability Checker",
         "tags": ["React", "Tailwind", "Axios", "React-select"],
         "projectlink": "https://cowin-check-nu.vercel.app",
         "githublink": "https://github.com/KartavyaSharma/cowin-check",
