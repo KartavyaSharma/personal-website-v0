@@ -142,7 +142,7 @@
         "img": "../../images/covaxstatus.png",
         "alt": "COVaxStatus alt",
         "category": "Project",
-        "name": "Vaccine Availability Checker",
+        "name": "COVaxStatus Updates",
         "tags": ["React", "Tailwind", "Axios", "React-select"],
         "projectlink": "https://cowin-check-nu.vercel.app",
         "githublink": "https://github.com/KartavyaSharma/cowin-check",
