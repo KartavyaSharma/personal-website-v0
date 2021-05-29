@@ -168,6 +168,11 @@
                 "name": "Git",
                 "link": "https://git-scm.com",
                 "src": "../../images/tech_stacks/git.png"
+            },
+            {
+                "name": "Axios",
+                "link": "https://axios-http.com/",
+                "src": "../../images/tech_stacks/axios.png"
             }
         ],
         "expFlag": false,
