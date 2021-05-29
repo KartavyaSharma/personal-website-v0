@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Kartavyas.com",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Kartavya Sharma's personal website, an aggregation of all his projects and blog posts.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kartavya Sharma",
   "dependencies": {
     "@animated-burgers/burger-squeeze": "^1.1.2",
     "@ap.cx/react-fullpage": "^0.2.0",
