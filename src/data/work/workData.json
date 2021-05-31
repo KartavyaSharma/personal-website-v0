@@ -35,16 +35,4 @@
         "companyWebsite": "",
         "roleDescription": "Taught Computer Science to students at a school outside Indore, MP. Designed their curriculum to be more inclusive of a broad range of concepts in computing and programming. <br/><br/> Covered languages such as Python, C++, Java, and SQLite3."
     },
-    {
-        "company": "Prime Academy",
-        "position": "Web Developer",
-        "companyLogo": "../../images/Prime_logo.png",
-        "alt": "PrimeDev",
-        "dates": {
-            "start": "Dec 2019",
-            "end": "May 2020"
-        },
-        "companyWebsite": "",
-        "roleDescription": "Worked with Bootstrap, JQuery, and markup languages to develop a web-interface for the institution capable of delivering dynamic content through plugins and JavaScript libraries."
-    }
 ]
