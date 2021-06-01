@@ -44,7 +44,6 @@ export default function BlogPage(props) {
     const prevPage = currentPage - 1 <= 1 ? '/blog' : `/blog/${currentPage - 1}`;
     const nextPage = `/blog/${currentPage + 1}`;
 
-
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768);
         const updateIsMobile = () => {
