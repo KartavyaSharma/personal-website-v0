@@ -93,7 +93,7 @@ function Footer(props) {
                                 </div>
                             </div>
                             <hr className="border-orange-500" />
-                            <div className="w-full text-center text-sm md:text-base my-6 md:my-12 text-trueGray-400">This site was made using <a href='https://www.gatsbyjs.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Gatsby.js</a>, <a href='https://tailwindcss.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Tailwind CSS</a>, and <a href='https://python.org/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Python</a>. View <a href='https://github.com/KartavyaSharma/personal-website' rel="noreferrer" target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>Source code</span></a> on Github</div>
+                            <div className="w-full text-center text-sm md:text-base my-6 md:my-12 text-trueGray-400">This site was made using <a href='https://www.gatsbyjs.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Gatsby.js</a>, <a href='https://tailwindcss.com/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Tailwind CSS</a>, and <a href='https://python.org/' rel="noreferrer" target="_blank" className='underline hover:text-orange-500'>Python</a>. View <a href='https://github.com/KartavyaSharma/personal-website' rel="noreferrer" target="_blank" className='hover:text-orange-500 cursor-pointer'> <span className='underline'>source code</span></a> on Github</div>
                         </div>
                     </div>
                 </div>

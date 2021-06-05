@@ -20,7 +20,7 @@ export default function Work() {
                             	transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-103'>
                                 <div className='grid grid-cols-1 h-full p-4 md:p-8 md:pt-5'>
                                     <div className='flex flex-row items-center h-full w-full'>
-                                        <div className='text-white text-base lg:text-xl h-full w-full font-semibold'>
+                                        <div className='text-white text-opacity-80 text-base lg:text-xl h-full w-full font-semibold'>
                                             {exp.node.position}
                                             <br/>
                                             <span className='text-sm lg:text-base'>{exp.node.company}</span>

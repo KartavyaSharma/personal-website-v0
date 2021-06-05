@@ -50,8 +50,8 @@ function Intro() {
                     </nav>
                     <div className='grid grid-cols-4 text-white text-base sm:text-lg lg:text-xl py-6 xl:w-4/5 font-blogBody sm:leading-5 lg:leading-9 text-opacity-80'>
                         <div className='flex items-center justify-center col-span-full lg:col-span-3 2xl:col-span-2'>
-                            <div className='text-white text-2xl md:text-3xl font-mono'>
-                                I'm a <span className='font-bold text-orange-500'>software engineer</span> &#38; an incoming freshman majoring in EECS at <span className='font-bold text-orange-500'>UC Berkeley</span>
+                            <div className='text-white text-2xl md:text-3xl font-mono text-opacity-80'>
+                                I'm a <span className='font-bold italic'>software engineer</span> &#38; an incoming freshman majoring in EECS at <span className='font-bold italic'>UC Berkeley</span>
                             </div>
                         </div>
                     </div>

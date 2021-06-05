@@ -3,11 +3,13 @@ import { graphql } from 'gatsby'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 import Header from '../components/Header'
+import ProjectCardList from '../components/ProjectPageCards'
 import Footer from '../components/Footer'
 import SEO from '../components/SEO'
 
 export default function ProjectPage(props) {
     const queryData = props.data.projectDataJson;
+    const otherProjectData = props.data.allProjectDataJson.edges;
     const logo = getImage(queryData.img);
     return (
         <div className='bg-trueGray-900'>
@@ -27,7 +29,7 @@ export default function ProjectPage(props) {
                     <div className='text-3xl text-white text-opacity-80 font-mono font-semibold mt-10'>Project details</div>
                     <p dangerouslySetInnerHTML={{ __html: queryData.about }} className='text-white font-blogBody pt-5' />
                     <div className='text-3xl text-white text-opacity-80 font-mono font-semibold mt-5'>Tech stack and API usage</div>
-                    <div className={`grid grid-cols-2 ${queryData.tech.length > 5 ? 'md:grid-cols-5' : 'md:grid-cols-'+queryData.tech.length} w-full items-center mt-5`}>
+                    <div className={`grid grid-cols-2 ${queryData.tech.length > 5 ? 'md:grid-cols-5' : 'md:grid-cols-'+queryData.tech.length} w-full items-center mt-5 md:min-w-keepWmd 2xl:min-w-keepWlg`}>
                         {
                             queryData.tech.map(t => {
                                 const tech_stack = getImage(t.src);
@@ -76,6 +78,9 @@ export default function ProjectPage(props) {
                             ) : null
                         }
                     </div>
+                </div>
+                <div className='hidden lg:flex flex-col items-start mx-6 xl:mx-12 2xl:mx-10 w-full'>
+                    <ProjectCardList cardData={otherProjectData} />
                 </div>
             </div>
             <Footer isPage={true} />
@@ -128,6 +133,16 @@ export const projectQuery = graphql`
             }
             mexp
             expFlag
+        }
+        allProjectDataJson(filter: {name: {ne: $name}}, limit: 3) {
+            edges {
+                node {
+                    name
+                    projectlink
+                    githublink
+                    category
+                }
+            }
         }
     }
 `

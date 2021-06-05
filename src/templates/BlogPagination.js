@@ -90,7 +90,7 @@ export default function BlogPage(props) {
                             id='header-search'
                             placeholder='Search blog posts'
                             name='res'
-                            className={`appearance-none bg-transparent rounded border-b border-trueGray-800 w-full text-white text-xl text-opacity-80 font-semibold p-4 pl-9 leading-tight focus:outline-none focus:bg-trueGray-800 
+                            className={`appearance-none bg-transparent rounded border-b border-trueGray-800 w-full text-white text-xl text-opacity-80 font-semibold p-4 pl-10 leading-tight focus:outline-none focus:bg-trueGray-800 
                                 ${hasFocus ? 'border-orange-500' : ''}`}
                         />
                     </form>)

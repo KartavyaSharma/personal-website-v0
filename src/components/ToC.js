@@ -106,7 +106,7 @@ export default function ToC({ headings, mobile, currPath }) {
     }
 
     return (
-        <div className={`${!mobile ? 'sticky top-10 2xl:top-20' : 'p-3 bg-trueGray-800 rounded max-w-full'}`}>
+        <div className={`${!mobile ? 'sticky top-10 2xl:top-20' : 'p-3 bg-trueGray-800 rounded w-full'}`}>
             <div className='p-2 md:pt-0'>
                 <div className='text-white font-mono text-lg lg:text-xl 2xl:text-2xl'>Table of contents</div>
                 <div className='TOC md:overflow-auto mt-1 md:mt-4'>
