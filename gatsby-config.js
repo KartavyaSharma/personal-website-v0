@@ -98,6 +98,14 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-plugin-google-gtag`,
+            options:  {
+                trackingIds: [
+                    `${GA_Tracking_id}`
+                ]
+            },
+        },
+        {
             resolve: `gatsby-plugin-manifest`,
             options: {
                 name: `personal-website`,
