@@ -156,17 +156,13 @@ const config = {
                     })),
             },
         },
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: `UA-199256372-1`,
+            },
+        }
     ],
-}
-
-if(process.env.CONTEXT === 'production') {
-    const googleAnalytics = {
-        resolve: `gatsby-plugin-google-analytics`,
-        options: {
-            trackingId: `UA-199256372-1`,
-        },
-    };
-    config.plugins.push(googleAnalytics);
 }
 
 module.exports = config;
