@@ -13,34 +13,26 @@ export default function ProjectPageCards({ cardData }) {
             >
                 {data.map(project => {
                     return (
-                        <Link
-                            to={`/project/${project.node.name
-                                .replace(" -", "")
-                                .split(" ")
-                                .join("-")
-                                .toLowerCase()}`}
-                        >
-                            <div className="w-full grid grid-rows-2 p-3 pl-0">
-                                <div>
-                                    <div className="text-white text-opacity-80 text-lg lg:text-xl font-mono font-semibold">
-                                        {project.node.name}
-                                    </div>
-                                </div>
-                                <div className="flex flex-row items-center w-full">
-                                    <Link
-                                        to={`/project/${project.node.name
-                                            .replace(" -", "")
-                                            .split(" ")
-                                            .join("-")
-                                            .toLowerCase()}`}
-                                    >
-                                        <button className="text-trueGray-400 text-xs font-mono">
-                                            View Details
-                                        </button>
-                                    </Link>
+                        <div className="w-full grid grid-rows-2 p-3 pl-0">
+                            <div>
+                                <div className="text-white text-opacity-80 text-lg lg:text-xl font-mono font-semibold">
+                                    {project.node.name}
                                 </div>
                             </div>
-                        </Link>
+                            <div className="flex flex-row items-center w-full">
+                                <Link
+                                    to={`/project/${project.node.name
+                                        .replace(" -", "")
+                                        .split(" ")
+                                        .join("-")
+                                        .toLowerCase()}`}
+                                >
+                                    <button className="text-trueGray-400 text-xs font-mono">
+                                        View Details
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
                     )
                 })}
             </div>
