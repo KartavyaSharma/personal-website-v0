@@ -169,4 +169,4 @@ if(process.env.CONTEXT === 'production') {
     config.plugins.push(googleAnalytics);
 }
 
-module.expots = config;
+module.exports = config;
