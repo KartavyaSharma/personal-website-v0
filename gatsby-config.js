@@ -1,6 +1,6 @@
 const { data } = require("autoprefixer")
 
-module.exports = {
+const config = {
     siteMetadata: {
         title: `Kartavya Sharma`,
         description: `Kartavya Sharma's personal website. An aggregation of all his projects and blog posts.`,
@@ -98,14 +98,6 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-google-gtag`,
-            options:  {
-                trackingIds: [
-                    `${GA_TRACKING_ID}`
-                ]
-            },
-        },
-        {
             resolve: `gatsby-plugin-manifest`,
             options: {
                 name: `personal-website`,
@@ -166,3 +158,15 @@ module.exports = {
         },
     ],
 }
+
+if(process.env.CONTEXT === 'production') {
+    const googleAnalytics = {
+        resolve: `gatsby-plugin-google-analytics`,
+        options: {
+            trackingId: `UA-199256372-1`,
+        },
+    };
+    config.plugins.push(googleAnalytics);
+}
+
+module.expots = config;
