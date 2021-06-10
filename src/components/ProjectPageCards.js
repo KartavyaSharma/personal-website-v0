@@ -40,7 +40,7 @@ export default function ProjectPageCards({ cardData }) {
     //test
 
     return (
-        <div className="w-full flex flex-row justify-center sticky top-10 2xl:top-20">
+        <div className="w-full flex flex-row justify-center">
             <div className="flex flex-col">
                 <div className="text-white font-mono text-lg lg:text-2xl 2xl:text-3xl font-bold text-opacity-80">
                     More projects
