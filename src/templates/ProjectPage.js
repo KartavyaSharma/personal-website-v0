@@ -79,7 +79,7 @@ export default function ProjectPage(props) {
                         }
                     </div>
                 </div>
-                <div className='hidden lg:flex flex-col items-start mx-6 xl:mx-12 2xl:mx-10 w-full'>
+                <div className='hidden lg:flex flex-col w-full'>
                     <ProjectCardList cardData={otherProjectData} />
                 </div>
             </div>
