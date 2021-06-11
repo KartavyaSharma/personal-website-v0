@@ -159,7 +159,7 @@ const config = {
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
-                trackingId: `UA-199256372-1`,
+                trackingId: `${process.env.GA_TRACKING_ID}`,
             },
         }
     ],
