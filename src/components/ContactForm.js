@@ -73,7 +73,7 @@ function ContactFields(props) {
             >
                 <input type="hidden" name="apikey" value="f5c68998-5d13-4604-b787-dbaf32f95af4"/>
                 <input type="hidden" name="subject" value="New Submission from Web3Forms"/>
-                <input type="hidden" name="redirect" value="https://web3forms.com/success"/>
+                <input type="hidden" name="redirect" value="https://kartavyas.com/success"/>
                 <input type="checkbox" name="botcheck" id="" className="hidden"/>
 
                 <div className="flex flex-wrap -mx-3 mb-6">
