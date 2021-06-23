@@ -58,6 +58,12 @@
   background: #555;
 }
 
+@media (min-width: 1526px) {
+    .page-heights {
+        height: 100vh;
+    }
+}
+
 @media (max-width: 768px) {
     .TOC {
         max-height: none !important;

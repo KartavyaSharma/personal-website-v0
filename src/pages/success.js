@@ -25,7 +25,7 @@ export default function FormSubmitSuccess() {
     }, [])
 
     return (
-        <div className='bg-trueGray-900' style={{ height: '100vh' }}>
+        <div className='bg-trueGray-900 page-heights'>
             <Header />
             <div className='pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col'>
                 <div className='flex flex-col md:flex-row w-full'>

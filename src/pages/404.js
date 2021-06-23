@@ -25,7 +25,7 @@ export default function NotFoundPage() {
     }, [])
 
     return (
-        <div className='bg-trueGray-900' style={{ height: '100vh' }}>
+        <div className='bg-trueGray-900 page-heights'>
             <Header />
             <div className='pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col items-center'>
                 <div className='flex flex-col md:flex-row w-full'>
@@ -46,7 +46,7 @@ export default function NotFoundPage() {
                             <path d="M604,527.2a4.93658,4.93658,0,0,1-1.32,3.392A4.33873,4.33873,0,0,1,599.5,532h-10a4.66433,4.66433,0,0,1-4.5-4.8,4.90458,4.90458,0,0,1,.82-2.74134A47.02,47.02,0,0,1,592.5,524a47.66454,47.66454,0,0,1,11.13,1.28A5.06656,5.06656,0,0,1,604,527.2Z" transform="translate(-63.054 -157.8845)" fill="#fff" /><circle cx="484.946" cy="308.1155" r="5" fill="#fff" /><circle cx="577.946" cy="308.1155" r="5" fill="#fff" /><circle cx="582.946" cy="355.1155" r="5" fill="#f97316" opacity="0.3" /><circle cx="460.946" cy="355.1155" r="5" fill="#f97316" opacity="0.3" />
                         </svg>
                     </div>
-                    <div className='flex flex-col justify-center w-full md:pl-10'>
+                    <div className='flex flex-col justify-center w-full pl-20'>
                         <div className='text-white font-mono text-lg md:text-3xl lg:text-5xl pt-10 font-semibold'>Oops! Page not found.</div>
                         <Link to='/' className='mt-4'>
                             <button className='rounded px-2 py-1 border border-trueGray-800 hover:bg-trueGray-800'>
