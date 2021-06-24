@@ -18,6 +18,11 @@
     }
 }
 
+@font-face {
+	font-family: 'Chivo';
+	src: local('Chivo'), url('../fonts/Chivo/Chivo-Regular.ttf') format('ttf');
+}
+
 @tailwind components;
 @tailwind utilities;
 

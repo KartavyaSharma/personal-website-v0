@@ -9,12 +9,12 @@ import Footer from "../components/Footer"
 
 import SEO from '../components/SEO'
 
-const sectionBody = "text-white text-base sm:text-lg lg:text-xl py-8 md:py-12 lg:py-16";
+const sectionBody = "text-trueGray-800 text-base sm:text-lg lg:text-xl py-8 md:py-12 lg:py-16";
 
 function IndexPage() {
 
     return (
-        <div className='bg-trueGray-900'>
+        <div className='bg-gray-50'>
             <SEO title='Kartavya Sharma' image="../images/logo.png"/>
             <Intro />
             <Aboutme body={sectionBody} />

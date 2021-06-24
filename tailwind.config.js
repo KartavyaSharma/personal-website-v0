@@ -36,10 +36,14 @@ module.exports = {
         featuredmd: '300px',
         featuredbase: '200px',
       },
+      fontFamily: {
+    		'chivo': ['Chivo', 'Helvetica', 'Arial', 'sans-serif'],
+    	},
       colors: {
         'terminalGreen': '#16C60C',
         orange: colors.orange,
         trueGray: colors.trueGray,
+        cyan: colors.cyan,
       },
       fontFamily: {
         'blogBody': ['Inter', 'sans-serif']
