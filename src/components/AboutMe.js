@@ -57,6 +57,7 @@ function AboutMe(props) {
                         <div id='ab-me' dangerouslySetInnerHTML={{ __html: about }} className='w-full pt-5 lg:py-8 lg:pr-8 text-sm lg:text-lg text-opacity-80 font-blogBody' />
                     </div>
                 </div>
+            </div>
         </IndexLayout>
     )
 }
