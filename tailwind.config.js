@@ -40,6 +40,10 @@ module.exports = {
         'terminalGreen': '#16C60C',
         orange: colors.orange,
         trueGray: colors.trueGray,
+        coolGray: colors.coolGray,
+        warmGray: colors.warmGray,
+        cyan: colors.cyan,
+        rose: colors.rose,
       },
       fontFamily: {
         'blogBody': ['Inter', 'sans-serif']
