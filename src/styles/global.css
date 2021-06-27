@@ -18,6 +18,11 @@
     }
 }
 
+@font-face {
+	font-family: 'Chivo';
+	src: local('Chivo'), url('../fonts/Chivo/Chivo-Regular.ttf') format('ttf');
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -56,6 +61,12 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media (min-width: 1526px) {
+    .page-heights {
+        height: 100vh;
+    }
 }
 
 @media (max-width: 768px) {

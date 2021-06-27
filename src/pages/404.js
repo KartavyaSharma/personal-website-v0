@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'gatsby'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -24,10 +25,10 @@ export default function NotFoundPage() {
     }, [])
 
     return (
-        <div className='bg-trueGray-900' style={{ height: '100vh' }}>
+        <div className='bg-trueGray-900 page-heights'>
             <Header />
             <div className='pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col items-center'>
-                <div className='flex flex-row w-full'>
+                <div className='flex flex-col md:flex-row w-full'>
                     <div className='w-1/2'>
                         <svg id="fd59ce54-f850-4dfc-bc34-dd7d379d600e" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width={`${mobileWidth}`} height={`${mobileHeight}`} viewBox="0 0 1074.392 584.231"><title>page not found</title><ellipse cx="540.64346" cy="549.3094" rx="527.5" ry="34.9216" fill="#f2f2f2" /><path d="M583.47969,324.89424c-85.94407,0-147.651,55.13938-147.651,183.79791,0,145.813,61.70691,184.41057,147.651,184.41057s151.327-42.27352,151.327-184.41057C734.80664,356.75255,669.42376,324.89424,583.47969,324.89424Zm.56495,319.80837c-59.52686,0-90.62592-34.92288-90.62592-135.9163,0-89.11185,32.37209-136.10461,91.899-136.10461s91.899,30.86774,91.899,136.10461C677.21663,607.23367,643.5715,644.70261,584.04464,644.70261Z" transform="translate(-63.054 -157.8845)" fill="#2f2e41" />
                             <path d="M384.36531,591.40121H348.831V486.76183A20.95585,20.95585,0,0,0,327.87517,465.806h-8.32638a20.95585,20.95585,0,0,0-20.95586,20.95585V591.40121H198.36285a11.96327,11.96327,0,0,1-10.57763-17.552l106.0824-200.78034A20.95585,20.95585,0,0,0,284.28724,344.33l-6.26231-2.9572a20.95585,20.95585,0,0,0-27.4293,9.07005L121.21416,592.4754a28.41578,28.41578,0,0,0-3.35584,13.39612v0a28.41583,28.41583,0,0,0,28.41584,28.41583H298.59293v66.16727a25.119,25.119,0,0,0,25.119,25.119h.00005a25.119,25.119,0,0,0,25.119-25.119V634.28739h35.53428a21.44307,21.44307,0,0,0,21.44307-21.44307v0A21.44307,21.44307,0,0,0,384.36531,591.40121Z" transform="translate(-63.054 -157.8845)" fill="#f97316" /><path d="M1042.36183,591.40121h-35.53428V486.76183A20.95585,20.95585,0,0,0,985.87169,465.806h-8.32638a20.95585,20.95585,0,0,0-20.95586,20.95585V591.40121H856.35937a11.96326,11.96326,0,0,1-10.57763-17.552L951.86413,373.06891A20.95586,20.95586,0,0,0,942.28376,344.33l-6.26231-2.9572a20.95586,20.95586,0,0,0-27.42931,9.07005L779.21068,592.4754a28.41578,28.41578,0,0,0-3.35584,13.39612v0a28.41583,28.41583,0,0,0,28.41583,28.41583H956.58945v66.16727a25.119,25.119,0,0,0,25.119,25.119h0a25.119,25.119,0,0,0,25.119-25.119V634.28739h35.53428a21.44307,21.44307,0,0,0,21.44307-21.44307v0A21.44307,21.44307,0,0,0,1042.36183,591.40121Z" transform="translate(-63.054 -157.8845)" fill="#f97316" /><path d="M394.16787,579.148H358.63358V474.50864a20.95585,20.95585,0,0,0-20.95585-20.95586h-8.32638a20.95586,20.95586,0,0,0-20.95586,20.95586V579.148H208.16541a11.96327,11.96327,0,0,1-10.57763-17.552L303.67017,360.81572a20.95586,20.95586,0,0,0-9.58037-28.73893l-6.26231-2.9572a20.95586,20.95586,0,0,0-27.42931,9.07L131.01672,580.2222a28.41582,28.41582,0,0,0-3.35584,13.39613v0a28.41583,28.41583,0,0,0,28.41583,28.41583H308.39549v66.16727a25.119,25.119,0,0,0,25.119,25.119h.00005a25.119,25.119,0,0,0,25.119-25.119V622.0342h35.53429a21.44307,21.44307,0,0,0,21.44307-21.44307v0A21.44307,21.44307,0,0,0,394.16787,579.148Z" transform="translate(-63.054 -157.8845)" fill="none" stroke="#3f3d56" stroke-miterlimit="10" />
@@ -45,10 +46,34 @@ export default function NotFoundPage() {
                             <path d="M604,527.2a4.93658,4.93658,0,0,1-1.32,3.392A4.33873,4.33873,0,0,1,599.5,532h-10a4.66433,4.66433,0,0,1-4.5-4.8,4.90458,4.90458,0,0,1,.82-2.74134A47.02,47.02,0,0,1,592.5,524a47.66454,47.66454,0,0,1,11.13,1.28A5.06656,5.06656,0,0,1,604,527.2Z" transform="translate(-63.054 -157.8845)" fill="#fff" /><circle cx="484.946" cy="308.1155" r="5" fill="#fff" /><circle cx="577.946" cy="308.1155" r="5" fill="#fff" /><circle cx="582.946" cy="355.1155" r="5" fill="#f97316" opacity="0.3" /><circle cx="460.946" cy="355.1155" r="5" fill="#f97316" opacity="0.3" />
                         </svg>
                     </div>
-                    <div className='flex flex-col items-center justify-center w-full'>
-                        <div className='text-white font-mono text-5xl pt-10 font-semibold'>Oops! Page not found.</div>
+                    <div className='flex flex-col justify-center w-full pl-20'>
+                        <div className='text-white font-mono text-lg md:text-3xl lg:text-5xl pt-10 font-semibold'>Oops! Page not found.</div>
+                        <Link to='/' className='mt-4'>
+                            <button className='rounded px-2 py-1 border border-trueGray-800 hover:bg-trueGray-800'>
+                                <div className='flex flex-col'>
+                                    <div className='flex flex-row justify-center items-center'>
+                                        <div className='text-white text-opacity-80 text-sm'>Return to home</div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="bi bi-arrow-right-short" viewBox="0 0 16 16" className='ml-1 md:ml-2'>
+                                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </button>
+                        </Link>
                     </div>
                 </div>
+                <Link to='/' className='mt-4 md:hidden'>
+                    <button className='rounded px-2 py-1 border border-trueGray-800 hover:bg-trueGray-800'>
+                        <div className='flex flex-col'>
+                            <div className='flex flex-row justify-center items-center'>
+                                <div className='text-white text-opacity-80 text-sm'>Return to home</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="bi bi-arrow-right-short" viewBox="0 0 16 16" className='ml-1 md:ml-2'>
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </button>
+                </Link>
             </div>
             <Footer isPage={true} isContact={true} />
         </div>
