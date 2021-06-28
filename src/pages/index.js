@@ -14,7 +14,7 @@ const sectionBody = "text-trueGray-800 text-base sm:text-lg lg:text-xl py-8 md:p
 function IndexPage() {
 
     return (
-        <div className='bg-gray-50'>
+        <div className='bg-trueGray-900'>
             <SEO title='Kartavya Sharma' image="../images/logo.png"/>
             <Intro />
             <Aboutme body={sectionBody} />
