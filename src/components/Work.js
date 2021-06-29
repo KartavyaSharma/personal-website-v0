@@ -17,7 +17,7 @@ export default function Work() {
                         const img = getImage(exp.node.companyLogo)
                         return(
                             <div className='border h-full border-border w-full rounded md:group-hover:bg-trueGray-400 md:group-hover:bg-opacity-10 md:group-hover:border-border
-                            	transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-103'>
+                            	transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105'>
                                 <div className='grid grid-cols-1 h-full p-4 md:p-8 md:pt-5'>
                                     <div className='flex flex-row items-center h-full w-full'>
                                         <div className='text-white text-opacity-80 text-base lg:text-xl h-full w-full font-semibold'>

@@ -25,7 +25,7 @@ function BlogList(props) {
                                 <div className='justify-start items-center col-span-2'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id} >
                                         <div 
-                                        className={`text-base md:text-2xl pr-3 font-semibold hover:text-red-high hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100 
+                                        className={`text-base md:text-2xl pr-3 font-semibold hover:text-highlight hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100 
                                             ${ !isMobile ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : ''}`}>
                                             {blog.node.frontmatter.title}
                                         </div>

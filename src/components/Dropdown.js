@@ -12,11 +12,11 @@ export default function Dropdown(props) {
         <Menu as="div" className="relative inline-block text-right">
             {({ open }) => (
                 <div>
-                    <div>
-                        <Menu.Button className="flex justify-center items-center pl-5 md:pl-14 cursor-pointer text-base md:text-xl lg:text-2xl 2xl:text-3xl py-0 xl:py-3 outline-none hover:text-red-high">
+                    <div className='group flex flex-row h-full items-center'>
+                        <Menu.Button className="flex justify-center items-center cursor-pointer text-base md:text-xl lg:text-2xl 2xl:text-3xl py-0 xl:py-3 md:mr-2 outline-none group-hover:text-red-high">
                             Experience
-                        <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-white" aria-hidden="true" />
                         </Menu.Button>
+                        <ChevronDownIcon className="-mb-1 h-5 w-5 text-highlight group-hover:text-red-high" aria-hidden="true" />
                     </div>
 
                     <Transition

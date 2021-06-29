@@ -2,7 +2,7 @@ import React from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import { Link } from 'gatsby'
 
-const linkStyle = "hidden md:block cursor-pointer text-gray-400 hover:text-red-high uppercase";
+const linkStyle = "hidden md:block cursor-pointer text-gray-400 hover:text-highlight uppercase";
 
 function Footer(props) {
     return (
@@ -16,11 +16,11 @@ function Footer(props) {
                                     {
                                         props.paginationAnim || props.paginationAnim === undefined ? (
                                             <div className="w-full text-3xl md:text-4xl lg:text-6xl font-bold" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
-                                                <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-red-high'>Let's get in touch!</span></div>
+                                                <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-highlight'>Let's get in touch!</span></div>
                                             </div>
                                         ) : (
                                             <div className="w-full text-3xl md:text-4xl lg:text-6xl font-bold">
-                                                <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-red-high'>Let's get in touch!</span></div>
+                                                <div className="w-full md:w-2/3">Starting somthing new? <br/> <span className='text-highlight'>Let's get in touch!</span></div>
                                             </div>
                                         )
                                     }
@@ -56,7 +56,7 @@ function Footer(props) {
                         <div className="flex flex-col">
                             <div className="flex mt-12 lg:mt-24 mb-6 md:mb-12 flex-row justify-between">
                                 <div>
-                                    <ScrollLink activeClass="active" to="home" spy={true} smooth={true} duration={500} className="cursor-pointer text-red-high">
+                                    <ScrollLink activeClass="active" to="home" spy={true} smooth={true} duration={500} className="cursor-pointer text-highlight">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16" className='hover:text-white'>
                                             <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
                                         </svg>
@@ -92,8 +92,8 @@ function Footer(props) {
                                     </a>
                                 </div>
                             </div>
-                            <hr className="border-red-high" />
-                            <div className="w-full text-center text-sm md:text-base my-6 md:my-12 text-trueGray-400">This site was made using <a href='https://www.gatsbyjs.com/' rel="noreferrer" target="_blank" className='underline hover:text-red-high'>Gatsby.js</a>, <a href='https://tailwindcss.com/' rel="noreferrer" target="_blank" className='underline hover:text-red-high'>Tailwind CSS</a>, and <a href='https://python.org/' rel="noreferrer" target="_blank" className='underline hover:text-red-high'>Python</a>. View <a href='https://github.com/KartavyaSharma/personal-website' rel="noreferrer" target="_blank" className='hover:text-red-high cursor-pointer'> <span className='underline'>source code</span></a> on Github</div>
+                            <hr className="border-highlight" />
+                            <div className="w-full text-center text-sm md:text-base my-6 md:my-12 text-trueGray-400">This site was made using <a href='https://www.gatsbyjs.com/' rel="noreferrer" target="_blank" className='underline hover:text-highlight'>Gatsby.js</a>, <a href='https://tailwindcss.com/' rel="noreferrer" target="_blank" className='underline hover:text-highlight'>Tailwind CSS</a>, and <a href='https://python.org/' rel="noreferrer" target="_blank" className='underline hover:text-highlight'>Python</a>. View <a href='https://github.com/KartavyaSharma/personal-website' rel="noreferrer" target="_blank" className='hover:text-highlight cursor-pointer'> <span className='underline'>source code</span></a> on Github</div>
                         </div>
                     </div>
                 </div>
