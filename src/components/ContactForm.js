@@ -62,7 +62,7 @@ function ContactFields(props) {
                     Contact
                 </p>
                 <div className="text-5xl leading-normal font-extrabold tracking-tight text-gray-100">
-                    Let's Get In <span className="text-orange-500">Touch</span>!
+                    Let's Get In <span className="text-highlight">Touch</span>!
                 </div>
             </div>
             <form
@@ -80,7 +80,7 @@ function ContactFields(props) {
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label
                             htmlFor='firstName'
-                            className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2"
+                            className="block uppercase tracking-wide text-highlight text-xs font-bold mb-2"
                             for="grid-first-name"
                         >
                             First Name
@@ -93,7 +93,7 @@ function ContactFields(props) {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.firstName}
-                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800 
+                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-hover-bg 
                                 ${ formik.touched.firstName && formik.errors.firstName ? ('border-red-500') : 'border-white' }`}
                             placeholder="Jane"
                         />
@@ -104,7 +104,7 @@ function ContactFields(props) {
                     <div className="w-full md:w-1/2 px-3">
                         <label
                             htmlFor='lastName'
-                            className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2"
+                            className="block uppercase tracking-wide text-highlight text-xs font-bold mb-2"
                             for="grid-last-name"
                         >
                             Last Name
@@ -117,7 +117,7 @@ function ContactFields(props) {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.lastName}
-                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800
+                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-hover-bg
                                 ${ formik.touched.lastName && formik.errors.lastName ? ('border-red-500') : 'border-white' }`}
                             placeholder="Doe"
                         />
@@ -130,7 +130,7 @@ function ContactFields(props) {
                     <div className="w-full px-3">
                         <label
                             htmlFor='email' 
-                            className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2" 
+                            className="block uppercase tracking-wide text-highlight text-xs font-bold mb-2" 
                             for="grid-password"
                         >
                             Email Address
@@ -142,7 +142,7 @@ function ContactFields(props) {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.email}
-                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-trueGray-800
+                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-hover-bg
                                 ${ formik.touched.email && formik.errors.email ? ('border-red-500') : 'border-white' }`}
                             placeholder="janedoe@example.com"
                         />
@@ -155,7 +155,7 @@ function ContactFields(props) {
                     <div className="w-full px-3">
                         <label
                             htmlFor='message'
-                            className="block uppercase tracking-wide text-orange-500 text-xs font-bold mb-2"
+                            className="block uppercase tracking-wide text-highlight text-xs font-bold mb-2"
                             for="grid-password"
                         >
                             Your Message
@@ -168,7 +168,7 @@ function ContactFields(props) {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.message}
-                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 focus:bg-trueGray-800 leading-tight focus:outline-none
+                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 focus:bg-hover-bg leading-tight focus:outline-none
                                 ${ formik.touched.message && formik.errors.message ? ('border-red-500') : 'border-white' }`}
                             placeholder="Looking forward to hearing from you!"
                         >
@@ -181,7 +181,7 @@ function ContactFields(props) {
                 <button
                     disabled={!(formik.isValid && formik.dirty)}
                     type="submit"
-                    className={`shadow bg-orange-500 hover:bg-orange-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded
+                    className={`hover:bg-hover-bg border border-border rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
                         ${ !(formik.isValid && formik.dirty) ? 'disabled:opacity-50 disabled:cursor-not-allowed' : '' }`}
                 >
                     Send Message

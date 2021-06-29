@@ -12,11 +12,13 @@ export default function DropdownPage(props) {
         <Menu as="div" className="relative inline-block text-right z-50">
             {({ open }) => (
                 <div>
-                    <div>
-                        <Menu.Button className="flex justify-center items-center pl-10 2xl:pl-14 cursor-pointer font-semibold text-xl lg:text-2xl py-0 xl:py-3 outline-none">
+                    <div className='pl-10 2xl:pl-14'>
+                        <div className='group flex flex-row h-full items-center'>
+                        <Menu.Button className="flex justify-center items-center cursor-pointer font-semibold text-xl lg:text-2xl py-0 xl:py-3 outline-none group-hover:text-red-high">
                             Experience
-                        <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5 text-white" aria-hidden="true" />
                         </Menu.Button>
+                        <ChevronDownIcon className="-mb-1 h-5 w-5 text-highlight group-hover:text-red-high" aria-hidden="true" />
+                    </div>
                     </div>
 
                     <Transition
@@ -31,7 +33,7 @@ export default function DropdownPage(props) {
                     >
                         <Menu.Items
                             static
-                            className="origin-top-right absolute z-50 right-0 mt-2 w-56 rounded shadow-xl bg-trueGray-800"
+                            className="origin-top-right absolute z-50 right-0 mt-2 w-56 rounded shadow-xl bg-hover-bg"
                         >
                             <div className="py-1">
                                 <Menu.Item>
@@ -39,7 +41,7 @@ export default function DropdownPage(props) {
                                         <Link
                                         to="/#projects"
                                         className={classNames(
-                                            active ? 'bg-trueGray-700 text-orange-500 cursor-pointer' : 'bg-trueGray-800 text-white text-opacity-80',
+                                            active ? 'text-red-high cursor-pointer' : 'bg-hover-bg text-white text-opacity-80',
                                             'block px-4 py-2 text-lg'
                                         )}
                                         activeClass="active"
@@ -54,7 +56,7 @@ export default function DropdownPage(props) {
                                         <Link
                                         to="/#work"
                                         className={classNames(
-                                            active ? 'bg-trueGray-700 text-orange-500 cursor-pointer' : 'bg-trueGray-800 text-white text-opacity-80',
+                                            active ? 'text-red-high cursor-pointer' : 'bg-hover-bg text-white text-opacity-80',
                                             'block px-4 py-2 text-lg'
                                         )}
                                         activeClass="active"

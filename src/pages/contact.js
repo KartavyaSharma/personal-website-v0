@@ -8,7 +8,7 @@ export default class Contact extends React.Component {
 
     render() {
         return (
-            <div className='bg-trueGray-900'>
+            <div className='bg-background'>
                 <Header />
                 <ContactForm />
                 <Footer isPage={true} isContact={true} />
