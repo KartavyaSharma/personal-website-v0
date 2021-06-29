@@ -164,7 +164,7 @@ const config_bubble = {
         },
         "move": {
             "enable": true,
-            "speed": 0.2,
+            "speed": 0.6,
             "direction": "none",
             "random": true,
             "straight": false,

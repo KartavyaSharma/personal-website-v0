@@ -15,9 +15,9 @@ export default function DropdownPage(props) {
                     <div className='pl-10 2xl:pl-14'>
                         <div className='group flex flex-row h-full items-center'>
                         <Menu.Button className="flex justify-center items-center cursor-pointer font-semibold text-xl lg:text-2xl py-0 xl:py-3 outline-none group-hover:text-red-high">
-                            Experience
+                            <div>Experience</div>
+                            <ChevronDownIcon className="-mb-1 h-5 w-5 text-highlight group-hover:text-red-high" aria-hidden="true" />
                         </Menu.Button>
-                        <ChevronDownIcon className="-mb-1 h-5 w-5 text-highlight group-hover:text-red-high" aria-hidden="true" />
                     </div>
                     </div>
 

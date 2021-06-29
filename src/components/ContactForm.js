@@ -94,7 +94,7 @@ function ContactFields(props) {
                             onBlur={formik.handleBlur}
                             value={formik.values.firstName}
                             className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-hover-bg 
-                                ${ formik.touched.firstName && formik.errors.firstName ? ('border-red-500') : 'border-white' }`}
+                                ${ formik.touched.firstName && formik.errors.firstName ? ('border-red-500') : 'border-highlight' }`}
                             placeholder="Jane"
                         />
                         {formik.touched.firstName && formik.errors.firstName ? (
@@ -118,7 +118,7 @@ function ContactFields(props) {
                             onBlur={formik.handleBlur}
                             value={formik.values.lastName}
                             className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-hover-bg
-                                ${ formik.touched.lastName && formik.errors.lastName ? ('border-red-500') : 'border-white' }`}
+                                ${ formik.touched.lastName && formik.errors.lastName ? ('border-red-500') : 'border-highlight' }`}
                             placeholder="Doe"
                         />
                         {formik.touched.lastName && formik.errors.lastName ? (
@@ -143,7 +143,7 @@ function ContactFields(props) {
                             onBlur={formik.handleBlur}
                             value={formik.values.email}
                             className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-hover-bg
-                                ${ formik.touched.email && formik.errors.email ? ('border-red-500') : 'border-white' }`}
+                                ${ formik.touched.email && formik.errors.email ? ('border-red-500') : 'border-highlight' }`}
                             placeholder="janedoe@example.com"
                         />
                         {formik.touched.email && formik.errors.email ? (
@@ -169,7 +169,7 @@ function ContactFields(props) {
                             onBlur={formik.handleBlur}
                             value={formik.values.message}
                             className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 focus:bg-hover-bg leading-tight focus:outline-none
-                                ${ formik.touched.message && formik.errors.message ? ('border-red-500') : 'border-white' }`}
+                                ${ formik.touched.message && formik.errors.message ? ('border-red-500') : 'border-highlight' }`}
                             placeholder="Looking forward to hearing from you!"
                         >
                         </textarea>
@@ -182,7 +182,7 @@ function ContactFields(props) {
                     disabled={!(formik.isValid && formik.dirty)}
                     type="submit"
                     className={`hover:bg-hover-bg border border-border rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
-                        ${ !(formik.isValid && formik.dirty) ? 'disabled:opacity-50 disabled:cursor-not-allowed' : '' }`}
+                        ${ !(formik.isValid && formik.dirty) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
                 >
                     Send Message
                 </button>
