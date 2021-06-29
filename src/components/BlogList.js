@@ -25,7 +25,7 @@ function BlogList(props) {
                                 <div className='justify-start items-center col-span-2'>
                                     <Link to={blog.node.fields.slug} key={blog.node.id} >
                                         <div 
-                                        className={`text-base md:text-2xl pr-3 font-semibold hover:text-orange-500 hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100 
+                                        className={`text-base md:text-2xl pr-3 font-semibold hover:text-red-high hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100 
                                             ${ !isMobile ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : ''}`}>
                                             {blog.node.frontmatter.title}
                                         </div>
@@ -37,7 +37,7 @@ function BlogList(props) {
                                             .map(tag => {
                                                 return (
                                                     <div className='pr-4 py-4 hidden md:block'>
-                                                        <div className='text-xs rounded px-2 py-0.5 border border-trueGray-800 cursor-default bg-trueGray-700 text-white opacity-80'>{tag}</div>
+                                                        <div className='text-xs rounded px-2 py-0.5 border border-border cursor-default text-white opacity-80'>{tag}</div>
                                                     </div>
                                                 );
                                             })

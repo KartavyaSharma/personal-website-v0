@@ -10,7 +10,7 @@ module.exports = {
       'red': theme('colors.red.500'),
       'green': theme('colors.green.500'),
       'blue': theme('colors.blue.500'),
-      'orange': theme('colors.orange.500'),
+      'orange': theme('colors.orange.500')
     }),
     extend: {
       maxHeight: {
@@ -38,6 +38,13 @@ module.exports = {
       },
       colors: {
         'terminalGreen': '#16C60C',
+        'background': '#24305E',
+        'hover-bg': '#374785',
+        'highlight': '#A8D0E6',
+        'border': '#374785',
+        'red-high': '#F76C6C',
+        'border-red':'#F76C6C',
+        'yellow': '#F8E9A1',
         orange: colors.orange,
         trueGray: colors.trueGray,
       },

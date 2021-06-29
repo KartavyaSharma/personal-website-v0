@@ -108,6 +108,58 @@ const config = {
     "retina_detect": false
 };
 
+const config_bubble = {
+    "particles": {
+        "number": {
+            "value": 50,
+            "density": {
+                "enable": false
+            }
+        },
+        "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+                "speed": 4,
+                "size_min": 0.3
+            }
+        },
+        "line_linked": {
+            "enable": false
+        },
+        "move": {
+            "random": true,
+            "speed": 1,
+            "direction": "top",
+            "out_mode": "out"
+        }
+    },
+    "interactivity": {
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "bubble"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "repulse"
+            }
+        },
+        "modes": {
+            "bubble": {
+                "distance": 250,
+                "duration": 2,
+                "size": 0,
+                "opacity": 0
+            },
+            "repulse": {
+                "distance": 400,
+                "duration": 4
+            }
+        }
+    }
+}
+
 const mobile = JSON.parse(JSON.stringify(config));
 mobile.particles.number.value = 40;
 mobile.interactivity.events.onhover.enable = false;
@@ -116,7 +168,7 @@ function Particle(props) {
     const { className, canvasClassName, isMobile } = props;
     return (
         <div>
-            <Particles className={className} canvasClassName={canvasClassName} params={isMobile ? mobile : config} />
+            <Particles className={className} canvasClassName={canvasClassName} params={isMobile ? mobile : config_bubble} />
         </div>
     )
 }
