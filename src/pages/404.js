@@ -25,7 +25,7 @@ export default function NotFoundPage() {
     }, [])
 
     return (
-        <div className='bg-background page-heights'>
+        <div className='bg-background min-h-screen'>
             <Header />
             <div className='pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col items-center'>
                 <div className='flex flex-col md:flex-row w-full'>
@@ -43,8 +43,9 @@ export default function NotFoundPage() {
                     </div>
                     <div className='flex flex-col justify-center w-full pl-20'>
                         <div className='text-white font-mono text-lg md:text-3xl lg:text-5xl pt-10 font-semibold'>Oops! Page not found.</div>
+                        <div className='text-white font-mono text-xs lg:text-sm pt-2'>Looks like you found a page that does not exist!</div>
                         <Link to='/' className='mt-4'>
-                            <button className='px-2 py-1 hover:bg-hover-bg border border-border rounded-md text-white'>
+                            <button className='px-2 py-1 hover:bg-hover-bg border border-border rounded-md text-white outline-none'>
                                 <div className='flex flex-col'>
                                     <div className='flex flex-row justify-center items-center'>
                                         <div className='text-white text-opacity-80 text-sm font-mono'>Return to home</div>
@@ -58,7 +59,7 @@ export default function NotFoundPage() {
                     </div>
                 </div>
                 <Link to='/' className='mt-4 md:hidden'>
-                    <button className='px-2 py-1 hover:bg-hover-bg border border-border rounded-md text-white'>
+                    <button className='px-2 py-1 hover:bg-hover-bg border border-border rounded-md text-white outline-none'>
                         <div className='flex flex-col'>
                             <div className='flex flex-row justify-center items-center'>
                                 <div className='text-white text-opacity-80 text-sm font-mono'>Return to home</div>
