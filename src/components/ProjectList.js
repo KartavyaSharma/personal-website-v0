@@ -12,10 +12,10 @@ function ProjectList(props) {
                         const img = getImage(project.node.img);
                         return (
                             <div className='group'>
-                                <div className='absolute z-50 border text-opacity-80 border-border text-white font-mono font-semibold text-base md:text-lg bg-background px-2 py-1 -mt-4'>
+                                <div className='absolute z-50 border text-opacity-80 border-border text-white font-mono font-semibold text-base md:text-lg bg-background px-2 py-1 -mt-4 rounded-t-lg rounded-r-lg shadow-lg'>
                                     {project.node.category}
                                 </div>
-                                <div className='relative z-10 border h-full border-border w-full rounded md:group-hover:bg-opacity-10'>
+                                <div className='relative z-10 border h-full border-border w-full rounded md:group-hover:bg-opacity-10 shadow-lg'>
                                     <div className='grid grid-rows-3 h-full p-4 md:p-8 md:pb-0 md:pt-5'>
                                         <div className='grid grid-cols-3 items-center w-full'>
                                             <div id="proj-name" className='text-lg md:text-xl font-semibold font-mono text-white text-opacity-80 md:group-hover:text-highlight col-span-full md:col-span-2'>{project.node.name}</div>

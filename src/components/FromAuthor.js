@@ -8,7 +8,7 @@ export default function FromAuthor() {
     const img = getImage(data.image);
 
     return (
-        <div className='max-h-screen ml-5 rounded border border-trueGray-800'>
+        <div className='max-h-screen ml-5 rounded-lg border border-hover-bg shadow-xl bg-hover-bg'>
             <div className='p-5'>
                 <GatsbyImage image={img} alt="From author" className='rounded-full' style={{ maxWidth: "128px" }} />
                 <div className='text-white text-opacity-80 font-mono text-3xl pt-5'>From the author</div>

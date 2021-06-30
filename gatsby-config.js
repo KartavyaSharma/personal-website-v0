@@ -31,7 +31,7 @@ const config = {
                     {
                         resolve: `gatsby-remark-vscode`,
                         options: {
-                            theme: 'Dark+ (default dark)',
+                            theme: 'Tomorrow Night Blue',
                             inlineCode: {
                                 marker: '**',
                                 className: 'inline-code-wrapper'

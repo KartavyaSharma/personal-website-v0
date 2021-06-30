@@ -15,10 +15,30 @@ class Content extends React.Component {
         script.setAttribute("src", "https://utteranc.es/client.js");
         script.setAttribute("repo", "KartavyaSharma/personal-website-utterances-comments");
         script.setAttribute("issue-term", "pathname");
-        script.setAttribute("theme", "github-dark");
+        script.setAttribute("theme", "github-light");
         script.setAttribute("crossorigin", "anonymous");
         script.setAttribute("async", true);
         anchor.appendChild(script);
+
+        let paragraph = document.getElementsByTagName('p');
+        for (let para of paragraph) {
+            let links = para.getElementsByTagName('a');
+            for(let link of links) {
+                link.className+='r-link ai-element ai-element_type2 ai-element2';
+            }
+        }
+
+        let body = document.getElementById('body_content');
+        let list_1 = body.getElementsByTagName('ul');
+        for (let ordered_list of list_1) {
+            let list_2 = ordered_list.getElementsByTagName('li');
+            for (let link of list_2) {
+                let one_link = link.getElementsByTagName('a');
+                for (let sing_link of one_link) {
+                    sing_link.className+='r-link ai-element ai-element_type2 ai-element2';
+                }
+            }
+        }
     }
     render() {
         return (
@@ -29,7 +49,7 @@ class Content extends React.Component {
                     dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}>
                 </div>
                 <div className='text-3xl font-mono text-white font-semibold pb-2'>Comments</div>
-                <hr className='border-orange-500 hidden md:block md:min-w-keepWmd 2xl:min-w-keepWlg'/>
+                <hr className='border-highlight hidden md:block md:min-w-keepWmd 2xl:min-w-keepWlg'/>
                 <div id='inject-comments' className='md:pt-8'></div>
             </div>
         );
@@ -55,7 +75,7 @@ function BlogPost({ data }) {
     }, []);
 
     return (
-        <div className='bg-trueGray-900'>
+        <div className='bg-background'>
             <Header />
             <SEO 
                 title={data.markdownRemark.frontmatter.title} 
@@ -67,7 +87,7 @@ function BlogPost({ data }) {
             <div className="pt-10 2xl:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 mb-16 lg:mb-4 max-w-screen-2xl w-full mx-auto flex">
                 <div className='max-w-full lg:max-w-3xl 2xl:max-w-4xl flex flex-col justify-center'>
                     <div className='text-4xl lg:text-6xl 2xl:text-7xl text-white font-bold font-mono'>{data.markdownRemark.frontmatter.title}</div>
-                    <div className='text-lg lg:text-xl text-trueGray-500 italic mt-4 font-mono'>{data.markdownRemark.frontmatter.description}</div>
+                    <div className='text-lg lg:text-xl text-white text-opacity-80 italic mt-4 font-mono'>{data.markdownRemark.frontmatter.description}</div>
                     <div className='flex items-center'>
                         <div className='text-white text-xl mt-6 mb-6 mr-4 font-mono flex flex-row'>
                             {data.markdownRemark.frontmatter.date} {data.markdownRemark.frontmatter.tags.length ? <span className='hidden md:block'>&nbsp;|</span> : null}
@@ -77,7 +97,7 @@ function BlogPost({ data }) {
                                 .map(tag => {
                                     return (
                                         <div className='pr-4'>
-                                            <div className='hidden md:block text-sm rounded px-2 py-0.5 border border-trueGray-800 cursor-default bg-trueGray-700 text-white'>{tag}</div>
+                                            <div className='hidden md:block text-sm rounded px-2 py-0.5 border border-border cursor-default text-white'>{tag}</div>
                                         </div>
                                     );
                                 })

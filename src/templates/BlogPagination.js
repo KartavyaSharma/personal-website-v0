@@ -65,7 +65,7 @@ export default function BlogPage(props) {
     }, [])
 
     return (
-        <div className='bg-trueGray-900'>
+        <div className='bg-background'>
             <Header paginationAnim={currentPage === 1 ? true : false} />
             <SEO title="Kartavya's Blog" description="Kartavya Sharma's blog. A collection of writing focused on the current state of tech and web development tutorials."/>
             <div className={classNames(headerStyle, 'mb-12 md:mb-0')}>
@@ -77,7 +77,7 @@ export default function BlogPage(props) {
                         autoComplete='off'
                         className={`lg:-mt-16 flex flex-row items-center ${currentPage !== 1 ? 'hidden' : ''}`}
                     >
-                        <label htmlFor='header-search' className='-mr-2 ml-2 absolute'>
+                        <label htmlFor='header-search' className='-mr-2.5 ml-2 absolute'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16" className={`${hasFocus ? 'text-orange-500' : ''}`}>
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                             </svg>
@@ -90,8 +90,8 @@ export default function BlogPage(props) {
                             id='header-search'
                             placeholder='Search blog posts'
                             name='res'
-                            className={`appearance-none bg-transparent rounded border-b border-trueGray-800 w-full text-white text-xl text-opacity-80 font-semibold p-4 pl-10 leading-tight focus:outline-none focus:bg-trueGray-800 
-                                ${hasFocus ? 'border-orange-500' : ''}`}
+                            className={`appearance-none bg-transparent border-b border-highlight w-full text-white text-xl text-opacity-80 font-semibold p-4 pl-10 leading-tight focus:outline-none focus:bg-hover-bg 
+                                ${hasFocus ? 'border-highlight rounded shadow-lg' : ''}`}
                         />
                     </form>)
                 }
@@ -107,7 +107,7 @@ export default function BlogPage(props) {
                                 <div className='flex justify-start items-center'>
                                     {true && (
                                         <Link to={isFirst ? '' : `${prevPage}`} rel="prev" className={`${isFirst ? 'pointer-events-none' : ''}`}>
-                                            <button className={`bg-trueGray-800 px-3 py-1 flex rounded outline-none mr-1 ${isFirst ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`} disabled={isFirst}>
+                                            <button className={`border border-border hover:bg-hover-bg px-3 py-1 flex rounded outline-none mr-1 ${isFirst ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`} disabled={isFirst}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
                                                     <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
                                                 </svg>
@@ -117,7 +117,7 @@ export default function BlogPage(props) {
                                     )}
                                     {true && (
                                         <Link disabled={isLast} to={isLast ? '' : `${nextPage}`} rel="next" className={`${isLast ? 'pointer-events-none' : ''}`}>
-                                            <button className={`bg-trueGray-800 px-3 py-1 flex rounded outline-none ml-1 ${isLast ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`} disabled={isLast}>
+                                            <button className={`border border-border hover:bg-hover-bg px-3 py-1 flex rounded outline-none ml-1 ${isLast ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`} disabled={isLast}>
                                                 {/* <div className='text-white'>Next Page</div> */}
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
                                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
@@ -131,7 +131,7 @@ export default function BlogPage(props) {
                             <div>
                                 <div className='flex flex-col'>
                                     <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results </div>
-                                    <span className='text-xs text-opacity-80 text-orange-500'>(press the 'esc' key to return)</span>
+                                    <span className='text-xs text-opacity-80 text-highlight'>(press the 'esc' key to return)</span>
                                 </div>
                                 <SearchResults postArray={postData} isEmpty={searchQuery} mobile={isMobile} />
                             </div>

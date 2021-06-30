@@ -25,7 +25,7 @@ export default function ProjectPageCards({ cardData }) {
                                         .join("-")
                                         .toLowerCase()}`}
                                 >
-                                    <button className="text-trueGray-400 text-xs font-mono">
+                                    <button className="text-trueGray-400 text-xs font-mono hover:text-red-high outline-none">
                                         View Details
                                     </button>
                                 </Link>
@@ -37,8 +37,6 @@ export default function ProjectPageCards({ cardData }) {
         )
     }
 
-    //test
-
     return (
         <div className="w-full flex flex-row justify-center">
             <div className="flex flex-col">
@@ -47,11 +45,11 @@ export default function ProjectPageCards({ cardData }) {
                 </div>
                 <div className="mt-5">{renderCardList()}</div>
                 <Link to='/#projects' className='mt-3'>
-                    <button className='rounded px-2 py-1 border border-trueGray-800 hover:bg-trueGray-800'>
+                    <button className='rounded px-2 py-1 border border-border hover:bg-hover-bg outline-none'>
                         <div className='flex flex-col'>
                             <div className='flex flex-row justify-center items-center'>
-                                <div className='text-white text-opacity-80 text-sm'>View all projects</div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="gray" class="bi bi-arrow-right-short" viewBox="0 0 16 16" className='ml-1 md:ml-2'>
+                                <div className='text-white text-opacity-80 text-sm font-mono'>View all projects</div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-arrow-right-short" viewBox="0 0 16 16" className='ml-1.5'>
                                     <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
                                 </svg>
                             </div>
