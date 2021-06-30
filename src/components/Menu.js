@@ -26,11 +26,11 @@ function Menu({ toggle, isOpen }) {
                 </div>
                 <nav className='justify-between items-center relative font-semibold text-xl lg:text-2xl py-0 xl:py-4 text-highlight hidden lg:block font-mono'>
                     <Link to="/" className="hover:text-red-high cursor-pointer">Home</Link>
-                    <Link to="/#about-me" className="pl-10 2xl:pl-14 hover:text-red-high cursor-pointer">About</Link>
+                    <Link to="/#about-me" className="ml-10 2xl:ml-14 hover:text-red-high cursor-pointer">About</Link>
                     {/* <Link to="/#projects" className="pl-5 md:pl-14 hover:text-red-high cursor-pointer">Projects</Link> */}
                     <DropdownPage />
-                    <Link to="/blog" className="pl-10 2xl:pl-14 hover:text-red-high cursor-pointer">Blog</Link>
-                    <Link to="/contact" className="pl-10 2xl:pl-14 hover:text-red-high cursor-pointer">Contact</Link>
+                    <Link to="/blog" className="ml-10 2xl:ml-14 hover:text-red-high cursor-pointer">Blog</Link>
+                    <Link to="/contact" className="ml-10 2xl:ml-14 hover:text-red-high cursor-pointer">Contact</Link>
                 </nav>
             </div>
         </div>

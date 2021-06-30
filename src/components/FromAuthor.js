@@ -10,8 +10,8 @@ export default function FromAuthor() {
     return (
         <div className='max-h-screen ml-5 rounded-lg border border-hover-bg shadow-xl bg-hover-bg'>
             <div className='p-5'>
-                <GatsbyImage image={img} alt="From author" className='rounded-full' style={{ maxWidth: "128px" }} />
-                <div className='text-white text-opacity-80 font-mono text-3xl pt-5'>From the author</div>
+                {/* <GatsbyImage image={img} alt="From author" className='rounded-full' style={{ maxWidth: "128px" }} /> */}
+                <div className='text-white text-opacity-80 font-mono text-3xl'>From the author</div>
                 <div className='text-white text-opacity-80 text-base font-blogBody pt-5'>{data.fromAuthor}</div>
             </div>
         </div>

@@ -29,7 +29,7 @@ export default function ProjectPage(props) {
                     <div className='text-3xl text-white text-opacity-80 font-mono font-semibold mt-10'>Project details</div>
                     <p dangerouslySetInnerHTML={{ __html: queryData.about }} className='text-white font-blogBody pt-5' />
                     <div className='text-3xl text-white text-opacity-80 font-mono font-semibold mt-5'>Tech stack and API usage</div>
-                    <div className={`grid grid-cols-2 ${queryData.tech.length > 5 ? 'md:grid-cols-5' : 'md:grid-cols-'+queryData.tech.length} w-full items-center mt-5 md:min-w-keepWmd 2xl:min-w-keepWlg`}>
+                    <div className={`grid grid-cols-2 ${queryData.tech.length > 5 ? 'md:grid-cols-5' : 'md:grid-cols-'+queryData.tech.length} w-full items-center mt-5 md:min-w-keepWmd 2xl:min-w-keepWlg bg-hover-bg rounded-lg shadow-lg p-8`}>
                         {
                             queryData.tech.map(t => {
                                 const tech_stack = getImage(t.src);
@@ -52,7 +52,7 @@ export default function ProjectPage(props) {
                             null
                         )
                     }
-                    <div className='flex flex-row items-center pt-14'>
+                    <div className='flex flex-row items-center pt-10'>
                         {
                             queryData.projectlink !== "" ? (
                                 <a href={`${queryData.projectlink}`} target="_blank" rel='noreferrer'>

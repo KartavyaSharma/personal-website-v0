@@ -25,7 +25,7 @@ export default function ProjectPageCards({ cardData }) {
                                         .join("-")
                                         .toLowerCase()}`}
                                 >
-                                    <button className="text-trueGray-400 text-xs font-mono hover:text-red-high outline-none">
+                                    <button className="text-white text-xs font-mono hover:text-red-high outline-none">
                                         View Details
                                     </button>
                                 </Link>
@@ -39,13 +39,13 @@ export default function ProjectPageCards({ cardData }) {
 
     return (
         <div className="w-full flex flex-row justify-center">
-            <div className="flex flex-col">
+            <div className="flex flex-col bg-hover-bg rounded-lg shadow-lg p-5 w-full ml-10">
                 <div className="text-white font-mono text-lg lg:text-2xl 2xl:text-3xl font-bold text-opacity-80">
                     More projects
                 </div>
                 <div className="mt-5">{renderCardList()}</div>
                 <Link to='/#projects' className='mt-3'>
-                    <button className='rounded px-2 py-1 border border-border hover:bg-hover-bg outline-none'>
+                    <button className='rounded px-2 py-1 border border-background hover:bg-background outline-none'>
                         <div className='flex flex-col'>
                             <div className='flex flex-row justify-center items-center'>
                                 <div className='text-white text-opacity-80 text-sm font-mono'>View all projects</div>

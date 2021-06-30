@@ -52,12 +52,10 @@ function ContactFields(props) {
 
     return (
         <div
-            className="p-5 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto font-mono"
-            data-sal="zoom-out"
-            data-sal-easing="ease"
-            data-sal-duration="1000"
+            className="p-5 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto font-mon"
+            
         >
-            <div className="text-center mb-16">
+            <div className="text-center mb-16" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
                 <p className="mt-10 md:mt-4 text-base leading-7 text-gray-200 font-regular uppercase">
                     Contact
                 </p>
@@ -68,8 +66,11 @@ function ContactFields(props) {
             <form
                 action="https://api.web3forms.com/submit"
                 method="POST"
-                className="w-full"
+                className="w-full bg-hover-bg rounded-lg shadow-lg p-8"
                 autoComplete="new-password"
+                data-sal="zoom-out"
+                data-sal-easing="ease"
+                data-sal-duration="1000"
             >
                 <input type="hidden" name="apikey" value="f5c68998-5d13-4604-b787-dbaf32f95af4"/>
                 <input type="hidden" name="subject" value="New Submission from Web3Forms"/>
@@ -181,7 +182,7 @@ function ContactFields(props) {
                 <button
                     disabled={!(formik.isValid && formik.dirty)}
                     type="submit"
-                    className={`hover:bg-hover-bg border border-border rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
+                    className={`hover:bg-background border border-background rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
                         ${ !(formik.isValid && formik.dirty) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
                 >
                     Send Message
