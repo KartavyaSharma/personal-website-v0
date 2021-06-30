@@ -40,7 +40,7 @@ function Intro() {
                         <ScrollLink activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:text-red-high cursor-pointer">About</ScrollLink>
                         {
                             !isMobile ? (
-                                <div className='ml-5 md:ml-14'><Dropdown /></div>
+                                <div className='ml-5 md:ml-14 z-50'><Dropdown /></div>
                             ) : (
                                 <div className='ml-5 md:ml-14'><ScrollLink activeClass="active" to="projects" spy={true} smooth={true} duration={500} className="hover:text-red-high cursor-pointer">Projects</ScrollLink></div>
                             )
