@@ -66,7 +66,7 @@ function ContactFields(props) {
             <form
                 action="https://api.web3forms.com/submit"
                 method="POST"
-                className="w-full bg-hover-bg rounded-lg shadow-lg p-8"
+                className="w-full bg-hover-bg rounded-lg shadow-lg p-10"
                 autoComplete="new-password"
                 data-sal="zoom-out"
                 data-sal-easing="ease"
