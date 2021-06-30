@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 function Burger({ isOpen, toggle }) {
+
+    const noScroll = () => {
+        if(isOpen) {
+            window.scrollTo(0,0);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", noScroll);
+        return () => {
+            window.removeEventListener("scroll", noScroll);
+        }
+    }, [noScroll]);
+
     return (
-        <StyledMenu open={isOpen} onClick={toggle} onKeyDown={toggle}>
+        <StyledMenu open={isOpen} onClick={toggle} onKeyDown={toggle} className={`${isOpen ? 'overflow-none' : ''}`}>
             <Link to='/' className='p-4 outline-none'>
                 Home
             </Link>
@@ -32,7 +46,7 @@ const StyledMenu = styled.nav`
   z-index: 40;
   flex-direction: column;
   justify-content: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   height: 100vh;
   text-align: left;
@@ -62,7 +76,7 @@ const StyledMenu = styled.nav`
     }
 
     &:hover {
-      color: #343078;
+      color: #A8D0E6;
     }
   }
 `

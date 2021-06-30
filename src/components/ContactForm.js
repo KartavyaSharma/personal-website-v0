@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 
 const validate = (values) => {
@@ -37,6 +37,22 @@ const validate = (values) => {
 }
 
 function ContactFields(props) {
+
+    const [isMobile, setIsMobile] = useState(undefined);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth <= 768)
+        const changeMenu = () => {
+            setIsMobile(window.innerWidth <= 768);
+        }
+
+        window.addEventListener('resize', changeMenu);
+
+        return () => {
+            window.removeEventListener('resize', changeMenu);
+        }
+    }, []);
+
     const formik = useFormik({
         initialValues: {
             firstName: "",
@@ -162,7 +178,7 @@ function ContactFields(props) {
                             Your Message
                         </label>
                         <textarea
-                            rows="10"
+                            rows={`${isMobile ? 5 : 10}`}
                             id="message"
                             name="message"
                             type="message"
