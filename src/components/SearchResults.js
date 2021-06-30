@@ -38,7 +38,7 @@ export default function SearchResults(props) {
                                             <div className='grid grid-cols-3 items-center'>
                                                 <div className='justify-start items-center gap-y-4 col-span-2'>
                                                     <Link to={slug}>
-                                                        <div className={`text-base md:text-2xl font-semibold pr-3 hover:text-orange-500 hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100 ${!props.mobile ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : ''}`}>
+                                                        <div className={`text-base md:text-2xl font-semibold pr-3 hover:text-highlight hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100 ${!props.mobile ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : ''}`}>
                                                             {title}
                                                         </div>
                                                     </Link>
