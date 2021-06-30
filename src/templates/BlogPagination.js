@@ -59,6 +59,8 @@ export default function BlogPage(props) {
             }
         }
 
+        document.getElementsByName('Link').classNames+='outline-none'
+
         return () => {
             window.removeEventListener('resize', updateIsMobile);
         }

@@ -1,29 +1,70 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 function Burger({ isOpen, toggle }) {
     return (
-        <div role='button' tabIndex='0' className={isOpen ? 'grid grid-rows-4 text-center bg-trueGray-800 text-white font-mono text-xl mt-5' : 'hidden'} onClick={toggle} onKeyDown={toggle}>
-            <Link to='/' className='p-4'>
+        <StyledMenu open={isOpen} onClick={toggle} onKeyDown={toggle}>
+            <Link to='/' className='p-4 outline-none'>
                 Home
             </Link>
-            <Link to='/#about-me' className='p-4'>
+            <Link to='/#about-me' className='p-4 outline-none'>
                 About
             </Link>
-            <Link to='/#projects' className='p-4'>
+            <Link to='/#projects' className='p-4 outline-none'>
                 Projects
             </Link>
-            <Link to='/#work' className='p-4'>
-                 Work
+            <Link to='/#work' className='p-4 outline-none'>
+                Work
             </Link>
-            <Link to='/blog' className='p-4'>
+            <Link to='/blog' className='p-4 outline-none'>
                 Blog
             </Link>
-            <Link to='/contact' className='p-4'>
+            <Link to='/contact' className='p-4 outline-none'>
                 Contact
             </Link>
-        </div>
+        </StyledMenu>
     )
 }
+
+const StyledMenu = styled.nav`
+  display: flex;
+  z-index: 40;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  height: 100vh;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: 576px) {
+      width: 100%;
+    }
+
+  a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 2rem 0;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    color: #F76C6C;
+    text-decoration: none;
+    transition: color 0.3s linear;
+
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    &:hover {
+      color: #343078;
+    }
+  }
+`
 
 export default Burger

@@ -30,7 +30,7 @@ export default function Featured(props) {
                         }
                         return(
                             <div className=''>
-                                <div className='absolute z-50 border border-hover-bg text-white font-semibold text-xl md:text-2xl bg-hover-bg px-4 py-2 shadow-xl rounded-t-lg rounded-r-lg' style={{ marginTop: '-24px'}}>
+                                <div className='absolute z-30 border border-hover-bg text-white font-semibold text-xl md:text-2xl bg-hover-bg px-4 py-2 shadow-xl rounded-t-lg rounded-r-lg' style={{ marginTop: '-24px'}}>
                                     Featured Post
                                 </div>
                                 <div className='flex flex-col relative z-10 rounded-lg bg-hover-bg shadow-xl'>

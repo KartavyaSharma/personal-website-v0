@@ -8,7 +8,7 @@ import DropdownPage from '../components/DropdownPage'
 function Menu({ toggle, isOpen }) {
     return (
         <div className="pt-8 md:pt-12 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-row justify-center items-center">
-            <div>
+            <div className='outline-none'>
                 <Link to="/">
                     <div className='text-xl sm:text-2xl md:text-3xl font-extrabold font-mono'>
                         <span className='text-highlight'>
@@ -22,7 +22,7 @@ function Menu({ toggle, isOpen }) {
             </div>
             <div className='mx-auto mr-1'>
                 <div className='px-4'>
-                    <Burger onClick={ toggle } isOpen={ isOpen } className='lg:hidden cursor-pointer' />
+                    <Burger onClick={ toggle } isOpen={ isOpen } className='lg:hidden cursor-pointer z-50'/>
                 </div>
                 <nav className='justify-between items-center relative font-semibold text-xl lg:text-2xl py-0 xl:py-4 text-highlight hidden lg:block font-mono'>
                     <Link to="/" className="hover:text-red-high cursor-pointer">Home</Link>
