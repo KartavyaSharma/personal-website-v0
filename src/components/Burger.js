@@ -18,7 +18,7 @@ function Burger({ isOpen, toggle }) {
     }, [noScroll]);
 
     return (
-        <StyledMenu open={isOpen} onClick={toggle} onKeyDown={toggle} className={`${isOpen ? 'overflow-none' : ''} block md:hidden`}>
+        <StyledMenu open={isOpen} onClick={toggle} onKeyDown={toggle} className={`${isOpen ? 'overflow-none' : ''} md:hidden`}>
             <Link to='/' className='p-4 outline-none'>
                 Home
             </Link>
