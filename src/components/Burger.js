@@ -18,7 +18,7 @@ function Burger({ isOpen, toggle }) {
     }, [noScroll]);
 
     return (
-        <StyledMenu open={isOpen} onClick={toggle} onKeyDown={toggle} className={`${isOpen ? 'overflow-none' : ''}`}>
+        <StyledMenu open={isOpen} onClick={toggle} onKeyDown={toggle} className={`${isOpen ? 'overflow-none' : ''} block md:hidden`}>
             <Link to='/' className='p-4 outline-none'>
                 Home
             </Link>
@@ -42,43 +42,49 @@ function Burger({ isOpen, toggle }) {
 }
 
 const StyledMenu = styled.nav`
-  display: flex;
-  z-index: 40;
-  flex-direction: column;
-  justify-content: center;
-  backdrop-filter: blur(20px);
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
-  height: 100vh;
-  text-align: left;
-  padding: 2rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
-
-  @media (max-width: 576px) {
-      width: 100%;
-    }
-
-  a {
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: #F76C6C;
-    text-decoration: none;
-    transition: color 0.3s linear;
+    display: flex;
+    z-index: 40;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(20px);
+    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+    height: 100vh;
+    text-align: left;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
 
     @media (max-width: 576px) {
-      font-size: 1.5rem;
-      text-align: center;
+        width: 100%;
     }
 
-    &:hover {
-      color: #A8D0E6;
+        @media (min-width: 768px) {
+            .nav {
+                display: none;
+            }
+        }
+
+    a {
+        font-size: 2rem;
+        text-transform: uppercase;
+        padding: 2rem 0;
+        font-weight: bold;
+        letter-spacing: 0.5rem;
+        color: #F76C6C;
+        text-decoration: none;
+        transition: color 0.3s linear;
+
+        @media (max-width: 576px) {
+        font-size: 1.5rem;
+        text-align: center;
     }
-  }
+
+        &:hover {
+            color: #A8D0E6;
+        }
+    }
 `
 
 export default Burger
