@@ -39,13 +39,13 @@ function Footer(props) {
                                         <div className="w-44 pt-6 md:pt-0">
                                             {
                                                 props.paginationAnim || props.paginationAnim === undefined ? (
-                                                    <a href='/contact/' className="font-semibold text-base hover:bg-hover-bg border border-border rounded-md text-white outline-none justify-center text-center shadow px-4 py-2 md:px-4 md:py-3 lg:px-10 lg:py-3 flex items-center"
+                                                    <Link to='/contact' className="font-semibold text-base hover:bg-hover-bg border border-border rounded-md text-white outline-none justify-center text-center shadow px-4 py-2 md:px-4 md:py-3 lg:px-10 lg:py-3 flex items-center"
                                                         data-sal="slide-left" data-sal-easing="ease" data-sal-duration="1000"
-                                                    >Contact Me</a>
+                                                    >Contact Me</Link>
                                                 ) : (
-                                                    <a href='/contact/' className="font-semibold text-base hover:bg-hover-bg border border-border rounded-md text-white outline-none justify-center text-center shadow px-4 py-2  md:px-4 md:py-3 lg:px-10 lg:py-3 flex items-center">
+                                                    <Link to='/contact' className="font-semibold text-base hover:bg-hover-bg border border-border rounded-md text-white outline-none justify-center text-center shadow px-4 py-2  md:px-4 md:py-3 lg:px-10 lg:py-3 flex items-center">
                                                         Contact Me
-                                                    </a>
+                                                    </Link>
                                                 )
                                             }
                                         </div>
