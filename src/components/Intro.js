@@ -36,7 +36,7 @@ function Intro() {
                     <div className="text-white text-6xl md:text-8xl font-extrabold font-Chivo">
                         Kartavya Sharma<span className="bg-clip-text text-highlight">.</span>
                     </div>
-                    <div className='flex flex-row items-center relative text-base md:text-xl lg:text-2xl 2xl:text-3xl pt-4 xl:py-3 text-highlight font-mono'>
+                    <div className='flex flex-row items-center relative text-base md:text-xl lg:text-2xl 2xl:text-3xl pt-4 xl:py-3 text-highlight font-mono font-semibold'>
                         <ScrollLink activeClass="active" to="about-me" spy={true} smooth={true} duration={500} className="hover:text-red-high cursor-pointer">About</ScrollLink>
                         {
                             !isMobile ? (
