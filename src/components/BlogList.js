@@ -62,7 +62,7 @@ function BlogList(props) {
         );
     }
     return (
-        <div className='text-white py-8 md:py-12 lg:py-15 max-w-full'>
+        <div className='text-white -mt-5 mb-5 md:mb-8 lg:mb-10 max-w-full'>
             <ul>{renderBlogData()}</ul>
         </div>
     )

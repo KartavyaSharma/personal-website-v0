@@ -9,7 +9,7 @@ import Footer from "../components/Footer"
 
 import SEO from '../components/SEO'
 
-const sectionBody = "text-white text-base sm:text-lg lg:text-xl py-8 md:py-12 lg:py-16";
+const sectionBody = "text-white text-base sm:text-lg lg:text-xl";
 
 function IndexPage() {
 

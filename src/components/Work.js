@@ -47,7 +47,7 @@ export default function Work() {
 
     return (
         <IndexLayout ident="work" idx='03' name="Work">
-            <ul className='mt-10 md:mt-15 lg:mt-20' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
+            <ul className='-mt-5' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
                 {renderWorkList()}
             </ul>
         </IndexLayout>

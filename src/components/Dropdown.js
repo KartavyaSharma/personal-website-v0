@@ -13,7 +13,7 @@ export default function Dropdown(props) {
             {({ open }) => (
                 <div>
                     <div className='group flex flex-row h-full items-center'>
-                        <Menu.Button className="flex justify-center items-center cursor-pointer text-base md:text-xl lg:text-2xl 2xl:text-3xl py-0 xl:py-3 outline-none group-hover:text-red-high">
+                        <Menu.Button className="flex justify-center items-center font-semibold cursor-pointer text-base md:text-xl lg:text-2xl 2xl:text-3xl py-0 xl:py-3 outline-none group-hover:text-red-high">
                             <div className='md:mr-2'>Experience</div>
                             <ChevronDownIcon className="-mb-1 h-5 w-5 text-highlight group-hover:text-red-high" aria-hidden="true" />
                         </Menu.Button>
