@@ -64,7 +64,7 @@ function ProjectList(props) {
         );
     }
     return (
-        <div className='mt-10 md:mt-15 lg:mt-20' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
+        <div data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
             <div>{renderProjectData()}</div>
         </div>
     )

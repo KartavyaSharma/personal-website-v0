@@ -45,7 +45,7 @@ function AboutMe(props) {
 
     return (
         <IndexLayout ident="about-me" idx="01" name="About me">
-            <div className='flex flex-row' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
+            <div className='flex flex-row -mt-5' data-sal="zoom-out" data-sal-easing="ease" data-sal-duration="1000">
                 <div className={classNames(props.body, 'text-opacity-80')}>
                     <div className='flex flex-col lg:flex-row justify-start'>
                     <GatsbyImage 
