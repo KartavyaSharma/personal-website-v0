@@ -25,7 +25,7 @@ Having a good code highlighting library was only part of the solution, however. 
 
 Just as I was searching for options, I happened to visit [Emma Goto's](https://twitter.com/emma_goto) [personal website's](https://www.emgoto.com/) code repository. To my surprise, she wasn't using any CMS. Instead, she wrote a script in JS which allowed her to create a Markdown post and then programmatically inject frontmatter into the file for the parser to read. This was ingenious! With a traditional Markdown editor, I would have a richer feature set and more control over the source code of my Markdown. I took inspiration from Emma's script, and decide to make my own.
 
-# A Python content management script is born
+# A CLI based Python CMS
 
 This post is the first created using my Python script to manage content and images on this blog. Although I plan to further extend its functionality, it serves its purpose at the moment.
 
