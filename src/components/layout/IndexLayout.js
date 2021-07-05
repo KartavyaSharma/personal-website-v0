@@ -27,7 +27,7 @@ export default function IndexLayout({ children, customClass, ident, idx, name })
                     >
                         {name}
                     </div>
-                    <hr className='border border-border mt-5 w-full' data-sal="slide-left" data-sal-easing="ease" data-sal-duration="800"/>
+                    <hr className='border border-border mt-5 w-full' data-sal="slide-down" data-sal-easing="ease" data-sal-duration="800"/>
                 </div>
             </div>
             <div className='mt-10 md:mt-16 lg:mt-18'>
