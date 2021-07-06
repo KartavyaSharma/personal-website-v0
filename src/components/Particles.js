@@ -219,7 +219,7 @@ const config_bubble = {
     "retina_detect": false
 }
 
-const mobile = JSON.parse(JSON.stringify(config));
+const mobile = JSON.parse(JSON.stringify(config_bubble));
 mobile.particles.number.value = 40;
 mobile.interactivity.events.onhover.enable = false;
 
