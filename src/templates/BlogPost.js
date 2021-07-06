@@ -15,7 +15,7 @@ class Content extends React.Component {
         script.setAttribute("src", "https://utteranc.es/client.js");
         script.setAttribute("repo", "KartavyaSharma/personal-website-utterances-comments");
         script.setAttribute("issue-term", "pathname");
-        script.setAttribute("theme", "github-light");
+        script.setAttribute("theme", "preferred-color-scheme");
         script.setAttribute("crossorigin", "anonymous");
         script.setAttribute("async", true);
         anchor.appendChild(script);
