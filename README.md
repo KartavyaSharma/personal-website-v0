@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.kartavyas.com">
-    <img alt="logo" src="./src/images/logo.png" width="64" />
+    <img alt="logo" src="./src/images/logo_new_color.png" width="64" />
   </a>
 </p>
 <h1 align="center">
