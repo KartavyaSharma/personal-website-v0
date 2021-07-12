@@ -1,10 +1,11 @@
-<p align="center">
+<p align="">
   <a href="https://www.kartavyas.com">
-    <img alt="logo" src="./src/images/logo.png" width="64" />
+    <img alt="logo" src="./src/images/logo_new_color.png" width="128" />
   </a>
 </p>
-<h1 align="center">
-  kartavyas.com
+
+<h1 style="font-size: 500px;"> 
+  Kartavya's Personal Website (<a href="https://kartavyas.com">www.kartavyas.com</a>)
 </h1>
 
 This repository contains the source code for my [personal website](https://www.kartavyas.com/).
