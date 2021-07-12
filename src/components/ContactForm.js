@@ -80,7 +80,7 @@ function ContactFields(props) {
                 </div>
             </div>
             <form
-                action="https://api.web3forms.com/submit"
+                action="https://kartavyas-backend.herokuapp.com/mail/handler"
                 method="POST"
                 className="w-full bg-hover-bg rounded-lg shadow-lg p-10"
                 autoComplete="new-password"
@@ -88,11 +88,6 @@ function ContactFields(props) {
                 data-sal-easing="ease"
                 data-sal-duration="1000"
             >
-                <input type="hidden" name="apikey" value="f5c68998-5d13-4604-b787-dbaf32f95af4"/>
-                <input type="hidden" name="subject" value="New Submission from Web3Forms"/>
-                <input type="hidden" name="redirect" value="https://kartavyas.com/success"/>
-                <input type="checkbox" name="botcheck" id="" className="hidden"/>
-
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label
