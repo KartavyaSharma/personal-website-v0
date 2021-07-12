@@ -12,10 +12,12 @@ export default function FormSubmitSuccess() {
     useEffect(() => {
         const toggleDimensions = () => {
             if (window.innerWidth <= 768) {
-                setMobileWidth(134.299);
-                setMobileHeight(73.028875);
+                setMobileWidth(268.598);
+                setMobileHeight(146.05775);
             }
         }
+
+        toggleDimensions();
 
         window.addEventListener('resize', toggleDimensions);
 
@@ -42,7 +44,7 @@ export default function FormSubmitSuccess() {
                     <div className='flex flex-col justify-center'>
                         <div className='text-white font-mono text-4xl lg:text-5xl pt-10 font-semibold'>Form successfully submitted!</div>
                         <div className='text-white font-mono text-xs lg:text-sm pt-2'>Thank you for reaching out, I'll try to get back to you as soon as possible.</div>
-                        <Link to='/' className='mt-4'>
+                        <Link to='/' className='mt-4 hidden md:block'>
                             <button className='px-2 py-1 hover:bg-hover-bg border border-border rounded-md text-white outline-none'>
                                 <div className='flex flex-col'>
                                     <div className='flex flex-row justify-center items-center'>
