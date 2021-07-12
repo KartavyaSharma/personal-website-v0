@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 
+import Auth from './Auth'
+
 const validate = (values) => {
     const errors = {};
     if(values.firstName[0] === " ") {
@@ -17,13 +19,7 @@ const validate = (values) => {
         errors.lastName = "Invalid field entry";
     } else if(values.lastName.length < 3) {
         errors.lastName = "Must be greater than 3 characters";
-    }
-
-    if(!values.email) {
-        errors.email = "Email is required";
-    } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = "Invalid email address";
-    }
+    }   
 
     if(values.message[0] === " ") {
         errors.message = "Invalid field entry"
@@ -39,6 +35,7 @@ const validate = (values) => {
 function ContactFields(props) {
 
     const [isMobile, setIsMobile] = useState(undefined);
+    const [email, setEmail] = useState('undefined');
 
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768)
@@ -57,7 +54,6 @@ function ContactFields(props) {
         initialValues: {
             firstName: "",
             lastName: "",
-            email: "",
             message: "",
         },
         validate,
@@ -148,19 +144,14 @@ function ContactFields(props) {
                             Email Address
                         </label>
                         <input 
-                            id="email"
                             name="email"
                             type="email"
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.email}
-                            className={`appearance-none bg-transparent border-b w-full text-gray-50 mr-3 p-4 leading-tight focus:outline-none focus:bg-hover-bg
-                                ${ formik.touched.email && formik.errors.email ? ('border-red-500') : 'border-highlight' }`}
-                            placeholder="janedoe@example.com"
+                            value={email}
+                            className='hidden'
                         />
-                        {formik.touched.email && formik.errors.email ? (
-                            <div className="text-red-500 text-xs italic mt-1">{formik.errors.email}</div>
-                        ) : null}
+                        <Auth getEmail = {(userEmail) => {
+                            setEmail(userEmail)
+                        }}/>
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
@@ -191,10 +182,10 @@ function ContactFields(props) {
                     </div>
                 </div>
                 <button
-                    disabled={!(formik.isValid && formik.dirty)}
+                    disabled={!(formik.isValid && email!=='undefined')}
                     type="submit"
                     className={`hover:bg-background border border-background rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
-                        ${ !(formik.isValid && formik.dirty) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
+                        ${ !(formik.isValid && email!=='undefined') ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
                 >
                     Send Message
                 </button>
