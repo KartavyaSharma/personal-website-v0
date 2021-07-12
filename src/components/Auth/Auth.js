@@ -22,7 +22,8 @@ const uiConfig = {
     // We will display Google and Facebook as auth providers.
     signInOptions: [
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.FacebookAuthProvider.PROVIDER_ID
+        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        firebase.auth.GithubAuthProvider.PROVIDER_ID
     ],
     callbacks: {
         // Avoid redirects after sign-in.
@@ -44,9 +45,9 @@ function SignInScreen({ getEmail }) {
     if (!isSignedIn) {
         return (
             <div>
-                <div className='flex flex-col justify-start items-start w-full'>
-                    <div className='font-mono text-xs text-highlight'>Please sign-in to verify email.</div>
-                    <div className='w-full'>
+                <div className='flex flex-col justify-start items-start'>
+                    <div className='font-mono text-xs text-highlight'>Please sign-in to verify your email.</div>
+                    <div>
                         <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
                     </div>
                 </div>
@@ -56,8 +57,10 @@ function SignInScreen({ getEmail }) {
     getEmail(firebase.auth().currentUser.email);
     return (
         <div>
-            <p>Hey {firebase.auth().currentUser.displayName}! You are now signed-in!</p>
-            <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
+            <div className='font-mono text-xs text-highlight'>Hey {firebase.auth().currentUser.displayName}! You are now signed-in!</div>
+            <button onClick={() => firebase.auth().signOut()} className='hover:bg-background border border-background rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6'>
+                Sign Out
+            </button>
         </div>
     );
 }

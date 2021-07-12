@@ -16,11 +16,12 @@
 
  .firebaseui-container {
     background: rgba(0, 0, 0, 0.05);
-    margin-bottom: 15px;
+    margin: 0 !important;
     min-height: 150px;
     padding-top: 10px;
     border-radius: 20px;
     box-shadow: none;
+    max-width: none !important;
   }
   .firebaseui-container.firebaseui-page-provider-sign-in {
     background: transparent;
@@ -58,12 +59,17 @@
     top: 10%;
     bottom: 10%;
   }
-  .firebaseui-card-content {
-    padding: 0 !important;
-  }
-  .firebaseui-idp-list {
-      display: flex !important;
-  }
-  .firebaseui-list-item {
-    margin-right: 10px !important;
+
+  @media only screen and (min-width: 1000px) {
+    .firebaseui-card-content {
+      padding: 0 !important;
+      width: 100% !important;
+    }
+    .firebaseui-idp-list {
+        display: flex !important;
+        width: 100% !important;
+    }
+    .firebaseui-list-item {
+      margin-right: 10px !important;
+    }
   }
