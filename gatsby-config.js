@@ -1,4 +1,5 @@
 const { data } = require("autoprefixer")
+require('node-fetch')
 
 const config = {
     siteMetadata: {

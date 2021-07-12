@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 
-import Auth from './Auth/Auth'
+import loadable from "@loadable/component"
+
+const LoadableAuth = loadable(() => import('./Auth/Auth'))
 
 const validate = (values) => {
     const errors = {};
@@ -149,7 +151,7 @@ function ContactFields(props) {
                             value={email}
                             className='hidden'
                         />
-                        <Auth getEmail = {(userEmail) => {
+                        <LoadableAuth getEmail = {(userEmail) => {
                             setEmail(userEmail)
                         }}/>
                     </div>

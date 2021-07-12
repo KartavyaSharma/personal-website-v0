@@ -2,11 +2,11 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 const { isExportDeclaration } = require("typescript");
 const projectJson = require('./src/data/projects/projectData.json');
 
-exports.onCreateNode = ({ node, getNode, actions}) => {
+exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions;
 
-    if(node.internal.type === `MarkdownRemark`) {
-        const slug = createFilePath({ node, getNode, basePath: `src/content/posts/`, trailingSlash: false});
+    if (node.internal.type === `MarkdownRemark`) {
+        const slug = createFilePath({ node, getNode, basePath: `src/content/posts/`, trailingSlash: false });
         createNodeField({
             node,
             name: `slug`,
@@ -19,7 +19,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions
     const blogTemplate = require.resolve(`./src/templates/BlogPost.js`)
     const projectTemplate = require.resolve(`./src/templates/ProjectPage.js`)
-    
+
     const response = await graphql(`
         query MyQuery {
             allMarkdownRemark {
@@ -41,7 +41,7 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
     }
 
     projectJson.forEach(project => {
-        var path = `project/${project.name.replace(' -','').split(' ').join('-').toLowerCase()}`;
+        var path = `project/${project.name.replace(' -', '').split(' ').join('-').toLowerCase()}`;
         createPage({
             path: path,
             component: projectTemplate,
@@ -54,16 +54,16 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
     const posts = response.data.allMarkdownRemark.edges;
     const postsPerPage = 5;
     const numPages = Math.ceil(posts.length / postsPerPage);
-    
-    Array.from({ length: numPages }).forEach((_,i) => {
+
+    Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
-            path: i === 0 ? `/blog` : `/blog/${i+1}`,
+            path: i === 0 ? `/blog` : `/blog/${i + 1}`,
             component: require.resolve("./src/templates/BlogPagination.js"),
             context: {
                 limit: postsPerPage,
                 skip: i * postsPerPage,
                 numPages,
-                currentPage: i+1,
+                currentPage: i + 1,
             },
         })
     })
@@ -79,4 +79,17 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
     });
 }
 
-
+// exports.onCreateWebpackConfig = ({ actions, stage, loaders, plugins }) => {
+//     if (stage === 'build-html' || stage === 'develop-html') {
+//         actions.setWebpackConfig({
+//             module: {
+//                 rules: [
+//                     {
+//                         test: /firebase/,
+//                         use: loaders.null(),
+//                     },
+//                 ],
+//             },
+//         });
+//     }
+// }
