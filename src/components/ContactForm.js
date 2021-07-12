@@ -37,7 +37,7 @@ const validate = (values) => {
 function ContactFields(props) {
 
     const [isMobile, setIsMobile] = useState(undefined);
-    const [email, setEmail] = useState('undefined');
+    const [email, setEmail] = useState(false);
 
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768)
@@ -184,10 +184,10 @@ function ContactFields(props) {
                     </div>
                 </div>
                 <button
-                    disabled={!(formik.isValid && email!=='undefined')}
+                    disabled={!(formik.isValid && email!==false)}
                     type="submit"
                     className={`hover:bg-background border border-background rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
-                        ${ !(formik.isValid && email!=='undefined') ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
+                        ${ !(formik.isValid && email!==false) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
                 >
                     Send Message
                 </button>
