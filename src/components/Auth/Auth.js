@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
+import './firebaseui-styling.global.css'
 
 // Configure Firebase.
 const firebaseConfig = {
@@ -43,9 +44,11 @@ function SignInScreen({ getEmail }) {
     if (!isSignedIn) {
         return (
             <div>
-                <div className='flex flex-col'>
-                    <div className='font-blogBody text-lg'>Please sign-in to verify email.</div>
-                    <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+                <div className='flex flex-col justify-start items-start w-full'>
+                    <div className='font-mono text-xs text-highlight'>Please sign-in to verify email.</div>
+                    <div className='w-full'>
+                        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+                    </div>
                 </div>
             </div>
         );

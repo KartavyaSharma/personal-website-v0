@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 
-import Auth from './Auth'
+import Auth from './Auth/Auth'
 
 const validate = (values) => {
     const errors = {};
