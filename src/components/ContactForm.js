@@ -3,7 +3,7 @@ import { useFormik } from 'formik'
 
 import loadable from "@loadable/component"
 
-const LoadableAuth = loadable(() => import('./Auth/Auth'))
+const LoadableAuth = loadable(() => import('../utils/Auth/Auth'))
 
 const validate = (values) => {
     const errors = {};

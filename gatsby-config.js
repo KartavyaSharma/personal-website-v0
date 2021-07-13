@@ -29,6 +29,12 @@ const config = {
             options: {
                 plugins: [
                     {
+                        resolve: 'gatsby-remark-code-titles',
+                        options: {
+                            className: 'highlight-headers',
+                        },
+                    },
+                    {
                         resolve: `gatsby-remark-vscode`,
                         options: {
                             theme: 'Tomorrow Night Blue',

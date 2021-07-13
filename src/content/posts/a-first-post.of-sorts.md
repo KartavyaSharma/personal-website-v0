@@ -25,7 +25,7 @@ The website itself is developed using React and Gatsby (a static-site-generator.
 
 In addition to all those plugins, I also incorporated ~~a for-React subset of the [Highlight.js](https://www.npmjs.com/package//react-highlight "Highlight.js") code highlighting library~~ [gatsby-remark-vscode](https://www.gatsbyjs.com/plugins/gatsby-remark-vscode/) as my code snippet highlighting library. It supports all the latest language features and is up to date with VS Code's own code highlighting style. It also supports theme imports similar to VS Code, and has a wide array of languages that it can accurately highlight.
 
-```c++
+```c++:title=CPP
 //a simple program to generate all subsets of numbers from {0...n-1}
 #include <bits/stdc++.h>
 

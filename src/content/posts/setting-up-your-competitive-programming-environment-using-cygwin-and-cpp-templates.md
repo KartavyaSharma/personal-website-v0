@@ -39,7 +39,7 @@ There is a default list of pre-selected packages that you should install on the 
 
 You should ensure that you install dos2unix, without it you would not be able to translate your script file's DOS line endings - `bash**\r\n` - to Unix line endings - `bash**\n`. Since Cygwin runs all commands in a fashion similar to Unix where the line feed ends with `bash**\n`, your script's `bash**\r\n` line endings will cause Cygwin to throw an error. To get around this you can simply use dos2unix to translate all line feed carriages to Unix compatible ones. This can be done using the following command: 
 
-```bash
+```bash:title=BASH
 $ dos2unix your_script_file_name.sh
 ```
 
@@ -61,7 +61,7 @@ This can come quite in handy when you don't want to spend time writing loops and
 ### Macros
 
 A template pre-defines C++ macros for you, this way, a shorthand code snippet will be at your disposal during practice or competition.
-```c++
+```c++:title=CPP
 #define ar array
 #define endl "\n"
     
@@ -76,7 +76,7 @@ typedef long double ld;
 
 In addition to this, you can also add loop macros; however, you have to be careful while using them. Loop macros can make your code hard to read and might lead to bugs. On that note, here are some of the loop macros I find myself using regularly:
 
-```c++
+```c++:title=CPP
 #define f(i,a,b) for(ll i=a; i<b; i++)
 #define f0(i,a) for(ll i=0; i<a; i++)
 #define fa(a) for(auto x:a) cout << x << ' '; // useful for printing numbers from an array/vector
@@ -89,7 +89,7 @@ You can find the complete list of macros in the template below.
 
 In addition to macros, writing functions like binary search during a competition is counterproductive, to address this, you can include some template functions where you can specify what type of data you providing to the function without modifying its contents.
 
-```c++
+```c++:title=CPP
 // this function uses binary search to find an element in the param
 // array/vector. Binary search will only work if the array is sorted
 template <typename T> ll search(T *param, ll size, T value) {
@@ -112,7 +112,7 @@ To further improve my workflow, I also use conditional preprocessor directives. 
 
 I mostly use USACO, CodeForces, and Google Kickstart while practicing and competing. The next block is specific to these three platforms, but you can modify it to suit your context.
 
-```c++
+```c++:title=CPP
 // defining contest macros
 // #define kickstart true
 
@@ -122,7 +122,7 @@ I mostly use USACO, CodeForces, and Google Kickstart while practicing and compet
 
 You can comment or uncomment any of these macros depending on the platform you are competing on. The conditional preprocessor directives are defined inside the `main` function.
 
-```c++
+```c++:title=CPP
 int main() {
 
 	#ifdef kart_local
@@ -164,7 +164,7 @@ I'll be covering using _chrono_ in another post since you would be required to d
 
 Here's the template I use on a daily basis. It has additional components compared to what I have mentioned up to this point; however, you can modify it as you wish. Going ahead, this file will be referenced as `bash**__master.cpp`, instead of creating a new file for each problem we will write our code in this file and run a script when are finished with a problem. Details on how to do this are mentioned later on in this post.
 
-```c++
+```c++:title=CPP
 #include <bits/stdc++.h>
 #include <chrono>
 
@@ -295,7 +295,7 @@ Using Cygwin we can automate certain aspects of testing and debugging our C++ co
 
 Since we are not setting up a build system in our text editor, we will use Cygwin's *`bash**gcc`, `bash**g++`, and `bash**gdb`* packages to compile and run our C++ program. The command for compiling a file named `bash**__master.cpp` is as follows:
 
-```bash
+```bash:title=BASH
 $ g++ -D_GLIBCXX_DEBUG -Wall -o a.exe __master.cpp
 ```
 
@@ -309,7 +309,7 @@ To create an alias for the compilation script above, we would first need to writ
 
 Our `comp.sh` script file will look something like this:
 
-```bash
+```bash:title=BASH
 #!/bin/bash
 g++ -D_GLIBCXX_DEBUG -Wall -o a.exe __master.cpp && ./a
 ```
@@ -318,13 +318,13 @@ That is the entirety of our `comp.sh` file! You will notice that I have included
 
 We can now register our alias inside the `bash.bashrc` file. Simply go to the bottom of the file and type:
 
-```bash
+```bash:title=BASH
 alias comp = \"/cygdrive/c/Users/your_username/path/to/script/./comp.sh\"
 ```
 
 The `bash**bash.bashrc` file takes full paths from Cygwin's `bash**home(~)` directory. The drive letter is denoted by `bash**c` and can be substituted for other letters. `bash**./comp.sh` will tell Cygwin to execute `bash**comp.sh` when `bash**$ comp` is typed in the terminal.
 
-```bash
+```bash:title=BASH
 $ comp // typing this into the terminal should execute __master.cpp
 ```
 
@@ -332,7 +332,7 @@ $ comp // typing this into the terminal should execute __master.cpp
 
 For those of you who noticed, the `bash**comp.sh` script is compiling a file named `bash**__master.cpp`. If you were to create a file with a different name,  executing `bash**$ comp` would throw an error, this is because the script is programmed to run the `bash**__master.cpp` file. This was done to ensure a smoother transition when switching between problems during competition or practice. To get this script to accept other file names you can simply do:
 
-```bash
+```bash:title=BASH
 #!/bin/bash
 read -p "Enter name of the file you want to compile `echo $'\n> '`" file_name
 g++ -D_GLIBCXX_DEBUG -Wall -o a.exe "${file_name}.cpp" && ./a
@@ -342,7 +342,7 @@ Further details about the commands used in the above script are mentioned below.
 
 Although, with this template problem approach, we can't really save the `bash**__master.cpp` file. To get around this, I coded a script that copies all the contents of the `bash**__master.cpp` file into another file that we can name from the terminal. It would create a new `bash**.cpp` file after we have finished solving a problem. This is what the script looked like.
 
-```bash
+```bash:title=BASH
 #!/bin/bash
 read -p "Enter Problem Name `echo $'\n> '`" name
 cp __master.cpp "${name}.cpp"
@@ -352,7 +352,7 @@ It would prompt the user to enter the problem name on a new line prefixed by a `
 
 In my `bash**bash.bashrc` file this script was aliased as:
 
-```bash
+```bash:title=BASH
 alias fin = \"/cygdrive/c/Users/your_username/path/to/script/./fin.sh\"
 ```
 
@@ -364,7 +364,7 @@ You should note that running `bash**$ fin` outside of the directory `bash**__mas
 
 By now you probably know the drill to save scripts and register aliases. I am going to mention one last script that helps with backing up all the code you will write. If you have used Git before, you know that there are three steps you have to follow to push your code to your remote repository (in simple use cases at least).
 
-```
+```plaintext:title=TEXT
 1. git add .
 2. git commit -m "your commit message/title"
 3. git push
@@ -372,7 +372,7 @@ By now you probably know the drill to save scripts and register aliases. I am go
 
 Since all of these are Cygwin commands running inside the terminal, we can simply write them in a script and automate the whole Git push process. Here's what my `bash**update.sh` script looks like:
 
-```bash
+```bash:title=BASH
 #!/bin/bash
 cd /cygdrive/c/Users/your_username/path/to/__master.cpp
 git add .
