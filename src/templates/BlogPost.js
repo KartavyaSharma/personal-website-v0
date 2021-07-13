@@ -35,7 +35,7 @@ class Content extends React.Component {
             for (let link of list_2) {
                 let one_link = link.getElementsByTagName('a');
                 for (let sing_link of one_link) {
-                    sing_link.className+='r-link ai-element ai-element_type2 ai-element2';
+                    sing_link.className+='r-link ai-element ai-element_type2 ai-element2 max-w-full';
                 }
             }
         }

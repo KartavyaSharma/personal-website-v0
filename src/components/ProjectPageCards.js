@@ -45,7 +45,7 @@ export default function ProjectPageCards({ cardData }) {
                 </div>
                 <div className="mt-5">{renderCardList()}</div>
                 <Link to='/#projects' className='mt-3'>
-                    <button className='rounded px-2 py-1 border border-background hover:bg-background outline-none'>
+                    <button className='rounded px-2 py-1 shadow-inner hover:border-highlight bg-background outline-none'>
                         <div className='flex flex-col'>
                             <div className='flex flex-row justify-center items-center'>
                                 <div className='text-white text-opacity-80 text-sm font-mono'>View all projects</div>

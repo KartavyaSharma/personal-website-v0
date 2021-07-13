@@ -57,8 +57,8 @@ function SignInScreen({ getEmail }) {
     getEmail(firebase.auth().currentUser.email);
     return (
         <div>
-            <div className='font-mono text-xs text-highlight mb-3'>Hey {firebase.auth().currentUser.displayName}! You are now signed-in!</div>
-            <button onClick={() => firebase.auth().signOut()} className='hover:bg-background border border-background rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-1 px-2'>
+            <div className='font-mono text-xs text-highlight mb-3'>Hey {firebase.auth().currentUser.displayName}! You are currently signed in as {firebase.auth().currentUser.email}.</div>
+            <button onClick={() => firebase.auth().signOut()} className='hover:bg-background border border-background rounded-md text-white outline-none focus:shadow-outline focus:outline-none text-xs py-1 px-2'>
                 Sign Out
             </button>
         </div>

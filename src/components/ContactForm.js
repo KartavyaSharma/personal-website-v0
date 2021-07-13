@@ -186,7 +186,7 @@ function ContactFields(props) {
                 <button
                     disabled={!(formik.isValid && email!==false)}
                     type="submit"
-                    className={`hover:bg-background border border-background rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
+                    className={`bg-background hover:border hover:border-highlight rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
                         ${ !(formik.isValid && email!==false) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
                 >
                     Send Message

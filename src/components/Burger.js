@@ -4,21 +4,21 @@ import { Link } from 'gatsby'
 
 function Burger({ isOpen, toggle }) {
 
-    const noScroll = () => {
-        if(isOpen) {
-            window.scrollTo(0,0);
-        }
-    }
+    // const noScroll = () => {
+    //     if (isOpen) {
+    //         window.scrollTo(0, 0);
+    //     }
+    // }
 
-    useEffect(() => {
-        window.addEventListener("scroll", noScroll);
-        return () => {
-            window.removeEventListener("scroll", noScroll);
-        }
-    }, [noScroll]);
+    // useEffect(() => {
+    //     window.addEventListener("scroll", noScroll);
+    //     return () => {
+    //         window.removeEventListener("scroll", noScroll);
+    //     }
+    // }, [noScroll]);
 
     return (
-        <StyledMenu open={isOpen} onClick={toggle} onKeyDown={toggle} className={`${isOpen ? 'overflow-none' : ''} md:hidden`}>
+        <StyledMenu open={isOpen} onClick={toggle} className={`${isOpen ? 'overflow-hidden fixed' : ''} `}>
             <Link to='/' className='p-4 outline-none'>
                 Home
             </Link>
@@ -49,7 +49,7 @@ const StyledMenu = styled.nav`
     backdrop-filter: blur(20px);
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
     height: 100vh;
-    text-align: left;
+    text-align: center;
     padding: 2rem;
     position: absolute;
     top: 0;
@@ -77,12 +77,8 @@ const StyledMenu = styled.nav`
         transition: color 0.3s linear;
 
         @media (max-width: 576px) {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-        &:hover {
-            color: #A8D0E6;
+            font-size: 1.5rem;
+            text-align: center;
         }
     }
 `

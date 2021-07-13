@@ -20,7 +20,7 @@ export default function ProjectPage(props) {
                     <div className='grid grid-cols-1 md:grid-rows-1 md:grid-cols-5 w-full items-center pt-10 md:pt-0'>
                         <div className='col-span-4'>
                             <div className='text-xl text-highlight font-mono'>{queryData.category}</div>
-                            <div className='text-4xl lg:text-6xl 2xl:text-7xl text-white font-bold font-mono'>{queryData.name}</div>
+                            <div className='text-4xl lg:text-6xl 2xl:text-7xl text-white font-bold font-mono mb-10 md:mb-0'>{queryData.name}</div>
                         </div>
                         <div className='flex justify-center md:justify-end items-center'>
                             <GatsbyImage image={logo} alt={queryData.alt} />
