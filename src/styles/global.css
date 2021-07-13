@@ -45,6 +45,11 @@
   height: 8px !important;
 }
 
+.grvsc-container::-webkit-scrollbar-track {
+  background: #002451;
+  border-radius: 0px 0px 8px 8px !important;
+}
+
 ::-webkit-scrollbar-track {
   background: #24305e;
 }
