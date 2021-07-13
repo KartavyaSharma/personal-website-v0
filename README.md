@@ -27,7 +27,7 @@ Forms are handled by [Formik](https://formik.org/) and SendGrid APIs. Blog post 
 
 Search is powered by [FlexSearch.js](https://github.com/nextapps-de/flexsearch).
 
-Authentication is handled by [Firebase Auth](https://firebase.google.com/docs/auth)
+Authentication is handled by [Firebase Auth](https://firebase.google.com/docs/auth).
 
 ### Contact
 
