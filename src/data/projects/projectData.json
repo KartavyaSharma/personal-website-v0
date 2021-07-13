@@ -109,9 +109,9 @@
                 "src": "../../images/tech_stacks/tailwind.png"
             },
             {
-                "name": "Forestry",
-                "link": "https://forestry.io",
-                "src": "../../images/tech_stacks/forestry.png"
+                "name": "Python",
+                "link": "https://python.org",
+                "src": "../../images/tech_stacks/Python.png"
             },
             {
                 "name": "JavaScript",
@@ -132,6 +132,16 @@
                 "name": "Utterances",
                 "link": "https://utteranc.es",
                 "src": "../../images/tech_stacks/utterances.png"
+            },
+            {
+                "name": "Flask",
+                "link": "https://flask.palletsprojects.com/",
+                "src": "../../images/tech_stacks/flask.png"
+            },
+            {
+                "name": "Firebase",
+                "link": "https://firebase.google.com/",
+                "src": "../../images/tech_stacks/firebase.png"
             }
         ],
         "expFlag": false,
