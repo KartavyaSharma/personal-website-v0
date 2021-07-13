@@ -1,8 +1,8 @@
 ---
 tags:
-- competitive-programming
+- COMPETITIVE-PROGRAMMING
 - C++
-- Cygwin
+- CYGWIN
 title: Setting up a competitive programming environment using Cygwin
 description: There are a number of ways you can set up your competitive programming
   environment. In this post, I'll mostly be focusing on using Cygwin with GVIM/VIM/Notepad++

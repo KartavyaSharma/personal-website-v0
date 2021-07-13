@@ -5,8 +5,8 @@ date: 2021-05-21T06:50:01.650354+01:00
 description: Traditional headless CMSs are great for writing in general, but they seem to fall apart when used for technical writing
 thumbnail: "../images/leavingforestry.jpg"
 tags:
-- forestry
-- headless-cms
+- FORESTRY
+- HEADLESS-CMS
 
 ---
 # Rational
