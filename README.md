@@ -17,12 +17,17 @@ This repository contains the source code for my [personal website](https://www.k
 - Gatsby.js
 - GraphQL
 - Tailwind CSS
+- Flask
+- Firebase
 
 This website was deployed using Vercel.
+API server is hosted on Heroku.
 
-Forms are handled by [Formik](https://formik.org/) and [Web3forms](https://web3forms.com/). Blog post comments are handled by [Utterances](https://utteranc.es/).
+Forms are handled by [Formik](https://formik.org/) and SendGrid APIs. Blog post comments are handled by [Utterances](https://utteranc.es/).
 
 Search is powered by [FlexSearch.js](https://github.com/nextapps-de/flexsearch).
+
+Authentication is handled by [Firebase Auth](https://firebase.google.com/docs/auth)
 
 ### Contact
 
