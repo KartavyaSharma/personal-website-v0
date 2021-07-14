@@ -78,18 +78,3 @@ module.exports.createPages = async ({ graphql, actions, reporter }) => {
         })
     });
 }
-
-// exports.onCreateWebpackConfig = ({ actions, stage, loaders, plugins }) => {
-//     if (stage === 'build-html' || stage === 'develop-html') {
-//         actions.setWebpackConfig({
-//             module: {
-//                 rules: [
-//                     {
-//                         test: /firebase/,
-//                         use: loaders.null(),
-//                     },
-//                 ],
-//             },
-//         });
-//     }
-// }

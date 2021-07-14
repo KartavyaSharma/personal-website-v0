@@ -135,45 +135,6 @@ DEMO DEPENDENCIES
 =====
 */
 
-/* The component will reset button browser styles */
-
-.r-button {
-  --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
-  --uirButtonPadding: var(
-    --rButtonPadding,
-    var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0)
-      var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0)
-  );
-  --uirButtonBorderWidth: var(--rButtonBorderWidth, 0);
-  --uirButtonBorderStyle: var(--rButtonBorderWidth, solid);
-  --uirButtonBorderColor: var(--rButtonBorderColor, currentColor);
-  --uirButtonFontFamily: var(--rButtonFontFamily, inherit);
-  --uirButtonFontSize: var(--rButtonFontSize, inherit);
-  --uirButtonColor: var(--rButtonColor);
-
-  background-color: var(--uirButtonBackgroundColor);
-  padding: var(--uirButtonPadding);
-
-  border-width: var(--uirButtonBorderWidth);
-  border-style: var(--uirButtonBorderStyle);
-  border-color: var(--uirButtonBorderColor);
-
-  cursor: pointer;
-
-  font-family: var(--uirButtonFontFamily);
-  font-size: var(--uirButtonFontSize);
-}
-
-.r-button::-moz-focus-inner,
-.r-button[type="button"]::-moz-focus-inner,
-.r-button[type="reset"]::-moz-focus-inner,
-.r-button[type="submit"]::-moz-focus-inner {
-  /* Remove the inner border and padding in Firefox. */
-
-  border-style: none;
-  padding: 0;
-}
-
 /* The component will reset browser's styles of link */
 
 .r-link {
@@ -218,65 +179,6 @@ button.ai-element {
 }
 
 /* 
-  Styles of elements with the border on all sides
-  */
-
-.ai-element_type1 {
-  --uiaiElementLineWeight: var(--aiElementLineWeight, 2px);
-  --uiaiElementLineColor: var(--aiElementLineColor, #000);
-}
-
-.ai-element_type1::before,
-.ai-element_type1::after {
-  width: 100%;
-  height: var(--uiaiElementLineWeight);
-  left: 0;
-}
-
-.ai-element_type1::before {
-  top: 0;
-}
-
-.ai-element_type1::after {
-  bottom: 0;
-}
-
-.ai-element_type1 .ai-element__label::before,
-.ai-element_type1 .ai-element__label::after {
-  width: var(--uiaiElementLineWeight);
-  height: 100%;
-  top: 0;
-}
-
-.ai-element_type1 .ai-element__label::before {
-  left: 0;
-}
-
-.ai-element_type1 .ai-element__label::after {
-  right: 0;
-}
-
-.ai-element_type1::before,
-.ai-element_type1::after,
-.ai-element_type1 .ai-element__label::before,
-.ai-element_type1 .ai-element__label::after {
-  content: "";
-  background-color: var(--uiaiElementLineColor);
-  position: absolute;
-  opacity: 1;
-
-  will-change: transform, opacity;
-  transition-property: transform, opacity;
-}
-
-.ai-element_type1:hover::before,
-.ai-element_type1:hover::after,
-.ai-element_type1:hover .ai-element__label::before,
-.ai-element_type1:hover .ai-element__label::after {
-  opacity: 0;
-}
-
-/* 
   Styles of elements with the bottom border
   */
 
@@ -297,52 +199,6 @@ button.ai-element {
   position: absolute;
   left: 0;
   bottom: 0;
-}
-
-/* 
-  Styles of elements with background
-  */
-
-.ai-element_type3 {
-  --uiaiElementLineColor: var(--aiElementLineColor, #000);
-  --uiaiElementPadding: var(--aiElementPadding, 10px);
-  transition: color 0.3s ease-out;
-  z-index: 1;
-}
-
-.ai-element_type3::before,
-.ai-element_type3::after {
-  content: "";
-  background-color: var(--uiaiElementLineColor);
-  opacity: 1;
-  position: absolute;
-  z-index: -1;
-
-  transition: transform 0.35s ease-out, opacity 0.35s ease-out 0.03s;
-}
-
-.ai-element_type3:hover::before,
-.ai-element_type3:hover::after {
-  opacity: 0;
-  transition-delay: 0s;
-}
-
-.ai-element_text::before {
-  content: attr(data-ai-element-text);
-  color: var(--uiaiElementColorHover);
-  position: absolute;
-}
-
-.ai-element_text::before,
-.ai-element_text .ai-element__label {
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.86, 0.6, 0.08, 1.01);
-  transition-duration: 0.4s;
-}
-
-.ai-element_text:hover::before,
-.ai-element_text:hover .ai-element__label {
-  transition-duration: 0.3s;
 }
 
 /*

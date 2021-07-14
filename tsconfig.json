@@ -1,0 +1,15 @@
+{
+    "include": ["src/**/*"],
+    "exclude": ["src/functions/**/*"],
+    "compilerOptions": {
+        "target": "es6",
+        "lib": ["es2020", "dom"],
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "skipLibCheck": true
+    }
+}

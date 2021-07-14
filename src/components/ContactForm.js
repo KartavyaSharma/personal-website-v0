@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 
-import loadable from "@loadable/component"
-
-const LoadableAuth = loadable(() => import('../utils/Auth/Auth'))
-
 const validate = (values) => {
     const errors = {};
     if(values.firstName[0] === " ") {
@@ -34,10 +30,9 @@ const validate = (values) => {
     return errors;
 }
 
-function ContactFields(props) {
+function ContactFields({ user_name, user_email, sign_out}) {
 
     const [isMobile, setIsMobile] = useState(undefined);
-    const [email, setEmail] = useState(false);
 
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768)
@@ -65,18 +60,7 @@ function ContactFields(props) {
     });
 
     return (
-        <div
-            className="p-5 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto font-mon"
-            
-        >
-            <div className="text-center mb-16" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
-                <p className="mt-10 md:mt-4 text-base leading-7 text-gray-200 font-regular uppercase">
-                    Contact
-                </p>
-                <div className="text-5xl leading-normal font-extrabold tracking-tight text-gray-100">
-                    Let's Get In <span className="text-highlight">Touch</span>!
-                </div>
-            </div>
+        <div>
             <form
                 action="https://kartavyas-backend.herokuapp.com/mail/handler"
                 method="POST"
@@ -148,12 +132,10 @@ function ContactFields(props) {
                         <input 
                             name="email"
                             type="email"
-                            value={email}
+                            value={user_email}
                             className='hidden'
                         />
-                        <LoadableAuth getEmail = {(userEmail) => {
-                            setEmail(userEmail)
-                        }}/>
+                        <div className='text-xs mt-3'>You are currently signed in as {user_email}</div>
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
@@ -184,10 +166,10 @@ function ContactFields(props) {
                     </div>
                 </div>
                 <button
-                    disabled={!(formik.isValid && email!==false)}
+                    disabled={!(formik.isValid)}
                     type="submit"
                     className={`bg-background hover:border hover:border-highlight rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
-                        ${ !(formik.isValid && email!==false) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
+                        ${ !(formik.isValid) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
                 >
                     Send Message
                 </button>

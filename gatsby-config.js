@@ -9,6 +9,12 @@ const config = {
     },
     plugins: [
         {
+            resolve: `gatsby-plugin-typescript`,
+            options: {
+                allowNamespaces: true,
+            },
+        },
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: `${__dirname}/src/content/images`,
