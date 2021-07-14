@@ -16,8 +16,15 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-function Auth({ user, error, loading, setError, signOut, signInWithGoogle, signInWithGithub, signInWithFacebook }) {
-    return (
+const Auth = ({
+    user,
+    error,
+    loading,
+    setError,
+    signOut,
+    signInWithGoogle,
+    signInWithGithub,
+}) => (
         <div className="p-5 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto">
             <div className="text-center mb-10" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
                 <p className="mt-10 md:mt-4 text-base text-gray-200 font-regular uppercase">
@@ -29,9 +36,7 @@ function Auth({ user, error, loading, setError, signOut, signInWithGoogle, signI
             </div>
             {
                 user ? (
-                    <div>
-                        <ContactForm user_name={user.displayName} user_mail={user} sign_out={signOut} />
-                    </div>
+                    <ContactForm user_name={user.displayName} user_mail={user} sign_out={signOut} />
                 ) : (
                     <div className="flex items-center justify-center">
                         <div className=" bg-hover-bg rounded-lg shadow-lg p-7 lg:p-9 flex flex-col lg:w-2/5 lg:items-center lg:justify-center" data-sal="slide-up" data-sal-easing="ease" data-sal-duration="1000">
@@ -82,7 +87,6 @@ function Auth({ user, error, loading, setError, signOut, signInWithGoogle, signI
             }
         </div>
     )
-}
 
 const firebaseAppAuth = firebaseApp.auth();
 
