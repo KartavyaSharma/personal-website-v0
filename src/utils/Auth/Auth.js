@@ -16,6 +16,7 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
+
 const Auth = ({
     user,
     error,
@@ -26,6 +27,7 @@ const Auth = ({
     signInWithGithub,
 }) => (
         <div className="p-5 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto">
+            <div>{user}</div>
             <div className="text-center mb-10" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
                 <p className="mt-10 md:mt-4 text-base text-gray-200 font-regular uppercase">
                     Contact
@@ -59,14 +61,6 @@ const Auth = ({
                                     </svg>
                                     <div className='ml-3 text-white font-semibold'>
                                         Login with Google
-                                    </div>
-                                </button>
-                                <button className='px-3 py-2 flex flex-row items-center bg-background rounded-xl shadow-lg ring mt-4 lg:ml-4 lg:mt-0 hidden'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16" className='fill-blue'>
-                                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                                    </svg>
-                                    <div className='ml-3 text-white'>
-                                        Login with Facebook
                                     </div>
                                 </button>
                                 <button 
