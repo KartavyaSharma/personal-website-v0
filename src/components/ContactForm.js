@@ -30,7 +30,7 @@ const validate = (values) => {
     return errors;
 }
 
-function ContactFields({ user_name, user_email, sign_out}) {
+function ContactFields({ user_email, user_name}) {
 
     const [isMobile, setIsMobile] = useState(undefined);
 
@@ -55,7 +55,7 @@ function ContactFields({ user_name, user_email, sign_out}) {
         },
         validate,
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
         },
     });
 
@@ -66,9 +66,9 @@ function ContactFields({ user_name, user_email, sign_out}) {
                 method="POST"
                 className="w-full bg-hover-bg rounded-lg shadow-lg p-10"
                 autoComplete="new-password"
-                data-sal="zoom-out"
-                data-sal-easing="ease"
-                data-sal-duration="1000"
+                // data-sal="zoom-out"
+                // data-sal-easing="ease"
+                // data-sal-duration="1000"
             >
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -135,7 +135,7 @@ function ContactFields({ user_name, user_email, sign_out}) {
                             value={user_email}
                             className='hidden'
                         />
-                        <div className='text-xs mt-3'>You are currently signed in as {user_email}</div>
+                        <div className='text-lg mt-3 text-white'>You are currently signed in as <span className='text-gray-200 font-semibold italic'>{user_name} ({user_email})</span></div>
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">

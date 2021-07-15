@@ -7,20 +7,22 @@ import ContactForm from '../../components/ContactForm'
 const Auth = () => {
     
     useFirebaseApp();
-    const [isSigningIn, setIsSigningIn] = React.useState(false);
+    const [isSigningIn, setIsSigningIn] = React.useState(null);
+    const [signedIn, setSignedIn] = React.useState(false);
     const [error, setError] = React.useState(null);
     const [user, setUser] = React.useState(null);
 
     const handleSignInWithGoogle = () => {
         setIsSigningIn(true);
         setError(null);
-        const provider = new GoogleAuthProvider();
-        const auth = getAuth();
-        signInWithPopup(auth, provider)
+        const auth = getAuth()
+        signInWithPopup(auth, new GoogleAuthProvider())
         .then((result) => {
-            const user = result.user
+            const user = result.user;
+            console.log(user);
             setUser(user);
             setIsSigningIn(false);
+            setSignedIn(true);
         })
         .catch(e => {
             setIsSigningIn(false);
@@ -43,7 +45,6 @@ const Auth = () => {
 
     return (
         <div className="p-5 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto">
-            <div>{user}</div>
             <div className="text-center mb-10" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
                 <p className="mt-10 md:mt-4 text-base text-gray-200 font-regular uppercase">
                     Contact
@@ -53,8 +54,8 @@ const Auth = () => {
                 </div>
             </div>
             {
-                user ? (
-                    <ContactForm />
+                signedIn && isSigningIn === false ? (
+                    <ContactForm user_email={user.email} user_name={user.displayName}/>
                 ) : (
                     <div className="flex items-center justify-center">
                         <div className=" bg-hover-bg rounded-lg shadow-lg p-7 lg:p-9 flex flex-col lg:w-1/2 lg:items-center lg:justify-center" data-sal="slide-up" data-sal-easing="ease" data-sal-duration="1000">
