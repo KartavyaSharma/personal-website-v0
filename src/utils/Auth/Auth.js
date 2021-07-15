@@ -59,7 +59,7 @@ const Auth = () => {
                 ) : (
                     <div className="flex items-center justify-center">
                         <div className=" bg-hover-bg rounded-lg shadow-lg p-7 lg:p-9 flex flex-col lg:w-1/2 lg:items-center lg:justify-center" data-sal="slide-up" data-sal-easing="ease" data-sal-duration="1000">
-                            <div className='text-2xl font-semibold text-highlight'>Sign in</div>
+                            <div className='text-2xl font-semibold text-highlight text-center'>Sign in</div>
                             <div className='mt-3 text-white font-blogBody text-center'>
                                 Signing in allows us to verify your email before we move forward. This way we can ensure that we are talking to a real person.
                             </div>
