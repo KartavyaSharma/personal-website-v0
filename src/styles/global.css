@@ -29,8 +29,8 @@
 
 .inline-code-wrapper {
   background-color: #002451 !important;
-  padding: .2em .4em;
-  border-radius: 0.125rem;
+  padding: .1em .4em;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar {

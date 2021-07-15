@@ -45,7 +45,7 @@ class Content extends React.Component {
             <div>
                 <div 
                     id="body_content" 
-                    className='font-blogBody md:min-w-keepWmd 2xl:min-w-keepWlg pb-10 lg:max-w-3xl 2xl:max-w-4xl' 
+                    className='font-blogBody md:min-w-keepWmd 2xl:min-w-keepWlg pb-10 lg:max-w-3xl 2xl:max-w-4xl leading-relaxed'
                     dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}>
                 </div>
                 <div className='text-3xl font-mono text-white font-semibold pb-2'>Comments</div>
