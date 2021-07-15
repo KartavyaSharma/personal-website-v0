@@ -1,31 +1,47 @@
 import React from 'react'
-import firebase from 'firebase';
-import withFirebaseAuth from 'react-with-firebase-auth';
-
+import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from 'firebase/auth';
+import { useFirebaseApp } from '../../hooks/useFirebase';
 import ContactForm from '../../components/ContactForm'
 
-// Configure Firebase.
-const firebaseConfig = {
-    apiKey: process.env.GATSBY_FIREBASE_APIKEY,
-    authDomain: process.env.GATSBY_FIREBASE_AUTHDOMAIN,
-    projectId: process.env.GATSBY_FIREBASE_PROJECTID,
-    storageBucket: process.env.GATSBY_FIREBASE_STORAGEBUCKET,
-    messagingSenderId: process.env.GATSBY_FIREBASE_MESSAGINGSENDERID,
-    appId: process.env.GATSBY_FIREBASE_APPID
-};
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+const Auth = () => {
+    
+    useFirebaseApp();
+    const [isSigningIn, setIsSigningIn] = React.useState(false);
+    const [error, setError] = React.useState(null);
+    const [user, setUser] = React.useState(null);
 
+    const handleSignInWithGoogle = () => {
+        setIsSigningIn(true);
+        setError(null);
+        const provider = new GoogleAuthProvider();
+        const auth = getAuth();
+        signInWithPopup(auth, provider)
+        .then((result) => {
+            const user = result.user
+            setUser(user);
+            setIsSigningIn(false);
+        })
+        .catch(e => {
+            setIsSigningIn(false);
+            setError(e);
+        })
+    }
 
-const Auth = ({
-    user,
-    error,
-    loading,
-    setError,
-    signOut,
-    signInWithGoogle,
-    signInWithGithub,
-}) => (
+    // const handleSignInWithGithub = () => {
+    //     setIsSigningIn(true);
+    //     setError(null);
+    //     signInWithPopup(getAuth(firebaseApp), new GithubAuthProvider())
+    //     .then(() => {
+    //         setIsSigningIn(false);
+    //     })
+    //     .catch(e => {
+    //         setIsSigningIn(false);
+    //         setError(e);
+    //     })
+    // }
+
+    return (
         <div className="p-5 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto">
             <div>{user}</div>
             <div className="text-center mb-10" data-sal="slide-right" data-sal-easing="ease" data-sal-duration="1000">
@@ -38,18 +54,18 @@ const Auth = ({
             </div>
             {
                 user ? (
-                    <ContactForm user_name={user.displayName} user_mail={user} sign_out={signOut} />
+                    <ContactForm />
                 ) : (
                     <div className="flex items-center justify-center">
-                        <div className=" bg-hover-bg rounded-lg shadow-lg p-7 lg:p-9 flex flex-col lg:w-2/5 lg:items-center lg:justify-center" data-sal="slide-up" data-sal-easing="ease" data-sal-duration="1000">
+                        <div className=" bg-hover-bg rounded-lg shadow-lg p-7 lg:p-9 flex flex-col lg:w-1/2 lg:items-center lg:justify-center" data-sal="slide-up" data-sal-easing="ease" data-sal-duration="1000">
                             <div className='text-2xl font-semibold text-highlight'>Sign in</div>
-                            <div className='mt-3 text-white font-blogBody'>
+                            <div className='mt-3 text-white font-blogBody text-center'>
                                 Signing in allows us to verify your email before we move forward. This way we can ensure that we are talking to a real person.
                             </div>
-                            <div className='mt-5 flex flex-col lg:flex-row lg:items-center w-full justify-start'>
+                            <div className='mt-5 flex flex-col lg:flex-row lg:items-center w-full justify-center'>
                                 <button 
-                                    className='px-3 py-2 flex flex-row bg-background rounded-xl shadow-lg ring'
-                                    onClick={signInWithGoogle}
+                                    className='px-3 py-2 flex flex-row bg-background rounded-xl shadow-lg ring outline-none'
+                                    onClick={handleSignInWithGoogle}
                                 >
                                     <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                                         <g transform="matrix(1, 0, 0, 1, 27.009001, -39.238998)">
@@ -64,8 +80,7 @@ const Auth = ({
                                     </div>
                                 </button>
                                 <button 
-                                    className='px-3 py-2 flex flex-row items-center bg-background rounded-xl shadow-lg ring mt-4 lg:ml-4 lg:mt-0'
-                                    onClick={signInWithGithub}
+                                    className='px-3 py-2 flex flex-row items-center bg-background rounded-xl shadow-lg ring mt-4 lg:ml-4 lg:mt-0 outline-none'
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-github" viewBox="0 0 16 16">
                                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
@@ -81,12 +96,6 @@ const Auth = ({
             }
         </div>
     )
-
-const firebaseAppAuth = firebaseApp.auth();
-
-const providers = {
-    googleProvider: new firebase.auth.GoogleAuthProvider(),
-    githubProvider: new firebase.auth.GithubAuthProvider(),
 }
 
-export default withFirebaseAuth({ providers, firebaseAppAuth })(Auth);
+export default Auth;

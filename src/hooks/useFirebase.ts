@@ -8,11 +8,11 @@ export function useFirebaseApp(
 ): FirebaseApp {
     const firebaseApp = React.useContext(FirebaseAppContext);
 
-    if(fn === null) return firebaseApp;
+    if(fn == null) return firebaseApp;
 
     React.useEffect(() => {
         if (!firebaseApp) {
-            return;
+            return ;
         }
         return fn(firebaseApp);
     }, [firebaseApp, ...dep])
