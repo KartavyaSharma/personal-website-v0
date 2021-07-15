@@ -42,7 +42,7 @@ const config = {
                         resolve: `gatsby-remark-images`,
                         options: {
                             maxWidth: 896,
-                            loading: lazy,
+                            loading: 'lazy',
                             quality: 100,
                             
                         },
