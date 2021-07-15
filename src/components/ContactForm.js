@@ -135,7 +135,7 @@ function ContactFields({ user_email, user_name}) {
                             value={user_email}
                             className='hidden'
                         />
-                        <div className='text-lg mt-3 text-white'>You are currently signed in as <span className='text-gray-200 font-semibold italic'>{user_name} ({user_email})</span></div>
+                        <div className='text-md mt-3 text-white'><span className='text-gray-200 font-mono'>{user_email}</span></div>
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
