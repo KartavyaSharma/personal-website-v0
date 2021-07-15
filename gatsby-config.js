@@ -39,6 +39,15 @@ const config = {
             options: {
                 plugins: [
                     {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 896,
+                            loading: lazy,
+                            quality: 100,
+                            
+                        },
+                    },
+                    {
                         resolve: 'gatsby-remark-code-titles',
                         options: {
                             className: 'highlight-headers',
