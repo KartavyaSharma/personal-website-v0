@@ -15,7 +15,7 @@ function Author() {
                     src={data.image.childImageSharp.fluid.src}
                     fluid={data.image.childImageSharp.fluid}
                     alt={data.name} className='rounded-full w-9'/>
-                <Link to="/#about-me" className='text-white text-xl pl-4 hover:underline hover:text-orange-500'>by {data.name}</Link>
+                <Link to="/#about-me" className='text-white text-xl pl-4 hover:underline hover:text-highlight'>by {data.name}</Link>
             </div>
         </div>
     )
