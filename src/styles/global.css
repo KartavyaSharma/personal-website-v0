@@ -83,6 +83,11 @@
 
 .grvsc-container {
     border-radius: 0px 0px 8px 8px !important;
+    max-height: 1000px !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
 }
 
 @media (min-width: 768px) {
