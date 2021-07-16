@@ -399,10 +399,10 @@ components:
         FormData:
             type: object
             properties:
-                firstName:
+                first_name:
                     type: string
                     description: First name of the sender
-                lastName:
+                last_name:
                     type: string
                     description: Last name of the sender
                 email:
@@ -428,7 +428,7 @@ The global configuration section is to define core attributes of your specificat
 * `**description:` stores the user defined description of what the API does/is. Also used for documentation.
 * `**version:` a user defined version value for the API.
 * `**title:` a user defined title for the API. Used for documentation.
-* `**servers:` defining base paths for different server locations. In your case you can use `**/mail`, all your `**path:` routes are going to be prefixed by the this base path.
+* `**servers:` defining base paths for different server locations. In your case you can use `**/mail`. All your `**path:` routes are going to be prefixed by the this base path.
 * `**description:` a user defined description of the base path we just specified.
 
 The API URL configuration section. Here we define the app's URL paths:
@@ -438,6 +438,68 @@ The API URL configuration section. Here we define the app's URL paths:
 * `**post:` defines the HTTP method this URL endpoint will respond to. This scope will contain the core email handler Python logic.
 * This section combines to make the `**POST /mail/handler` endpoint.
 
-The single `**POST /mail/handler` API endpoint configuration:
+Single `**POST /mail/handler` API endpoint configuration:
 
-* 
+* `**operationId:` defines a Python import path/module which will be called to respond to an HTTP `**POST` request on the `**/mail/handler` endpoint. `**web.controllers.mail_controller.send_mail` essentially specifies a `**send_mail` function inside the `**mail_controller.py` module, and this module is stored in the `**web/controllers/` directory. `**operationId` basically connects a function to respond to an HTTP request. It's general structure is `**<package_name>.<package_name>.<module_name>.<function_name>`.
+* `**tags:` are used for documentation and the Swagger UI. All CRUD methods for your `**/hander` API will share this tag definition.
+* `**summary:` defines the Swagger UI display text for this endpoint.
+* `**description:` implementation notes for our endpoint function. Used for documentation.
+
+API endpoint request body configuration. Enables request validation with specified data format checking:
+
+* `**requestBody:` usually used with `**POST/PUT` requests. Contains a representation of the resource that this API endpoint will receive.
+* `**required:` defines if a request body with a set data scheme is required or not. Takes in a boolean.
+* `**content:` describes the type of content our endpoint receives.
+* `**application/x-www-form-urlencoded`: defines a scope containing the expected content schema for `**application/x-www-form-urlencoded` data. This content type will change depending on the data you expect in your request body. `**application/x-www-form-urlencoded` defines incoming form data.
+* `**schema:` data structure in the form of properties you expect in the request body. This schema will correspond with the form fields.
+* `**$ref:` a pointer to where the schema is stored in our Swagger file. `**$ref`s promote a cleaner configuration file and increase readability.
+
+Request body schema definition. Corresponds with the form data enclosed inside the HTTP request.
+
+* `**components:` defines a store for different parts of the Swagger config. Used to modularize your code.
+* `**schemas:` identifier, similar to a variable, for a scope that stores multiple schemas; but, for our purposes, it only stores one.
+* `**FormData:` unique name for the schema used in the `**/mail/handler` API endpoint.
+* `**type:` defines the structure of the schema as a JSON object.
+* `**properties:` defines the data that will be stored in the JSON object. This is the data that your form is supposed to send. Values inside the property scope and form field names need to match.
+
+Here is how the `**properties:` scope matches with the form I implemented earlier:
+
+* The `**properties:` scope
+
+```yaml
+properties:
+    first_name:
+        type: string
+        description: First name of the sender
+    last_name:
+        type: string
+        description: Last name of the sender
+    email:
+        type: string
+        description: Email of the sender
+    message:
+        type: string
+        description: Message from the sender
+```
+
+* Form implementation
+
+```html
+<html>
+    <head>
+        <title>Form Example</title>
+    </head>
+    <body>
+        <form action="https://<BACKEND-SERVER-URL>/<MAIL-BASE-PATH>/<HANDLER-PATH>" method="POST">
+            <input name="first_name" type="text" placeholder="First Name" />
+            <input name="last_name" type="text" placeholder="Last Name" />
+            <input name="email" type="email" placeholder="Email" />
+            <input name="message" type="text" placeholder="Enter you message" />
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
+```
+
+# Adding controllers
+
