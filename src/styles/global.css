@@ -27,6 +27,10 @@
   max-width: 56rem;
 }
 
+a.link-headers::after {
+  color: #a8d0e6 !important;
+}
+
 .inline-code-wrapper {
   background-color: #002451 !important;
   padding: .1em .4em;
