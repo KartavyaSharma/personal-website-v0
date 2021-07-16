@@ -73,6 +73,12 @@ a.link-headers::after {
   }
 }
 
+@media (max-width: 2000px) {
+    .TOC {
+        max-height: 500px !important;
+    }
+}
+
 @media (max-width: 768px) {
   .TOC {
     max-height: none !important;

@@ -45,7 +45,7 @@ Creating an API in a loosely typed language such as Python can quickly turn into
 
 Sending emails using barebones Mailer libraries in Python is frustrating. Gmail has strict SMTP regulations that some libraries struggle with. To circumvent all of this, I resorted to SendGrid's API suite for sending emails. It has a compact API, which I was able to implement in a couple of minutes.
 
-The SendGrid mailer is the second step in our two-step RPC.
+The SendGrid mailer is the second step in this two-step RPC.
 
 # An overview
 
@@ -153,7 +153,7 @@ All this information was obviously not necessary, however, knowing it will help 
 
 Right now, Heroku doesn't know that your project is a Python app, this is because it uses key files in your Project directory to identify its type. Including a `**requirements.txt` in the root directory is one way for Heroku to recognize your Python app.
 
-The `**requirements.txt` file stores a list of all our app's dependencies. When you deploy your app for the first time, Heroku installs those dependencies and caches them for subsequent builds. 
+The `**requirements.txt` file stores a list of all your app's dependencies. When you deploy your app for the first time, Heroku installs those dependencies and caches them for subsequent builds. 
 
 # Creating a Flask app
 
@@ -198,7 +198,13 @@ if __name__ == '__main__':
 
 Alternatively, if you wish to have an complete HTML page rendered at `bash**'/'` path, you can change the `python**def home()` function to:
 
-```python
+```python {diff}
+from flask import (Flask, render_template)
+
+# Creating a Flask app instance
+app = Flask(__name__, template_folder="templates")
+
+# Creating a URL route identifier for "/"
 @app.route('/')
 def home():
     """
@@ -207,10 +213,14 @@ def home():
     
     :return:	A "Hello world!" string
     """
-    return render_template('home.html')
+-    return "Hello world!"
++    return render_template('home.html')
+
+if __name__ == '__main__':
+    app.run(degub=True)
 ```
 
-You'll notice that a module `bash**flask` was imported, however, we haven't yet installed the Flask web framework inside our `bash**venv`. Currently running the `bash**python server.py` command will throw a `bash**ModuleNotFoundError`:
+You'll notice that a module `bash**flask` was imported, however, the Flask web framework hasn't yet been installed in the `bash**venv`. Currently running the `bash**python server.py` command will throw a `bash**ModuleNotFoundError`:
 
 ```bash
 Traceback (most recent call last):
@@ -231,7 +241,7 @@ virtualenv==20.0.17
 Werkzeug==1.0.1
 ```
 
-To install the aforementioned modules into our virtual environment, run:
+To install the aforementioned modules into your virtual environment, run:
 
 ```bash
 $ python -m pip install -r requirements.txt
@@ -358,7 +368,7 @@ The `**specification.yml` file contains the configuration your Connexion app ins
 ```yaml
 openapi: 3.0.0
 info:
-    description: This is the OpenAPI configuration file that goes with our sever code
+    description: This is the OpenAPI configuration file that goes with your sever code
     version: "1.0.0"
     title: Mail Handler API Endpoint
 
@@ -405,6 +415,29 @@ components:
 
 If you are wondering what OpenAPI is, it is a newer version of Swagger which is now in official use.
 
-There are a lot of things happening in this `**specification.yml` file, and on the outset this file is structured in a hierarchical manner: the indentations represent scopes and levels of ownership.
+There are a lot of things happening in this `**specification.yml` file, and from the outset this file is structured in a hierarchical manner: the indentations represent scopes and levels of ownership.
 
-For instance, `yaml**paths:` defines the scope under which all API URL endpoints will be defined for your Connexion application. Under `yaml**paths:` the `yaml**/handler:` value defines a scope under which all the URLS for `**/mail/handler` will be defined. Inside the `yaml**/handler:` value, the `yaml**post:` value signifies a scope with definitions for all `**HTTP POST` requests to the `**/mail/handler` API endpoint. A similar structure follows suit throughout the rest of your `bash**specification.yml` file.
+For instance, `yaml**paths:` defines a scope under which all API URL endpoints will be specified for your Connexion application. Under `yaml**paths:` the `yaml**/handler:` value defines a scope under which all the URLS for `**/mail/handler` will be specified. Inside the `yaml**/handler:` value, the `yaml**post:` value signifies a scope with definitions for all `**HTTP POST` requests to the `**/mail/handler` API endpoint. A similar structure follows suit throughout the `bash**specification.yml` file.
+
+The `bash**specification.yml` has many sections, let's break down what's what.
+
+The global configuration section is to define core attributes of your specification:
+
+* `**openapi:` tells Connexion what version of OpenAPI (previously Swagger) is being used.
+* `**info:` begins a new scope containing information about the API being built. This is used for documentation purposes.
+* `**description:` stores the user defined description of what the API does/is. Also used for documentation.
+* `**version:` a user defined version value for the API.
+* `**title:` a user defined title for the API. Used for documentation.
+* `**servers:` defining base paths for different server locations. In your case you can use `**/mail`, all your `**path:` routes are going to be prefixed by the this base path.
+* `**description:` a user defined description of the base path we just specified.
+
+The API URL configuration section. Here we define the app's URL paths:
+
+* `**paths:` defined a scope containing all API endpoints.
+* `**handler:` one of your API endpoints. Prefixed by the `**/mail` base path.
+* `**post:` defines the HTTP method this URL endpoint will respond to. This scope will contain the core email handler Python logic.
+* This section combines to make the `**POST /mail/handler` endpoint.
+
+The single `**POST /mail/handler` API endpoint configuration:
+
+* 
