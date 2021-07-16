@@ -317,3 +317,94 @@ $ heroku open
 Congratulations, you should now have a deployed Heroku Flask application. If you want to know more, or if you are having some trouble, visit [Getting Started on Heroku with Python | Heroku Dev Center](https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true).
 
 # Adding Connexion
+
+Integrating Connexion is a two step process. You will have to modify your `**server.py` file to create a `python**connexion.App()` instance, and add a Swagger server configuration file in which you will specify your API's input/output validation along with controller modules. To add Connexion you can modify your `**server.py` file to:
+
+```python
+from flask import render_template
+import connexion
+
+# Creating application instance with Connexion
+app = connexion.App(__name__, specification_dir='./spec/')
+
+# Read the specification.yml file inside ./spec/ to configure API endpoints
+app.add_api('specification.yml')
+
+# Your home route handler will not change
+@app.route('/')
+def home():
+    """
+    This route function responds to all incoming requests
+    on <URL>/
+    
+    :return:	A "Hello world!" string
+    """
+    return render_template('home.html')
+
+# You will have specify a 'host' and 'port' to Connexion on on which
+# it will run your app in local development
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
+```
+
+You'll notice that there is no `**Flask` module that is imported; here, Connexion is used to create the application instance. In the background, the Flask app is still created, but now there is a Connexion wrapper on top of it which provides you with added functionality. Moreover, there is a new parameter provided to the `python**connexion.App()` function: the `python**specification_dir='./spec/'`, this tells Connexion the directory in which it has to look for its configuration file. The next line is telling Connexion the file in which its configuration is stored, in your case it will be `**specification.yml`. You'll know more about this file now.
+
+On a side note, you might have also noticed that we haven't specified the `**templates_folder` parameter when initializing the app instance. Unfortunately, in Connexion you cannot use templates outside the `**./templates` folder stored in the root of your project directory. This is at least what I found when I looked into it, if someone finds a way around this, please feel free to mention it in the comments section.
+
+### The configuration file
+
+The `**specification.yml` file contains the configuration your Connexion app instance will look for to instantiate input parameter validation, output response data and types, endpoint specifications, and the Swagger UI (although we won't be looking into this in this post.) Here is what your `**specification.yml` will look like to create a `**POST /mail/handler` RPC API endpoint:
+
+```yaml
+openapi: 3.0.0
+info:
+    description: This is the OpenAPI configuration file that goes with our sever code
+    version: "1.0.0"
+    title: Mail Handler API Endpoint
+
+servers:
+    - url: /mail
+      description: Main production server for exposing API endpoints for mail controllers
+
+paths:
+    /handler:
+        post:
+            operationId: web.controllers.mail_controller.send_mail
+            tags:
+                - Response
+            summary: Add to sender identity and send mail
+            description: Recieves form body response and sends mail
+            requestBody:
+                required: true
+                content:
+                    application/x-www-form-urlencoded:
+                        schema:
+                            $ref: '#/components/schemas/FormData'
+            responses:
+                200:
+                    description: Successfully sent mail
+
+components:
+    schemas:
+        FormData:
+            type: object
+            properties:
+                firstName:
+                    type: string
+                    description: First name of the sender
+                lastName:
+                    type: string
+                    description: Last name of the sender
+                email:
+                    type: string
+                    description: Email of the sender
+                message:
+                    type: string
+                    description: Message from the sender
+```
+
+If you are wondering what OpenAPI is, it is a newer version of Swagger which is now in official use.
+
+There are a lot of things happening in this `**specification.yml` file, and on the outset this file is structured in a hierarchical manner: the indentations represent scopes and levels of ownership.
+
+For instance, `yaml**paths:` defines the scope under which all API URL endpoints will be defined for your Connexion application. Under `yaml**paths:` the `yaml**/handler:` value defines a scope under which all the URLS for `**/mail/handler` will be defined. Inside the `yaml**/handler:` value, the `yaml**post:` value signifies a scope with definitions for all `**HTTP POST` requests to the `**/mail/handler` API endpoint. A similar structure follows suit throughout the rest of your `bash**specification.yml` file.
