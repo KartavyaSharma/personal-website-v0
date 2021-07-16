@@ -1,15 +1,319 @@
-# What is a CMS anyways?
+*Using Swagger (connexion) and Flask to create a server exposing an RPC-oriented API endpoint to handle user contact form submissions.*
 
-CMSs are a shorthand for content-management-systems. As their name unmistakably suggests, a CMS is used to manage content. But where exactly would you manage your content and where would it go?
+Most business-oriented/public-facing websites have some version of a contact form available for their consumers/audience. Contact forms are inherently great; they save the user from the hassle of trying to contact you through phone/email, and they don't have to leave your website. They are easily an integral part of any modern site.
 
-In the case of traditional monolithic (all-in-one type) of CMSs, you could use their internal management system to host, create, edit, publish, and deliver your content on the internet. A monolithic CMSs allows users to work inside a system that the provider has defines, a very popular example is WordPress, which allows creating your own website as you see fit *inside their system*.
+Recently, I began to experiment with my existing contact setup. When I first integrated a contact form, I integrated Web3Forms' API to get user responses sent to my inbox. It was easy to implement, and it just worked. However, this wasn't a rich experience for the user; once they submitted a form, they were unaware of what happened with their submission or where it went.
 
-On the other hand, nowadays we are seeing an increase in microservice-architecture-based management systems, which are more commonly referred to as headless CMSs. These allow you to host your content anywhere where there is an internet connection and at the least a barebones server which can complete a request-response cycle, or a framework which can do that for you and make that data available in the data layer. Headless systems work on an API-based content delivery framework, instead of defining a rigid scope for the ways you can publish and style your content, these systems simply relay it to you, from there you have complete control over how you want to share it on the internet.
+With complete access to user submissions, I could interact with them in a more meaningful way. Submission data can be stored in a database, saved in a file, sent to an external API endpoint, or be cached. My goal was to trigger an Email mechanism as soon as a user clicked the "send message" button; this would inject the form data into an email transport and send it to my inbox. While a traditional form-handler API might do the same thing behind the curtains, I now had greater control of how I wanted to interact with my users.
 
-# Rational
+# Where's the REST?
 
-For [kartavyas.com](https://kartavyas.com), I initially opted for a Git-based CMS, which in a way *was* headless; however, not in the traditional sense. Instead of delivering data through an API which I could then use, it simply committed new content to a designated location in my code repository, similar to how a programmer would commit their changes. This spared me of some extra work I would have had to do. With a headless approach, instead of having to query APIs, I could simply point Gatsby to where my Markdown files were stored.
+It is tempting to throw around "RESTful API" all over this post, but that would *technically* be incorrect.
 
-Even though it hasn't been much longer than a couple of weeks since I started writing this blog, I realized that the CMS I was using wasn't the right fit for what I wanted to do. Forestry had excellent frontmatter schema options, and it was simple enough to use that it didn't become a hassle. Everything was great until I wrote my [second post](https://www.kartavyas.com/content/posts/setting-up-your-competitive-programming-environment-using-cygwin-and-cpp-templates).
+RESTful APIs are by definition used to expose server-side resources to the client-side for any of the CRUD (create, read, update delete) operations. Since I am not storing any form responses in a database, nor accessing them later, and only using that data to trigger a sequence of events, it is more appropriate to call this service an RPC (remote procedure call) API.
 
-Before I go into why I had to move on from Forestry, I'll take some time to talk about code highlighting libraries, and why they turned out to be a problem when used in conjunction with Forestry. Code highlighting libraries are great, they allow me to write colorful syntax aware code instead of hard to read bland, white monospaced font sentences. 
+However, this API won't entirely be free of REST; to send the form data in the request body, instead of the URL query parameters, you will need to use 'POST" as your form's method with the action attribute linking to your API endpoint.
+
+```html
+<html>
+    <head>
+        <title>Form Example</title>
+    </head>
+    <body>
+        <form action="https://<BACKEND-SERVER-URL>/<MAIL-BASE-PATH>/<HANDLER-PATH>" method="POST">
+            <input name="first_name" type="text" placeholder="First Name" />
+            <input name="last_name" type="text" placeholder="Last Name" />
+            <input name="email" type="email" placeholder="Email" />
+            <input name="message" type="text" placeholder="Enter you message" />
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
+```
+
+The above form does not precisely represent how I ended up implementing my contact form. However, it does serve its purpose to show the bits of REST that I have used in my API.
+
+# The handler API
+
+Your API needs to be able to accept incoming form data in HTTP requests and transform that data into a JSON object for us to parse. In a nutshell, your `bash**/handler` endpoint should be able to parse incoming data, transport it to the mailer API (more on that in a bit.) The mailer API will then send out the emails.
+
+### Enter Swagger (Connexion)
+
+Creating an API in a loosely typed language such as Python can quickly turn into a nightmare. Not knowing what type of data to expect on your endpoint usually leads to many `bash**TypeErrors`. Before I started my project, I stumbled across Swagger in a Flask tutorial. At its core, Swagger provides type validation on API input/output and provides Swagger documentation wrapped in a neatly designed UI. More on how to implement this later.
+
+### SendGrid Mailer
+
+Sending emails using barebones Mailer libraries in Python is frustrating. Gmail has strict SMTP regulations that some libraries struggle with. To circumvent all of this, I resorted to SendGrid's API suite for sending emails. It has a compact API, which I was able to implement in a couple of minutes.
+
+The SendGrid mailer is the second step in our two-step RPC.
+
+# An overview
+
+Going forward, here's what you are going to do to setup your backend.
+
+- Initialize a Heroku app
+- Set up a Flask App
+- Add Connexion to your Flask server
+- Add controllers
+- Add a SendGrid helper
+- Barebones form test
+- Add CORS (optional)
+
+# Initializing a Heroku app
+
+For completeness, I will also be talking about deployment on Heroku. This includes initial development environment setup, creating an app, connecting it with Git, and developing concurrently while deploying Heroku builds. If you are already familiar with Heroku, feel free to skip ahead.
+
+I'll be showing you how to install Heroku on Ubuntu/WSL2 and Windows. If you are using any other operating system, you can refer to [The Heroku CLI | Heroku Dev Center](https://devcenter.heroku.com/articles/heroku-cli) page on how to get started with the Heroku CLI.
+
+### Installing Heroku
+
+Installing Heroku's CLI on Ubuntu requires a single BASH command.
+
+```bash
+$ curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+```
+
+You can verify your installation and version using `bash**heroku --version`.
+
+Installing Heroku on Windows will require you to download and run an executable from https://cli-assets.heroku.com/heroku-x64.exe. Running the executable will make the `**Heroku` command available in your terminal (CMD). Again, you can verify you installing and version using `**heroku --version`.
+
+Although Heroku is available on Windows CMD, I highly recommend installing WSL2 and running it on Linux. This will give your development process more continuity, and Ubuntu/WSL2 provides a very rich developer ecosystem.
+
+Going forward, the differences between Heroku terminal commands disappear on Windows/Ubuntu/WSL2.
+
+### Login  and Git Initialization
+
+To be able to quickly deploy and build your app on the Heroku cloud, you will need to have it connected to a Git repository, this will allow you to push and commit your changes with a single command. But, first you will have to verify your identity.
+
+Use the `bash**heroku login` command to log into the Heroku CLI.
+
+```bash
+$ heroku login
+heroku: Press any key to open up the browser to login or q to exit
+ ›   Warning: If browser does not open, visit
+ ›   https://cli-auth.heroku.com/auth/browser/***
+heroku: Waiting for login...
+Logging in... done
+Logged in as me@example.com
+```
+
+`bash**cd` into your project directory and run the `bash**git init` command to classify the project folder as a Git repository. Add your new repository to GitHub by creating a new repository and running the following commands.
+
+Note: you don't *need* to create a GitHub repository for this to work, but it's a nice way to keep your code backed up.
+
+```bash
+$ git remote add origin https://github.com/<YOUR-USERNAME>/<NEW-REPOSITORY-NAME>.git
+$ git branch -M master
+$ git push -u origin master
+```
+
+### A new Heroku app
+
+Run the `bash**heroku create` command. This prepares Heroku to receive your source code.
+
+```bash
+$ heroku create
+Creating app... done, ⬢ serene-caverns-82714
+https://serene-caverns-82714.herokuapp.com/ | https://git.heroku.com/serene-caverns-82714.git
+```
+
+The `bash**heroku create` command adds a new Git remote (called `**heroku`) to your local Git repository.
+
+To deploy your code you can simply run `bash**git push heroku main`.
+
+*NOTE: at this stage running `bash**git push heroku main` will give you an error since you have not specified the `bash**Procfile` and `bash**requirements.txt` files. You will create both these files in upcoming sections.*
+
+### Adding a Procfile
+
+Now you have to tell Heroku what commands to run when your app spins up every time. This is defined in a `**Procfile`, a plaintext file in the root of your project directory. For a simple Flask app, you can run:
+
+```bash
+$ "web: gunicorn server:app" >> Procfile
+```
+
+The `bash**Procfile` has a command format of `bash**<process type>:<command>`. This means that `bash**web` is a Heroku process, and according to  [Heroku's Procfile Doc](https://devcenter.heroku.com/articles/procfile) it is the only `bash**<process type>` that can receive external HTTP traffic from Heroku's routers. This makes it an integral part of your application setup. The `bash**<command>` part of your `bash**Procfile` spells `bash**gunicorn server:app`, this is essentially a complete `bash**gunicorn` command. A typical `bash**gunicorn` command has the format:
+
+```bash
+$ gunicorn [OPTIONS] APP_MODULE
+```
+
+*Taken from the [Gunicorn 20.1.0 documentation](https://docs.gunicorn.org/en/stable/run.html#gunicorn)*.
+
+This means that your entire `bash**Procfile ` command is structured as:
+
+```bash
+$ <process typ>: gunicorn [OPTIONS] APP_MODULE 
+```
+
+The `bash**APP_MODULE` fragment of the `bash**gunicorn` command essentially means that you should have a `bash**server.py` file with a variable named `bash**app`. The template for `bash**APP_MODULE` is `bash**${MODULE_NAME}:${VARIABLE_NAME}`.
+
+All this information was obviously not necessary, however, knowing it will help you navigate the Heroku landscape down the line.
+
+### Making it a Python app
+
+Right now, Heroku doesn't know that your project is a Python app, this is because it uses key files in your Project directory to identify its type. Including a `**requirements.txt` in the root directory is one way for Heroku to recognize your Python app.
+
+The `**requirements.txt` file stores a list of all our app's dependencies. When you deploy your app for the first time, Heroku installs those dependencies and caches them for subsequent builds. 
+
+# Creating a Flask app
+
+In the root of your directory create a `bash**server.py` file. This file needs to correspond with the `bash**${MODULE_NAME}` in your `bash**Procfile` command. It is also recommended that you install all dependencies inside a Python virtual environment. To install and create a virtual environment inside your root directory, run:
+
+```bash
+# inside the project root
+$ pip install virtualenv
+$ virtualenv venv
+
+$ cd venv/Scripts && activate # if you are on Windows
+
+$ source venv/bin/activate # if you are on Linux/Ubuntu/WSL2
+```
+
+This will isolate all dependencies you install to your virtual environment.
+
+If you want your Python web app to render an HTML home page, you can create an additional templates directory in the project root. You can use the Jinja templating system to populate your HTML file with dynamic data. However, since you are only creating an API endpoint, a templating engine won't be necessary for this setup.
+
+The following Python code sets up a basic Flask server, and responds with a hello world on the `bash**'/'` path.
+
+```python
+from flask import (Flask, render_template)
+
+# Creating a Flask app instance
+app = Flask(__name__, template_folder="templates")
+
+# Creating a URL route identifier for "/"
+@app.route('/')
+def home():
+    """
+    This route function responds to all incoming requests
+    on <URL>/
+    
+    :return:	A "Hello world!" string
+    """
+    return "Hello world!"
+
+if __name__ == '__main__':
+    app.run(degub=True)
+```
+
+Alternatively, if you wish to have an complete HTML page rendered at `bash**'/'` path, you can change the `python**def home()` function to:
+
+```python
+@app.route('/')
+def home():
+    """
+    This route function responds to all incoming requests
+    on <URL>/
+    
+    :return:	A "Hello world!" string
+    """
+    return render_template('home.html')
+```
+
+You'll notice that a module `bash**flask` was imported, however, we haven't yet installed the Flask web framework inside our `bash**venv`. Currently running the `bash**python server.py` command will throw a `bash**ModuleNotFoundError`:
+
+```bash
+Traceback (most recent call last):
+  File "server.py", line 1, in <module>
+ModuleNotFoundError: No module named 'flask'
+```
+
+This is a good time to circle back to your `bash**requirements.txt` file. If you have not yet created a `bash**requirements.txt` file, run `bash** touch requirements.txt` and add the following lines:
+
+```
+connexion==2.8.0
+Flask==1.1.4
+gunicorn==20.1.0
+sendgrid==6.7.1
+flask-cors==3.0.10
+urllib3==1.25.8
+virtualenv==20.0.17
+Werkzeug==1.0.1
+```
+
+To install the aforementioned modules into our virtual environment, run:
+
+```bash
+$ python -m pip install -r requirements.txt
+```
+
+Now if you run `bash**python server.py` you should see no errors. You can check if you server is responding to requests as intended by navigating to the `bash**localhost:5000/` URL.
+
+At this point you can run the `bash**git push heroku main` command to create your first deployment on Heroku.
+
+```bash
+$ git push heroku main
+Counting objects: 407, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (182/182), done.
+Writing objects: 100% (407/407), 68.65 KiB | 68.65 MiB/s, done.
+Total 407 (delta 199), reused 407 (delta 199)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Building on the Heroku-20 stack
+remote: -----> Determining which buildpack to use for this app
+remote: -----> Python app detected
+remote: -----> Using Python version specified in runtime.txt
+remote: -----> Installing python-3.9.6
+remote: -----> Installing pip 20.2.4, setuptools 47.1.1 and wheel 0.36.2
+remote:        Collecting django
+remote:          Downloading Django-3.2-py3-none-any.whl (7.9 MB)
+remote:        Collecting gunicorn
+remote:          Downloading gunicorn-20.1.0.tar.gz (370 kB)
+remote:        Collecting django-heroku
+remote:          Downloading django_heroku-0.3.1-py2.py3-none-any.whl (6.2 kB)
+remote:        Collecting asgiref<4,>=3.3.2
+remote:          Downloading asgiref-3.3.2-py3-none-any.whl (22 kB)
+remote:        Collecting pytz
+remote:          Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
+remote:        Collecting sqlparse>=0.2.2
+remote:          Downloading sqlparse-0.4.1-py3-none-any.whl (42 kB)
+remote:        Collecting psycopg2
+remote:          Downloading psycopg2-2.8.6.tar.gz (383 kB)
+remote:        Collecting whitenoise
+remote:          Downloading whitenoise-5.2.0-py2.py3-none-any.whl (19 kB)
+remote:        Collecting dj-database-url>=0.5.0
+remote:          Downloading dj_database_url-0.5.0-py2.py3-none-any.whl (5.5 kB)
+remote:        Building wheels for collected packages: gunicorn, psycopg2
+remote:          Building wheel for gunicorn (setup.py): started
+remote:          Building wheel for gunicorn (setup.py): finished with status 'done'
+remote:          Created wheel for gunicorn: filename=gunicorn-20.1.0-py3-none-any.whl size=78918 sha256=31cf6259d9f936d5565df167c93a9901bdd93d7daaf7ef915631f720750126bf
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-orcrzfks/wheels/ee/ca/72/3e9be4033d3993d4d78e2f4accdfcfff6c690921fef5ea0d57
+remote:          Building wheel for psycopg2 (setup.py): started
+remote:          Building wheel for psycopg2 (setup.py): finished with status 'done'
+remote:          Created wheel for psycopg2: filename=psycopg2-2.8.6-cp39-cp39-linux_x86_64.whl size=523834 sha256=5adec4cab8382243abb5e1c4638481479baa8b13b94caa392d06d92e98b51d2d
+remote:          Stored in directory: /tmp/pip-ephem-wheel-cache-orcrzfks/wheels/a2/07/10/a9a82e72d50feb8d646acde6a88000bbf2ca0f82e41aea438a
+remote:        Successfully built gunicorn psycopg2
+remote:        Installing collected packages: asgiref, pytz, sqlparse, django, gunicorn, psycopg2, whitenoise, dj-database-url, django-heroku
+remote:        Successfully installed asgiref-3.3.2 dj-database-url-0.5.0 django-3.2 django-heroku-0.3.1 gunicorn-20.1.0 psycopg2-2.8.6 pytz-2021.1 sqlparse-0.4.1 whitenoise-5.2.0
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        129 static files copied to '/tmp/build_9d3818e3/staticfiles', 393 post-processed.
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote: -----> Compressing...
+remote:        Done: 60.7M
+remote: -----> Launching...
+remote:        Released v5
+remote:        https://serene-caverns-82714.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/serene-caverns-82714.git
+ * [new branch]      revert-to-requirements -> main
+```
+
+To ensure that at least one dyno (Heroku's term for Linux container) instance is running run:
+
+```bash
+$ heroku ps:scale web=1
+```
+
+To view your newly deployed app:
+
+```bash
+$ heroku open
+```
+
+Congratulations, you should now have a deployed Heroku Flask application. If you want to know more, or if you are having some trouble, visit [Getting Started on Heroku with Python | Heroku Dev Center](https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true).
+
+# Adding Connexion
