@@ -142,7 +142,7 @@ $ gunicorn [OPTIONS] APP_MODULE
 This means that your entire `bash**Procfile ` command is structured as:
 
 ```bash
-$ <process typ>: gunicorn [OPTIONS] APP_MODULE 
+$ <process type>: gunicorn [OPTIONS] APP_MODULE 
 ```
 
 The `bash**APP_MODULE` fragment of the `bash**gunicorn` command essentially means that you should have a `bash**server.py` file with a variable named `bash**app`. The template for `bash**APP_MODULE` is `bash**${MODULE_NAME}:${VARIABLE_NAME}`.
@@ -490,7 +490,7 @@ properties:
         <title>Form Example</title>
     </head>
     <body>
-        <form action="https://<BACKEND-SERVER-URL>/<MAIL-BASE-PATH>/<HANDLER-PATH>" method="POST">
+        <form action="https://<BACKEND-SERVER-URL>/mail/handler" method="POST">
             <input name="first_name" type="text" placeholder="First Name" />
             <input name="last_name" type="text" placeholder="Last Name" />
             <input name="email" type="email" placeholder="Email" />
@@ -503,3 +503,8 @@ properties:
 
 # Adding controllers
 
+
+
+
+
+*Thumbnail backdrop by [David Clode](https://unsplash.com/photos/QZePScKPb2Q) on [Unsplash](https://unsplash.com)*
