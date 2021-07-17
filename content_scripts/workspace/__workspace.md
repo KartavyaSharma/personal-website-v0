@@ -452,7 +452,7 @@ API endpoint request body configuration. Enables request validation with specifi
 * `**content:` describes the type of content our endpoint receives.
 * `**application/x-www-form-urlencoded`: defines a scope containing the expected content schema for `**application/x-www-form-urlencoded` data. This content type will change depending on the data you expect in your request body. `**application/x-www-form-urlencoded` defines incoming form data.
 * `**schema:` data structure in the form of properties you expect in the request body. This schema will correspond with the form fields.
-* `**$ref:` a pointer to where the schema is stored in our Swagger file. `**$ref`s promote a cleaner configuration file and increase readability.
+* `**$ref:` a pointer to where the schema is stored in the Swagger file. `**$ref`s promote a cleaner configuration file and increase readability.
 
 Request body schema definition. Corresponds with the form data enclosed inside the HTTP request.
 
@@ -502,6 +502,50 @@ properties:
 ```
 
 # Adding controllers
+
+When your API receives a `**POST` request on `**/mail/handler` it will call the function specified in the `**operationId`. In this case, there should be a `**mail_controller.py` file with a `python**send_mail` function. The `**mail_controller.py` file should be stored in the `**web/controllers` directory. Here's what your `**mail_controller.py` file should look like:
+
+```python
+"""
+This is the mail_controller module
+"""
+
+from flask import *
+from web.sendgrid_mailers.sendgrid_handler import *
+from types import SimpleNamespace
+
+def send_mail(body): # The body parameter contains incoming form data of type Dict.
+    """
+    Mailer function that uses SendGrid's handlers to send mail.
+    :body:      A dictionary containing form data
+    :return:    Create success/failed response for server
+    """
+    dict_vars = SimpleNamespace(**body)
+    res_home = home_mailer(
+        dict_vars.first_name, 
+        dict_vars.last_name, 
+        dict_vars.email, 
+        dict_vars.message
+    )
+
+    res_client = client_mailer(dict_vars.first_name, dict_vars.email)
+
+    if type(res_home) != bool:
+        Flask.abort(404)
+
+    if type(res_client) != bool:
+        Flask.abort(404)
+
+    return redirect("<REDIRECT-URL-AFTER-FORM-SUBMIT>")
+```
+
+Here, you have created a `python**send_mail()` function which takes in a `**body` parameter, unpacks the `**body` dictionary into keyword arguments, stores them in `**dict_vars`, and calls the `python**home_mailer()` and `python**client_mailer()` functions. The `python**home_mailer()` and `python**client_mailer()` functions are imported from another module named `**sendgrid_handler.py`. You will create this module in the next section.
+
+The `python**if` statements check if the `**mailer` functions returned the expected confirmation type after sending the mail. If the functions returned an `**object`, your API will return an `**error 404` code and abort all processes.
+
+Finally, the `python**return` statement uses a `python**redirct()` function to route to an external link once the mailing process is complete. Usually this would be a success notification page.
+
+# Integrating SendGrid
 
 
 
