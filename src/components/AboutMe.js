@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import classNames from 'classnames'
+import { MobileContext } from '../context/MobileContext'
 
 import IndexLayout from '../components/layout/IndexLayout'
 
@@ -28,20 +29,7 @@ function AboutMe(props) {
     const about = data.aboutJson.content.replace(/\n/g, '<br />');
     const img = getImage(data.aboutJson.img);
 
-    const [isMobile, setIsMobile] = useState(undefined);
-    
-    useEffect(() => {
-        setIsMobile(window.innerWidth <= 1024);
-        const hideElement = () => {
-            setIsMobile(window.innerWidth <= 1024);
-        };
-
-        window.addEventListener('resize', hideElement());
-
-        return () => {
-            window.removeEventListener('resize', hideElement());
-        };
-    },[]);
+    const isMobile = useContext(MobileContext).mobile;
 
     return (
         <IndexLayout ident="about-me" idx="01" name="About me">

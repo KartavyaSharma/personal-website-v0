@@ -1,3 +1,17 @@
+---
+id: d6c8a9e4-44c6-4a91-8d64-21b061ebeecb
+title: Creating a Python form handler API with Flask and Connexion
+date: 2021-07-17T17:17:06.431683+01:00
+description: Using Connexion and Flask to create a server exposing an RPC oriented API endpoint to handle contact form submissions.
+thumbnail: "../images/swaggerapi.jpg"
+tags:
+- RPC
+- API
+- FLASK
+- CONNEXION
+- HEROKU
+
+---
 Most business-oriented/public-facing websites have some version of a contact form available for their consumers/audience. Contact forms are inherently great; they save the user from the hassle of trying to contact you through phone/email, and they don't have to leave your website. They are easily an integral part of any modern site.
 
 Recently, I began to experiment with my existing contact setup. When I first integrated a contact form, I integrated Web3Forms' API to get user responses sent to my inbox. It was easy to implement, and it just worked. However, this wasn't a rich experience for the user; once they submitted a form, they were unaware of what happened with their submission or where it went.

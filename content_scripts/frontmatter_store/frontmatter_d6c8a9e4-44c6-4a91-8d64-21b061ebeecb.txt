@@ -1,0 +1,14 @@
+---
+id: d6c8a9e4-44c6-4a91-8d64-21b061ebeecb
+title: Creating a Python form handler API with Flask and Connexion
+date: 2021-07-17T17:17:06.431683+01:00
+description: Using Connexion and Flask to create a server exposing an RPC oriented API endpoint to handle contact form submissions.
+thumbnail: "../images/swaggerapi.jpg"
+tags:
+- RPC
+- API
+- FLASK
+- CONNEXION
+- HEROKU
+
+---
