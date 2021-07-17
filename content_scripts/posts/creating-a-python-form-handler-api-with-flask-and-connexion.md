@@ -163,9 +163,9 @@ All this information was obviously not necessary, however, knowing it will help 
 
 ### Making it a Python app
 
-Right now, Heroku doesn't know that your project is a Python app, this is because it uses key files in your Project directory to identify its type. Including a `**requirements.txt` in the root directory is one way for Heroku to recognize your Python app.
+Right now, Heroku doesn't know that your project is a Python app, this is because it uses key files in your Project directory to identify its type. Including a `bash**requirements.txt` in the root directory is one way for Heroku to recognize your Python app.
 
-The `**requirements.txt` file stores a list of all your app's dependencies. When you deploy your app for the first time, Heroku installs those dependencies and caches them for subsequent builds. 
+The `bash**requirements.txt` file stores a list of all your app's dependencies. When you deploy your app for the first time, Heroku installs those dependencies and caches them for subsequent builds. 
 
 # Creating a Flask app
 
@@ -429,7 +429,7 @@ If you are wondering what OpenAPI is, it is a newer version of Swagger which is 
 
 There are a lot of things happening in this `bash**specification.yml` file, and from the outset this file is structured in a hierarchical manner: the indentations represent scopes and levels of ownership.
 
-For instance, `yaml**paths:` defines a scope under which all API URL endpoints will be specified for your Connexion application. Under `yaml**paths:` the `yaml**/handler:` value defines a scope under which all the URLS for`bash**/mail/handler` will be specified. Inside the `yaml**/handler:` value, the `yaml**post:` value signifies a scope with definitions for all `bash**HTTP POST` requests to the `**/mail/handler` API endpoint. A similar structure follows suit throughout the `bash**specification.yml` file.
+For instance, `yaml**paths:` defines a scope under which all API URL endpoints will be specified for your Connexion application. Under `yaml**paths:` the `yaml**/handler:` value defines a scope under which all the URLS for`bash**/mail/handler` will be specified. Inside the `yaml**/handler:` value, the `yaml**post:` value signifies a scope with definitions for all `bash**HTTP POST` requests to the `bash**/mail/handler` API endpoint. A similar structure follows suit throughout the `bash**specification.yml` file.
 
 The `bash**specification.yml` has many sections, let's break down what's what.
 
@@ -440,13 +440,13 @@ The global configuration section is to define core attributes of your specificat
 * `yaml**description:` stores the user defined description of what the API does/is. Also used for documentation.
 * `yaml**version:` a user defined version value for the API.
 * `yaml**title:` a user defined title for the API. Used for documentation.
-* `yaml**servers:` defining base paths for different server locations. In your case you can use `**/mail`. All your `**path:` routes are going to be prefixed by the this base path.
+* `yaml**servers:` defining base paths for different server locations. In your case you can use `bash**/mail`. All your `yaml**path:` routes are going to be prefixed by the this base path.
 * `yaml**description:` a user defined description of the base path we just specified.
 
 The API URL configuration section. Here we define the app's URL paths:
 
 * `yaml**paths:` defined a scope containing all API endpoints.
-* `yaml**handler:` one of your API endpoints. Prefixed by the `**/mail` base path.
+* `yaml**handler:` one of your API endpoints. Prefixed by the `bash**/mail` base path.
 * `yaml**post:` defines the HTTP method this URL endpoint will respond to. This scope will contain the core email handler Python logic.
 * This section combines to make the `bash**POST /mail/handler` endpoint.
 
