@@ -26,7 +26,7 @@ RESTful APIs are by definition used to expose server-side resources to the clien
 
 However, this API won't entirely be free of REST; to send the form data in the request body, instead of the URL query parameters, you will need to use 'POST" as your form's method with the action attribute linking to your API endpoint. The `html**method="POST"` attribute means that this form's data will be sent to the `html**action=""` URL as a resource.
 
-```html
+```html:title=HTML
 <html>
     <head>
         <title>Form Example</title>
@@ -81,7 +81,7 @@ I'll be showing you how to install Heroku on Ubuntu/WSL2 and Windows. If you are
 
 Installing Heroku's CLI on Ubuntu requires a single BASH command.
 
-```bash
+```bash:title=BASH
 $ curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 ```
 
@@ -99,7 +99,7 @@ To be able to quickly deploy and build your app on the Heroku cloud, you will ne
 
 Use the `bash**heroku login` command to log into the Heroku CLI.
 
-```bash
+```bash:title=BASH
 $ heroku login
 heroku: Press any key to open up the browser to login or q to exit
  ›   Warning: If browser does not open, visit
@@ -113,7 +113,7 @@ Logged in as me@example.com
 
 Note: you don't *need* to create a GitHub repository for this to work, but it's a nice way to keep your code backed up.
 
-```bash
+```bash:title=BASH
 $ git remote add origin https://github.com/<YOUR-USERNAME>/<NEW-REPOSITORY-NAME>.git
 $ git branch -M master
 $ git push -u origin master
@@ -123,7 +123,7 @@ $ git push -u origin master
 
 Run the `bash**heroku create` command. This prepares Heroku to receive your source code.
 
-```bash
+```bash:title=BASH
 $ heroku create
 Creating app... done, ⬢ serene-caverns-82714
 https://serene-caverns-82714.herokuapp.com/ | https://git.heroku.com/serene-caverns-82714.git
@@ -139,13 +139,13 @@ To deploy your code you can simply run `bash**git push heroku main`.
 
 Now you have to tell Heroku what commands to run when your app spins up every time. This is defined in a `**Procfile`, a plaintext file in the root of your project directory. For a simple Flask app, you can run:
 
-```bash
+```bash:title=BASH
 $ "web: gunicorn server:app" >> Procfile
 ```
 
 The `bash**Procfile` has a command format of `bash**<process type>:<command>`. This means that `bash**web` is a Heroku process, and according to  [Heroku's Procfile Doc](https://devcenter.heroku.com/articles/procfile) it is the only `bash**<process type>` that can receive external HTTP traffic from Heroku's routers. This makes it an integral part of your application setup. The `bash**<command>` part of your `bash**Procfile` spells `bash**gunicorn server:app`, this is essentially a complete `bash**gunicorn` command. A typical `bash**gunicorn` command has the format:
 
-```bash
+```bash:title=BASH
 $ gunicorn [OPTIONS] APP_MODULE
 ```
 
@@ -153,7 +153,7 @@ $ gunicorn [OPTIONS] APP_MODULE
 
 This means that your entire `bash**Procfile ` command is structured as:
 
-```bash
+```bash:title=BASH
 $ <process type>: gunicorn [OPTIONS] APP_MODULE 
 ```
 
@@ -171,7 +171,7 @@ The `**requirements.txt` file stores a list of all your app's dependencies. When
 
 In the root of your directory create a `bash**server.py` file. This file needs to correspond with the `bash**${MODULE_NAME}` in your `bash**Procfile` command. It is also recommended that you install all dependencies inside a Python virtual environment. To install and create a virtual environment inside your root directory, run:
 
-```bash
+```bash:title=BASH
 # inside the project root
 $ pip install virtualenv
 $ virtualenv venv
@@ -187,7 +187,7 @@ If you want your Python web app to render an HTML home page, you can create an a
 
 The following Python code sets up a basic Flask server, and responds with a hello world on the `bash**'/'` path.
 
-```python
+```python:title=PYTHON -- server.py
 from flask import (Flask, render_template)
 
 # Creating a Flask app instance
@@ -210,7 +210,7 @@ if __name__ == '__main__':
 
 Alternatively, if you wish to have an complete HTML page rendered at `bash**'/'` path, you can change the `python**def home()` function to:
 
-```python {diff}
+```python {diff}:title=PYTHON -- server.py
 from flask import (Flask, render_template)
 
 # Creating a Flask app instance
@@ -234,7 +234,7 @@ if __name__ == '__main__':
 
 You'll notice that a module `bash**flask` was imported, however, the Flask web framework hasn't yet been installed in the `bash**venv`. Currently running the `bash**python server.py` command will throw a `bash**ModuleNotFoundError`:
 
-```bash
+```bash:title=BASH
 Traceback (most recent call last):
   File "server.py", line 1, in <module>
 ModuleNotFoundError: No module named 'flask'
@@ -242,7 +242,7 @@ ModuleNotFoundError: No module named 'flask'
 
 This is a good time to circle back to your `bash**requirements.txt` file. If you have not yet created a `bash**requirements.txt` file, run `bash** touch requirements.txt` and add the following lines:
 
-```
+```text:title=TEXT -- requirements.txt
 connexion==2.8.0
 Flask==1.1.4
 gunicorn==20.1.0
@@ -255,7 +255,7 @@ Werkzeug==1.0.1
 
 To install the aforementioned modules into your virtual environment, run:
 
-```bash
+```bash:title=BASH
 $ python -m pip install -r requirements.txt
 ```
 
@@ -263,7 +263,7 @@ Now if you run `bash**python server.py` you should see no errors. You can check 
 
 At this point you can run the `bash**git push heroku main` command to create your first deployment on Heroku.
 
-```bash
+```bash:title=BASH
 $ git push heroku main
 Counting objects: 407, done.
 Delta compression using up to 8 threads.
@@ -326,13 +326,13 @@ To https://git.heroku.com/serene-caverns-82714.git
 
 To ensure that at least one dyno (Heroku's term for Linux container) instance is running run:
 
-```bash
+```bash:title=BASH
 $ heroku ps:scale web=1
 ```
 
 To view your newly deployed app:
 
-```bash
+```bash:title=BASH
 $ heroku open
 ```
 
@@ -342,7 +342,7 @@ Congratulations, you should now have a deployed Heroku Flask application. If you
 
 Integrating Connexion is a two step process. You will have to modify your `**server.py` file to create a `python**connexion.App()` instance, and add a Swagger server configuration file in which you will specify your API's input/output validation along with controller modules. To add Connexion you can modify your `**server.py` file to:
 
-```python
+```python:title=PYTHON -- server.py
 from flask import render_template
 import connexion
 
@@ -377,7 +377,7 @@ On a side note, you might have also noticed that we haven't specified the `**tem
 
 The `**specification.yml` file contains the configuration your Connexion app instance will look for to instantiate input parameter validation, output response data and types, endpoint specifications, and the Swagger UI (although we won't be looking into this in this post.) Here is what your `**specification.yml` will look like to create a `**POST /mail/handler` RPC API endpoint:
 
-```yaml
+```yaml:title=YAML -- specification.yml
 openapi: 3.0.0
 info:
     description: This is the OpenAPI configuration file that goes with your sever code
@@ -478,7 +478,7 @@ Here is how the `**properties:` scope matches with the form I implemented earlie
 
 * The `**properties:` scope
 
-```yaml
+```yaml:title=YAML
 properties:
     first_name:
         type: string
@@ -496,7 +496,7 @@ properties:
 
 * Form implementation
 
-```html
+```html:title=HTML -- form_test.html
 <html>
     <head>
         <title>Form Example</title>
@@ -517,7 +517,7 @@ properties:
 
 When your API receives a `**POST` request on `**/mail/handler` it will call the function specified in the `**operationId`. In this case, there should be a `**mail_controller.py` file with a `python**send_mail` function. The `**mail_controller.py` file should be stored in the `**web/controllers` directory. Here's what your `**mail_controller.py` file should look like:
 
-```python
+```python:title=PYTHON -- mail_controller.py
 """
 This is the mail_controller module
 """
@@ -561,7 +561,7 @@ Finally, the `python**return` statement uses a `python**redirct()` function to r
 
 You can use any API based mailing service with your `python**send_mail()` function. Personally, in my API I used SendGrid. Going through every implementation detail for integrating SendGrid would be impractical; however, [SendGrid's Integration Guide](https://app.sendgrid.com/guide/integrate) is an excellent resource to lean how the API works. For completeness, here's how an implementation might look like:
 
-```python
+```python:title=PYTHON -- sendgrid_hander.py
 """
 SendGrid mail handler, sends emails to kartavyas and senders
 """
@@ -638,7 +638,7 @@ The function call `python**SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
 
 `python**html_home_gen()` and `python**html_client_gen()` are functions which return an HTML string with custom user names and data. You can use these functions to generate HTML however you wish to, for instance:
 
-```python
+```python:title=PYTHON
 # using SendGrid's Python Library
 # https://github.com/sendgrid/sendgrid-python
 import os
@@ -670,7 +670,7 @@ You can find the configuration of my own contact form handler API on this [Githu
 
 # Conclusion
 
-
+TBA.
 
 
 
