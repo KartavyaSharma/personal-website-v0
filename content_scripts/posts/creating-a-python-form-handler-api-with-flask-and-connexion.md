@@ -49,9 +49,9 @@ The above form does not precisely represent how I ended up implementing my conta
 
 Your API needs to be able to accept incoming form data in HTTP requests and transform that data into a JSON object for us to parse. In a nutshell, your `bash**/handler` endpoint should be able to parse incoming data, transport it to the mailer API (more on that in a bit.) The mailer API will then send out the emails.
 
-### Enter Swagger (Connexion)
+### Enter Connexion
 
-Creating an API in a loosely typed language such as Python can quickly turn into a nightmare. Not knowing what type of data to expect on your endpoint usually leads to many `bash**TypeErrors`. Before I started my project, I stumbled across Swagger in a Flask tutorial. At its core, Swagger provides type validation on API input/output and provides Swagger documentation wrapped in a neatly designed UI. More on how to implement this later.
+Creating an API in a loosely typed language such as Python can quickly turn into a nightmare. Not knowing what type of data to expect on your endpoint usually leads to many `bash**TypeErrors`. Before I started my project, I stumbled across Connexion in a Flask tutorial. At its core, Connexion provides type validation on API input/output and provides Swagger documentation wrapped in a neatly designed UI. More on how to implement this later.
 
 ### SendGrid Mailer
 
@@ -87,7 +87,7 @@ $ curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
 You can verify your installation and version using `bash**heroku --version`.
 
-Installing Heroku on Windows will require you to download and run an executable from https://cli-assets.heroku.com/heroku-x64.exe. Running the executable will make the `**Heroku` command available in your terminal (CMD). Again, you can verify you installing and version using `**heroku --version`.
+Installing Heroku on Windows will require you to download and run an executable from https://cli-assets.heroku.com/heroku-x64.exe. Running the executable will make the `bash**Heroku` command available in your terminal (CMD). Again, you can verify you installing and version using `bash**heroku --version`.
 
 Although Heroku is available on Windows CMD, I highly recommend installing WSL2 and running it on Linux. This will give your development process more continuity, and Ubuntu/WSL2 provides a very rich developer ecosystem.
 
@@ -129,7 +129,7 @@ Creating app... done, ⬢ serene-caverns-82714
 https://serene-caverns-82714.herokuapp.com/ | https://git.heroku.com/serene-caverns-82714.git
 ```
 
-The `bash**heroku create` command adds a new Git remote (called `**heroku`) to your local Git repository.
+The `bash**heroku create` command adds a new Git remote (called `bash**heroku`) to your local Git repository.
 
 To deploy your code you can simply run `bash**git push heroku main`.
 
@@ -137,7 +137,7 @@ To deploy your code you can simply run `bash**git push heroku main`.
 
 ### Adding a Procfile
 
-Now you have to tell Heroku what commands to run when your app spins up every time. This is defined in a `**Procfile`, a plaintext file in the root of your project directory. For a simple Flask app, you can run:
+Now you have to tell Heroku what commands to run when your app spins up every time. This is defined in a `bash**Procfile`, a plaintext file in the root of your project directory. For a simple Flask app, you can run:
 
 ```bash:title=BASH
 $ "web: gunicorn server:app" >> Procfile
@@ -340,7 +340,7 @@ Congratulations, you should now have a deployed Heroku Flask application. If you
 
 # Adding Connexion
 
-Integrating Connexion is a two step process. You will have to modify your `**server.py` file to create a `python**connexion.App()` instance, and add a Swagger server configuration file in which you will specify your API's input/output validation along with controller modules. To add Connexion you can modify your `**server.py` file to:
+Integrating Connexion is a two step process. You will have to modify your `bash**server.py` file to create a `python**connexion.App()` instance, and add a Swagger server configuration file in which you will specify your API's input/output validation along with controller modules. To add Connexion you can modify your `bash**server.py` file to:
 
 ```python:title=PYTHON -- server.py
 from flask import render_template
@@ -369,13 +369,13 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
 ```
 
-You'll notice that there is no `**Flask` module that is imported; here, Connexion is used to create the application instance. In the background, the Flask app is still created, but now there is a Connexion wrapper on top of it which provides you with added functionality. Moreover, there is a new parameter provided to the `python**connexion.App()` function: the `python**specification_dir='./spec/'`, this tells Connexion the directory in which it has to look for its configuration file. The next line is telling Connexion the file in which its configuration is stored, in your case it will be `**specification.yml`. You'll know more about this file now.
+You'll notice that there is no `bash**Flask` module that is imported; here, Connexion is used to create the application instance. In the background, the Flask app is still created, but now there is a Connexion wrapper on top of it which provides you with added functionality. Moreover, there is a new parameter provided to the `python**connexion.App()` function: the `python**specification_dir='./spec/'`, this tells Connexion the directory in which it has to look for its configuration file. The next line is telling Connexion the file in which its configuration is stored, in your case it will be `bash**specification.yml`. You'll know more about this file now.
 
-On a side note, you might have also noticed that we haven't specified the `**templates_folder` parameter when initializing the app instance. Unfortunately, in Connexion you cannot use templates outside the `**./templates` folder stored in the root of your project directory. This is at least what I found when I looked into it, if someone finds a way around this, please feel free to mention it in the comments section.
+On a side note, you might have also noticed that we haven't specified the `bash**templates_folder` parameter when initializing the app instance. Unfortunately, in Connexion you cannot use templates outside the `bash**./templates` folder stored in the root of your project directory. This is at least what I found when I looked into it, if someone finds a way around this, please feel free to mention it in the comments section.
 
 ### The configuration file
 
-The `**specification.yml` file contains the configuration your Connexion app instance will look for to instantiate input parameter validation, output response data and types, endpoint specifications, and the Swagger UI (although we won't be looking into this in this post.) Here is what your `**specification.yml` will look like to create a `**POST /mail/handler` RPC API endpoint:
+The `bash**specification.yml` file contains the configuration your Connexion app instance will look for to instantiate input parameter validation, output response data and types, endpoint specifications, and the Swagger UI (although we won't be looking into this in this post.) Here is what your `bash**specification.yml` will look like to create a `bash**POST /mail/handler` RPC API endpoint:
 
 ```yaml:title=YAML -- specification.yml
 openapi: 3.0.0
@@ -427,56 +427,56 @@ components:
 
 If you are wondering what OpenAPI is, it is a newer version of Swagger which is now in official use.
 
-There are a lot of things happening in this `**specification.yml` file, and from the outset this file is structured in a hierarchical manner: the indentations represent scopes and levels of ownership.
+There are a lot of things happening in this `bash**specification.yml` file, and from the outset this file is structured in a hierarchical manner: the indentations represent scopes and levels of ownership.
 
-For instance, `yaml**paths:` defines a scope under which all API URL endpoints will be specified for your Connexion application. Under `yaml**paths:` the `yaml**/handler:` value defines a scope under which all the URLS for `**/mail/handler` will be specified. Inside the `yaml**/handler:` value, the `yaml**post:` value signifies a scope with definitions for all `**HTTP POST` requests to the `**/mail/handler` API endpoint. A similar structure follows suit throughout the `bash**specification.yml` file.
+For instance, `yaml**paths:` defines a scope under which all API URL endpoints will be specified for your Connexion application. Under `yaml**paths:` the `yaml**/handler:` value defines a scope under which all the URLS for`bash**/mail/handler` will be specified. Inside the `yaml**/handler:` value, the `yaml**post:` value signifies a scope with definitions for all `bash**HTTP POST` requests to the `**/mail/handler` API endpoint. A similar structure follows suit throughout the `bash**specification.yml` file.
 
 The `bash**specification.yml` has many sections, let's break down what's what.
 
 The global configuration section is to define core attributes of your specification:
 
-* `**openapi:` tells Connexion what version of OpenAPI (previously Swagger) is being used.
-* `**info:` begins a new scope containing information about the API being built. This is used for documentation purposes.
-* `**description:` stores the user defined description of what the API does/is. Also used for documentation.
-* `**version:` a user defined version value for the API.
-* `**title:` a user defined title for the API. Used for documentation.
-* `**servers:` defining base paths for different server locations. In your case you can use `**/mail`. All your `**path:` routes are going to be prefixed by the this base path.
-* `**description:` a user defined description of the base path we just specified.
+* `yaml**openapi:` tells Connexion what version of OpenAPI (previously Swagger) is being used.
+* `yaml**info:` begins a new scope containing information about the API being built. This is used for documentation purposes.
+* `yaml**description:` stores the user defined description of what the API does/is. Also used for documentation.
+* `yaml**version:` a user defined version value for the API.
+* `yaml**title:` a user defined title for the API. Used for documentation.
+* `yaml**servers:` defining base paths for different server locations. In your case you can use `**/mail`. All your `**path:` routes are going to be prefixed by the this base path.
+* `yaml**description:` a user defined description of the base path we just specified.
 
 The API URL configuration section. Here we define the app's URL paths:
 
-* `**paths:` defined a scope containing all API endpoints.
-* `**handler:` one of your API endpoints. Prefixed by the `**/mail` base path.
-* `**post:` defines the HTTP method this URL endpoint will respond to. This scope will contain the core email handler Python logic.
-* This section combines to make the `**POST /mail/handler` endpoint.
+* `yaml**paths:` defined a scope containing all API endpoints.
+* `yaml**handler:` one of your API endpoints. Prefixed by the `**/mail` base path.
+* `yaml**post:` defines the HTTP method this URL endpoint will respond to. This scope will contain the core email handler Python logic.
+* This section combines to make the `bash**POST /mail/handler` endpoint.
 
-Single `**POST /mail/handler` API endpoint configuration:
+Single `yaml**POST /mail/handler` API endpoint configuration:
 
-* `**operationId:` defines a Python import path/module which will be called to respond to an HTTP `**POST` request on the `**/mail/handler` endpoint. `**web.controllers.mail_controller.send_mail` essentially specifies a `**send_mail` function inside the `**mail_controller.py` module, and this module is stored in the `**web/controllers/` directory. `**operationId` basically connects a function to respond to an HTTP request. It's general structure is `**<package_name>.<package_name>.<module_name>.<function_name>`.
-* `**tags:` are used for documentation and the Swagger UI. All CRUD methods for your `**/hander` API will share this tag definition.
-* `**summary:` defines the Swagger UI display text for this endpoint.
-* `**description:` implementation notes for our endpoint function. Used for documentation.
+* `yaml**operationId:` defines a Python import path/module which will be called to respond to an HTTP `bash**POST` request on the `bash**/mail/handler` endpoint. `python**web.controllers.mail_controller.send_mail` essentially specifies a `python**send_mail()` function inside the `bash**mail_controller.py` module, and this module is stored in the `bash**web/controllers/` directory. `bash**operationId` basically connects a function to respond to an HTTP request. It's general structure is `bash**<package_name>.<package_name>.<module_name>.<function_name>`.
+* `yaml**tags:` are used for documentation and the Swagger UI. All CRUD methods for your `bash**/hander` API will share this tag definition.
+* `yaml**summary:` defines the Swagger UI display text for this endpoint.
+* `yaml**description:` implementation notes for our endpoint function. Used for documentation.
 
 API endpoint request body configuration. Enables request validation with specified data format checking:
 
-* `**requestBody:` usually used with `**POST/PUT` requests. Contains a representation of the resource that this API endpoint will receive.
-* `**required:` defines if a request body with a set data scheme is required or not. Takes in a boolean.
-* `**content:` describes the type of content our endpoint receives.
-* `**application/x-www-form-urlencoded`: defines a scope containing the expected content schema for `**application/x-www-form-urlencoded` data. This content type will change depending on the data you expect in your request body. `**application/x-www-form-urlencoded` defines incoming form data.
-* `**schema:` data structure in the form of properties you expect in the request body. This schema will correspond with the form fields.
-* `**$ref:` a pointer to where the schema is stored in the Swagger file. `**$ref`s promote a cleaner configuration file and increase readability.
+* `yaml**requestBody:` usually used with `bash**POST/PUT` requests. Contains a representation of the resource that this API endpoint will receive.
+* `yaml**required:` defines if a request body with a set data scheme is required or not. Takes in a boolean.
+* `yaml**content:` describes the type of content our endpoint receives.
+* `yaml**application/x-www-form-urlencoded`: defines a scope containing the expected content schema for `bash**application/x-www-form-urlencoded` data. This content type will change depending on the data you expect in your request body. `bash**application/x-www-form-urlencoded` defines incoming form data.
+* `yaml**schema:` data structure in the form of properties you expect in the request body. This schema will correspond with the form fields.
+* `yaml**$ref:` a pointer to where the schema is stored in the Swagger file. `yaml**$ref`s promote a cleaner configuration file and increase readability.
 
 Request body schema definition. Corresponds with the form data enclosed inside the HTTP request.
 
-* `**components:` defines a store for different parts of the Swagger config. Used to modularize your code.
-* `**schemas:` identifier, similar to a variable, for a scope that stores multiple schemas; but, for our purposes, it only stores one.
-* `**FormData:` unique name for the schema used in the `**/mail/handler` API endpoint.
-* `**type:` defines the structure of the schema as a JSON object.
-* `**properties:` defines the data that will be stored in the JSON object. This is the data that your form is supposed to send. Values inside the property scope and form field names need to match.
+* `yaml**components:` defines a store for different parts of the Swagger config. Used to modularize your code.
+* `yaml**schemas:` identifier, similar to a variable, for a scope that stores multiple schemas; but, for our purposes, it only stores one.
+* `yaml**FormData:` unique name for the schema used in the `bash**/mail/handler` API endpoint.
+* `yaml**type:` defines the structure of the schema as a JSON object.
+* `yaml**properties:` defines the data that will be stored in the JSON object. This is the data that your form is supposed to send. Values inside the property scope and form field names need to match.
 
-Here is how the `**properties:` scope matches with the form I implemented earlier:
+Here is how the `yaml**properties:` scope matches with the form I implemented earlier:
 
-* The `**properties:` scope
+* The `yaml**properties:` scope
 
 ```yaml:title=YAML
 properties:
@@ -515,7 +515,7 @@ properties:
 
 # Adding controllers
 
-When your API receives a `**POST` request on `**/mail/handler` it will call the function specified in the `**operationId`. In this case, there should be a `**mail_controller.py` file with a `python**send_mail` function. The `**mail_controller.py` file should be stored in the `**web/controllers` directory. Here's what your `**mail_controller.py` file should look like:
+When your API receives a `bash**POST` request on `bash**/mail/handler` it will call the function specified in the `yaml**operationId`. In this case, there should be a `bash**mail_controller.py` file with a `python**send_mail` function. The `bash**mail_controller.py` file should be stored in the `bash**web/controllers` directory. Here's what your `bash**mail_controller.py` file should look like:
 
 ```python:title=PYTHON -- mail_controller.py
 """
@@ -551,9 +551,9 @@ def send_mail(body): # The body parameter contains incoming form data of type Di
     return redirect("<REDIRECT-URL-AFTER-FORM-SUBMIT>")
 ```
 
-Here, you have created a `python**send_mail()` function which takes in a `**body` parameter, unpacks the `**body` dictionary into keyword arguments, stores them in `**dict_vars`, and calls the `python**home_mailer()` and `python**client_mailer()` functions. The `python**home_mailer()` and `python**client_mailer()` functions are imported from another module named `**sendgrid_handler.py`. You will create this module in the next section.
+Here, you have created a `python**send_mail()` function which takes in a `bash**body` parameter, unpacks the `bash**body` dictionary into keyword arguments, stores them in `python**dict_vars`, and calls the `python**home_mailer()` and `python**client_mailer()` functions. The `python**home_mailer()` and `python**client_mailer()` functions are imported from another module named `bash**sendgrid_handler.py`. You will create this module in the next section.
 
-The `python**if` statements check if the `**mailer` functions returned the expected confirmation type after sending the mail. If the functions returned an `**object`, your API will return an `**error 404` code and abort all processes.
+The `python**if` statements check if the `bash**mailer` functions returned the expected confirmation type after sending the mail. If the functions returned an `bash**object`, your API will return an `bash**error 404` code and abort all processes.
 
 Finally, the `python**return` statement uses a `python**redirct()` function to route to an external link once the mailing process is complete. Usually this would be a success notification page.
 
@@ -632,9 +632,9 @@ def client_mailer(client_name, client_email):
         return {'False': e.message}
 ```
 
-There's not much happening here. You will import the `python**SendGridAPIClient` and `**Mail` from `python**sendgrid.helpers.mail`. The `python**SendGridAPIClient()` function creates a API client instance; you can assign this to a variable. That instance can then take a `python**Mail` helper class, this class contains properties for your email's metadata such as sender email, receiver email, subject, and html content. 
+There's not much happening here. You will import the `python**SendGridAPIClient` and `bash**Mail` from `python**sendgrid.helpers.mail`. The `python**SendGridAPIClient()` function creates a API client instance; you can assign this to a variable. That instance can then take a `python**Mail` helper class, this class contains properties for your email's metadata such as sender email, receiver email, subject, and html content. 
 
-The function call `python**SendGridAPIClient(os.environ.get('SENDGRID_API_KEY')).send(Mail(from_email, to_emails, subject, html_content))` will initiate the process that sends the email. This function returns an object which contains SendGrid's API server response; the object contains properties such as `**status_code`, `**body`, and `**headers`.
+The function call `python**SendGridAPIClient(os.environ.get('SENDGRID_API_KEY')).send(Mail(from_email, to_emails, subject, html_content))` will initiate the process that sends the email. This function returns an object which contains SendGrid's API server response; the object contains properties such as `bash**status_code`, `bash**body`, and `bash**headers`.
 
 `python**html_home_gen()` and `python**html_client_gen()` are functions which return an HTML string with custom user names and data. You can use these functions to generate HTML however you wish to, for instance:
 
