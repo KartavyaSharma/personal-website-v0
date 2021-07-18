@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { graphql} from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -8,8 +8,12 @@ import Author from "../components/Author"
 import ToC from "../components/ToC"
 import SEO from "../components/SEO"
 
-class Content extends React.Component {
-    componentDidMount() {
+import { MobileProvider, MobileContext } from '../context/MobileContext'
+
+function Content({ hData, mobile }) {
+
+    useEffect(() => {
+
         let script = document.createElement('script');
         let anchor = document.getElementById('inject-comments');
         script.setAttribute("src", "https://utteranc.es/client.js");
@@ -20,59 +24,48 @@ class Content extends React.Component {
         script.setAttribute("async", true);
         anchor.appendChild(script);
 
+        if(!mobile) {
+            let body = document.getElementById('body_content');
+            let list_1 = body.getElementsByTagName('ul');
+            for (let ordered_list of list_1) {
+                let list_2 = ordered_list.getElementsByTagName('li');
+                for (let link of list_2) {
+                    let one_link = link.getElementsByTagName('a');
+                    for (let sing_link of one_link) {
+                        sing_link.className+='r-link ai-element ai-element_type2 ai-element2 max-w-full';
+                    }
+                }
+            }            
+        }
+
         let paragraph = document.getElementsByTagName('p');
         for (let para of paragraph) {
             let links = para.getElementsByTagName('a');
             for(let link of links) {
-                link.className+='r-link ai-element ai-element_type2 ai-element2';
+                link.className+=`${!mobile ? 'r-link ai-element ai-element_type2 ai-element2' : 'underline italic text-highlight'}`;
             }
         }
 
-        let body = document.getElementById('body_content');
-        let list_1 = body.getElementsByTagName('ul');
-        for (let ordered_list of list_1) {
-            let list_2 = ordered_list.getElementsByTagName('li');
-            for (let link of list_2) {
-                let one_link = link.getElementsByTagName('a');
-                for (let sing_link of one_link) {
-                    sing_link.className+='r-link ai-element ai-element_type2 ai-element2 max-w-full';
-                }
-            }
-        }
-    }
-    render() {
-        return (
-            <div>
-                <div 
-                    id="body_content" 
-                    className='font-blogBody md:min-w-keepWmd 2xl:min-w-keepWlg pb-10 lg:max-w-3xl 2xl:max-w-4xl leading-relaxed break-words'
-                    dangerouslySetInnerHTML={{ __html: this.props.hData.markdownRemark.html }}>
-                </div>
-                <div className='text-3xl font-mono text-white font-semibold pb-2'>Comments</div>
-                <hr className='border-highlight hidden md:block md:min-w-keepWmd 2xl:min-w-keepWlg'/>
-                <div id='inject-comments' className='md:pt-8'></div>
+    }, [mobile])
+
+    return (
+        <div>
+            <div 
+                id="body_content" 
+                className='font-blogBody md:min-w-keepWmd 2xl:min-w-keepWlg pb-10 lg:max-w-3xl 2xl:max-w-4xl leading-relaxed break-words'
+                dangerouslySetInnerHTML={{ __html: hData.markdownRemark.html }}>
             </div>
-        );
-    }
+            <div className='text-3xl font-mono text-white font-semibold pb-2'>Comments</div>
+            <hr className='border-highlight hidden md:block md:min-w-keepWmd 2xl:min-w-keepWlg'/>
+            <div id='inject-comments' className='md:pt-8'></div>
+        </div>
+    );
 }
 
 function BlogPost({ data }) {
 
-    const [isMobile, setIsMobile] = useState(undefined);
-
-    useEffect(() => {
-        setIsMobile(!(window.innerWidth >= 1024));
-        const hideToC = () => {
-            setIsMobile(!(window.innerWidth >= 1024));
-        };
-
-        window.addEventListener('resize', hideToC);
-
-        return () => {
-            window.removeEventListener('resize', hideToC);
-        }
-
-    }, []);
+    const tocWidth = useContext(MobileContext).mediumScreen;
+    const isMobile = useContext(MobileContext).mobile;
 
     return (
         <div className='bg-background'>
@@ -105,9 +98,9 @@ function BlogPost({ data }) {
                     </div>
                     <Author />
                     {
-                        isMobile ? (
+                        tocWidth ? (
                             <div className='flex flex-col items-start w-full pb-10'>
-                                <ToC mobile={isMobile} headings={data.markdownRemark.headings} />
+                                <ToC mobile={tocWidth} headings={data.markdownRemark.headings} />
                             </div>
                         ) : null
                     }
@@ -118,7 +111,7 @@ function BlogPost({ data }) {
                         className='max-h-blogImg'
                     />
                     <div className='pt-16'>
-                        <Content hData={data} />
+                        <Content hData={data} mobile={isMobile}/>
                     </div>
                 </div>
                 <div className='hidden lg:flex flex-col items-start mx-8 xl:mx-9 2xl:mx-8 w-full'>
@@ -130,7 +123,7 @@ function BlogPost({ data }) {
     )
 }
 
-export default BlogPost
+export default function BlogPostContext({ data }){return(<MobileProvider><BlogPost data={data}/></MobileProvider>)}
 
 export const getPostData = graphql`
     query ($slug: String!) {
