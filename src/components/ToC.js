@@ -76,7 +76,7 @@ export default function ToC({ headings, mobile, currPath }) {
                                             {
                                                 _.items.map(sub => {
                                                     return (
-                                                        <li className='pt-2 pl-10'>
+                                                        <li className='pt-2 pl-8'>
                                                             <Link
                                                                 activeClass="active" 
                                                                 to={`${sub.url}`} 

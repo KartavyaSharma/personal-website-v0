@@ -175,10 +175,10 @@ In the root of your directory create a `bash**server.py` file. This file needs t
 # inside the project root
 $ pip install virtualenv
 $ virtualenv venv
-
-$ cd venv/Scripts && activate # if you are on Windows
-
-$ source venv/bin/activate # if you are on Linux/Ubuntu/WSL2
+# if you are on Windows
+$ cd venv/Scripts && activate
+# if you are on Linux/Ubuntu/WSL
+$ source venv/bin/activate
 ```
 
 This will isolate all dependencies you install to your virtual environment.
@@ -187,7 +187,7 @@ If you want your Python web app to render an HTML home page, you can create an a
 
 The following Python code sets up a basic Flask server, and responds with a hello world on the `bash**'/'` path.
 
-```python:title=PYTHON -- server.py
+```python:title=PYTHON&nbsp;•&nbsp;server.py
 from flask import (Flask, render_template)
 
 # Creating a Flask app instance
@@ -210,7 +210,7 @@ if __name__ == '__main__':
 
 Alternatively, if you wish to have an complete HTML page rendered at `bash**'/'` path, you can change the `python**def home()` function to:
 
-```python:title=PYTHON -- server.py {diff}
+```python:title=PYTHON&nbsp;•&nbsp;server.py {diff}
 from flask import (Flask, render_template)
 
 # Creating a Flask app instance
@@ -242,7 +242,7 @@ ModuleNotFoundError: No module named 'flask'
 
 This is a good time to circle back to your `bash**requirements.txt` file. If you have not yet created a `bash**requirements.txt` file, run `bash** touch requirements.txt` and add the following lines:
 
-```text:title=TEXT -- requirements.txt
+```text:title=TEXT&nbsp;•&nbsp;requirements.txt
 connexion==2.8.0
 Flask==1.1.4
 gunicorn==20.1.0
@@ -342,7 +342,7 @@ Congratulations, you should now have a deployed Heroku Flask application. If you
 
 Integrating Connexion is a two step process. You will have to modify your `bash**server.py` file to create a `python**connexion.App()` instance, and add a Swagger server configuration file in which you will specify your API's input/output validation along with controller modules. To add Connexion you can modify your `bash**server.py` file to:
 
-```python:title=PYTHON -- server.py
+```python:title=PYTHON&nbsp;•&nbsp;server.py
 from flask import render_template
 import connexion
 
@@ -377,7 +377,7 @@ On a side note, you might have also noticed that we haven't specified the `bash*
 
 The `bash**specification.yml` file contains the configuration your Connexion app instance will look for to instantiate input parameter validation, output response data and types, endpoint specifications, and the Swagger UI (although we won't be looking into this in this post.) Here is what your `bash**specification.yml` will look like to create a `bash**POST /mail/handler` RPC API endpoint:
 
-```yaml:title=YAML -- specification.yml
+```yaml:title=YAML&nbsp;•&nbsp;specification.yml
 openapi: 3.0.0
 info:
     description: This is the OpenAPI configuration file that goes with your sever code
@@ -474,9 +474,9 @@ Request body schema definition. Corresponds with the form data enclosed inside t
 * `yaml**type:` defines the structure of the schema as a JSON object.
 * `yaml**properties:` defines the data that will be stored in the JSON object. This is the data that your form is supposed to send. Values inside the property scope and form field names need to match.
 
-Here is how the `yaml**properties:` scope matches with the form I implemented earlier:
+Here is how the `yaml**properties:` scope matches with a sample form:
 
-* The `yaml**properties:` scope
+The `yaml**properties:` scope
 
 ```yaml:title=YAML
 properties:
@@ -494,9 +494,9 @@ properties:
         description: Message from the sender
 ```
 
-* Form implementation
+Form implementation
 
-```html:title=HTML -- form_test.html
+```html:title=HTML&nbsp;•&nbsp;form_test.html
 <html>
     <head>
         <title>Form Example</title>
@@ -517,7 +517,7 @@ properties:
 
 When your API receives a `bash**POST` request on `bash**/mail/handler` it will call the function specified in the `yaml**operationId`. In this case, there should be a `bash**mail_controller.py` file with a `python**send_mail` function. The `bash**mail_controller.py` file should be stored in the `bash**web/controllers` directory. Here's what your `bash**mail_controller.py` file should look like:
 
-```python:title=PYTHON -- mail_controller.py
+```python:title=PYTHON&nbsp;•&nbsp;mail_controller.py
 """
 This is the mail_controller module
 """
@@ -561,7 +561,7 @@ Finally, the `python**return` statement uses a `python**redirct()` function to r
 
 You can use any API based mailing service with your `python**send_mail()` function. Personally, in my API I used SendGrid. Going through every implementation detail for integrating SendGrid would be impractical; however, [SendGrid's Integration Guide](https://app.sendgrid.com/guide/integrate) is an excellent resource to lean how the API works. For completeness, here's how an implementation might look like:
 
-```python:title=PYTHON -- sendgrid_hander.py
+```python:title=PYTHON&nbsp;•&nbsp;sendgrid_hander.py
 """
 SendGrid mail handler, sends emails to kartavyas and senders
 """
@@ -667,11 +667,6 @@ This post covers a very narrow use case under SendGrid's vast emailing ecosystem
 # Working code
 
 You can find the configuration of my own contact form handler API on this [Github repository](https://github.com/KartavyaSharma/kartavyas-backend). Feel free to refer to it if you find yourself stuck.
-
-# Conclusion
-
-TBA.
-
 
 
 *Thumbnail backdrop by [David Clode](https://unsplash.com/photos/QZePScKPb2Q) on [Unsplash](https://unsplash.com)*

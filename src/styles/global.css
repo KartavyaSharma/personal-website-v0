@@ -73,27 +73,26 @@ a.link-headers::after {
   }
 }
 
-@media (max-width: 2000px) {
+@media (min-width: 100px) {
     .TOC {
-        max-height: 500px !important;
+      max-height: none !important;
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .TOC {
-    max-height: none !important;
+    max-height: 300px !important;
   }
 }
 
-@media (max-width: 1536px) {
+@media (min-width: 1536px) {
   .TOC {
-    max-height: 300px;
+    max-height: 500px !important;
   }
 }
 
 .grvsc-container {
     border-radius: 0px 0px 8px 8px !important;
-    max-height: 1000px !important;
 }
 
 ::-webkit-scrollbar-corner {
@@ -120,12 +119,18 @@ p {
 
 #body_content > ul {
   list-style-type: disc !important;
-  list-style-position: inside !important;
+  list-style-position: outside !important;
   padding-left: 16px !important;
   margin-bottom: 24px !important;
   color: #edf2f7;
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+#body_content > ul > li {
+    margin-top: 17px;
+    margin-bottom: 17px;
+    margin-left:  20px;
 }
 
 .highlight-headers {
