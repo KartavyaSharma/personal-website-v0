@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
 import authorData from "../static_queries/getAuthorData"
 import featuredPost from '../static_queries/getFeaturedPost'
+import { MobileContext } from '../context/MobileContext'
 
 function BlogHomeList(props) {
-
     const featuredPostData = featuredPost();
     const data = authorData();
-
-    const [isMobile, setIsMobile] = useState(undefined);
-    useEffect(() => {
-        setIsMobile(window.innerWidth <= 768);
-    }, []);
-
+    const small = useContext(MobileContext).small;
     function renderBlogPostList() {
         return (
             <div className={`grid grid-rows-${props.listData.length - 1 < 4 ? props.listData.length - 1 : 4} items-center gap-y-7`}>
@@ -27,7 +21,7 @@ function BlogHomeList(props) {
                                     <div className='justify-start items-center gap-y-4 col-span-2'>
                                         <Link to={post.node.fields.slug} key={post.node.id}>
                                             <div className={`text-base md:text-2xl font-semibold pr-3 hover:text-highlight hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100
-                                                ${ !isMobile ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : '' }`}>
+                                                ${ !small ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : '' }`}>
                                                 {post.node.frontmatter.title}
                                             </div>
                                         </Link>

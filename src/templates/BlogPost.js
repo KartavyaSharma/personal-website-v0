@@ -1,53 +1,18 @@
 import React, { useEffect, useContext } from 'react'
 import { graphql} from 'gatsby'
 import Img from 'gatsby-image'
-
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Author from "../components/Author"
 import ToC from "../components/ToC"
 import SEO from "../components/SEO"
-
 import { MobileProvider, MobileContext } from '../context/MobileContext'
+import { useLinks } from '../hooks/useLinks'
+import { useUtterances } from '../hooks/useUtterances'
 
 function Content({ hData, mobile }) {
-
-    useEffect(() => {
-
-        let script = document.createElement('script');
-        let anchor = document.getElementById('inject-comments');
-        script.setAttribute("src", "https://utteranc.es/client.js");
-        script.setAttribute("repo", "KartavyaSharma/personal-website-utterances-comments");
-        script.setAttribute("issue-term", "pathname");
-        script.setAttribute("theme", "preferred-color-scheme");
-        script.setAttribute("crossorigin", "anonymous");
-        script.setAttribute("async", true);
-        anchor.appendChild(script);
-
-        if(!mobile) {
-            let body = document.getElementById('body_content');
-            let list_1 = body.getElementsByTagName('ul');
-            for (let ordered_list of list_1) {
-                let list_2 = ordered_list.getElementsByTagName('li');
-                for (let link of list_2) {
-                    let one_link = link.getElementsByTagName('a');
-                    for (let sing_link of one_link) {
-                        sing_link.className+='r-link ai-element ai-element_type2 ai-element2 max-w-full';
-                    }
-                }
-            }            
-        }
-
-        let paragraph = document.getElementsByTagName('p');
-        for (let para of paragraph) {
-            let links = para.getElementsByTagName('a');
-            for(let link of links) {
-                link.className+=`${!mobile ? 'r-link ai-element ai-element_type2 ai-element2' : 'underline italic text-highlight'}`;
-            }
-        }
-
-    }, [mobile])
-
+    useUtterances()
+    useLinks(mobile)
     return (
         <div>
             <div 
@@ -64,8 +29,7 @@ function Content({ hData, mobile }) {
 
 function BlogPost({ data }) {
 
-    const tocWidth = useContext(MobileContext).mediumScreen;
-    const isMobile = useContext(MobileContext).mobile;
+    const { small, medium } = useContext(MobileContext);
 
     return (
         <div className='bg-background'>
@@ -98,9 +62,9 @@ function BlogPost({ data }) {
                     </div>
                     <Author />
                     {
-                        tocWidth ? (
+                        medium ? (
                             <div className='flex flex-col items-start w-full pb-10'>
-                                <ToC mobile={tocWidth} headings={data.markdownRemark.headings} />
+                                <ToC mobile={medium} headings={data.markdownRemark.headings} />
                             </div>
                         ) : null
                     }
@@ -111,7 +75,7 @@ function BlogPost({ data }) {
                         className='max-h-blogImg'
                     />
                     <div className='pt-16'>
-                        <Content hData={data} mobile={isMobile}/>
+                        <Content hData={data} mobile={small}/>
                     </div>
                 </div>
                 <div className='hidden lg:flex flex-col items-start mx-8 xl:mx-9 2xl:mx-8 w-full'>

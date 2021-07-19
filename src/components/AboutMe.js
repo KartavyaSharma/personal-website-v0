@@ -29,7 +29,7 @@ function AboutMe(props) {
     const about = data.aboutJson.content.replace(/\n/g, '<br />');
     const img = getImage(data.aboutJson.img);
 
-    const isMobile = useContext(MobileContext).mobile;
+    const isMobile = useContext(MobileContext).small;
 
     return (
         <IndexLayout ident="about-me" idx="01" name="About me">

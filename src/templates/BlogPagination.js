@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import classNames from 'classnames'
 import { graphql, Link } from 'gatsby'
 import { useFlexSearch } from 'react-use-flexsearch'
-
 import Header from '../components/Header'
 import Footer from "../components/Footer"
 import FromAuthor from '../components/FromAuthor'
@@ -11,13 +10,13 @@ import Featured from '../components/Featured'
 import SearchResults from '../components/SearchResults'
 import SEO from '../components/SEO'
 import ShareIcons from '../components/ShareIcons'
-
 import featuredPost from '../static_queries/getFeaturedPost'
 import getBlogPageList from '../static_queries/getBlogPageList'
+import { MobileProvider } from '../context/MobileContext'
 
 const headerStyle = "pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col";
 
-export default function BlogPage(props) {
+function BlogPage({ props }) {
 
     const { index, store } = props.data.localSearchSearchPosts;
     const allPostData = getBlogPageList();
@@ -154,6 +153,8 @@ export default function BlogPage(props) {
         </div>
     );
 }
+
+export default function BlogPaginationContext(props){return(<MobileProvider><BlogPage props={props} /></MobileProvider>)}
 
 export const paginationQuery = graphql`
     query blogPagination($skip: Int!, $limit: Int!) {

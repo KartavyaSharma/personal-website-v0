@@ -34,7 +34,6 @@ const Auth = () => {
         signInWithPopup(auth, new GoogleAuthProvider())
         .then((result) => {
             const user = result.user;
-            console.log(user);
             setUser(user);
             setIsSigningIn(false);
             setSignedIn(true);
@@ -52,7 +51,6 @@ const Auth = () => {
         signInWithPopup(auth, new GithubAuthProvider())
         .then((result) => {
             const user = result.user;
-            console.log(user);
             setUser(user);
             setIsSigningIn(false);
             setSignedIn(true);
@@ -70,7 +68,6 @@ const Auth = () => {
         signInWithPopup(auth, new FacebookAuthProvider())
         .then((result) => {
             const user = result.user;
-            console.log(user);
             setUser(user);
             setIsSigningIn(false);
             setSignedIn(true);

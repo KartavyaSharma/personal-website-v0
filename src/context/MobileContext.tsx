@@ -25,7 +25,7 @@ export const MobileProvider = ({ children }) => {
     }, [])
 
     return (
-        <MobileContext.Provider value={{mobile: isMobile, mediumScreen: isMedScreen, bigScreen: isBigScreen}}>
+        <MobileContext.Provider value={{small: isMobile, medium: isMedScreen, big: isBigScreen}}>
             {children}
         </MobileContext.Provider>
     )
