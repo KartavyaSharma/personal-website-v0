@@ -64,7 +64,7 @@ const config = {
                         },
                     },
                     "gatsby-remark-normalize-paths",
-                    `gatsby-remark-autolink-headers`
+                    `gatsby-remark-autolink-headers`,
                     {
                         resolve: "gatsby-remark-images",
                         options: {
