@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-export const MobileContext = React.createContext(null);
+export const MobileContext = React.createContext<{ small: boolean | null, medium: boolean | null, big: boolean | null }>(null);
 
-export const MobileProvider = ({ children }) => {
-    const [isMobile, setIsMobile] = React.useState(null);
-    const [isMedScreen, setMedScreen] = React.useState(null);
-    const [isBigScreen, setBigScreen] = React.useState(null);
+export const MobileProvider = ({ children }): React.ReactNode => {
+    const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
+    const [isMedScreen, setMedScreen] = React.useState<boolean | null>(null);
+    const [isBigScreen, setBigScreen] = React.useState<boolean | null>(null);
 
     React.useEffect(() => {
         if (!isMobile && typeof window !== 'undefined') {
