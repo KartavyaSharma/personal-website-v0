@@ -143,6 +143,11 @@ const Auth = () => {
                                     )
                                 }
                             </div>
+                            {
+                                error !== null ? (
+                                    <div className='text-red-500 italic text-xs'>{error}</div>
+                                ) : (null)
+                            }
                         </div>
                     </div>
                 )
