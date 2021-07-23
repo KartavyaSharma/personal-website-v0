@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
+import Loader from '../components/Loader'
+import axios from 'axios'
+import qs from 'qs'
 
 const validate = (values) => {
     const errors = {};
@@ -30,15 +33,20 @@ const validate = (values) => {
     return errors;
 }
 
-function ContactFields({ user_email, user_name}) {
+function ContactFields({ user_email }) {
 
     const [isMobile, setIsMobile] = useState(undefined);
+    const [isLoading, setIsLoading] = useState(false);
+    const [myForm, setIsMyForm] = useState(undefined);
 
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768)
         const changeMenu = () => {
             setIsMobile(window.innerWidth <= 768);
         }
+
+        const contact_form = document.getElementById("contact-form");
+        setIsMyForm(new FormData(contact_form));
 
         window.addEventListener('resize', changeMenu);
 
@@ -55,20 +63,31 @@ function ContactFields({ user_email, user_name}) {
         },
         validate,
         onSubmit: (values) => {
-            // alert(JSON.stringify(values, null, 2));
-        },
+            setIsLoading(true);
+            axios({
+                method: "post",
+                url: "https://kartavyas-backend.herokuapp.com/mail/handler",
+                data: myForm,
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            })
+            .then(function (response) {
+                //handle success
+                console.log(response);
+            })
+            .catch(function (response) {
+                //handle error
+                console.log(response);
+            });
+        }
     });
 
     return (
         <div>
             <form
-                action="https://kartavyas-backend.herokuapp.com/mail/handler"
-                method="POST"
+                onSubmit={formik.handleSubmit}
                 className="w-full bg-hover-bg rounded-lg shadow-lg p-10"
                 autoComplete="new-password"
-                // data-sal="zoom-out"
-                // data-sal-easing="ease"
-                // data-sal-duration="1000"
+                id="contact-form"
             >
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -165,14 +184,19 @@ function ContactFields({ user_email, user_name}) {
                         ) : null}
                     </div>
                 </div>
-                <button
-                    disabled={!(formik.isValid)}
-                    type="submit"
-                    className={`bg-background hover:border hover:border-highlight rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
-                        ${ !(formik.isValid) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
-                >
-                    Send Message
-                </button>
+                <div className='flex flex-row'>
+                    <button
+                        disabled={!(formik.isValid && formik.dirty)}
+                        type="submit"
+                        className={`bg-background hover:border hover:border-highlight rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
+                            ${ !(formik.isValid && formik.dirty) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
+                    >
+                        Send Message
+                    </button>
+                    <div className='ml-5 justify-center'>
+                        <Loader status={isLoading} />
+                    </div>
+                </div>
             </form>
         </div>
     )
