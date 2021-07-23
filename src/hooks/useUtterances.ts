@@ -8,7 +8,7 @@ export function useUtterances():null {
         script.setAttribute("issue-term", "pathname");
         script.setAttribute("theme", "preferred-color-scheme");
         script.setAttribute("crossorigin", "anonymous");
-        script.setAttribute("async", true);
+        script.setAttribute("async", "true");
 
         const anchor = document.getElementById('inject-comments');
         if(anchor.getElementsByTagName('script').length === 0) anchor.appendChild(script);
