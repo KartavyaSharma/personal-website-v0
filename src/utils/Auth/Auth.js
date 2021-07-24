@@ -143,6 +143,11 @@ const Auth = () => {
                                     )
                                 }
                             </div>
+                            {
+                                error !== null ? (
+                                    <div className='text-red-500 italic text-xs mt-3 w-full text-center font-semibold'>Sign in failed, please try again.</div>
+                                ) : (null)
+                            }
                         </div>
                     </div>
                 )

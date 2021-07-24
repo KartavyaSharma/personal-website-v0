@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { graphql} from 'gatsby'
 import Img from 'gatsby-image'
 import Header from "../components/Header"
@@ -11,8 +11,9 @@ import { useLinks } from '../hooks/useLinks'
 import { useUtterances } from '../hooks/useUtterances'
 
 function Content({ hData, mobile }) {
-    useUtterances()
-    useLinks(mobile)
+    useUtterances();
+    useLinks(mobile);
+
     return (
         <div>
             <div 
