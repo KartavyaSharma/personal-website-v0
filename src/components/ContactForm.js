@@ -166,10 +166,10 @@ function ContactFields({ user_email, user_name}) {
                     </div>
                 </div>
                 <button
-                    disabled={!(formik.isValid)}
+                    disabled={!(formik.isValid && formik.dirty)}
                     type="submit"
                     className={`bg-background hover:border hover:border-highlight rounded-md text-white outline-none focus:shadow-outline focus:outline-none font-bold py-2 px-6
-                        ${ !(formik.isValid) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
+                        ${ !(formik.isValid && formik.dirty) ? 'disabled:opacity-50 disabled:cursor-not-allowed pointer-events-none' : '' }`}
                 >
                     Send Message
                 </button>
