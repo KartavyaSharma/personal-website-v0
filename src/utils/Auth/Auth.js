@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { getAuth, GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider, signInWithPopup } from 'firebase/auth';
+import { MobileContext } from '../../context/MobileContext';
 import { useFirebaseApp } from '../../hooks/useFirebase';
 import ContactForm from '../../components/ContactForm'
 
@@ -12,20 +13,8 @@ const Auth = () => {
     const [error, setError] = React.useState(null);
     const [user, setUser] = React.useState(null);
 
-    const [isMobile, setIsMobile] = useState(undefined);
-
-    useEffect(() => {
-        setIsMobile(window.innerWidth <= 768)
-        const changeMenu = () => {
-            setIsMobile(window.innerWidth <= 768);
-        }
-
-        window.addEventListener('resize', changeMenu);
-
-        return () => {
-            window.removeEventListener('resize', changeMenu);
-        }
-    }, []);
+    const { small } = useContext(MobileContext);
+    const isMobile = small;
 
     const handleSignInWithGoogle = () => {
         setIsSigningIn(true);

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { useFormik } from 'formik'
+import { MobileContext } from '../context/MobileContext';
 
 const validate = (values) => {
     const errors = {};
@@ -32,20 +33,8 @@ const validate = (values) => {
 
 function ContactFields({ user_email, user_name}) {
 
-    const [isMobile, setIsMobile] = useState(undefined);
-
-    useEffect(() => {
-        setIsMobile(window.innerWidth <= 768)
-        const changeMenu = () => {
-            setIsMobile(window.innerWidth <= 768);
-        }
-
-        window.addEventListener('resize', changeMenu);
-
-        return () => {
-            window.removeEventListener('resize', changeMenu);
-        }
-    }, []);
+    const { small } = useContext(MobileContext);
+    const isMobile = small;
 
     const formik = useFormik({
         initialValues: {
@@ -66,9 +55,6 @@ function ContactFields({ user_email, user_name}) {
                 method="POST"
                 className="w-full bg-hover-bg rounded-lg shadow-lg p-10"
                 autoComplete="new-password"
-                // data-sal="zoom-out"
-                // data-sal-easing="ease"
-                // data-sal-duration="1000"
             >
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">

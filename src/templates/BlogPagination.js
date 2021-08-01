@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import classNames from 'classnames'
 import { graphql, Link } from 'gatsby'
 import { useFlexSearch } from 'react-use-flexsearch'
@@ -12,7 +12,7 @@ import SEO from '../components/SEO'
 import ShareIcons from '../components/ShareIcons'
 import featuredPost from '../static_queries/getFeaturedPost'
 import getBlogPageList from '../static_queries/getBlogPageList'
-import { MobileProvider } from '../context/MobileContext'
+import { MobileProvider, MobileContext } from '../context/MobileContext'
 
 const headerStyle = "pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col";
 
@@ -34,7 +34,8 @@ function BlogPage({ props }) {
     const postData = searchQuery ? unFlattenResults(results) : allPostData;
 
     const [hasFocus, setFocus] = useState(false);
-    const [isMobile, setIsMobile] = useState(undefined);
+    const { small } = useContext(MobileContext);
+    const isMobile = small;
 
     const featuredPostData = featuredPost();
     const { currentPage, numPages } = props.pageContext;
@@ -44,12 +45,6 @@ function BlogPage({ props }) {
     const nextPage = `/blog/${currentPage + 1}`;
 
     useEffect(() => {
-        setIsMobile(window.innerWidth <= 768);
-        const updateIsMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
-        }
-
-        window.addEventListener('resize', updateIsMobile);
 
         document.onkeydown = function (event) {
             if (event.key === "Escape") {
@@ -59,10 +54,6 @@ function BlogPage({ props }) {
         }
 
         document.getElementsByName('Link').classNames+='outline-none'
-
-        return () => {
-            window.removeEventListener('resize', updateIsMobile);
-        }
     }, [])
 
     return (
