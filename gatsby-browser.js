@@ -7,3 +7,6 @@
 // You can delete this file if you're not using it
 import './src/styles/global.css';
 import 'gatsby-remark-vscode/styles.css';
+import { wrapRootElement as wrap } from './rootWrapper';
+
+export const wrapRootElement = wrap;

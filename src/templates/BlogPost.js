@@ -6,7 +6,7 @@ import Footer from "../components/Footer"
 import Author from "../components/Author"
 import ToC from "../components/ToC"
 import SEO from "../components/SEO"
-import { MobileProvider, MobileContext } from '../context/MobileContext'
+import { MobileContext } from '../context/MobileContext'
 import { useLinks } from '../hooks/useLinks'
 import { useUtterances } from '../hooks/useUtterances'
 
@@ -88,7 +88,7 @@ function BlogPost({ data }) {
     )
 }
 
-export default function BlogPostContext({ data }){return(<MobileProvider><BlogPost data={data}/></MobileProvider>)}
+export default function BlogPostContext({ data }){return(<BlogPost data={data}/>)}
 
 export const getPostData = graphql`
     query ($slug: String!) {

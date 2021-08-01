@@ -9,14 +9,14 @@ import Footer from '../components/Footer'
 export default function Contact() {
 
     return (
-        <MobileProvider>
+        // <MobileProvider>
             <div className='bg-background min-h-screen'>
                 <Header />
-                <FirebaseProvider>
+                {/* <FirebaseProvider> */}
                     <Auth />
-                </FirebaseProvider>
+                {/* </FirebaseProvider> */}
                 <Footer isPage={true} isContact={true} />
             </div>
-        </MobileProvider>
+        // </MobileProvider>
     )
 }

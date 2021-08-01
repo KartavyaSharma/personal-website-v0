@@ -12,7 +12,7 @@ import SEO from '../components/SEO'
 import ShareIcons from '../components/ShareIcons'
 import featuredPost from '../static_queries/getFeaturedPost'
 import getBlogPageList from '../static_queries/getBlogPageList'
-import { MobileProvider, MobileContext } from '../context/MobileContext'
+import { MobileContext } from '../context/MobileContext'
 
 const headerStyle = "pt-14 lg:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 max-w-screen-2xl w-full mx-auto flex flex-col";
 
@@ -145,7 +145,7 @@ function BlogPage({ props }) {
     );
 }
 
-export default function BlogPaginationContext(props){return(<MobileProvider><BlogPage props={props} /></MobileProvider>)}
+export default function BlogPaginationContext(props){return(<BlogPage props={props} />)}
 
 export const paginationQuery = graphql`
     query blogPagination($skip: Int!, $limit: Int!) {
