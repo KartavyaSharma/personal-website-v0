@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { getAuth, GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider, signInWithPopup } from 'firebase/auth';
 import { MobileContext } from '../../context/MobileContext';
+import { SignInContext } from '../../context/SignInContext';
 import { useFirebaseApp } from '../../hooks/useFirebase';
 import ContactForm from '../../components/ContactForm'
 
@@ -8,16 +9,19 @@ import ContactForm from '../../components/ContactForm'
 const Auth = () => {
     
     useFirebaseApp();
-    const [isSigningIn, setIsSigningIn] = React.useState(null);
-    const [signedIn, setSignedIn] = React.useState(false);
-    const [error, setError] = React.useState(null);
-    const [user, setUser] = React.useState(null);
-
     const { small } = useContext(MobileContext);
     const isMobile = small;
 
+    const { signInState, firebaseUserInfoState, changeFunction } = useContext(SignInContext);
+
+    const [error, setError] = React.useState(null);    
+    const [signedIn, setSignedIn] = React.useState(signInState);
+    const [isSigningIn, setIsSigningIn] = React.useState(!(signInState === true));
+    const [user, setUser] = React.useState(firebaseUserInfoState);
+
+
     const handleSignInWithGoogle = () => {
-        setIsSigningIn(true);
+        setIsSigningIn(signInState === true ? false : true);
         setError(null);
         const auth = getAuth()
         signInWithPopup(auth, new GoogleAuthProvider())
@@ -26,6 +30,7 @@ const Auth = () => {
             setUser(user);
             setIsSigningIn(false);
             setSignedIn(true);
+            changeFunction(true, user);
         })
         .catch(e => {
             setIsSigningIn(false);
@@ -40,9 +45,9 @@ const Auth = () => {
         signInWithPopup(auth, new GithubAuthProvider())
         .then((result) => {
             const user = result.user;
-            setUser(user);
             setIsSigningIn(false);
             setSignedIn(true);
+            changeFunction(true, user);
         })
         .catch(e => {
             setIsSigningIn(false);
