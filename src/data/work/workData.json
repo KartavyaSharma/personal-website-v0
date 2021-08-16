@@ -1,5 +1,17 @@
 [
     {
+        "company": "Caltools - Health Calculators",
+        "position": "Backend Web Developer",
+        "companyLogo": "../../images/caltools-pie-256.png",
+        "alt": "Caltools",
+        "dates": {
+            "start": "Jun 2021",
+            "end": "Present"
+        },
+        "companyWebsite": "https://www.caltools.net",
+        "roleDescription": "Set up AWS Lambda functions to expose calculator compute logic as an API. Used the Serverless framework along with TypeScript to add API authorization (in addition to CORS.) <br/><br/> Used the MVC architectural model to design the backend with Express, and implemented caching mechanisms to reduce API call rates."
+    },
+    {
         "company": "Salkatech",
         "position": "Web Developer",
         "companyLogo": "../../images/android-chrome-512x512.png",
@@ -20,8 +32,8 @@
             "start": "Jun 2018",
             "end": "Nov 2020"
         },
-        "companyWebsite": "",
-        "roleDescription": "Developed ROZE as a utility to prevent distracted driving. ROZE uses Google's text-to-speech (TTI) API to narrate all incoming notifications. <br /><br />Implemented localization through Google's Cloud Translate API, and added location based services through Google's Geolocation API."
+        "companyWebsite": "false",
+        "roleDescription": "Developed ROZE as a utility to prevent distracted driving. ROZE uses Google's text-to-speech (TTI) API to narrate incoming notifications. <br /><br />Implemented localization through Google's Cloud Translate API, and added location based services through Google's Geolocation API."
     },
     {
         "company": "Prime Academy",
@@ -32,7 +44,7 @@
             "start": "Oct 2018",
             "end": "Nov 2019"
         },
-        "companyWebsite": "",
+        "companyWebsite": "false",
         "roleDescription": "Taught Computer Science to students at a school outside Indore, MP. Designed their curriculum to be more inclusive of a broad range of concepts in computing and programming. <br/><br/> Covered languages such as Python, C++, Java, and SQLite3."
     }
 ]

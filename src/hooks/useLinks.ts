@@ -26,7 +26,6 @@ export function useLinks(mobile: boolean):null {
 		    for(let link of links) {
 				if(mobile === true) {
 					link.className = mobile_string;
-					console.log(link.className);
 				} else {
 					link.className = big_string;
 				}

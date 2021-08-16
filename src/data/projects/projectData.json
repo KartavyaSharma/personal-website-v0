@@ -4,7 +4,7 @@
         "img": "../../images/android-chrome-512x512.png",
         "alt": "Salkatech Hero",
         "category": "Contract",
-        "name": "Salkatech Website",
+        "name": "Salkatech.com",
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "https://salkatech.com",
         "githublink": "",
@@ -90,8 +90,8 @@
         "tags": ["HTML", "CSS", "JQuery", "GIMP"],
         "projectlink": "https://kartavyas.com",
         "githublink": "https://github.com/KartavyaSharma/personal-website",
-        "description": "My personal website (the one you are viewing) built using Gatsby.js, Tailwind CSS, and Forestry CMS.",
-        "about": "<div><a href='https://kartavyas.com' target='_blank' rel='noreferrer'>kartavyas.com</a> is a personal website I built as a learning experience for web development.<br /><br />The website was developed using a React.js-based static-site-generator called Gatsby.js. The current iteration of it makes use of many technologies such as GraphQL, Formik, and Forestry CMS, to name a few (you can find the complete list below).<br /><br />The contact form is managed by Web3Forms, and all validation is handled by Formik (a frontend form library for React).<br /><br />In addition to forms, all blog posts are integrated within the website, and each post has a dedicated comments section based on Github's issue interface. Moreover, all posts have an SEO component which enables sharing across multiple platforms. Each project (similar to this one) has a dedicated page generated through a template.<br /><br />If you feel the website could use some upgrades, feel free to reach out to me using my email or the contact form.<br /><br />If you wish to know more about how I built this website, stick around; I will be writing posts outlining how to code each component once a week.</div>",
+        "description": "My personal website (what you're on right now) built using Gatsby.js, Tailwind CSS, and Flask.",
+        "about": "<div><a href='https://kartavyas.com' target='_blank' rel='noreferrer'>kartavyas.com</a> is my personal website I built as my first web development project.<br /><br />The website was developed using Gatsby.js &#8212; a React.js-based static-site-generator. The current iteration of this makes use of many technologies such as GraphQL, Formik, and Flask CMS, to name a few (you can find the complete list below).<br /><br />The contact form is managed by Web3Forms, and all validation is handled by Formik (a frontend form management library for React).<br /><br />In addition to forms, all blog posts are integrated within the website, and each post has a dedicated comments section based on Github's issue interface. Moreover, all posts have an SEO component which enables rich social sharing across multiple platforms. Each project (similar to this one) has a dedicated page generated through a template.<br /><br />If you feel the website could use some upgrades, feel free to reach out to me using my email or the contact form.<br /><br />If you wish to know more about how I built this website, stick around; I will be writing posts outlining how I built this website from scratch.</div>",
         "tech": [
             {
                 "name": "React",
@@ -152,7 +152,7 @@
         "img": "../../images/covaxstatus.png",
         "alt": "COVaxStatus alt",
         "category": "Project",
-        "name": "COVaxStatus Updates",
+        "name": "COVaxStatus",
         "tags": ["React", "Tailwind", "Axios", "React-select"],
         "projectlink": "https://covaxstatus.kartavyas.com",
         "githublink": "https://github.com/KartavyaSharma/cowin-check",

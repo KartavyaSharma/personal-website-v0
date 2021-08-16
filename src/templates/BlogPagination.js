@@ -59,7 +59,7 @@ function BlogPage({ props }) {
     return (
         <div className='bg-background'>
             <Header paginationAnim={currentPage === 1 ? true : false} />
-            <SEO title="Kartavya's Blog" description="Kartavya Sharma's blog. A collection of writing focused on the current state of tech and web development tutorials."/>
+            <SEO title="Kartavya Sharma" page='Blog' description="Kartavya Sharma's blog. A collection of writing focused on the current state of tech and web development tutorials."/>
             <div className={classNames(headerStyle, 'mb-12 md:mb-0')}>
                 {
                     isMobile ? (null) : (

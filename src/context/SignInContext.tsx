@@ -9,8 +9,6 @@ export const SignInProvider = ({ children }) => {
     const [isSignedIn, setIsSignedIn] = useState(false);
     const [firebaseUserInfo, setFirebaseUserInfo] = useState<object | null>(null);
 
-    console.log(isSignedIn);
-
     return (
         <SignInContext.Provider value={{ signInState: isSignedIn, firebaseUserInfoState: firebaseUserInfo, changeFunction: (setValue: boolean, setUserInfo: object | null) => {
             setIsSignedIn(setValue)

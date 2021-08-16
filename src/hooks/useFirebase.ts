@@ -3,8 +3,7 @@ import * as React from 'react';
 import { FirebaseAppContext } from '../context/FirebaseContext';
 
 export function useFirebaseApp(
-    fn: (firebaseApp: FirebaseApp) => void | (() => void | undefined) = null,
-    dep = []
+    fn: (firebaseApp: FirebaseApp) => void | undefined = null
 ): FirebaseApp {
     const firebaseApp = React.useContext(FirebaseAppContext);
 
@@ -15,5 +14,5 @@ export function useFirebaseApp(
             return ;
         }
         return fn(firebaseApp);
-    }, [firebaseApp, ...dep])
+    }, [firebaseApp])
 }

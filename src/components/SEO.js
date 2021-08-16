@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
-export default function SEO({ title, description, image, where, isPost = false }) {
+export default function SEO({ title, page = null, description, image, where, isPost = false }) {
     const { site } = useStaticQuery(graphql`
         {
             site {
@@ -25,6 +25,7 @@ export default function SEO({ title, description, image, where, isPost = false }
 
     const seo = {
         title: title || defaultTitle,
+        page: page,
         description: description || defaultDescription,
         url: isPost ? where : 'https://www.kartavyas.com',
     }
@@ -38,7 +39,7 @@ export default function SEO({ title, description, image, where, isPost = false }
             htmlAttributes={{
                 lang: 'en'
             }}
-            title={isPost ? `${seo.title} | Kartavya Sharma` : seo.title}
+            title={isPost ? `${seo.title} | Kartavya Sharma` : `${seo.page} | Kartavya Sharma`}
             defaultTitle={seo.title}
             meta={[
                 {
@@ -47,7 +48,7 @@ export default function SEO({ title, description, image, where, isPost = false }
                 },
                 {
                     property: `og:title`,
-                    content: isPost ? `${seo.title} | Kartavya Sharma` : seo.title,
+                    content: isPost ? `${seo.title} | Kartavya Sharma` : `${seo.page} | Kartavya Sharma`,
                 },
                 {
                     property: 'og:description',

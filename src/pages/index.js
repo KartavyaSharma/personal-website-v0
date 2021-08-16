@@ -18,7 +18,7 @@ function IndexPage() {
     return (
         <div className='bg-background'>
             <MobileProvider>
-                <SEO title='Kartavya Sharma' image="../images/logo.png"/>
+                <SEO title='Kartavya Sharma' page='Home' image="../images/logo.png"/>
                 <Intro />
                 <Aboutme body={sectionBody} />
                 <Projects />
