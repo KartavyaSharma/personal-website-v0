@@ -5,14 +5,14 @@
 </p>
 
 <h1 style="font-size: 500px;"> 
-  Kartavya's Personal Website (<a href="https://kartavyas.com">www.kartavyas.com</a>)
+  <a href="https://kartavyas.com">www.kartavyas.com</a>
 </h1>
 
 This repository contains the source code for my [personal website](https://www.kartavyas.com/).
 
 ### Tech stack and API usage
 
-[kartavyas.com](https://www.kartavyas.com/) was built using the following technologies:
+This website was built using the following technologies:
 
 - Gatsby.js
 - GraphQL
@@ -20,10 +20,13 @@ This repository contains the source code for my [personal website](https://www.k
 - Flask
 - Firebase
 
-This website was deployed using Vercel.
+
+Deployed using Vercel.
 API server is hosted on Heroku.
 
-Forms are handled by [Formik](https://formik.org/) and SendGrid APIs. Blog post comments are handled by [Utterances](https://utteranc.es/).
+Forms are handled by [Formik](https://formik.org/) and SendGrid APIs. 
+
+Blog post comments are handled by [Utterances](https://utteranc.es/).
 
 Search is powered by [FlexSearch.js](https://github.com/nextapps-de/flexsearch).
 
