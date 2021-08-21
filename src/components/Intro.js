@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link as ScrollLink } from 'react-scroll'
 import { Link } from 'gatsby'
+import { getCurrentXkcdMeta } from '../utils/RandomXKCD/rxkcd'
 
 import ParticleBg from "../components/Particles"
 import Dropdown from '../components/Dropdown'
@@ -9,8 +10,17 @@ import Dropdown from '../components/Dropdown'
 function Intro() {
 
     const [isMobile, setIsMobile] = useState(undefined);
+    const [xkcdUrl, setxkcdUrl] = useState(undefined);
 
     useEffect(() => {
+
+        getCurrentXkcdMeta().then((res) => {
+            console.log(res);
+            setxkcdUrl(res.img);
+        }).catch((err) => {
+            console.log(err);
+        })
+
         setIsMobile(window.innerWidth <= 768)
         const changeMenu = () => {
             setIsMobile(window.innerWidth <= 768);
@@ -51,7 +61,7 @@ function Intro() {
                     <div className='grid grid-cols-4 text-white text-base sm:text-lg lg:text-xl py-6 xl:w-4/5 font-blogBody sm:leading-5 lg:leading-9 text-opacity-80'>
                         <div className='flex items-center justify-center col-span-full lg:col-span-3 2xl:col-span-2'>
                             <div className='text-white text-2xl md:text-3xl font-chivo text-opacity-80'>
-                                I'm a <a href='https://i.redd.it/6rypte6ms4s61.png' target='_blank' rel='noreferrer' className='r-link ai-element ai-element_type2 ai-element2'>software engineer</a> &#38; an incoming freshman majoring in EECS at <a href='http://www.stanfordrejects.com' target='_blank' rel='noreferrer' className='r-link ai-element ai-element_type2 ai-element2'>UC Berkeley</a>
+                                I'm a <a href={`${xkcdUrl}`} target='_blank' rel='noreferrer' className='r-link ai-element ai-element_type2 ai-element2'>software engineer</a> &#38; a freshman majoring in EECS at <a href='http://www.stanfordrejects.com' target='_blank' rel='noreferrer' className='r-link ai-element ai-element_type2 ai-element2'>UC Berkeley</a>
                             </div>
                         </div>
                     </div>
