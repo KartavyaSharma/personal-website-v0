@@ -1,33 +1,61 @@
-const axios = require('axios').default
+// This module is non functional
 
-export interface XkcdResponse {
-    month: string;
-    num: number;
-    link: string;
-    year: string;
-    news: string;
-    safe_title: string;
-    trascript: string;
-    alt: string;
-    img: string;
-    title: string;
-    day: string;
+// export interface XkcdResponse {
+//     alt:string;
+//     day:string;
+//     img:string;
+//     link:string;
+//     month:string;
+//     news:string;
+//     num:number;
+//     safe_title:string;
+//     title:string;
+//     transcript:string;
+//     year:string;
+// }
+
+interface ApiMeta {
+    corsHeader: string;
+    apiBaseUrl: string;
+    apiUrlFormat: string;
 }
 
-export async function getCurrentXkcdMeta():Promise<XkcdResponse> {
+const apiMeta: ApiMeta = {
+    corsHeader: "https://8000-scarlet-pony-5v9ed38h.ws-us16.gitpod.io",
+    apiBaseUrl: "https://xkcd.com",
+    apiUrlFormat: "info.0.json"
+}
+
+function loadJSON(path, success, error)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                if (success)
+                    success(JSON.parse(xhr.responseText));
+            } else {
+                if (error)
+                    error(xhr);
+            }
+        }
+    };
+    xhr.open("GET", path, true);
+    xhr.send();
+}
+
+export async function getCurrentXkcdMeta():Promise<any> {
     try {
-        const response = await axios('https://xkcd.com/info.0.json', {
-            method: 'GET',
-            mode: 'no-cors',
-            headers: {
-              'Access-Control-Allow-Origin': '*',
-              'Content-Type': 'application/json',
-            },
-           credentials: 'same-origin',
+        const callUrl: string = `${apiMeta.apiBaseUrl}/${apiMeta.apiUrlFormat}`;
+        const response = loadJSON(callUrl, (data) => {
+            console.log(data);
+        }, (error) => {
+            console.log(error);
         })
-        console.log(response)
-        const jsonResponse:XkcdResponse = JSON.parse(JSON.stringify(response));
-        return jsonResponse;
+        // const jsonComicMeta: object = JSON.parse(response);
+        // console.log(jsonComicMeta);
+        return response;
     } catch (error) {
         return error.response;
     }
