@@ -60,7 +60,7 @@ module.exports = {
   variants: {
     extend: {
       opacity: ['disabled'],
-      fill: ['hover', 'focus'],
+      fill: ['group-hover', 'hover', 'focus'],
     },
   },
   plugins: [],
