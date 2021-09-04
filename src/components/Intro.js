@@ -50,7 +50,7 @@ function Intro() {
                     <div className='grid grid-cols-4 text-white text-base sm:text-lg lg:text-xl py-6 xl:w-4/5 font-blogBody sm:leading-5 lg:leading-9 text-opacity-80'>
                         <div className='flex items-center justify-center col-span-full lg:col-span-3 2xl:col-span-2'>
                             <div className='text-white text-2xl md:text-3xl font-chivo text-opacity-80'>
-                                I'm a <a href={'https://imgs.xkcd.com/comics/academia_vs_business.png'} target='_blank' rel='noreferrer' className='r-link ai-element ai-element_type2 ai-element2'>software engineer</a> &#38; a freshman majoring in EECS at <a href='http://www.stanfordrejects.com' target='_blank' rel='noreferrer' className='r-link ai-element ai-element_type2 ai-element2'>UC Berkeley</a>
+                                I'm an EE/CS major at <a href='http://www.stanfordrejects.com' target='_blank' rel='noreferrer' className='r-link ai-element ai-element_type2 ai-element2'>UC Berkeley</a>; interested in web development and all things software engineering.
                             </div>
                         </div>
                     </div>
