@@ -14,7 +14,8 @@ module.exports = {
     }),
     extend: {
       screens: {
-        '3xl': '1800px'
+        '3xl': '1800px',
+        'big': '2000px'
       },
       maxHeight: {
         blogImg: '600px',

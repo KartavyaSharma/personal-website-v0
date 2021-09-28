@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { graphql} from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Img from 'gatsby-image'
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -31,6 +32,7 @@ function Content({ hData, mobile }) {
 function BlogPost({ data }) {
 
     const { small, medium } = useContext(MobileContext);
+    const img = getImage(data.markdownRemark.frontmatter.thumbnail)
 
     return (
         <div className='bg-background'>
@@ -43,7 +45,7 @@ function BlogPost({ data }) {
                 where={`https://www.kartavyas.com${data.markdownRemark.fields.slug}`}
             />
             <div className="pt-10 2xl:pt-16 lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 mb-16 lg:mb-4 max-w-screen-2xl w-full mx-auto flex">
-                <div className='max-w-full lg:max-w-3xl 2xl:max-w-4xl flex flex-col justify-center'>
+                <div className='max-w-full lg:max-w-3xl 2xl:max-w-4xl min-w-max flex flex-col justify-center'>
                     <div className='text-4xl lg:text-6xl 2xl:text-7xl text-white font-bold font-mono'>{data.markdownRemark.frontmatter.title}</div>
                     <div className='text-lg lg:text-xl text-white text-opacity-80 italic mt-4 font-mono'>{data.markdownRemark.frontmatter.description}</div>
                     <div className='flex items-center'>
@@ -69,12 +71,13 @@ function BlogPost({ data }) {
                             </div>
                         ) : null
                     }
-                    <Img
+                    {/* <Img
                         src={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid.src}
                         fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}
                         alt={data.markdownRemark.frontmatter.title}
                         className='max-h-blogImg'
-                    />
+                    /> */}
+                    <GatsbyImage image={img} alt={data.markdownRemark.frontmatter.title} className='max-h-blogImg' />
                     <div className='pt-16'>
                         <Content hData={data} mobile={small}/>
                     </div>
@@ -103,9 +106,14 @@ export const getPostData = graphql`
                 tags
                 thumbnail {
                     childImageSharp {
-                        fluid(quality: 100) {
-                            ...GatsbyImageSharpFluid
-                        }
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            formats: AUTO
+                            transformOptions: {fit: COVER}
+                            layout: CONSTRAINED
+                            width: 4000
+                            quality: 100
+                        )
                     }
                     relativePath
                     publicURL

@@ -90,7 +90,7 @@ function BlogPage({ props }) {
                 <div className={`flex ${currentPage === 1 ? 'lg:pt-16' : ''}`}>
                     {
                         !hasFocus ? (
-                            <div className='max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl flex flex-col justify-center'>
+                            <div className='max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl xl:min-w-max flex flex-col justify-center'>
                                 {currentPage === 1 ? <Featured postData={featuredPostData} /> : null}
                                 {currentPage === 1 ? (
                                     <div className='text-white text-opacity-80 font-semibold text-4xl pb-2 pt-3 font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Latest Posts</div>)

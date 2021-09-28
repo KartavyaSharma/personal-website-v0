@@ -85,7 +85,8 @@
     "gatsby-remark-code-titles": "^1.1.0",
     "postcss": "^8.2.9",
     "prettier": "2.2.1",
-    "tailwindcss": "^2.0.4"
+    "tailwindcss": "^2.0.4",
+    "tailwindcss-debug-screens": "^2.1.0"
   },
   "keywords": [
     "gatsby"
