@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
@@ -11,12 +11,19 @@ export default function ProjectPage(props) {
     const queryData = props.data.projectDataJson;
     const otherProjectData = props.data.allProjectDataJson.edges;
     const logo = getImage(queryData.img);
+
+    const [isMac, setIsMac] = useState(false)
+
+    useEffect(() => {
+        setIsMac(window.innerWidth == 1440)
+    }, [])
+
     return (
         <div className='bg-background'>
             <Header />
             <SEO title={queryData.name} isPost={true} image={queryData.img.publicURL} />
             <div className="lg:pb-24 px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-36 mb-16 lg:mb-4 max-w-screen-2xl w-full mx-auto flex" data-sal="fade" data-sal-easing="ease" data-sal-duration="1500">
-                <div className='max-w-3xl 2xl:max-w-4xl flex flex-col justify-center'>
+                <div className={`${!isMac ? 'max-w-3xl' : ''} 2xl:max-w-4xl flex flex-col justify-center`}>
                     <div className='grid grid-cols-1 md:grid-rows-1 md:grid-cols-5 w-full items-center pt-10 md:pt-0'>
                         <div className='col-span-4'>
                             <div className='text-xl text-highlight font-mono'>{queryData.category}</div>
@@ -80,7 +87,7 @@ export default function ProjectPage(props) {
                     </div>
                 </div>
                 <div className='hidden lg:flex flex-col w-full'>
-                    <ProjectCardList cardData={otherProjectData} />
+                    {!isMac ? <ProjectCardList cardData={otherProjectData} /> : null}
                 </div>
             </div>
             <Footer isPage={true} />
