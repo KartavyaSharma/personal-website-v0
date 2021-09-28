@@ -110,7 +110,7 @@ const Auth = () => {
                                         Login with Google
                                     </div>
                                 </button>
-                                { !isMobile ? (
+                                {/* { !isMobile ? (
                                         <button 
                                             className='px-3 py-2 flex flex-row items-center bg-background rounded-xl shadow-lg ring mt-4 lg:ml-4 lg:mt-0 outline-none justify-center'
                                             onClick={handleSignInWithGithub}
@@ -135,7 +135,7 @@ const Auth = () => {
                                             </div>
                                         </button>
                                     )
-                                }
+                                } */}
                             </div>
                             {
                                 error !== null ? (

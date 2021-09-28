@@ -13,6 +13,9 @@ module.exports = {
       'orange': theme('colors.orange.500')
     }),
     extend: {
+      screens: {
+        '3xl': '1800px'
+      },
       maxHeight: {
         blogImg: '600px',
         featured: '450px',
@@ -23,6 +26,8 @@ module.exports = {
         18: '72px',
       },
       maxWidth: {
+        '3/4': '75%',
+        '2/3': '66.66666%',
         mobileImg: '100px',
         '8': '32px',
       },
