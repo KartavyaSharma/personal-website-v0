@@ -126,8 +126,8 @@ const config = {
                 name: `personal-website`,
                 short_name: `kartavyas`,
                 start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
+                background_color: `#26305B`,
+                theme_color: `#26305B`,
                 display: `minimal-ui`,
                 icon: `src/images/logo_new_color.png`, // This path is relative to the root of the site.
             },
