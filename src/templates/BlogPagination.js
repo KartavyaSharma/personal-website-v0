@@ -69,7 +69,7 @@ function BlogPage({ props }) {
                         autoComplete='off'
                         className={`lg:-mt-16 flex flex-row items-center ${currentPage !== 1 ? 'hidden' : ''}`}
                     >
-                        <label htmlFor='header-search' className='-mr-2.5 ml-2 absolute'>
+                        <label htmlFor='header-search' className='-mr-2.5 ml-3 absolute'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                             </svg>
@@ -82,8 +82,8 @@ function BlogPage({ props }) {
                             id='header-search'
                             placeholder='Search blog posts'
                             name='res'
-                            className={`appearance-none bg-transparent border-b border-highlight w-full text-white text-xl text-opacity-80 font-semibold p-4 pl-10 leading-tight focus:outline-none focus:bg-hover-bg 
-                                ${hasFocus ? 'border-highlight rounded shadow-lg' : ''}`}
+                            className={`appearance-none border border-hover-bg bg-transparent rounded-md w-full text-white text-xl text-opacity-80 font-semibold p-4 pl-10 leading-tight focus:outline-none focus:bg-hover-bg 
+                                ${hasFocus ? 'bg-hover-bg shadow-lg' : ''}`}
                         />
                     </form>)
                 }
@@ -120,7 +120,7 @@ function BlogPage({ props }) {
                                 </div>
                             </div>
                         ) : (
-                            <div>
+                            <div className='max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl xl:min-w-max flex flex-col justify-center'>
                                 <div className='flex flex-col'>
                                     <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results </div>
                                     <span className='text-xs text-opacity-80 text-highlight'>(press the 'esc' key to return)</span>
