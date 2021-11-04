@@ -13,7 +13,7 @@ export default function SearchResults(props) {
             <div>
                 {
                     props.isEmpty !== '' && props.postArray.length === 0 ? (
-                        <div className='text-white text-2xl md:text-3xl font-blogBody flex flex-col items-start'>
+                        <div className='text-white text-2xl md:text-3xl font-blogBody min-w-keepWlg'>
                             <span>Oops, no results found!</span>
                         </div>
                     ) : (
@@ -36,7 +36,7 @@ export default function SearchResults(props) {
 
                                         return (
                                             <div className='grid grid-cols-3 items-center'>
-                                                <div className='justify-start items-center gap-y-4 col-span-2'>
+                                                <div className='justify-start items-center gap-y-4 col-span-2 min-w-keepWlg'>
                                                     <Link to={slug}>
                                                         <div className={`text-base md:text-2xl font-semibold pr-3 hover:text-highlight hover:cursor-pointer hover:no-underline opacity-80 hover:opacity-100 ${!props.mobile ? 'hover:transition hover:ease-in-out transform hover:translate-x-4 duration-300' : ''}`}>
                                                             {title}

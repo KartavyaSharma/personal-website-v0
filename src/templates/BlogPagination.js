@@ -120,7 +120,7 @@ function BlogPage({ props }) {
                                 </div>
                             </div>
                         ) : (
-                            <div className='max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl xl:min-w-max flex flex-col justify-center'>
+                            <div className='max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl xl:min-w-max flex flex-col'>
                                 <div className='flex flex-col'>
                                     <div className='text-white font-semibold text-4xl font-mono md:min-w-keepWmd 2xl:min-w-keepWlg' id='post-anchor'>Search Results </div>
                                     <span className='text-xs text-opacity-80 text-highlight'>(press the 'esc' key to return)</span>
