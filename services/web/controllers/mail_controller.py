@@ -4,7 +4,7 @@ for kartavyas
 """
 
 from flask import *
-from email.sendgrid_mailers.sendgrid_handler import *
+from web.sendgrid_mailers.sendgrid_handler import *
 from types import SimpleNamespace
 
 def send_mail(body):

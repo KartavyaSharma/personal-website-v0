@@ -11,7 +11,7 @@ servers:
 paths:
     /handler:
         post:
-            operationId: email.controllers.mail_controller.send_mail
+            operationId: web.controllers.mail_controller.send_mail
             tags:
                 - Response
             summary: Add to sender identity and send mail
