@@ -51,7 +51,7 @@ function ContactFields({ user_email, user_name}) {
     return (
         <div>
             <form
-                action="https://kartavyas-backend.herokuapp.com/mail/handler"
+                action="https://services.kartavyas.com/mail/handler"
                 method="POST"
                 className="w-full bg-hover-bg rounded-lg shadow-lg p-10"
                 autoComplete="new-password"
