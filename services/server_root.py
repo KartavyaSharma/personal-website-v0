@@ -2,7 +2,7 @@ from flask import render_template
 import connexion
 from flask_cors import CORS
 
-app = connexion.App(__name__, specification_dir='./spec', options={'swagger_ui': False})
+app = connexion.App(__name__, specification_dir='./server_spec', options={'swagger_ui': False})
 
 app.add_api('specification.yml')
 CORS(app.app)
