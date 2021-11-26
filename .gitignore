@@ -68,3 +68,7 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+services-env
+__pychache__
+sendgrid.env
