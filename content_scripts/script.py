@@ -14,7 +14,7 @@ def create_frontmatter():
     TAGS = []
     number_of_tags = int(input('ENTER NO. OF TAGS: '))
     
-    for i in range(0, number_of_tags)
+    for i in range(0, number_of_tags):
         tag = input()
         TAGS.append(tag)
     
