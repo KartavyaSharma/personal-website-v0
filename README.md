@@ -22,7 +22,7 @@ This website was built using the following technologies:
 
 
 Deployed using Vercel.
-API server is hosted on Heroku.
+API server is hosted on [Digital Ocean](https://www.digitalocean.com/).
 
 Forms are handled by [Formik](https://formik.org/) and SendGrid APIs. 
 
