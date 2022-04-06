@@ -225,8 +225,8 @@ def home():
     
     :return:	A "Hello world!" string
     """
--    return "Hello world!"
-+    return render_template('home.html')
+    return "Hello world!"
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(degub=True)
