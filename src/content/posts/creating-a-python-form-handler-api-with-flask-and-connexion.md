@@ -210,7 +210,7 @@ if __name__ == '__main__':
 
 Alternatively, if you wish to have an complete HTML page rendered at `bash**'/'` path, you can change the `python**def home()` function to:
 
-```python:title=PYTHON&nbsp;•&nbsp;server.py {diff}
+```python:title=PYTHON&nbsp;•&nbsp;server.py
 from flask import (Flask, render_template)
 
 # Creating a Flask app instance
