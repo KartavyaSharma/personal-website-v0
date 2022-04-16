@@ -6,7 +6,7 @@ export function useUtterances():null {
                 script.setAttribute("src", "https://utteranc.es/client.js");
                 script.setAttribute("repo", "KartavyaSharma/personal-website-utterances-comments");
                 script.setAttribute("issue-term", "pathname");
-                script.setAttribute("theme", "preferred-color-scheme");
+                script.setAttribute("theme", "dark-blue");
                 script.setAttribute("crossorigin", "anonymous");
                 script.setAttribute("async", "true");
 
