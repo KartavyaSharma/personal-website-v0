@@ -6,7 +6,7 @@
         "alt": "Caltools",
         "dates": {
             "start": "Jun 2021",
-            "end": "Present"
+            "end": "Aug 2021"
         },
         "companyWebsite": "https://www.caltools.net",
         "roleDescription": "Set up AWS Lambda functions to expose calculator compute logic as an API. Used the Serverless framework along with TypeScript to add API authorization (in addition to CORS.) <br/><br/> Used the MVC architectural model to design the backend with Express, and implemented caching mechanisms to reduce API call rates."
