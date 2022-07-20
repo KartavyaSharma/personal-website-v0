@@ -1,5 +1,17 @@
 [
     {
+        "company": "UC Berkeley EECS",
+        "position": "Academic Intern",
+        "companyLogo": "../../images/eecs_border.png",
+        "alt": "EECS logo",
+        "dates": {
+            "start": "Jun 2022",
+            "end": "present"
+        },
+        "companyWebsite": "https://eecs.berkeley.edu/",
+        "roleDescription": "Assisted students with weekly labs and helped students work on numerous projects including Gitlet &mdash; a minified version control system &mdash; and 2048 &mdash; the popular tile puzzle game. <br/><br/> Conducted exam prep sessions and mini-lectures during lab with 25 &ndash; 30 students. Led several problem solving sessions based on previous exam content."
+    },
+    {
         "company": "Caltools - Health Calculators",
         "position": "Backend Web Developer",
         "companyLogo": "../../images/caltools-pie-256.png",
