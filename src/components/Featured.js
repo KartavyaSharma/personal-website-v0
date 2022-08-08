@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
+import hidden from '../data/config/config'
 
 export default function Featured(props) {
 
@@ -22,7 +23,7 @@ export default function Featured(props) {
         return(
             <div>
                 {
-                    props.postData.map(post => {
+                    props.postData.filter(post => (!hidden.names.includes(post.node.frontmatter.title))).map(post => {
                         const img = getImage(post.node.frontmatter.thumbnail);
                         const compare = isMobile ? 100 : 150;
                         if(post.node.frontmatter.description.length > compare) {

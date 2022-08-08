@@ -44,27 +44,27 @@ def create_frontmatter():
 
 
 def workspace_to_txt():
-    pre, ext = os.path.splitext(os.getcwd()+'\\workspace\\__workspace.md')
-    os.rename(os.getcwd()+'\\workspace\\__workspace.md', pre + '.txt')
+    pre, ext = os.path.splitext(os.getcwd()+'/workspace/__workspace.md')
+    os.rename(os.getcwd()+'/workspace/__workspace.md', pre + '.txt')
     
     
 def workspace_to_md(ORIGINAL_EXT='.md'):
-    pre, ext = os.path.splitext(os.getcwd()+'\\workspace\\__workspace.txt')
-    os.rename(os.getcwd()+'\\workspace\\__workspace.txt', pre + ORIGINAL_EXT)
+    pre, ext = os.path.splitext(os.getcwd()+'/workspace/__workspace.txt')
+    os.rename(os.getcwd()+'/workspace/__workspace.txt', pre + ORIGINAL_EXT)
     
     
 def temp_to_markdown(file_markdown_name):
-    pre, ext = os.path.splitext(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt')
+    pre, ext = os.path.splitext(os.getcwd()+'/workspace/'+file_markdown_name+'.txt')
     try:
-        os.rename(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt', pre + '.md')
+        os.rename(os.getcwd()+'/workspace/'+file_markdown_name+'.txt', pre + '.md')
     except FileExistsError:
         overwrite_flag = input("File already exists, do you want to overwrite it and try again? [y/n]: ")
         if overwrite_flag == 'y':
             try:
-                os.remove(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt', pre + '.md')
+                os.remove(os.getcwd()+'/workspace/'+file_markdown_name+'.txt', pre + '.md')
             except:
                 raise Exception('File overwrite failed, aborting...')
-            os.rename(os.getcwd()+'\\workspace\\'+file_markdown_name+'.txt', pre + '.md')
+            os.rename(os.getcwd()+'/workspace/'+file_markdown_name+'.txt', pre + '.md')
             print('Previous file has been overwritten!')
         else:
             raise Exception('File overwrite aborted, files cannot have the same name!')
@@ -84,7 +84,7 @@ def markdown_title_on_edit(identification):
     return file_markdown_name
 
 def store_markdown_frontmatter_on_create(file_markdown_name, identification, frontmatter):
-    store_file = open(os.getcwd()+'\\frontmatter_store\\frontmatter_'+identification+'.txt', 'w+')
+    store_file = open(os.getcwd()+'/frontmatter_store/frontmatter_'+identification+'.txt', 'w+')
     for frontmatter_var in frontmatter:
         store_file.write(frontmatter_var+'\n')
     ID_STORE = SqliteDict('KEY_VALUE_STORE.sqlite', autocommit=True)
@@ -104,7 +104,7 @@ def write_frontmatter_to_file(create_flag, file_markdown_name=None, frontmatter=
         identification = input('Enter post ID: ')
         file_markdown_name = markdown_title_on_edit(identification)
         temp_file = open('workspace/'+file_markdown_name+'.txt', 'a')
-        with open(os.getcwd()+"\\frontmatter_store\\frontmatter_"+identification+".txt", 'r+') as store_file:
+        with open(os.getcwd()+"/frontmatter_store/frontmatter_"+identification+".txt", 'r+') as store_file:
             for line in store_file:
                 temp_file.write(line)
                 
@@ -115,19 +115,19 @@ def write_frontmatter_to_file(create_flag, file_markdown_name=None, frontmatter=
 
 def write_markdown_to_file(file_markdown_name):
     temp_file = open('workspace/'+file_markdown_name+'.txt', 'a')
-    with open(os.getcwd()+'\\workspace\\__workspace.txt') as file:
+    with open(os.getcwd()+'/workspace/__workspace.txt') as file:
         lines = file.readlines()
         temp_file.writelines(lines)
     temp_file.close()
 
     
 def move_to_posts(create_flag, file_markdown_name):
-    source = os.path.dirname(os.getcwd())+"\\content_scripts\\workspace\\"+file_markdown_name+".md"
-    destination = os.path.dirname(os.getcwd())+"\\content_scripts\\posts"
+    source = os.path.dirname(os.getcwd())+"/content_scripts/workspace/"+file_markdown_name+".md"
+    destination = os.path.dirname(os.getcwd())+"/content_scripts/posts"
     if create_flag == 'c':
         shutil.move(source, destination)
     elif create_flag == 'e':
-        destination += "\\"+file_markdown_name+".md"
+        destination += "/"+file_markdown_name+".md"
         os.replace(source, destination)
     print("Success!")
         
@@ -159,8 +159,8 @@ def git_operations():
     
     
 def push_image_to_repo(image_name):
-     source = os.getcwd()+"\\workspace\\"+image_name
-     destination = os.path.dirname(os.getcwd())+"\\src\\content\\images"
+     source = os.getcwd()+"/workspace/"+image_name
+     destination = os.path.dirname(os.getcwd())+"/src/content/images"
      print("Moving file to repo image dir...")
      shutil.move(source, destination)
      print("Success!")
@@ -168,15 +168,15 @@ def push_image_to_repo(image_name):
     
 def push_to_repo(identification):
     file_markdown_name = markdown_title_on_edit(identification)
-    source = os.path.dirname(os.getcwd())+"\\content_scripts\\posts\\"+file_markdown_name+".md"
-    destination = os.path.dirname(os.getcwd())+"\\src\\content\\posts"
+    source = os.path.dirname(os.getcwd())+"/content_scripts/posts/"+file_markdown_name+".md"
+    destination = os.path.dirname(os.getcwd())+"/src/content/posts"
     try:
         print("Adding file to posts repo in website src...")
         shutil.copy(source, destination)
         print("Success!")
     except:
         print("Seems like you are trying to push and edit for "+file_markdown_name+". Removing existing version...")
-        os.remove(source, destination+"\\"+file_markdown_name+".md")
+        os.remove(source, destination+"/"+file_markdown_name+".md")
         shutil.copy(source, destination)
     git_flag = input("Do you want to push these changes to remote [y/n]: ")
     if git_flag == 'y':

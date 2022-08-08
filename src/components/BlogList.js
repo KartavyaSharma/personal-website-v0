@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
-
 import authorData from "../static_queries/getAuthorData"
+import hidden from '../data/config/config'
 
 function BlogList(props) {
 
@@ -12,13 +12,17 @@ function BlogList(props) {
     }, []);
 
     const data = authorData();
+    const hiddenData = hidden.names;
+    let finalList = props.listData.filter(post => (!hiddenData.includes(post.node.frontmatter.title))).map(post => {
+        return post;
+    });
+    finalList = finalList.slice(0, 3);
 
     function renderBlogData() {
         return(
-            <div className={`grid grid-rows-${props.listData.length < 3 ? props.listData.length : '3'} items-center gap-y-5 md:gap-y-7 min-w-full`}>
+            <div className={`grid grid-rows-${props.listData.length - hiddenData.length < 3 ? props.listData.length - hiddenData.length : '3'} items-center gap-y-5 md:gap-y-7 min-w-full`}>
                 {
-                    props.listData.filter(blog => blog.node.title !== "")
-                    .map(blog => {
+                    finalList.map(blog => {
                         const img = getImage(blog.node.frontmatter.thumbnail);
                         return(
                             <div className='grid grid-cols-3 items-center'>

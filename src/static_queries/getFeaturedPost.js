@@ -4,7 +4,7 @@ export default function GetFeaturedPost() {
     const data = useStaticQuery(
         graphql`
         {
-            allMarkdownRemark(limit: 1, sort: {order: DESC, fields: frontmatter___date}) {
+            allMarkdownRemark(limit: 2, sort: {order: DESC, fields: frontmatter___date}) {
                 distinct(field: id)
                 edges {
                     node {

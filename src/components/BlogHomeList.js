@@ -4,16 +4,18 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import authorData from "../static_queries/getAuthorData"
 import featuredPost from '../static_queries/getFeaturedPost'
 import { MobileContext } from '../context/MobileContext'
+import hidden from '../data/config/config'
 
 function BlogHomeList(props) {
     const featuredPostData = featuredPost();
+    const featuredNames = featuredPostData.map(post => post.node.frontmatter.title);
     const data = authorData();
     const small = useContext(MobileContext).small;
     function renderBlogPostList() {
         return (
-            <div className={`grid grid-rows-${props.listData.length - 1 < 4 ? props.listData.length - 1 : 4} items-center gap-y-7`}>
+            <div className={`grid grid-rows-${props.listData.length - 1 - featuredNames.length < 4 ? props.listData.length - 1 - featuredNames.length : 4} items-center gap-y-7`}>
                 {
-                    props.listData.filter(post => (post.node.frontmatter.title !== "" && featuredPostData[0].node.frontmatter.title !== post.node.frontmatter.title))
+                    props.listData.filter(post => (!hidden.names.includes(post.node.frontmatter.title) && post.node.frontmatter.title !== "" && !featuredNames.includes(post.node.frontmatter.title)))
                     .map(post => {
                         const img = getImage(post.node.frontmatter.thumbnail);
                         return (

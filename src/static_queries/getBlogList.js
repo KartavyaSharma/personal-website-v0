@@ -4,7 +4,7 @@ export default function GetBlogList() {
     const data = useStaticQuery(
         graphql`
             query MyQuery {
-                allMarkdownRemark(limit: 3, sort: {order: DESC, fields: frontmatter___date}) {
+                allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}) {
                     edges {
                         node {
                             frontmatter {
