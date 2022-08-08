@@ -38,7 +38,7 @@ export default function ProjectPageCards({ cardData }) {
     }
 
     return (
-        <div className="w-full flex flex-row justify-center">
+        <div className="w-full flex flex-row justify-center sticky top-5">
             <div className="flex flex-col bg-hover-bg rounded-lg shadow-lg p-5 w-full ml-10">
                 <div className="text-white font-mono text-lg lg:text-2xl 2xl:text-3xl font-bold text-opacity-80">
                     More projects
