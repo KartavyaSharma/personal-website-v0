@@ -8,7 +8,9 @@
   <a href="https://kartavyas.com">www.kartavyas.com</a>
 </h1>
 
-&#x26a0;&#xfe0f; **This project has been deprecated**: the website has several outdated/deprecated dependencies from the Gatsby plugin ecosystem. A lot of other plugins/dependencies have introduced breaking changes that require significant changes in my codebase to successfully build this project. As of now, I don't plan on building this project again over Vercel.
+## &#x26a0;&#xfe0f; **This project has been deprecated!**
+
+This web app has several outdated/deprecated dependencies from the Gatsby plugin ecosystem. A lot of other plugins/dependencies have introduced breaking changes that require significant changes in my codebase to successfully build this project. As of now, I don't plan on building this project again over Vercel.
 
 Be on the lookout for v2 of my personal website which will use Bun and SvelteKit. This website will be online till I setup the new version, and eventually it will move over to [old.kartavyas.com](https://old.kartavyas.com/).
 
