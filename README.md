@@ -3,6 +3,8 @@ This web app has several outdated/deprecated dependencies from the Gatsby plugin
 
 Be on the lookout for v1 of my personal website which will use Bun and SvelteKit. This website will remain online while I setup the new version, and eventually it will move over to [v0.kartavyas.com](https://v0.kartavyas.com/).
 
+---
+
 <p align="">
   <a href="https://www.kartavyas.com">
     <img alt="logo" src="./src/images/logo_new_color.png" width="128" />
